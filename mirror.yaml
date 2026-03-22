@@ -1,0 +1,79 @@
+# =============================================================================
+# mirror.yaml — Mirror configuration for aqua-registry
+# =============================================================================
+#
+# Used by:  python3 scripts/mirror.py
+# Purpose:  Rewrite download URLs in pkgs/**/registry.yaml so that tools are
+#           fetched from mirror/proxy servers instead of GitHub or upstream
+#           servers directly (useful behind the Great Firewall of China or
+#           any other restricted network).
+#
+# Commands:
+#   python3 scripts/mirror.py               # apply mirrors
+#   python3 scripts/mirror.py --dry-run     # preview changes without writing
+#   python3 scripts/mirror.py --restore     # restore originals via git
+
+
+# =============================================================================
+# github_release_url_prefix
+# =============================================================================
+# Most aqua packages are of type: github_release.  For these, aqua assembles
+# the download URL at runtime:
+#   https://github.com/{owner}/{repo}/releases/download/{version}/{asset}
+# No `url:` field is stored in registry.yaml by default.
+#
+# When this key is set, scripts/mirror.py injects an explicit `url:` field
+# into every version_overrides block that has an `asset:` field but no
+# existing `url:`.  The injected template looks like:
+#
+#   url: https://gh-proxy.org/https://github.com/{owner}/{repo}/releases/download/{{.Version}}/{{.Asset}}
+#
+# aqua then downloads through this URL instead of GitHub directly.
+#
+# Change this value to your preferred GitHub proxy, or remove the key to
+# disable GitHub release proxying entirely.
+github_release_url_prefix: "https://gh-proxy.org"
+
+
+# =============================================================================
+# mirrors — explicit url: field rewriting
+# =============================================================================
+# Applies to packages of type: http (and any other type that stores an
+# explicit `url:` field in registry.yaml, e.g. checksum/raw-content URLs).
+#
+# Each entry:
+#   original  — URL prefix to match in the existing `url:` value (required)
+#   mirror    — Replacement URL prefix (required)
+#
+# Rules:
+#   - Only *indented* `url:` lines are rewritten (top-level keys are ignored).
+#   - Setting mirror equal to original effectively disables that entry.
+#   - The first matching entry wins; order matters.
+#   - Commented-out entries are shown as examples; uncomment to enable.
+
+mirrors:
+  # ---- GitHub (explicit url: fields) ----------------------------------------
+  # Some packages store raw GitHub URLs (checksums, raw content, etc.) as
+  # explicit `url:` fields.  Route them through the proxy.
+  - original: "https://github.com/"
+    mirror: "https://gh-proxy.org/https://github.com/"
+
+  - original: "https://raw.githubusercontent.com/"
+    mirror: "https://gh-proxy.org/https://raw.githubusercontent.com/"
+
+  # ---- Node.js ---------------------------------------------------------------
+  # Official dist server -> USTC mirror.
+  - original: "https://nodejs.org/dist/"
+    mirror: "https://mirrors.ustc.edu.cn/node/"
+
+  # ---- HashiCorp (terraform, vault, consul, packer, …) ----------------------
+  # No well-known public Chinese mirror exists.  Set your own internal mirror
+  # URL and uncomment, or leave commented out to keep the original URLs.
+  # - original: "https://releases.hashicorp.com/"
+  #   mirror: "https://my-internal-mirror.example.com/hashicorp/"
+
+  # ---- Haskell / GHC / Cabal ------------------------------------------------
+  # downloads.haskell.org -> USTC hackage mirror.
+  - original: "https://downloads.haskell.org/"
+    mirror: "https://mirrors.ustc.edu.cn/hackage/"
+

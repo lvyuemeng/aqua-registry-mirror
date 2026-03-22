@@ -11,6 +11,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.12.25"
+        url: https://gh-proxy.org/https://github.com/syncthing/syncthing/releases/download/{{.Version}}/{{.Asset}}
         asset: syncthing-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -25,6 +26,7 @@ packages:
       - version_constraint: Version in ["v0.14.22", "v1.6.0", "v1.20.0"]
         no_asset: true
       - version_constraint: semver("<= 0.14.48")
+        url: https://gh-proxy.org/https://github.com/syncthing/syncthing/releases/download/{{.Version}}/{{.Asset}}
         asset: syncthing-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -35,6 +37,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.5.0")
+        url: https://gh-proxy.org/https://github.com/syncthing/syncthing/releases/download/{{.Version}}/{{.Asset}}
         asset: syncthing-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -45,6 +48,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.12.1")
+        url: https://gh-proxy.org/https://github.com/syncthing/syncthing/releases/download/{{.Version}}/{{.Asset}}
         asset: syncthing-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -55,6 +59,7 @@ packages:
           - goos: linux
             format: tar.gz
       - version_constraint: semver("<= 1.18.2")
+        url: https://gh-proxy.org/https://github.com/syncthing/syncthing/releases/download/{{.Version}}/{{.Asset}}
         asset: syncthing-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -64,6 +69,7 @@ packages:
           - goos: linux
             format: tar.gz
       - version_constraint: semver("<= 2.0.13")
+        url: https://gh-proxy.org/https://github.com/syncthing/syncthing/releases/download/{{.Version}}/{{.Asset}}
         asset: syncthing-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: zip
         replacements:
@@ -72,6 +78,7 @@ packages:
           - goos: linux
             format: tar.gz
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/syncthing/syncthing/releases/download/{{.Version}}/{{.Asset}}
         asset: syncthing-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: zip
         replacements:

@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.11.2")
+        url: https://gh-proxy.org/https://github.com/jackchuka/mdschema/releases/download/{{.Version}}/{{.Asset}}
         asset: mdschema_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -14,6 +15,7 @@ packages:
           asset: mdschema_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/jackchuka/mdschema/releases/download/{{.Version}}/{{.Asset}}
         asset: mdschema_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

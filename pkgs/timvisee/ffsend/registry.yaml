@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version in ["v0.2.13", "v0.2.75"]
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
         format: raw
         replacements:
@@ -14,6 +15,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version in ["v0.2.60", "v0.2.69"]
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -27,6 +29,7 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: Version == "v0.2.47"
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
         format: raw
         replacements:
@@ -39,6 +42,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.0.9"
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -48,6 +52,7 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("<= 0.0.2")
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -59,6 +64,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.0.3"
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -74,6 +80,7 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v0.0.4"
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -88,6 +95,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.1.2")
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -102,6 +110,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.2.9")
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
         format: raw
         replacements:
@@ -109,6 +118,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.2.17")
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
         format: raw
         windows_arm_emulation: true
@@ -118,6 +128,7 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: semver("<= 0.2.22")
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
         format: raw
         windows_arm_emulation: true
@@ -132,6 +143,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.2.24")
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
         format: raw
         replacements:
@@ -144,6 +156,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
         format: raw
         windows_arm_emulation: true

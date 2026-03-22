@@ -11,6 +11,7 @@ packages:
       - version_constraint: semver("<= 0.6.4")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/EnvCLI/EnvCLI/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}_{{.Arch}}"
         format: raw
         rosetta2: true

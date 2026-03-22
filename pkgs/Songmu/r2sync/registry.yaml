@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.0.1")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/Songmu/r2sync/releases/download/{{.Version}}/{{.Asset}}
         asset: r2sync_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:

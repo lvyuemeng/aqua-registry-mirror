@@ -14,6 +14,7 @@ packages:
       - version_constraint: semver("<= 0.0.158")
         no_asset: true
       - version_constraint: semver("<= 0.0.195")
+        url: https://gh-proxy.org/https://github.com/namespacelabs/foundation/releases/download/{{.Version}}/{{.Asset}}
         asset: nsc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -26,6 +27,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.0.391")
+        url: https://gh-proxy.org/https://github.com/namespacelabs/foundation/releases/download/{{.Version}}/{{.Asset}}
         asset: nsc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -39,6 +41,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/namespacelabs/foundation/releases/download/{{.Version}}/{{.Asset}}
         asset: nsc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

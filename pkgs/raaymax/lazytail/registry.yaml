@@ -11,6 +11,7 @@ packages:
       - version_constraint: Version == "v0.2.0"
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/raaymax/lazytail/releases/download/{{.Version}}/{{.Asset}}
         asset: lazytail-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

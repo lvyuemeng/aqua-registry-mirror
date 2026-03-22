@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.5")
+        url: https://gh-proxy.org/https://github.com/c-bata/kube-prompt/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-prompt_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -14,6 +15,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/c-bata/kube-prompt/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-prompt_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true

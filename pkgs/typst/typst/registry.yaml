@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.0")
+        url: https://gh-proxy.org/https://github.com/typst/typst/releases/download/{{.Version}}/{{.Asset}}
         asset: typst-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -27,6 +28,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.5.0")
+        url: https://gh-proxy.org/https://github.com/typst/typst/releases/download/{{.Version}}/{{.Asset}}
         asset: typst-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:
@@ -42,6 +44,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.11.1")
+        url: https://gh-proxy.org/https://github.com/typst/typst/releases/download/{{.Version}}/{{.Asset}}
         asset: typst-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -58,6 +61,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/typst/typst/releases/download/{{.Version}}/{{.Asset}}
         asset: typst-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:

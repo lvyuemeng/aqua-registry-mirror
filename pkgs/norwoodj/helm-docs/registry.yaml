@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.11.2"
+        url: https://gh-proxy.org/https://github.com/norwoodj/helm-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: helm-docs_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -19,6 +20,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 1.3.0")
+        url: https://gh-proxy.org/https://github.com/norwoodj/helm-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: helm-docs_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -34,6 +36,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.5.0")
+        url: https://gh-proxy.org/https://github.com/norwoodj/helm-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: helm-docs_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -48,6 +51,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/norwoodj/helm-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: helm-docs_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

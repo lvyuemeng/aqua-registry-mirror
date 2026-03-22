@@ -10,6 +10,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.15.1")
+        url: https://gh-proxy.org/https://github.com/lsd-rs/lsd/releases/download/{{.Version}}/{{.Asset}}
         asset: lsd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -21,6 +22,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "0.16.0"
+        url: https://gh-proxy.org/https://github.com/lsd-rs/lsd/releases/download/{{.Version}}/{{.Asset}}
         asset: lsd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -32,6 +34,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.19.0")
+        url: https://gh-proxy.org/https://github.com/lsd-rs/lsd/releases/download/{{.Version}}/{{.Asset}}
         asset: lsd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -51,6 +54,7 @@ packages:
       - version_constraint: Version == "0.20.0"
         no_asset: true
       - version_constraint: semver("<= 0.23.1")
+        url: https://gh-proxy.org/https://github.com/lsd-rs/lsd/releases/download/{{.Version}}/{{.Asset}}
         asset: lsd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -67,6 +71,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/lsd-rs/lsd/releases/download/{{.Version}}/{{.Asset}}
         asset: lsd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

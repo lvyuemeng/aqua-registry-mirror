@@ -10,6 +10,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/open-policy-agent/regal/releases/download/{{.Version}}/{{.Asset}}
         asset: regal_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true

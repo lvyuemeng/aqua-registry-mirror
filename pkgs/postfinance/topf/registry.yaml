@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/postfinance/topf/releases/download/{{.Version}}/{{.Asset}}
         asset: topf_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

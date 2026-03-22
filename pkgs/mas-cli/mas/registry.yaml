@@ -9,11 +9,13 @@ packages:
       - version_constraint: Version == "v1.2.1"
         no_asset: true
       - version_constraint: semver("<= 1.4.2")
+        url: https://gh-proxy.org/https://github.com/mas-cli/mas/releases/download/{{.Version}}/{{.Asset}}
         asset: mas-cli.{{.Format}}
         format: zip
         supported_envs:
           - darwin
       - version_constraint: semver("<= 1.8.6")
+        url: https://gh-proxy.org/https://github.com/mas-cli/mas/releases/download/{{.Version}}/{{.Asset}}
         asset: mas.{{.Format}}
         format: pkg
         files:
@@ -22,6 +24,7 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("< 3.0.0")
+        url: https://gh-proxy.org/https://github.com/mas-cli/mas/releases/download/{{.Version}}/{{.Asset}}
         asset: mas-{{trimV .Version}}.{{.Format}}
         format: pkg
         files:
@@ -30,6 +33,7 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("<= 3.1.0")
+        url: https://gh-proxy.org/https://github.com/mas-cli/mas/releases/download/{{.Version}}/{{.Asset}}
         asset: mas-{{trimV .Version}}-{{.Arch}}.{{.Format}}
         format: pkg
         replacements:
@@ -40,6 +44,7 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("<= 4.1.0")
+        url: https://gh-proxy.org/https://github.com/mas-cli/mas/releases/download/{{.Version}}/{{.Asset}}
         asset: mas-{{trimV .Version}}-{{.Arch}}.{{.Format}}
         format: pkg
         replacements:
@@ -50,6 +55,7 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/mas-cli/mas/releases/download/{{.Version}}/{{.Asset}}
         asset: mas-{{trimV .Version}}-{{.Arch}}.{{.Format}}
         format: pkg
         replacements:

@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/andreybleme/lazycontainer/releases/download/{{.Version}}/{{.Asset}}
         asset: lazycontainer_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:

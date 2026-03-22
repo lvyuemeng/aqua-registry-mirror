@@ -10,6 +10,7 @@ packages:
       - version_constraint: Version in ["install-cargo-binstall-1.0.0", "v1.4.0"]
         no_asset: true
       - version_constraint: semver("<= 0.2.0")
+        url: https://gh-proxy.org/https://github.com/cargo-bins/cargo-binstall/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-binstall-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -24,6 +25,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.3.0"
+        url: https://gh-proxy.org/https://github.com/cargo-bins/cargo-binstall/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-binstall-{{.Arch}}-{{.OS}}-{{.Version}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -41,6 +43,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.7.0")
+        url: https://gh-proxy.org/https://github.com/cargo-bins/cargo-binstall/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-binstall-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -58,6 +61,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.18.1")
+        url: https://gh-proxy.org/https://github.com/cargo-bins/cargo-binstall/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-binstall-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -71,6 +75,7 @@ packages:
           - goos: linux
             format: tgz
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/cargo-bins/cargo-binstall/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-binstall-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:

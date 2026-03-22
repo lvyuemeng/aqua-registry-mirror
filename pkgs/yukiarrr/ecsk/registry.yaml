@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.5.6")
+        url: https://gh-proxy.org/https://github.com/yukiarrr/ecsk/releases/download/{{.Version}}/{{.Asset}}
         asset: ecsk_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -21,6 +22,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.9.0")
+        url: https://gh-proxy.org/https://github.com/yukiarrr/ecsk/releases/download/{{.Version}}/{{.Asset}}
         asset: ecsk_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -37,6 +39,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/yukiarrr/ecsk/releases/download/{{.Version}}/{{.Asset}}
         asset: ecsk_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

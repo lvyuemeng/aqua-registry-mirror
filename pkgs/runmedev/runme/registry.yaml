@@ -10,6 +10,7 @@ packages:
       - name: stateful/runme
     version_overrides:
       - version_constraint: semver("<= 0.1.12")
+        url: https://gh-proxy.org/https://github.com/runmedev/runme/releases/download/{{.Version}}/{{.Asset}}
         asset: rdme_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -24,6 +25,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/runmedev/runme/releases/download/{{.Version}}/{{.Asset}}
         asset: runme_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.12.0"
+        url: https://gh-proxy.org/https://github.com/quarylabs/sqruff/releases/download/{{.Version}}/{{.Asset}}
         asset: sqruff-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -27,6 +28,7 @@ packages:
           - darwin/arm64
           - windows/amd64
       - version_constraint: semver("<= 0.0.2")
+        url: https://gh-proxy.org/https://github.com/quarylabs/sqruff/releases/download/{{.Version}}/{{.Asset}}
         asset: sqruff_{{.Version}}_{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -45,6 +47,7 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: semver("<= 0.0.4")
+        url: https://gh-proxy.org/https://github.com/quarylabs/sqruff/releases/download/{{.Version}}/{{.Asset}}
         asset: sqruff-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -63,6 +66,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.0.9")
+        url: https://gh-proxy.org/https://github.com/quarylabs/sqruff/releases/download/{{.Version}}/{{.Asset}}
         asset: sqruff-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -85,6 +89,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("< 0.25.14")
+        url: https://gh-proxy.org/https://github.com/quarylabs/sqruff/releases/download/{{.Version}}/{{.Asset}}
         asset: sqruff-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -101,6 +106,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/quarylabs/sqruff/releases/download/{{.Version}}/{{.Asset}}
         asset: sqruff-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

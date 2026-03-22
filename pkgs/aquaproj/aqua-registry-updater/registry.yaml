@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/aquaproj/aqua-registry-updater/releases/download/{{.Version}}/{{.Asset}}
         asset: aqua-registry-updater_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

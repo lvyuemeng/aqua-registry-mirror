@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.6.0")
         no_asset: true
       - version_constraint: semver("<= 0.7.1")
+        url: https://gh-proxy.org/https://github.com/yassinebenaid/bunster/releases/download/{{.Version}}/{{.Asset}}
         asset: bunster_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -22,6 +23,7 @@ packages:
           - name: bunster
             src: bunster_{{.OS}}-{{.Arch}}
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/yassinebenaid/bunster/releases/download/{{.Version}}/{{.Asset}}
         asset: bunster_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

@@ -11,11 +11,13 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.0.0"
+        url: https://gh-proxy.org/https://github.com/yorukot/superfile/releases/download/{{.Version}}/{{.Asset}}
         asset: spf
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/yorukot/superfile/releases/download/{{.Version}}/{{.Asset}}
         asset: superfile-{{.OS}}-{{.Version}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

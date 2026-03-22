@@ -18,4 +18,5 @@ packages:
     asset: zoxide-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/ajeetdsouza/zoxide/releases/download/{{.Version}}/{{.Asset}}
         asset: zoxide-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}

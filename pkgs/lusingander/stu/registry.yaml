@@ -9,11 +9,13 @@ packages:
       - version_constraint: semver("<= 0.2.4")
         no_asset: true
       - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/lusingander/stu/releases/download/{{.Version}}/{{.Asset}}
         asset: stu-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:
           - darwin
       - version_constraint: semver("<= 0.6.5")
+        url: https://gh-proxy.org/https://github.com/lusingander/stu/releases/download/{{.Version}}/{{.Asset}}
         asset: stu-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -32,6 +34,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/lusingander/stu/releases/download/{{.Version}}/{{.Asset}}
         asset: stu-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

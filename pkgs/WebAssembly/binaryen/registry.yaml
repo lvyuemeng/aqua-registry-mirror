@@ -599,6 +599,7 @@ packages:
               - name: wasm2js
                 src: binaryen-{{.Version}}-{{.Arch}}-{{.OS}}/wasm2js
       - version_constraint: semver(">= 1.38.30")
+        url: https://gh-proxy.org/https://github.com/WebAssembly/binaryen/releases/download/{{.Version}}/{{.Asset}}
         asset: binaryen-{{.Version}}-x86-{{.OS}}.{{.Format}}
         replacements: {}
         supported_envs:

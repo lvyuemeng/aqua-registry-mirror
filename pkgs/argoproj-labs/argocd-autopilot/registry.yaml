@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.6")
+        url: https://gh-proxy.org/https://github.com/argoproj-labs/argocd-autopilot/releases/download/{{.Version}}/{{.Asset}}
         asset: argocd-autopilot-{{.OS}}-{{.Arch}}.{{.Format}}
         format: gz
         rosetta2: true
@@ -19,6 +20,7 @@ packages:
           asset: argocd-autopilot-{{.OS}}-{{.Arch}}.sha256
           algorithm: sha256
       - version_constraint: semver("<= 0.3.7")
+        url: https://gh-proxy.org/https://github.com/argoproj-labs/argocd-autopilot/releases/download/{{.Version}}/{{.Asset}}
         asset: argocd-autopilot-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -31,6 +33,7 @@ packages:
           asset: argocd-autopilot-{{.OS}}-{{.Arch}}.sha256
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/argoproj-labs/argocd-autopilot/releases/download/{{.Version}}/{{.Asset}}
         asset: argocd-autopilot-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

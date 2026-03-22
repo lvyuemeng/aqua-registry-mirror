@@ -16,6 +16,7 @@ packages:
     version_constraint: semver(">= 0.0.27")
     version_overrides:
       - version_constraint: semver(">= 0.0.23")
+        url: https://gh-proxy.org/https://github.com/nats-io/natscli/releases/download/{{.Version}}/{{.Asset}}
         asset: nats-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         supported_envs:
           - darwin
@@ -23,12 +24,14 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver(">= 0.0.22")
+        url: https://gh-proxy.org/https://github.com/nats-io/natscli/releases/download/{{.Version}}/{{.Asset}}
         asset: nats-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         supported_envs:
           - darwin
           - linux
           - amd64
       - version_constraint: semver("< 0.0.22")
+        url: https://gh-proxy.org/https://github.com/nats-io/natscli/releases/download/{{.Version}}/{{.Asset}}
         asset: nats-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         supported_envs:
           - darwin

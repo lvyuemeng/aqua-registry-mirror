@@ -10,6 +10,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.2.0"
+        url: https://gh-proxy.org/https://github.com/containers/podlet/releases/download/{{.Version}}/{{.Asset}}
         asset: podlet-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -31,6 +32,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.1.1")
+        url: https://gh-proxy.org/https://github.com/containers/podlet/releases/download/{{.Version}}/{{.Asset}}
         asset: podlet-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -52,6 +54,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/containers/podlet/releases/download/{{.Version}}/{{.Asset}}
         asset: podlet-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -77,6 +80,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/containers/podlet/releases/download/{{.Version}}/{{.Asset}}
         asset: podlet-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         replacements:

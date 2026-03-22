@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.0-alpha.4")
+        url: https://gh-proxy.org/https://github.com/taiki-e/cargo-llvm-cov/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-llvm-cov-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -18,6 +19,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.1.15")
+        url: https://gh-proxy.org/https://github.com/taiki-e/cargo-llvm-cov/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-llvm-cov-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -32,6 +34,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.4.4")
+        url: https://gh-proxy.org/https://github.com/taiki-e/cargo-llvm-cov/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-llvm-cov-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -46,6 +49,7 @@ packages:
             replacements:
               arm64: aarch64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/taiki-e/cargo-llvm-cov/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-llvm-cov-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

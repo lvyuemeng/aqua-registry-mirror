@@ -11,6 +11,7 @@ packages:
       - version_constraint: Version == "0.80.0"
         no_asset: true
       - version_constraint: semver("<= 0.30.0-rc.0")
+        url: https://gh-proxy.org/https://github.com/eksctl-io/eksctl/releases/download/{{.Version}}/{{.Asset}}
         asset: eksctl_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -31,6 +32,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.40.0")
+        url: https://gh-proxy.org/https://github.com/eksctl-io/eksctl/releases/download/{{.Version}}/{{.Asset}}
         asset: eksctl_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -47,6 +49,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.64.0")
+        url: https://gh-proxy.org/https://github.com/eksctl-io/eksctl/releases/download/{{.Version}}/{{.Asset}}
         asset: eksctl_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -62,6 +65,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/eksctl-io/eksctl/releases/download/{{.Version}}/{{.Asset}}
         asset: eksctl_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

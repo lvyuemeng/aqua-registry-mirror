@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version in ["0.0.9", "0.0.24", "0.0.25", "0.0.29"]
         no_asset: true
       - version_constraint: Version == "0.0.1"
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: uutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -29,6 +30,7 @@ packages:
           - name: uutils
             src: uutils-{{.Version}}-{{.Arch}}-{{.OS}}/uutils
       - version_constraint: Version == "0.0.1.1"
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -49,6 +51,7 @@ packages:
           - name: coreutils
             src: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}/coreutils
       - version_constraint: Version == "0.0.2"
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -67,6 +70,7 @@ packages:
           - name: coreutils
             src: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}/coreutils
       - version_constraint: Version == "0.0.7"
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -81,6 +85,7 @@ packages:
           - name: coreutils
             src: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}/coreutils
       - version_constraint: Version == "0.0.14"
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -98,6 +103,7 @@ packages:
           - name: coreutils
             src: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}/coreutils
       - version_constraint: semver("<= 0.0.22")
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -118,6 +124,7 @@ packages:
           - name: coreutils
             src: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}/coreutils
       - version_constraint: Version == "0.0.23"
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -138,6 +145,7 @@ packages:
           - name: coreutils
             src: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}/coreutils
       - version_constraint: Version == "0.0.26"
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -158,6 +166,7 @@ packages:
           - name: coreutils
             src: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}/coreutils
       - version_constraint: Version == "0.0.27"
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -174,6 +183,7 @@ packages:
           - name: coreutils
             src: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}/coreutils
       - version_constraint: Version == "0.6.0"
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -189,6 +199,7 @@ packages:
           - name: coreutils
             src: coreutils-{{.Arch}}-{{.OS}}/coreutils
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/uutils/coreutils/releases/download/{{.Version}}/{{.Asset}}
         asset: coreutils-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

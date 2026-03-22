@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v0.0.2"
         no_asset: true
       - version_constraint: semver("<= 1.6.0")
+        url: https://gh-proxy.org/https://github.com/k1LoW/gh-setup/releases/download/{{.Version}}/{{.Asset}}
         asset: gh-setup_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -24,6 +25,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/k1LoW/gh-setup/releases/download/{{.Version}}/{{.Asset}}
         asset: gh-setup_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

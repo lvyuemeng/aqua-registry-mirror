@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.0")
+        url: https://gh-proxy.org/https://github.com/charmbracelet/glow/releases/download/{{.Version}}/{{.Asset}}
         asset: glow_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -23,6 +24,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.0.1")
+        url: https://gh-proxy.org/https://github.com/charmbracelet/glow/releases/download/{{.Version}}/{{.Asset}}
         asset: glow_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -37,6 +39,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.3.0")
+        url: https://gh-proxy.org/https://github.com/charmbracelet/glow/releases/download/{{.Version}}/{{.Asset}}
         asset: glow_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -53,6 +56,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.4.1")
+        url: https://gh-proxy.org/https://github.com/charmbracelet/glow/releases/download/{{.Version}}/{{.Asset}}
         asset: glow_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -68,6 +72,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v1.5.0"
+        url: https://gh-proxy.org/https://github.com/charmbracelet/glow/releases/download/{{.Version}}/{{.Asset}}
         asset: glow_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -84,6 +89,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v1.5.1"
+        url: https://gh-proxy.org/https://github.com/charmbracelet/glow/releases/download/{{.Version}}/{{.Asset}}
         asset: glow_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -100,6 +106,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/charmbracelet/glow/releases/download/{{.Version}}/{{.Asset}}
         asset: glow_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

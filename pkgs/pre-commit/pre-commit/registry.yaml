@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 2.7.0")
         no_asset: true
       - version_constraint: semver("<= 4.4.0")
+        url: https://gh-proxy.org/https://github.com/pre-commit/pre-commit/releases/download/{{.Version}}/{{.Asset}}
         asset: pre-commit-{{trimV .Version}}.pyz
         format: raw
         complete_windows_ext: false
@@ -20,6 +21,7 @@ packages:
           asset: "{{.Asset}}.sha256sum"
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/pre-commit/pre-commit/releases/download/{{.Version}}/{{.Asset}}
         asset: pre-commit-{{trimV .Version}}.pyz
         format: raw
         complete_windows_ext: false

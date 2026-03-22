@@ -11,6 +11,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.1.0")
+        url: https://gh-proxy.org/https://github.com/tealdeer-rs/tealdeer/releases/download/{{.Version}}/{{.Asset}}
         asset: tldr-{{.Arch}}-musl
         format: raw
         replacements:
@@ -18,6 +19,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.4.1")
+        url: https://gh-proxy.org/https://github.com/tealdeer-rs/tealdeer/releases/download/{{.Version}}/{{.Asset}}
         asset: tldr-{{.OS}}-{{.Arch}}-musl
         format: raw
         replacements:
@@ -25,6 +27,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.6.1")
+        url: https://gh-proxy.org/https://github.com/tealdeer-rs/tealdeer/releases/download/{{.Version}}/{{.Asset}}
         asset: tealdeer-{{.OS}}-{{.Arch}}-musl
         format: raw
         rosetta2: true
@@ -46,6 +49,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/tealdeer-rs/tealdeer/releases/download/{{.Version}}/{{.Asset}}
         asset: tealdeer-{{.OS}}-{{.Arch}}-musl
         format: raw
         windows_arm_emulation: true

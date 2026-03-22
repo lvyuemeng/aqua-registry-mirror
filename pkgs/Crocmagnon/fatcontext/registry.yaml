@@ -10,6 +10,7 @@ packages:
       - version_constraint: semver("<= 0.1.3")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/Crocmagnon/fatcontext/releases/download/{{.Version}}/{{.Asset}}
         asset: fatcontext_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

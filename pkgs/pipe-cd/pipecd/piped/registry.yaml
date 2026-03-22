@@ -10,12 +10,14 @@ packages:
       - version_constraint: semver("<= 0.1.5")
         no_asset: true
       - version_constraint: Version == "v0.1.6"
+        url: https://gh-proxy.org/https://github.com/pipe-cd/pipecd/releases/download/{{.Version}}/{{.Asset}}
         asset: piped-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         supported_envs:
           - darwin
       - version_constraint: semver("<= 0.7.5")
+        url: https://gh-proxy.org/https://github.com/pipe-cd/pipecd/releases/download/{{.Version}}/{{.Asset}}
         asset: piped_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -23,11 +25,13 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.7.6"
+        url: https://gh-proxy.org/https://github.com/pipe-cd/pipecd/releases/download/{{.Version}}/{{.Asset}}
         asset: piped_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.9.0")
+        url: https://gh-proxy.org/https://github.com/pipe-cd/pipecd/releases/download/{{.Version}}/{{.Asset}}
         asset: piped_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -37,6 +41,7 @@ packages:
       - version_constraint: Version == "v0.9.1"
         no_asset: true
       - version_constraint: semver("<= 0.24.0")
+        url: https://gh-proxy.org/https://github.com/pipe-cd/pipecd/releases/download/{{.Version}}/{{.Asset}}
         asset: piped_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -46,6 +51,7 @@ packages:
       - version_constraint: semver("<= 0.24.3")
         no_asset: true
       - version_constraint: semver("<= 0.27.4")
+        url: https://gh-proxy.org/https://github.com/pipe-cd/pipecd/releases/download/{{.Version}}/{{.Asset}}
         asset: piped_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -55,6 +61,7 @@ packages:
       - version_constraint: semver("<= 0.29.0")
         no_asset: true
       - version_constraint: semver("<= 0.33.0")
+        url: https://gh-proxy.org/https://github.com/pipe-cd/pipecd/releases/download/{{.Version}}/{{.Asset}}
         asset: piped_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -62,6 +69,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/pipe-cd/pipecd/releases/download/{{.Version}}/{{.Asset}}
         asset: piped_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:

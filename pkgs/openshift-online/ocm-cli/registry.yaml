@@ -11,6 +11,7 @@ packages:
       - version_constraint: Version == "v0.1.57"
         no_asset: true
       - version_constraint: semver("<= 0.1.30")
+        url: https://gh-proxy.org/https://github.com/openshift-online/ocm-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: ocm-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.1.58")
+        url: https://gh-proxy.org/https://github.com/openshift-online/ocm-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: ocm-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -36,6 +38,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.1.65")
+        url: https://gh-proxy.org/https://github.com/openshift-online/ocm-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: ocm-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -46,6 +49,7 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/openshift-online/ocm-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: ocm-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

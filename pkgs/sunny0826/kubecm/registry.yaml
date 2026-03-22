@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.1")
+        url: https://gh-proxy.org/https://github.com/sunny0826/kubecm/releases/download/{{.Version}}/{{.Asset}}
         asset: kubecm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.13.1")
+        url: https://gh-proxy.org/https://github.com/sunny0826/kubecm/releases/download/{{.Version}}/{{.Asset}}
         asset: kubecm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -40,6 +42,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.15.2")
+        url: https://gh-proxy.org/https://github.com/sunny0826/kubecm/releases/download/{{.Version}}/{{.Asset}}
         asset: kubecm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -54,6 +57,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.19.2")
+        url: https://gh-proxy.org/https://github.com/sunny0826/kubecm/releases/download/{{.Version}}/{{.Asset}}
         asset: kubecm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -67,6 +71,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/sunny0826/kubecm/releases/download/{{.Version}}/{{.Asset}}
         asset: kubecm_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

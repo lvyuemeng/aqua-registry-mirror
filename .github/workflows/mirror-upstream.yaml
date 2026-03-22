@@ -72,3 +72,13 @@ jobs:
       - name: Push changes
         run: git push --force-with-lease
 
+      - name: Create and push mirror tag
+        run: |
+          TAG="mirror-$(date -u +%Y%m%d)"
+          # Delete the tag if it already exists (idempotent daily re-run)
+          git tag -d "${TAG}" 2>/dev/null || true
+          git push origin ":refs/tags/${TAG}" 2>/dev/null || true
+          git tag "${TAG}"
+          git push origin "${TAG}"
+          echo "Pushed tag ${TAG}"
+

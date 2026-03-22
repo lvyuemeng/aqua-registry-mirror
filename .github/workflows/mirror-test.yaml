@@ -1,0 +1,34 @@
+---
+name: Test mirror script
+
+on:
+  pull_request:
+    paths:
+      - scripts/mirror.py
+      - tests/test_mirror.py
+      - mirror.yaml
+  push:
+    branches:
+      - main
+    paths:
+      - scripts/mirror.py
+      - tests/test_mirror.py
+      - mirror.yaml
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  test-mirror:
+    name: Run mirror unit tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions: {}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Run tests
+        run: python3 tests/test_mirror.py -v
+      - name: Dry-run mirror (sanity check against real pkgs/)
+        run: python3 scripts/mirror.py --dry-run

@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1"
+        url: https://gh-proxy.org/https://github.com/liweiyi88/gosnakego/releases/download/{{.Version}}/{{.Asset}}
         asset: gosnakego_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:
@@ -15,6 +16,7 @@ packages:
         rosetta2: true
         complete_windows_ext: false
       - version_constraint: semver("<= v0.2.0")
+        url: https://gh-proxy.org/https://github.com/liweiyi88/gosnakego/releases/download/{{.Version}}/{{.Asset}}
         asset: gosnakego_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:
@@ -22,6 +24,7 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver("<= v0.3.1")
+        url: https://gh-proxy.org/https://github.com/liweiyi88/gosnakego/releases/download/{{.Version}}/{{.Asset}}
         asset: gosnakego_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:
@@ -31,6 +34,7 @@ packages:
       - version_constraint: Version == "v0.3.2"
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/liweiyi88/gosnakego/releases/download/{{.Version}}/{{.Asset}}
         asset: gosnakego_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

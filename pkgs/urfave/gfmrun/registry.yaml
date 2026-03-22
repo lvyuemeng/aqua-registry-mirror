@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 1.2.0")
         no_asset: true
       - version_constraint: Version == "v1.2.12-beta"
+        url: https://gh-proxy.org/https://github.com/urfave/gfmrun/releases/download/{{.Version}}/{{.Asset}}
         asset: gfmrun-{{.OS}}-{{.Arch}}-{{.Version}}
         format: raw
         rosetta2: true
@@ -20,6 +21,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/urfave/gfmrun/releases/download/{{.Version}}/{{.Asset}}
         asset: gfmrun-{{.OS}}-{{.Arch}}-{{.Version}}
         format: raw
         rosetta2: true

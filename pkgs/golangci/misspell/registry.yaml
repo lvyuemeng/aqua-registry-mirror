@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.1")
+        url: https://gh-proxy.org/https://github.com/golangci/misspell/releases/download/{{.Version}}/{{.Asset}}
         asset: misspell_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -17,6 +18,7 @@ packages:
           asset: misspell_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.5.1")
+        url: https://gh-proxy.org/https://github.com/golangci/misspell/releases/download/{{.Version}}/{{.Asset}}
         asset: misspell_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -24,6 +26,7 @@ packages:
           asset: misspell_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/golangci/misspell/releases/download/{{.Version}}/{{.Asset}}
         asset: misspell_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

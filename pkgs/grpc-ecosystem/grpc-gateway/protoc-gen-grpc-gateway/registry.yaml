@@ -9,6 +9,7 @@ packages:
     version_overrides:
       # v2.14.0 SLSA provenance https://github.com/aquaproj/aqua-registry/pull/31943#issuecomment-2649535381
       - version_constraint: semver("<= 2.13.0")
+        url: https://gh-proxy.org/https://github.com/grpc-ecosystem/grpc-gateway/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-grpc-gateway-{{.Version}}-{{.OS}}-{{.Arch}}
         supported_envs:
           - windows
@@ -25,6 +26,7 @@ packages:
           asset: grpc-gateway_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/grpc-ecosystem/grpc-gateway/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-grpc-gateway-{{.Version}}-{{.OS}}-{{.Arch}}
         supported_envs:
           - windows

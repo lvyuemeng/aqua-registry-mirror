@@ -18,6 +18,7 @@ packages:
     version_constraint: semver(">= 2.1.0")
     version_overrides:
       - version_constraint: semver("= 2.0.0")
+        url: https://gh-proxy.org/https://github.com/openclarity/kubeclarity/releases/download/{{.Version}}/{{.Asset}}
         asset: cli-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         files:
           - name: kubeclarity-cli

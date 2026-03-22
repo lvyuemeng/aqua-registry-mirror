@@ -11,6 +11,7 @@ packages:
       - version_constraint: semver("<= 1.5.3") or Version in ["2.15.0", "2.11.3", "2.5.7", "2.5.6", "2.3.1", "1.7.3", "1.7.2", "1.7.1", "1.6.2"]
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/mono0926/LicensePlist/releases/download/{{.Version}}/{{.Asset}}
         asset: portable_licenseplist.{{.Format}}
         format: zip
         files:

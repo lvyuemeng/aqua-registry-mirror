@@ -11,12 +11,14 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 9.0.0-M7")
+        url: https://gh-proxy.org/https://github.com/gradle/gradle-distributions/releases/download/{{.Version}}/{{.Asset}}
         asset: gradle-{{trimV .Version | replace ".0-RC" "-rc-" | replace ".0-M" "-milestone-" | trimSuffix ".0"}}-bin.zip
         files:
           - name: gradle
             src: >-
               {{.AssetWithoutExt | trimSuffix "-bin"}}/bin/gradle
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/gradle/gradle-distributions/releases/download/{{.Version}}/{{.Asset}}
         asset: gradle-{{trimV .Version | replace "-RC" "-rc-" | replace "-M" "-milestone-"}}-bin.zip
         files:
           - name: gradle

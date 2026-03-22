@@ -7,11 +7,13 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.8.0")
+        url: https://gh-proxy.org/https://github.com/liggitt/audit2rbac/releases/download/{{.Version}}/{{.Asset}}
         asset: audit2rbac-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/liggitt/audit2rbac/releases/download/{{.Version}}/{{.Asset}}
         asset: audit2rbac-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

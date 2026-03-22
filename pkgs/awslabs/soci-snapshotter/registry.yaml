@@ -9,6 +9,7 @@ packages:
       - name: soci-snapshotter-grpc
     version_overrides:
       - version_constraint: semver("<= 0.1.0")
+        url: https://gh-proxy.org/https://github.com/awslabs/soci-snapshotter/releases/download/{{.Version}}/{{.Asset}}
         asset: soci-snapshotter-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -21,6 +22,7 @@ packages:
         supported_envs:
           - linux
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/awslabs/soci-snapshotter/releases/download/{{.Version}}/{{.Asset}}
         asset: soci-snapshotter-{{trimV .Version}}-{{.OS}}-{{.Arch}}-static.{{.Format}}
         format: tar.gz
         checksum:

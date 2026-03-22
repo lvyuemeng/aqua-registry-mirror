@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.0")
+        url: https://gh-proxy.org/https://github.com/webdevops/go-crond/releases/download/{{.Version}}/{{.Asset}}
         asset: go-crond-64-{{.OS}}
         format: raw
         replacements:
@@ -15,6 +16,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.6.1")
+        url: https://gh-proxy.org/https://github.com/webdevops/go-crond/releases/download/{{.Version}}/{{.Asset}}
         asset: go-crond-64-{{.OS}}
         format: raw
         replacements:
@@ -27,6 +29,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 21.5.0")
+        url: https://gh-proxy.org/https://github.com/webdevops/go-crond/releases/download/{{.Version}}/{{.Asset}}
         asset: go-crond-64-{{.OS}}
         format: raw
         replacements:
@@ -39,6 +42,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/webdevops/go-crond/releases/download/{{.Version}}/{{.Asset}}
         asset: go-crond.{{.OS}}.{{.Arch}}
         format: raw
         supported_envs:

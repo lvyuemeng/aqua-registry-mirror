@@ -12,6 +12,7 @@ packages:
       - version_constraint: semver("< 0.48.0")
         error_message: Use version >= 0.48.0. Older versions are not supported.
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/jbangdev/jbang/releases/download/{{.Version}}/{{.Asset}}
         asset: jbang.zip
         files:
           - name: jbang

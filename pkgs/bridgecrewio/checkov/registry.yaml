@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "2.3.321"
+        url: https://gh-proxy.org/https://github.com/bridgecrewio/checkov/releases/download/{{.Version}}/{{.Asset}}
         asset: checkov_{{.OS}}_{{.Arch}}_{{.Version}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -19,6 +20,7 @@ packages:
       - version_constraint: Version == "2.3.340"
         no_asset: true
       - version_constraint: Version == "2.5.15"
+        url: https://gh-proxy.org/https://github.com/bridgecrewio/checkov/releases/download/{{.Version}}/{{.Asset}}
         asset: checkov_{{.OS}}_{{.Arch}}_{{.Version}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -33,6 +35,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "3.2.317"
+        url: https://gh-proxy.org/https://github.com/bridgecrewio/checkov/releases/download/{{.Version}}/{{.Asset}}
         asset: checkov_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -47,6 +50,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "3.2.322"
+        url: https://gh-proxy.org/https://github.com/bridgecrewio/checkov/releases/download/{{.Version}}/{{.Asset}}
         asset: checkov_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -60,6 +64,7 @@ packages:
       - version_constraint: semver("<= 2.3.314")
         no_asset: true
       - version_constraint: semver("<= 2.3.318")
+        url: https://gh-proxy.org/https://github.com/bridgecrewio/checkov/releases/download/{{.Version}}/{{.Asset}}
         asset: checkov_{{.OS}}_{{.Version}}
         format: raw
         complete_windows_ext: false
@@ -71,6 +76,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.3.334")
+        url: https://gh-proxy.org/https://github.com/bridgecrewio/checkov/releases/download/{{.Version}}/{{.Asset}}
         asset: checkov_{{.OS}}_{{.Arch}}_{{.Version}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -85,6 +91,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.2.51")
+        url: https://gh-proxy.org/https://github.com/bridgecrewio/checkov/releases/download/{{.Version}}/{{.Asset}}
         asset: checkov_{{.OS}}_{{.Arch}}_{{.Version}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -95,6 +102,7 @@ packages:
         replacements:
           amd64: X86_64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/bridgecrewio/checkov/releases/download/{{.Version}}/{{.Asset}}
         asset: checkov_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true

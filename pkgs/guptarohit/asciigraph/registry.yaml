@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.4.2"
+        url: https://gh-proxy.org/https://github.com/guptarohit/asciigraph/releases/download/{{.Version}}/{{.Asset}}
         asset: asciigraph_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -20,6 +21,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.5.2")
+        url: https://gh-proxy.org/https://github.com/guptarohit/asciigraph/releases/download/{{.Version}}/{{.Asset}}
         asset: asciigraph_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -37,6 +39,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/guptarohit/asciigraph/releases/download/{{.Version}}/{{.Asset}}
         asset: asciigraph_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

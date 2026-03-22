@@ -10,6 +10,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.14.4")
+        url: https://gh-proxy.org/https://github.com/cert-manager/cert-manager/releases/download/{{.Version}}/{{.Asset}}
         asset: cmctl-{{.OS}}-{{.Arch}}.tar.gz
         files:
           - name: cmctl

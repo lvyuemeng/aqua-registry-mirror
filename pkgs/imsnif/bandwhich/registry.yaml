@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.22.0"
+        url: https://gh-proxy.org/https://github.com/imsnif/bandwhich/releases/download/{{.Version}}/{{.Asset}}
         asset: bandwhich-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -18,11 +19,13 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.3.2")
+        url: https://gh-proxy.org/https://github.com/imsnif/bandwhich/releases/download/{{.Version}}/{{.Asset}}
         asset: what
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.5.1")
+        url: https://gh-proxy.org/https://github.com/imsnif/bandwhich/releases/download/{{.Version}}/{{.Asset}}
         asset: what-v{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -33,6 +36,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.20.0")
+        url: https://gh-proxy.org/https://github.com/imsnif/bandwhich/releases/download/{{.Version}}/{{.Asset}}
         asset: bandwhich-v{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -41,6 +45,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.22.2")
+        url: https://gh-proxy.org/https://github.com/imsnif/bandwhich/releases/download/{{.Version}}/{{.Asset}}
         asset: bandwhich-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -58,6 +63,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/imsnif/bandwhich/releases/download/{{.Version}}/{{.Asset}}
         asset: bandwhich-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

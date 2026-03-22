@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.25.1")
+        url: https://gh-proxy.org/https://github.com/junegunn/fzf/releases/download/{{.Version}}/{{.Asset}}
         asset: fzf-{{.Version}}-{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -19,6 +20,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "0.26.0"
+        url: https://gh-proxy.org/https://github.com/junegunn/fzf/releases/download/{{.Version}}/{{.Asset}}
         asset: fzf-{{.Version}}-{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -30,6 +32,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.27.3")
+        url: https://gh-proxy.org/https://github.com/junegunn/fzf/releases/download/{{.Version}}/{{.Asset}}
         asset: fzf-{{.Version}}-{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -44,6 +47,7 @@ packages:
             checksum:
               enabled: false
       - version_constraint: semver("<= 0.53.0")
+        url: https://gh-proxy.org/https://github.com/junegunn/fzf/releases/download/{{.Version}}/{{.Asset}}
         asset: fzf-{{.Version}}-{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:
@@ -54,6 +58,7 @@ packages:
           - goos: linux
             format: tar.gz
       - version_constraint: semver("<= 0.54.1")
+        url: https://gh-proxy.org/https://github.com/junegunn/fzf/releases/download/{{.Version}}/{{.Asset}}
         asset: fzf-{{trimV .Version}}-{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:
@@ -64,6 +69,7 @@ packages:
           - goos: linux
             format: tar.gz
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/junegunn/fzf/releases/download/{{.Version}}/{{.Asset}}
         asset: fzf-{{trimV .Version}}-{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:

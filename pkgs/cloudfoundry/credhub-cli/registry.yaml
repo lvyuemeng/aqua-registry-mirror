@@ -14,5 +14,6 @@ packages:
     version_constraint: semver(">= 2.9.21")
     version_overrides:
       - version_constraint: semver("< 2.9.21")
+        url: https://gh-proxy.org/https://github.com/cloudfoundry/credhub-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: credhub-{{.OS}}-{{.Version}}.{{.Format}}
         rosetta2: true

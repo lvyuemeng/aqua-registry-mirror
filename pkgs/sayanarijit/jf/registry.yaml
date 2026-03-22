@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version in ["v0.1.1", "v0.2.3"]
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/sayanarijit/jf/releases/download/{{.Version}}/{{.Asset}}
         asset: jf-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

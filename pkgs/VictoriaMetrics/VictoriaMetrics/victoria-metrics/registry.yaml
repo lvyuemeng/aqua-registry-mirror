@@ -11,6 +11,7 @@ packages:
       - version_constraint: semver("< 1.2.1")
         no_asset: true
       - version_constraint: semver("<= 1.29.4")
+        url: https://gh-proxy.org/https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/{{.Version}}/{{.Asset}}
         asset: victoria-metrics-{{.Version}}.{{.Format}}
         format: tar.gz
         files:
@@ -19,6 +20,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.52.0")
+        url: https://gh-proxy.org/https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/{{.Version}}/{{.Asset}}
         asset: victoria-metrics-{{.Version}}.{{.Format}}
         format: tar.gz
         files:
@@ -31,6 +33,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.72.0")
+        url: https://gh-proxy.org/https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/{{.Version}}/{{.Asset}}
         asset: victoria-metrics-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         files:
@@ -43,6 +46,7 @@ packages:
         supported_envs:
           - linux
       - version_constraint: semver("<= 1.78.1")
+        url: https://gh-proxy.org/https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/{{.Version}}/{{.Asset}}
         asset: victoria-metrics-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         files:
@@ -55,6 +59,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.89.1")
+        url: https://gh-proxy.org/https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/{{.Version}}/{{.Asset}}
         asset: victoria-metrics-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         files:
@@ -70,6 +75,7 @@ packages:
       - version_constraint: semver("> 1.97.1, <= 1.97.17") or semver("> 1.102.1, <= 1.102.21") or semver("> 1.110.0, <= 1.110.8")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/{{.Version}}/{{.Asset}}
         asset: victoria-metrics-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

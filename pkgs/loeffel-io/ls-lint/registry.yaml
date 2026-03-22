@@ -18,6 +18,7 @@ packages:
     version_constraint: semver(">= 2.0.0")
     version_overrides:
       - version_constraint: semver(">= 1.10.0-beta.1")
+        url: https://gh-proxy.org/https://github.com/loeffel-io/ls-lint/releases/download/{{.Version}}/{{.Asset}}
         asset: ls-lint-{{.OS}}
         format: raw
         overrides:
@@ -30,6 +31,7 @@ packages:
         checksum:
           enabled: false
       - version_constraint: semver(">= 1.1.0")
+        url: https://gh-proxy.org/https://github.com/loeffel-io/ls-lint/releases/download/{{.Version}}/{{.Asset}}
         asset: ls-lint-{{.OS}}
         format: raw
         supported_envs:
@@ -39,6 +41,7 @@ packages:
         checksum:
           enabled: false
       - version_constraint: semver("< 1.1.0")
+        url: https://gh-proxy.org/https://github.com/loeffel-io/ls-lint/releases/download/{{.Version}}/{{.Asset}}
         asset: ls-lint-{{.OS}}
         format: raw
         supported_envs:

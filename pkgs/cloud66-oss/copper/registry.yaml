@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.0.7")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/cloud66-oss/copper/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}_{{.Arch}}_{{.Version}}"
         format: raw
         rosetta2: true

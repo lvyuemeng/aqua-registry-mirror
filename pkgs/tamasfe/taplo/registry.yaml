@@ -25,6 +25,7 @@ packages:
             src: taplo.exe
     version_overrides:
       - version_constraint: Version startsWith "release-taplo-cli-"
+        url: https://gh-proxy.org/https://github.com/tamasfe/taplo/releases/download/{{.Version}}/{{.Asset}}
         asset: taplo-{{.Arch}}-{{.OS}}-gnu.{{.Format}}
         rosetta2: true
         format: tar.gz
@@ -39,6 +40,7 @@ packages:
         files:
           - name: taplo
       - version_constraint: Version startsWith "release-cli-" and semverWithVersion(">= 0.6.0", trimPrefix(Version, "release-cli-"))
+        url: https://gh-proxy.org/https://github.com/tamasfe/taplo/releases/download/{{.Version}}/{{.Asset}}
         asset: taplo-{{trimPrefix "release-cli-" .Version}}-{{.Arch}}-{{.OS}}-gnu.{{.Format}}
         rosetta2: true
         format: tar.gz
@@ -53,6 +55,7 @@ packages:
         files:
           - name: taplo
       - version_constraint: Version startsWith "release-cli-" and semverWithVersion("<= 0.5.0", trimPrefix(Version, "release-cli-"))
+        url: https://gh-proxy.org/https://github.com/tamasfe/taplo/releases/download/{{.Version}}/{{.Asset}}
         asset: taplo-{{.Arch}}-{{.OS}}-gnu.{{.Format}}
         format: tar.gz
         rosetta2: true

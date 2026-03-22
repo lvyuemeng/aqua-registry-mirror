@@ -12,6 +12,7 @@ packages:
       - version_constraint: Version == "v0.139.5"
         no_asset: true
       - version_constraint: Version == "v0.88.0"
+        url: https://gh-proxy.org/https://github.com/gohugoio/hugo/releases/download/{{.Version}}/{{.Asset}}
         asset: hugo_extended_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -33,6 +34,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.88.1"
+        url: https://gh-proxy.org/https://github.com/gohugoio/hugo/releases/download/{{.Version}}/{{.Asset}}
         asset: hugo_extended_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -56,6 +58,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.89.0"
+        url: https://gh-proxy.org/https://github.com/gohugoio/hugo/releases/download/{{.Version}}/{{.Asset}}
         asset: hugo_extended_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -78,6 +81,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.80.0")
+        url: https://gh-proxy.org/https://github.com/gohugoio/hugo/releases/download/{{.Version}}/{{.Asset}}
         asset: hugo_extended_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -99,6 +103,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.101.0")
+        url: https://gh-proxy.org/https://github.com/gohugoio/hugo/releases/download/{{.Version}}/{{.Asset}}
         asset: hugo_extended_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -122,6 +127,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.102.3")
+        url: https://gh-proxy.org/https://github.com/gohugoio/hugo/releases/download/{{.Version}}/{{.Asset}}
         asset: hugo_extended_{{trimV .Version}}_{{.OS}}-universal.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -143,6 +149,7 @@ packages:
             format: zip
             asset: hugo_extended_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
       - version_constraint: semver("<= 0.152.2")
+        url: https://gh-proxy.org/https://github.com/gohugoio/hugo/releases/download/{{.Version}}/{{.Asset}}
         asset: hugo_extended_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -156,6 +163,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/gohugoio/hugo/releases/download/{{.Version}}/{{.Asset}}
         asset: hugo_extended_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

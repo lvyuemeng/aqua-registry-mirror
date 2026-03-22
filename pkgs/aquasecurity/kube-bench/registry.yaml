@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version in ["v0.0.12", "v0.6.4"]
         no_asset: true
       - version_constraint: Version == "v0.0.11"
+        url: https://gh-proxy.org/https://github.com/aquasecurity/kube-bench/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-bench_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
       - version_constraint: semver("<= 0.0.8")
         no_asset: true
       - version_constraint: semver("<= 0.0.29")
+        url: https://gh-proxy.org/https://github.com/aquasecurity/kube-bench/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-bench_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -35,6 +37,7 @@ packages:
       - version_constraint: semver("<= 0.0.32")
         no_asset: true
       - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/aquasecurity/kube-bench/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-bench_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -44,6 +47,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.6.13-rc2")
+        url: https://gh-proxy.org/https://github.com/aquasecurity/kube-bench/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-bench_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -53,6 +57,7 @@ packages:
         supported_envs:
           - linux
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/aquasecurity/kube-bench/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-bench_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

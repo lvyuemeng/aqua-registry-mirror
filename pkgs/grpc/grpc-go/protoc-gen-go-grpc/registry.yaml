@@ -11,6 +11,7 @@ packages:
       - version_constraint: Version == "cmd/protoc-gen-go-grpc/v1.0.0"
         no_asset: true
       - version_constraint: semver("<= 1.2.0")
+        url: https://gh-proxy.org/https://github.com/grpc/grpc-go/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-go-grpc.{{.SemVer}}.{{.OS}}.{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -20,5 +21,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/grpc/grpc-go/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-go-grpc.{{.SemVer}}.{{.OS}}.{{.Arch}}.{{.Format}}
         format: tar.gz

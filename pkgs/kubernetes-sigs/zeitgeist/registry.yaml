@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.2"
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/zeitgeist/releases/download/{{.Version}}/{{.Asset}}
         asset: zeitgeist_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -23,6 +24,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.0.17")
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/zeitgeist/releases/download/{{.Version}}/{{.Asset}}
         asset: zeitgeist_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:
@@ -36,6 +38,7 @@ packages:
       - version_constraint: semver("<= 0.3.2")
         no_asset: true
       - version_constraint: Version == "v0.3.4"
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/zeitgeist/releases/download/{{.Version}}/{{.Asset}}
         asset: zeitgeist
         format: raw
         supported_envs:
@@ -55,6 +58,7 @@ packages:
               - --certificate
               - https://github.com/kubernetes-sigs/zeitgeist/releases/download/{{.Version}}/checksums.txt.pem
       - version_constraint: Version == "v0.3.5"
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/zeitgeist/releases/download/{{.Version}}/{{.Asset}}
         asset: zeitgeist_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:
@@ -78,6 +82,7 @@ packages:
       - version_constraint: Version == "v0.4.0"
         no_asset: true
       - version_constraint: Version == "v0.4.1"
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/zeitgeist/releases/download/{{.Version}}/{{.Asset}}
         asset: zeitgeist_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:
@@ -99,6 +104,7 @@ packages:
               - --certificate
               - https://github.com/kubernetes-sigs/zeitgeist/releases/download/{{.Version}}/checksums.txt.pem
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/zeitgeist/releases/download/{{.Version}}/{{.Asset}}
         asset: zeitgeist-{{.Arch}}-{{.OS}}
         format: raw
         supported_envs:

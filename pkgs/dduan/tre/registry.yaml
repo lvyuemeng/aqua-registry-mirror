@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.3")
+        url: https://gh-proxy.org/https://github.com/dduan/tre/releases/download/{{.Version}}/{{.Asset}}
         asset: tre-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -28,6 +29,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "0.3.0"
+        url: https://gh-proxy.org/https://github.com/dduan/tre/releases/download/{{.Version}}/{{.Asset}}
         asset: tre-v{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -49,6 +51,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.3.6")
+        url: https://gh-proxy.org/https://github.com/dduan/tre/releases/download/{{.Version}}/{{.Asset}}
         asset: tre-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -66,6 +69,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/dduan/tre/releases/download/{{.Version}}/{{.Asset}}
         asset: tre-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

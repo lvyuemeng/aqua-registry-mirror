@@ -27,6 +27,7 @@ packages:
         # asset name and format were changed
         rosetta2: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/docker/hub-tool/releases/download/{{.Version}}/{{.Asset}}
         asset: hub-tool_{{.OS}}_{{.Arch}}
         overrides: []
         format: raw

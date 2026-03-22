@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v1.0.0"
         no_asset: true
       - version_constraint: Version == "v1.1.6-alpha"
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -29,6 +30,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v2.23.1"
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -44,6 +46,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v2.23.2"
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_.{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -55,6 +58,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.2.0")
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}-{{.Arch}}.{{.Format}}"
         format: tar.gz
         rosetta2: true
@@ -72,6 +76,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.4.1")
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}-{{.Arch}}.{{.Format}}"
         format: tar.gz
         rosetta2: true
@@ -89,6 +94,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.6.2")
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -110,6 +116,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.7.0"
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -131,6 +138,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.7.1"
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -152,6 +160,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.9.0")
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -173,6 +182,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.10.1")
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -194,6 +204,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.15.2")
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -215,6 +226,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.18.0")
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -235,6 +247,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.23.0")
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -251,6 +264,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 3.4.2")
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -266,6 +280,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/errata-ai/vale/releases/download/{{.Version}}/{{.Asset}}
         asset: vale_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

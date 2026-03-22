@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.10")
+        url: https://gh-proxy.org/https://github.com/openziti/zrok/releases/download/{{.Version}}/{{.Asset}}
         asset: zrok_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -16,6 +17,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/openziti/zrok/releases/download/{{.Version}}/{{.Asset}}
         asset: zrok_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -28,6 +30,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.4.48") or (Version startsWith "v1.0.0-rc")
+        url: https://gh-proxy.org/https://github.com/openziti/zrok/releases/download/{{.Version}}/{{.Asset}}
         asset: zrok_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -41,6 +44,7 @@ packages:
       # github_artifact_attestations:
       #   signer_workflow:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/openziti/zrok/releases/download/{{.Version}}/{{.Asset}}
         asset: zrok_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

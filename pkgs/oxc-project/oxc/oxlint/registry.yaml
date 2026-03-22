@@ -14,6 +14,7 @@ packages:
           > Newer versions of Oxlint require node.js. There isn’t a native executable alternative anymore.
           https://github.com/oxc-project/oxc/discussions/14452#discussioncomment-14631344
       - version_constraint: semver("<= 0.0.8")
+        url: https://gh-proxy.org/https://github.com/oxc-project/oxc/releases/download/{{.Version}}/{{.Asset}}
         asset: oxlint-{{.OS}}-{{.Arch}}
         files:
           - name: oxlint
@@ -24,6 +25,7 @@ packages:
       - version_constraint: Version == "oxlint_v0.0.9"
         no_asset: true
       - version_constraint: semver("<= 0.0.19")
+        url: https://gh-proxy.org/https://github.com/oxc-project/oxc/releases/download/{{.Version}}/{{.Asset}}
         asset: oxlint-{{.OS}}-{{.Arch}}
         files:
           - name: oxlint
@@ -34,6 +36,7 @@ packages:
       - version_constraint: Version == "oxlint_v0.1.1"
         no_asset: true
       - version_constraint: semver("<= 0.2.2")
+        url: https://gh-proxy.org/https://github.com/oxc-project/oxc/releases/download/{{.Version}}/{{.Asset}}
         asset: oxlint-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -46,6 +49,7 @@ packages:
           amd64: x64
           windows: win32
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/oxc-project/oxc/releases/download/{{.Version}}/{{.Asset}}
         asset: oxlint-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

@@ -11,6 +11,7 @@ packages:
       - version_constraint: semver("<= 3.0.0")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/asciidoctor/asciidoctor-reveal.js/releases/download/{{.Version}}/{{.Asset}}
         asset: asciidoctor-revealjs-{{.OS}}
         format: raw
         files:

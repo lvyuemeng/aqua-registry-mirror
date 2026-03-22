@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.12")
+        url: https://gh-proxy.org/https://github.com/goodwithtech/dockle/releases/download/{{.Version}}/{{.Asset}}
         asset: dockle_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -27,6 +28,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.4.5")
+        url: https://gh-proxy.org/https://github.com/goodwithtech/dockle/releases/download/{{.Version}}/{{.Asset}}
         asset: dockle_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -44,6 +46,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/goodwithtech/dockle/releases/download/{{.Version}}/{{.Asset}}
         asset: dockle_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

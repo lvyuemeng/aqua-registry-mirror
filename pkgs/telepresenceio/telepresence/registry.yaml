@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2.14.4")
+        url: https://gh-proxy.org/https://github.com/telepresenceio/telepresence/releases/download/{{.Version}}/{{.Asset}}
         asset: telepresence-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -15,6 +16,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/telepresenceio/telepresence/releases/download/{{.Version}}/{{.Asset}}
         asset: telepresence-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

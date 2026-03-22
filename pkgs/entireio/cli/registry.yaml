@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.9")
+        url: https://gh-proxy.org/https://github.com/entireio/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: cli_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -19,6 +20,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/entireio/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: entire_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

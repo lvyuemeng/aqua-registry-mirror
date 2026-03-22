@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v1.0.1"
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/projectdiscovery/tlsx/releases/download/{{.Version}}/{{.Asset}}
         asset: tlsx_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

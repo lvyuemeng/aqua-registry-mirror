@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version in ["0.3.2", "0.4.4", "0.5.9", "0.12.9"]
         no_asset: true
       - version_constraint: semver("<= 0.2.1")
+        url: https://gh-proxy.org/https://github.com/alexellis/k3sup/releases/download/{{.Version}}/{{.Asset}}
         asset: k3sup
         format: raw
         overrides:
@@ -21,6 +22,7 @@ packages:
           - darwin
           - linux
       - version_constraint: semver("<= 0.5.8")
+        url: https://gh-proxy.org/https://github.com/alexellis/k3sup/releases/download/{{.Version}}/{{.Asset}}
         asset: k3sup
         format: raw
         overrides:
@@ -30,6 +32,7 @@ packages:
           - goos: darwin
             asset: k3sup-darwin
       - version_constraint: semver("<= 0.9.7")
+        url: https://gh-proxy.org/https://github.com/alexellis/k3sup/releases/download/{{.Version}}/{{.Asset}}
         asset: k3sup
         format: raw
         overrides:
@@ -45,6 +48,7 @@ packages:
       - version_constraint: semver("<= 0.9.10")
         no_asset: true
       - version_constraint: semver("<= 0.12.1")
+        url: https://gh-proxy.org/https://github.com/alexellis/k3sup/releases/download/{{.Version}}/{{.Asset}}
         asset: k3sup
         format: raw
         overrides:
@@ -58,6 +62,7 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/alexellis/k3sup/releases/download/{{.Version}}/{{.Asset}}
         asset: k3sup
         format: raw
         overrides:

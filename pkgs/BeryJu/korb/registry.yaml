@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.0.0"
+        url: https://gh-proxy.org/https://github.com/BeryJu/korb/releases/download/{{.Version}}/{{.Asset}}
         asset: korb_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -18,6 +19,7 @@ packages:
           asset: korb_{{trimV .Version}}_SHA256SUMS
           algorithm: sha256
       - version_constraint: semver("<= 1.1.0")
+        url: https://gh-proxy.org/https://github.com/BeryJu/korb/releases/download/{{.Version}}/{{.Asset}}
         asset: korb_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -26,6 +28,7 @@ packages:
           asset: korb_{{trimV .Version}}_SHA256SUMS
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/BeryJu/korb/releases/download/{{.Version}}/{{.Asset}}
         asset: korb_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

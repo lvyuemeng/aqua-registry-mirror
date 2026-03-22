@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 7.0.1")
         no_asset: true
       - version_constraint: semver("<= 7.0.5")
+        url: https://gh-proxy.org/https://github.com/watchexec/cargo-watch/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-watch-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         rosetta2: true
@@ -31,6 +32,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 7.5.1")
+        url: https://gh-proxy.org/https://github.com/watchexec/cargo-watch/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-watch-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         rosetta2: true
@@ -51,6 +53,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 7.7.2")
+        url: https://gh-proxy.org/https://github.com/watchexec/cargo-watch/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-watch-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         rosetta2: true
@@ -75,6 +78,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 8.0.0")
+        url: https://gh-proxy.org/https://github.com/watchexec/cargo-watch/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-watch-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         rosetta2: true
@@ -102,6 +106,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 8.1.1")
+        url: https://gh-proxy.org/https://github.com/watchexec/cargo-watch/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-watch-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:
@@ -128,6 +133,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v8.1.2"
+        url: https://gh-proxy.org/https://github.com/watchexec/cargo-watch/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-watch-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -155,6 +161,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/watchexec/cargo-watch/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-watch-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:

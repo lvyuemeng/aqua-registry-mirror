@@ -7,10 +7,12 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.38")
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.0.97")
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest
         format: raw
         rosetta2: true
@@ -26,6 +28,7 @@ packages:
       - version_constraint: Version == "v1.0.98"
         no_asset: true
       - version_constraint: semver("<= 1.0.107")
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest
         format: raw
         rosetta2: true
@@ -39,6 +42,7 @@ packages:
           - darwin
           - windows
       - version_constraint: Version == "v1.0.108"
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest
         format: raw
         rosetta2: true
@@ -49,6 +53,7 @@ packages:
           - darwin
           - linux/amd64
       - version_constraint: semver("<= 2.0.147")
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest
         format: raw
         rosetta2: true
@@ -62,6 +67,7 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 2.0.168")
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest
         format: raw
         rosetta2: true
@@ -79,6 +85,7 @@ packages:
           - darwin
           - windows
       - version_constraint: Version == "v2.0.169"
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest
         format: raw
         rosetta2: true
@@ -93,6 +100,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.0.183")
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest
         format: raw
         rosetta2: true
@@ -110,6 +118,7 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 2.1.1")
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -123,6 +132,7 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 2.2.6")
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest
         format: raw
         rosetta2: true
@@ -140,6 +150,7 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 3.0.3")
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest
         format: raw
         windows_arm_emulation: true
@@ -160,6 +171,7 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 3.0.46")
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape-{{.OS}}-latest.{{.Format}}
         format: tar.gz
         complete_windows_ext: false
@@ -177,6 +189,7 @@ packages:
           - darwin
           - windows
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/kubescape/kubescape/releases/download/{{.Version}}/{{.Asset}}
         asset: kubescape_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

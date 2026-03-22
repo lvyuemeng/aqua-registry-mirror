@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v2.2.6"
+        url: https://gh-proxy.org/https://github.com/ViRb3/wgcf/releases/download/{{.Version}}/{{.Asset}}
         asset: wgcf_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -16,6 +17,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 2.2.2")
+        url: https://gh-proxy.org/https://github.com/ViRb3/wgcf/releases/download/{{.Version}}/{{.Asset}}
         asset: wgcf_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -25,6 +27,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 2.2.5")
+        url: https://gh-proxy.org/https://github.com/ViRb3/wgcf/releases/download/{{.Version}}/{{.Asset}}
         asset: wgcf_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -33,6 +36,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/ViRb3/wgcf/releases/download/{{.Version}}/{{.Asset}}
         asset: wgcf_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         checksum:

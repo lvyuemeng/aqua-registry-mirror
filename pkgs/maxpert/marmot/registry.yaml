@@ -7,11 +7,13 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.4.1-alpha"
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-v0.4.1-{{.OS}}-{{.Arch}}-static.{{.Format}}
         format: tar.gz
         supported_envs:
           - linux
       - version_constraint: semver("<= 0.3.1")
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -22,6 +24,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.3.5")
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -31,11 +34,13 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.8.5-beta.3")
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-{{.Version}}-{{.OS}}-{{.Arch}}-static.{{.Format}}
         format: tar.gz
         supported_envs:
           - linux
       - version_constraint: semver("<= 0.8.8-alpha.4")
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -45,11 +50,13 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 2.0.1-beta.2")
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-{{.Version}}-{{.OS}}-{{.Arch}}-static.{{.Format}}
         format: tar.gz
         supported_envs:
           - linux
       - version_constraint: semver("<= 2.0.5")
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-{{.Version}}-{{.OS}}-{{.Arch}}-static.{{.Format}}
         format: tar.gz
         overrides:
@@ -59,6 +66,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 2.1.2")
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-{{.Version}}-beta-{{.OS}}-{{.Arch}}-static.{{.Format}}
         format: tar.gz
         overrides:
@@ -68,6 +76,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 2.2.0")
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-{{.Version}}-{{.OS}}-{{.Arch}}-static.{{.Format}}
         format: tar.gz
         overrides:
@@ -77,6 +86,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 2.4.2")
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-{{.Version}}-beta-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -86,6 +96,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/maxpert/marmot/releases/download/{{.Version}}/{{.Asset}}
         asset: marmot-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:

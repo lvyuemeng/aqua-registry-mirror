@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.0"
+        url: https://gh-proxy.org/https://github.com/solidiquis/erdtree/releases/download/{{.Version}}/{{.Asset}}
         asset: et-{{.Version}}-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -31,6 +32,7 @@ packages:
           - goos: windows
             asset: et-{{.Arch}}-{{.OS}}
       - version_constraint: Version == "v1.6.0"
+        url: https://gh-proxy.org/https://github.com/solidiquis/erdtree/releases/download/{{.Version}}/{{.Asset}}
         asset: et-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -45,6 +47,7 @@ packages:
           - darwin
           - linux
       - version_constraint: semver("<= 1.8.1")
+        url: https://gh-proxy.org/https://github.com/solidiquis/erdtree/releases/download/{{.Version}}/{{.Asset}}
         asset: et-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -61,6 +64,7 @@ packages:
             format: raw
             asset: et-{{.Version}}-{{.Arch}}-{{.OS}}
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/solidiquis/erdtree/releases/download/{{.Version}}/{{.Asset}}
         asset: erd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

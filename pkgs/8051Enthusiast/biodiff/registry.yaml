@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.2")
+        url: https://gh-proxy.org/https://github.com/8051Enthusiast/biodiff/releases/download/{{.Version}}/{{.Asset}}
         asset: biodiff-{{.OS}}-latest-x86.{{.Format}}
         format: zip
         rosetta2: true
@@ -17,6 +18,7 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: Version == "v0.2.0"
+        url: https://gh-proxy.org/https://github.com/8051Enthusiast/biodiff/releases/download/{{.Version}}/{{.Asset}}
         asset: biodiff-{{.OS}}-{{trimV .Version}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -27,6 +29,7 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: Version == "v0.2.1"
+        url: https://gh-proxy.org/https://github.com/8051Enthusiast/biodiff/releases/download/{{.Version}}/{{.Asset}}
         asset: biodiff-{{.OS}}-0-2-1.{{.Format}}
         format: zip
         rosetta2: true
@@ -37,6 +40,7 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/8051Enthusiast/biodiff/releases/download/{{.Version}}/{{.Asset}}
         asset: biodiff-{{.OS}}-{{trimV .Version}}.{{.Format}}
         format: zip
         rosetta2: true

@@ -10,6 +10,7 @@ packages:
       - version_constraint: semver("<= 1.1.0")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/zmap/zlint/releases/download/{{.Version}}/{{.Asset}}
         asset: zlint_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true

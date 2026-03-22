@@ -11,6 +11,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "0.4.3"
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{.Version}}_{{.OS}}_all.{{.Format}}
         format: tar.gz
         replacements:
@@ -29,6 +30,7 @@ packages:
             format: zip
             asset: tkn-pac_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
       - version_constraint: Version == "v0.17.4"
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_.{{trimV .Version}}_.{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         # Checksum file is broken
@@ -40,6 +42,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.33.0"
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         replacements:
@@ -56,6 +59,7 @@ packages:
             checksum:
               enabled: false
       - version_constraint: Version == "v0.35.3"
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -68,6 +72,7 @@ packages:
           - goos: darwin
             asset: tkn-pac_{{trimV .Version}}_{{.OS}}_all.{{.Format}}
       - version_constraint: Version == "v0.36.0"
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:
@@ -84,6 +89,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -105,6 +111,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.5.5")
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -122,6 +129,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.10.2")
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{.Version}}_{{.OS}}_all.{{.Format}}
         format: tar.gz
         replacements:
@@ -140,6 +148,7 @@ packages:
             format: zip
             asset: tkn-pac_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
       - version_constraint: semver("<= 0.17.3")
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -157,6 +166,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.17.7")
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -171,6 +181,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.19.2")
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -188,6 +199,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.32.0")
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -202,6 +214,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.35.2")
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:
@@ -218,6 +231,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/tektoncd/pipelines-as-code/releases/download/{{.Version}}/{{.Asset}}
         asset: tkn-pac_{{trimV .Version}}_{{.OS}}_all.{{.Format}}
         format: zip
         replacements:

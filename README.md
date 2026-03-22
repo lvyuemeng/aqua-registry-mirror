@@ -33,15 +33,17 @@ See [`mirror.yaml`](mirror.yaml) to change the proxy or add your own mirrors.
 
 ### Quick start
 
-In your `aqua.yaml`:
+In your `aqua.yaml`, add the mirror registry:
 
 ```yaml
 registries:
-  - name: standard
+  - type: standard
+    ref: v4.486.0 # renovate: depName=aquaproj/aqua-registry
+  - name: mirror
     type: github_content
     repo_owner: lvyuemeng
     repo_name: aqua-registry-mirror
-    ref: mirror-20260322  # replace with the latest mirror-YYYYMMDD tag
+    ref: mirror-20260322
     path: registry.yaml
 ```
 

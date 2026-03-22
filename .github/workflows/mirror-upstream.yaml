@@ -65,7 +65,7 @@ jobs:
           if git diff --quiet; then
             echo "No mirror changes needed."
           else
-            git add pkgs/
+            git add pkgs/ registry.yaml
             git commit -m "chore: re-apply mirror URLs"
           fi
 

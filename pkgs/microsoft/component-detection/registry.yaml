@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 1.0.10")
         no_asset: true
       - version_constraint: semver("<= 1.5.0")
+        url: https://gh-proxy.org/https://github.com/microsoft/component-detection/releases/download/{{.Version}}/{{.Asset}}
         asset: component-detection-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -24,6 +25,7 @@ packages:
       - version_constraint: semver("<= 2.0.1")
         no_asset: true
       - version_constraint: semver("<= 5.0.0")
+        url: https://gh-proxy.org/https://github.com/microsoft/component-detection/releases/download/{{.Version}}/{{.Asset}}
         asset: component-detection-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -37,6 +39,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/microsoft/component-detection/releases/download/{{.Version}}/{{.Asset}}
         asset: component-detection-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

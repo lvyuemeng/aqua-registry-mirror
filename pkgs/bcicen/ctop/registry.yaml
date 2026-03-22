@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v0.4.1-deps"
         no_asset: true
       - version_constraint: Version == "v0.6.0"
+        url: https://gh-proxy.org/https://github.com/bcicen/ctop/releases/download/{{.Version}}/{{.Asset}}
         asset: ctop-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -16,6 +17,7 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v0.6.1"
+        url: https://gh-proxy.org/https://github.com/bcicen/ctop/releases/download/{{.Version}}/{{.Asset}}
         asset: ctop-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -27,6 +29,7 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "0.7.6"
+        url: https://gh-proxy.org/https://github.com/bcicen/ctop/releases/download/{{.Version}}/{{.Asset}}
         asset: ctop-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -37,6 +40,7 @@ packages:
           asset: sha256sums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.5.1")
+        url: https://gh-proxy.org/https://github.com/bcicen/ctop/releases/download/{{.Version}}/{{.Asset}}
         asset: ctop-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -44,6 +48,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/bcicen/ctop/releases/download/{{.Version}}/{{.Asset}}
         asset: ctop-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true

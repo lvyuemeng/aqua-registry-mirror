@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/acsandmann/rift/releases/download/{{.Version}}/{{.Asset}}
         asset: rift-universal-{{.OS}}-{{trimV .Version}}.{{.Format}}
         format: tar.gz
         replacements:

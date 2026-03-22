@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/gopinath-langote/1build/releases/download/{{.Version}}/{{.Asset}}
         asset: 1build_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

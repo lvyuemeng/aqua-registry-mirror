@@ -21,6 +21,7 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver("< 0.0.4")
+        url: https://gh-proxy.org/https://github.com/itchyny/maze/releases/download/{{.Version}}/{{.Asset}}
         asset: maze_{{.OS}}_{{.Arch}}.{{.Format}}
         supported_envs:
           - darwin

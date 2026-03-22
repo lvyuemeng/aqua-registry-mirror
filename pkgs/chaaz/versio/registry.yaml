@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.5")
+        url: https://gh-proxy.org/https://github.com/chaaz/versio/releases/download/{{.Version}}/{{.Asset}}
         asset: versio__{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -18,6 +19,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.5.1")
+        url: https://gh-proxy.org/https://github.com/chaaz/versio/releases/download/{{.Version}}/{{.Asset}}
         asset: versio__{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -26,6 +28,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v0.5.2"
+        url: https://gh-proxy.org/https://github.com/chaaz/versio/releases/download/{{.Version}}/{{.Asset}}
         asset: versio__{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -42,6 +45,7 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: Version == "v0.5.3"
+        url: https://gh-proxy.org/https://github.com/chaaz/versio/releases/download/{{.Version}}/{{.Asset}}
         asset: versio__{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -56,6 +60,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.7.6")
+        url: https://gh-proxy.org/https://github.com/chaaz/versio/releases/download/{{.Version}}/{{.Asset}}
         asset: versio__{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -67,6 +72,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/chaaz/versio/releases/download/{{.Version}}/{{.Asset}}
         asset: versio__{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true

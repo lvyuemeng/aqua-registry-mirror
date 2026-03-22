@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.1")
+        url: https://gh-proxy.org/https://github.com/pvolok/mprocs/releases/download/{{.Version}}/{{.Asset}}
         asset: mprocs-{{.OS}}-{{.Arch}}.{{.Format}}
         files:
           - name: mprocs
@@ -21,6 +22,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.1.0"
+        url: https://gh-proxy.org/https://github.com/pvolok/mprocs/releases/download/{{.Version}}/{{.Asset}}
         asset: mprocs-{{trimV .Version}}-{{.OS}}64.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -40,6 +42,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.6.4")
+        url: https://gh-proxy.org/https://github.com/pvolok/mprocs/releases/download/{{.Version}}/{{.Asset}}
         asset: mprocs-{{trimV .Version}}-{{.OS}}64.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -59,6 +62,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/pvolok/mprocs/releases/download/{{.Version}}/{{.Asset}}
         asset: mprocs-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

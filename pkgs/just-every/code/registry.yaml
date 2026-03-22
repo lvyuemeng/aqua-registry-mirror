@@ -8,6 +8,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.3"
+        url: https://gh-proxy.org/https://github.com/just-every/code/releases/download/{{.Version}}/{{.Asset}}
         asset: code-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -18,6 +19,7 @@ packages:
           linux: unknown-linux-musl
           windows: pc-windows-msvc
       - version_constraint: semver("<= 0.1.5")
+        url: https://gh-proxy.org/https://github.com/just-every/code/releases/download/{{.Version}}/{{.Asset}}
         asset: coder-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -28,6 +30,7 @@ packages:
           linux: unknown-linux-musl
           windows: pc-windows-msvc
       - version_constraint: semver("<= 0.1.8")
+        url: https://gh-proxy.org/https://github.com/just-every/code/releases/download/{{.Version}}/{{.Asset}}
         asset: code-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -38,6 +41,7 @@ packages:
           linux: unknown-linux-musl
           windows: pc-windows-msvc
       - version_constraint: semver("<= 0.1.13")
+        url: https://gh-proxy.org/https://github.com/just-every/code/releases/download/{{.Version}}/{{.Asset}}
         asset: coder-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -48,6 +52,7 @@ packages:
           linux: unknown-linux-musl
           windows: pc-windows-msvc
       - version_constraint: semver("<= 0.2.34")
+        url: https://gh-proxy.org/https://github.com/just-every/code/releases/download/{{.Version}}/{{.Asset}}
         asset: code-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -58,6 +63,7 @@ packages:
           linux: unknown-linux-musl
           windows: pc-windows-msvc
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/just-every/code/releases/download/{{.Version}}/{{.Asset}}
         asset: code-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

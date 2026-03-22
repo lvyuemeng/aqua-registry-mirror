@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.17.0"
+        url: https://gh-proxy.org/https://github.com/carvel-dev/imgpkg/releases/download/{{.Version}}/{{.Asset}}
         asset: imgpkg-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -18,6 +19,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.27.1"
+        url: https://gh-proxy.org/https://github.com/carvel-dev/imgpkg/releases/download/{{.Version}}/{{.Asset}}
         asset: imgpkg-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -26,6 +28,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.27.3"
+        url: https://gh-proxy.org/https://github.com/carvel-dev/imgpkg/releases/download/{{.Version}}/{{.Asset}}
         asset: imgpkg-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -38,6 +41,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.35.0"
+        url: https://gh-proxy.org/https://github.com/carvel-dev/imgpkg/releases/download/{{.Version}}/{{.Asset}}
         asset: imgpkg-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -46,6 +50,7 @@ packages:
           asset: checksum.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.12.0")
+        url: https://gh-proxy.org/https://github.com/carvel-dev/imgpkg/releases/download/{{.Version}}/{{.Asset}}
         asset: imgpkg-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -55,6 +60,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.16.0")
+        url: https://gh-proxy.org/https://github.com/carvel-dev/imgpkg/releases/download/{{.Version}}/{{.Asset}}
         asset: imgpkg-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -68,6 +74,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.27.0")
+        url: https://gh-proxy.org/https://github.com/carvel-dev/imgpkg/releases/download/{{.Version}}/{{.Asset}}
         asset: imgpkg-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -80,6 +87,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("< 0.40.0")
+        url: https://gh-proxy.org/https://github.com/carvel-dev/imgpkg/releases/download/{{.Version}}/{{.Asset}}
         asset: imgpkg-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -88,6 +96,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/carvel-dev/imgpkg/releases/download/{{.Version}}/{{.Asset}}
         asset: imgpkg-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

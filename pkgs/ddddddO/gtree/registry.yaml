@@ -26,6 +26,7 @@ packages:
         replacements:
           amd64: x86_64
       - version_constraint: semver("< 1.2.0")
+        url: https://gh-proxy.org/https://github.com/ddddddO/gtree/releases/download/{{.Version}}/{{.Asset}}
         asset: gentree_{{.OS}}_{{.Arch}}.{{.Format}}
         files:
           - name: gentree

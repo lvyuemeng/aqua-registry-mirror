@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "0.2.5"
+        url: https://gh-proxy.org/https://github.com/whalebrew/whalebrew/releases/download/{{.Version}}/{{.Asset}}
         asset: whalebrew-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.1.0")
+        url: https://gh-proxy.org/https://github.com/whalebrew/whalebrew/releases/download/{{.Version}}/{{.Asset}}
         asset: whalebrew-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -35,6 +37,7 @@ packages:
       - version_constraint: semver("<= 0.2.1")
         no_asset: true
       - version_constraint: semver("<= 0.2.4")
+        url: https://gh-proxy.org/https://github.com/whalebrew/whalebrew/releases/download/{{.Version}}/{{.Asset}}
         asset: whalebrew-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -46,6 +49,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.3.1")
+        url: https://gh-proxy.org/https://github.com/whalebrew/whalebrew/releases/download/{{.Version}}/{{.Asset}}
         asset: whalebrew-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -61,6 +65,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/whalebrew/whalebrew/releases/download/{{.Version}}/{{.Asset}}
         asset: whalebrew-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

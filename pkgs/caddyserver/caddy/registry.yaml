@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2.5.2")
+        url: https://gh-proxy.org/https://github.com/caddyserver/caddy/releases/download/{{.Version}}/{{.Asset}}
         asset: caddy_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -19,6 +20,7 @@ packages:
           asset: caddy_{{trimV .Version}}_checksums.txt
           algorithm: sha512
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/caddyserver/caddy/releases/download/{{.Version}}/{{.Asset}}
         asset: caddy_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

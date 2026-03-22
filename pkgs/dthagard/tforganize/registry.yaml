@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v0.1.0"
         error_message: This version isn't support because assets are broken.
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/dthagard/tforganize/releases/download/{{.Version}}/{{.Asset}}
         asset: tforganize-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

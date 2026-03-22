@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.8")
+        url: https://gh-proxy.org/https://github.com/Skarlso/crd-to-sample-yaml/releases/download/{{.Version}}/{{.Asset}}
         asset: crd-to-yaml_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -24,6 +25,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.1.4")
+        url: https://gh-proxy.org/https://github.com/Skarlso/crd-to-sample-yaml/releases/download/{{.Version}}/{{.Asset}}
         asset: cty_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -39,6 +41,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/Skarlso/crd-to-sample-yaml/releases/download/{{.Version}}/{{.Asset}}
         asset: cty_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

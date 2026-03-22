@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v3.6.2"
+        url: https://gh-proxy.org/https://github.com/FairwindsOps/nova/releases/download/{{.Version}}/{{.Asset}}
         asset: nova_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -15,6 +16,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 2.0.1")
+        url: https://gh-proxy.org/https://github.com/FairwindsOps/nova/releases/download/{{.Version}}/{{.Asset}}
         asset: Nova_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -29,6 +31,7 @@ packages:
           - name: nova
             src: Nova
       - version_constraint: semver("<= 2.3.2")
+        url: https://gh-proxy.org/https://github.com/FairwindsOps/nova/releases/download/{{.Version}}/{{.Asset}}
         asset: nova_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -40,6 +43,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 3.6.4")
+        url: https://gh-proxy.org/https://github.com/FairwindsOps/nova/releases/download/{{.Version}}/{{.Asset}}
         asset: nova_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -48,6 +52,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/FairwindsOps/nova/releases/download/{{.Version}}/{{.Asset}}
         asset: nova_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

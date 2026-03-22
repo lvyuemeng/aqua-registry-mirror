@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2.0.0")
+        url: https://gh-proxy.org/https://github.com/jstemmer/go-junit-report/releases/download/{{.Version}}/{{.Asset}}
         asset: go-junit-report-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -19,6 +20,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/jstemmer/go-junit-report/releases/download/{{.Version}}/{{.Asset}}
         asset: go-junit-report-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 1.0.1")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/kevwan/depu/releases/download/{{.Version}}/{{.Asset}}
         asset: depu_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

@@ -42,6 +42,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.41.8")
+        url: https://gh-proxy.org/https://github.com/moonrepo/moon/releases/download/{{.Version}}/{{.Asset}}
         asset: moon-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -52,6 +53,7 @@ packages:
           linux: unknown-linux-musl
           windows: pc-windows-msvc
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/moonrepo/moon/releases/download/{{.Version}}/{{.Asset}}
         asset: moon_cli-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true

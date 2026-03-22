@@ -8,6 +8,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/bytecodealliance/wrpc/releases/download/{{.Version}}/{{.Asset}}
         asset: wit-bindgen-wrpc-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true

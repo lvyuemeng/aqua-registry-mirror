@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2.0.0-beta")
+        url: https://gh-proxy.org/https://github.com/teler-sh/teler/releases/download/{{.Version}}/{{.Asset}}
         asset: teler_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -23,6 +24,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.0.0-rc.4")
+        url: https://gh-proxy.org/https://github.com/teler-sh/teler/releases/download/{{.Version}}/{{.Asset}}
         asset: teler_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -35,6 +37,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/teler-sh/teler/releases/download/{{.Version}}/{{.Asset}}
         asset: teler_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

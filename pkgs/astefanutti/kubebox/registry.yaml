@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
+        url: https://gh-proxy.org/https://github.com/astefanutti/kubebox/releases/download/{{.Version}}/{{.Asset}}
         asset: kubebox-{{.OS}}
         format: raw
         replacements:
@@ -15,6 +16,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/astefanutti/kubebox/releases/download/{{.Version}}/{{.Asset}}
         asset: kubebox-{{.OS}}
         format: raw
         complete_windows_ext: false
@@ -25,6 +27,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/astefanutti/kubebox/releases/download/{{.Version}}/{{.Asset}}
         asset: kubebox-{{.OS}}
         format: raw
         replacements:

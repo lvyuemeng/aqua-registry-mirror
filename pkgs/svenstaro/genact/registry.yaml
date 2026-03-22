@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.2")
+        url: https://gh-proxy.org/https://github.com/svenstaro/genact/releases/download/{{.Version}}/{{.Asset}}
         asset: genact-{{.OS}}
         format: raw
         replacements:
@@ -15,6 +16,7 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: semver("<= 0.7.0")
+        url: https://gh-proxy.org/https://github.com/svenstaro/genact/releases/download/{{.Version}}/{{.Asset}}
         asset: genact-{{.OS}}
         format: raw
         replacements:
@@ -25,6 +27,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.12.0")
+        url: https://gh-proxy.org/https://github.com/svenstaro/genact/releases/download/{{.Version}}/{{.Asset}}
         asset: genact-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -37,6 +40,7 @@ packages:
             replacements:
               arm64: aarch64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/svenstaro/genact/releases/download/{{.Version}}/{{.Asset}}
         asset: genact-{{trimV .Version}}-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true

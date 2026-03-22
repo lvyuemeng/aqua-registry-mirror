@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "2.0.0-beta2"
+        url: https://gh-proxy.org/https://github.com/crazywhalecc/static-php-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: spc-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "2.0-rc3"
+        url: https://gh-proxy.org/https://github.com/crazywhalecc/static-php-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: spc-{{.OS}}-{{.Arch}}-bin.{{.Format}}
         format: tgz
         files:
@@ -31,6 +33,7 @@ packages:
       - version_constraint: semver("<= 2.0.0-rc6")
         no_asset: true
       - version_constraint: semver("<= 2.1.0-beta.2")
+        url: https://gh-proxy.org/https://github.com/crazywhalecc/static-php-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: spc-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -43,6 +46,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/crazywhalecc/static-php-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: spc-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

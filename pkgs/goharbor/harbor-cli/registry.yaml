@@ -11,6 +11,7 @@ packages:
       - version_constraint: Version in ["v0.0.3", "v0.0.5", "v0.0.13"]
         no_asset: true
       - version_constraint: Version == "v0.0.4"
+        url: https://gh-proxy.org/https://github.com/goharbor/harbor-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: harbor_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -22,6 +23,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.0.7")
+        url: https://gh-proxy.org/https://github.com/goharbor/harbor-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: harbor_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -33,6 +35,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/goharbor/harbor-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: harbor-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

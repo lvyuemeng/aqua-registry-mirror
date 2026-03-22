@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 1.7.4")
         no_asset: true
       - version_constraint: Version == "v1.7.5"
+        url: https://gh-proxy.org/https://github.com/gabrie30/ghorg/releases/download/{{.Version}}/{{.Asset}}
         asset: ghorg_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:
@@ -19,6 +20,7 @@ packages:
           asset: ghorg_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/gabrie30/ghorg/releases/download/{{.Version}}/{{.Asset}}
         asset: ghorg_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

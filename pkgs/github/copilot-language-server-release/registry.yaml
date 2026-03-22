@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.276.0")
+        url: https://gh-proxy.org/https://github.com/github/copilot-language-server-release/releases/download/{{.Version}}/{{.Asset}}
         asset: copilot-language-server-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -22,6 +23,7 @@ packages:
         files:
           - name: copilot-language-server
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/github/copilot-language-server-release/releases/download/{{.Version}}/{{.Asset}}
         asset: copilot-language-server-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

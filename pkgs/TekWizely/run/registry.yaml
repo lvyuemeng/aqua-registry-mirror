@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.6.5")
         no_asset: true
       - version_constraint: semver("<= 0.7.1")
+        url: https://gh-proxy.org/https://github.com/TekWizely/run/releases/download/{{.Version}}/{{.Asset}}
         asset: run_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -20,6 +21,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.8.0")
+        url: https://gh-proxy.org/https://github.com/TekWizely/run/releases/download/{{.Version}}/{{.Asset}}
         asset: run_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -27,6 +29,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/TekWizely/run/releases/download/{{.Version}}/{{.Asset}}
         asset: run_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

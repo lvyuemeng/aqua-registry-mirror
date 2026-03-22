@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.2")
+        url: https://gh-proxy.org/https://github.com/rhysd/dotfiles/releases/download/{{.Version}}/{{.Asset}}
         asset: dotfiles_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -19,6 +20,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/rhysd/dotfiles/releases/download/{{.Version}}/{{.Asset}}
         asset: dotfiles_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

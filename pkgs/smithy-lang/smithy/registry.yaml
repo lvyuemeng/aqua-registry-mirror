@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.47.0")
+        url: https://gh-proxy.org/https://github.com/smithy-lang/smithy/releases/download/{{.Version}}/{{.Asset}}
         asset: smithy-cli-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -25,6 +26,7 @@ packages:
             replacements:
               amd64: x64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/smithy-lang/smithy/releases/download/{{.Version}}/{{.Asset}}
         asset: smithy-cli-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         files:

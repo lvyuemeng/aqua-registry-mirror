@@ -13,6 +13,7 @@ packages:
       - version_constraint: Version in ["v0.15.1", "v0.27.0", "v0.28.1", "v0.28.4"]
         no_asset: true
       - version_constraint: Version == "v0.0.1"
+        url: https://gh-proxy.org/https://github.com/smallstep/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: step_{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -23,6 +24,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.14.0"
+        url: https://gh-proxy.org/https://github.com/smallstep/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: step_{{.OS}}_{{trimV .Version}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -31,6 +33,7 @@ packages:
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: Version == "v0.14.1"
+        url: https://gh-proxy.org/https://github.com/smallstep/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: step_{{.OS}}_{{trimV .Version}}-dev_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -39,6 +42,7 @@ packages:
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.13.3")
+        url: https://gh-proxy.org/https://github.com/smallstep/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: step_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -49,6 +53,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.15.3")
+        url: https://gh-proxy.org/https://github.com/smallstep/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: step_{{.OS}}_{{trimV .Version}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -57,6 +62,7 @@ packages:
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.17.6")
+        url: https://gh-proxy.org/https://github.com/smallstep/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: step_{{.OS}}_{{trimV .Version}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -71,6 +77,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.22.0")
+        url: https://gh-proxy.org/https://github.com/smallstep/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: step_{{.OS}}_{{trimV .Version}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -84,6 +91,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.24.4")
+        url: https://gh-proxy.org/https://github.com/smallstep/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: step_{{.OS}}_{{trimV .Version}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -107,6 +115,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/smallstep/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: step_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

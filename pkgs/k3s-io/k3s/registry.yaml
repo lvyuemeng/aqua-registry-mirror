@@ -8,6 +8,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/k3s-io/k3s/releases/download/{{.Version}}/{{.Asset}}
         asset: k3s-{{.Arch}}
         format: raw
         overrides:

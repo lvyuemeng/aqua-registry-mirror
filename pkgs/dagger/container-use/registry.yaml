@@ -11,6 +11,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.1")
+        url: https://gh-proxy.org/https://github.com/dagger/container-use/releases/download/{{.Version}}/{{.Asset}}
         asset: container-use_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -21,6 +22,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/dagger/container-use/releases/download/{{.Version}}/{{.Asset}}
         asset: container-use_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

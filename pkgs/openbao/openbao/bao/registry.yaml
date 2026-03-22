@@ -8,10 +8,12 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v2.0.0-alpha20240329"
+        url: https://gh-proxy.org/https://github.com/openbao/openbao/releases/download/{{.Version}}/{{.Asset}}
         asset: openbao_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
       - version_constraint: Version == "v2.0.0-beta20240618"
+        url: https://gh-proxy.org/https://github.com/openbao/openbao/releases/download/{{.Version}}/{{.Asset}}
         asset: bao_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -27,6 +29,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.1.1")
+        url: https://gh-proxy.org/https://github.com/openbao/openbao/releases/download/{{.Version}}/{{.Asset}}
         asset: bao_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -42,6 +45,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.4.4")
+        url: https://gh-proxy.org/https://github.com/openbao/openbao/releases/download/{{.Version}}/{{.Asset}}
         asset: bao_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -67,6 +71,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v2.5.0-beta20251125"
+        url: https://gh-proxy.org/https://github.com/openbao/openbao/releases/download/{{.Version}}/{{.Asset}}
         asset: bao_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -82,6 +87,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/openbao/openbao/releases/download/{{.Version}}/{{.Asset}}
         asset: bao_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

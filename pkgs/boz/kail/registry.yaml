@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v0.17.0"
         no_asset: true
       - version_constraint: Version == "v0.15.1"
+        url: https://gh-proxy.org/https://github.com/boz/kail/releases/download/{{.Version}}/{{.Asset}}
         asset: kail_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -19,6 +20,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/boz/kail/releases/download/{{.Version}}/{{.Asset}}
         asset: kail_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -30,6 +32,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.3.2")
+        url: https://gh-proxy.org/https://github.com/boz/kail/releases/download/{{.Version}}/{{.Asset}}
         asset: kail_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -41,6 +44,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.3.5")
+        url: https://gh-proxy.org/https://github.com/boz/kail/releases/download/{{.Version}}/{{.Asset}}
         asset: kail_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -52,6 +56,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.9.1")
+        url: https://gh-proxy.org/https://github.com/boz/kail/releases/download/{{.Version}}/{{.Asset}}
         asset: kail_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -63,6 +68,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.15.0")
+        url: https://gh-proxy.org/https://github.com/boz/kail/releases/download/{{.Version}}/{{.Asset}}
         asset: kail_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -74,6 +80,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.16.1")
+        url: https://gh-proxy.org/https://github.com/boz/kail/releases/download/{{.Version}}/{{.Asset}}
         asset: kail_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -84,6 +91,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/boz/kail/releases/download/{{.Version}}/{{.Asset}}
         asset: kail_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

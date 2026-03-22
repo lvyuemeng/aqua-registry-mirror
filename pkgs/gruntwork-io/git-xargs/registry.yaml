@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.1")
+        url: https://gh-proxy.org/https://github.com/gruntwork-io/git-xargs/releases/download/{{.Version}}/{{.Asset}}
         asset: git-xargs_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -17,6 +18,7 @@ packages:
       - version_constraint: Version == "v0.0.2"
         no_asset: true
       - version_constraint: semver("<= 0.1.6")
+        url: https://gh-proxy.org/https://github.com/gruntwork-io/git-xargs/releases/download/{{.Version}}/{{.Asset}}
         asset: git-xargs_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -27,6 +29,7 @@ packages:
       - version_constraint: semver("<= 0.1.8")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/gruntwork-io/git-xargs/releases/download/{{.Version}}/{{.Asset}}
         asset: git-xargs_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true

@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.0")
+        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/mkghtag/releases/download/{{.Version}}/{{.Asset}}
         asset: mkghtag_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         slsa_provenance:
@@ -32,6 +33,7 @@ packages:
             slsa_provenance:
               enabled: false
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/mkghtag/releases/download/{{.Version}}/{{.Asset}}
         asset: mkghtag_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:

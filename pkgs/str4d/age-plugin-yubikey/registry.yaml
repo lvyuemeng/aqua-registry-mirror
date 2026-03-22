@@ -10,6 +10,7 @@ packages:
         src: age-plugin-yubikey/age-plugin-yubikey
     version_overrides:
       - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/str4d/age-plugin-yubikey/releases/download/{{.Version}}/{{.Asset}}
         asset: age-plugin-yubikey-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -24,6 +25,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/str4d/age-plugin-yubikey/releases/download/{{.Version}}/{{.Asset}}
         asset: age-plugin-yubikey-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -36,6 +38,7 @@ packages:
           - darwin
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/str4d/age-plugin-yubikey/releases/download/{{.Version}}/{{.Asset}}
         asset: age-plugin-yubikey-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

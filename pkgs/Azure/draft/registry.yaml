@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.3")
+        url: https://gh-proxy.org/https://github.com/Azure/draft/releases/download/{{.Version}}/{{.Asset}}
         asset: draftv2-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -18,6 +19,7 @@ packages:
             goarch: arm64
             asset: draft-v2{{.OS}}-{{.Arch}}
       - version_constraint: semver("<= 0.0.7")
+        url: https://gh-proxy.org/https://github.com/Azure/draft/releases/download/{{.Version}}/{{.Asset}}
         asset: draftv2-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -25,11 +27,13 @@ packages:
         files:
           - name: draftv2
       - version_constraint: semver("<= 0.0.21")
+        url: https://gh-proxy.org/https://github.com/Azure/draft/releases/download/{{.Version}}/{{.Asset}}
         asset: draft-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
         complete_windows_ext: false
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/Azure/draft/releases/download/{{.Version}}/{{.Asset}}
         asset: draft-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

@@ -10,6 +10,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2023.12.9")
+        url: https://gh-proxy.org/https://github.com/jdx/mise/releases/download/{{.Version}}/{{.Asset}}
         asset: rtx-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -22,6 +23,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 2024.0.0")
+        url: https://gh-proxy.org/https://github.com/jdx/mise/releases/download/{{.Version}}/{{.Asset}}
         asset: rtx-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -39,6 +41,7 @@ packages:
       - version_constraint: semver(">= 2025.7.13, <= 2025.7.15")
         no_asset: true
       - version_constraint: semver("<= 2025.8.21")
+        url: https://gh-proxy.org/https://github.com/jdx/mise/releases/download/{{.Version}}/{{.Asset}}
         asset: mise-{{.Version}}-{{.OS}}-{{.Arch}}-musl.{{.Format}}
         format: tar.gz
         files:
@@ -54,6 +57,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/jdx/mise/releases/download/{{.Version}}/{{.Asset}}
         asset: mise-{{.Version}}-{{.OS}}-{{.Arch}}-musl.{{.Format}}
         format: tar.gz
         files:

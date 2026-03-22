@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.22.0")
+        url: https://gh-proxy.org/https://github.com/CycloneDX/cyclonedx-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: cyclonedx-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -17,6 +18,7 @@ packages:
           darwin: osx
           windows: win
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/CycloneDX/cyclonedx-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: cyclonedx-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

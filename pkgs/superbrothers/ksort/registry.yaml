@@ -11,6 +11,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.4.1"
+        url: https://gh-proxy.org/https://github.com/superbrothers/ksort/releases/download/{{.Version}}/{{.Asset}}
         asset: ksort-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -20,6 +21,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v0.4.2"
+        url: https://gh-proxy.org/https://github.com/superbrothers/ksort/releases/download/{{.Version}}/{{.Asset}}
         asset: ksort-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -28,6 +30,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/superbrothers/ksort/releases/download/{{.Version}}/{{.Asset}}
         asset: ksort-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -39,6 +42,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/superbrothers/ksort/releases/download/{{.Version}}/{{.Asset}}
         asset: ksort-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -50,6 +54,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/superbrothers/ksort/releases/download/{{.Version}}/{{.Asset}}
         asset: ksort-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         checksum:

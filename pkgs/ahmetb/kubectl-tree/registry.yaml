@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.4.0"
+        url: https://gh-proxy.org/https://github.com/ahmetb/kubectl-tree/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-tree_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -16,6 +17,7 @@ packages:
           asset: kubectl-tree_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.2.0")
+        url: https://gh-proxy.org/https://github.com/ahmetb/kubectl-tree/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-tree_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -27,6 +29,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.3.1")
+        url: https://gh-proxy.org/https://github.com/ahmetb/kubectl-tree/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-tree_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -40,6 +43,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/ahmetb/kubectl-tree/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-tree_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

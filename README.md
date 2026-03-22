@@ -41,7 +41,7 @@ registries:
     type: github_content
     repo_owner: lvyuemeng
     repo_name: aqua-registry-mirror
-    ref: main
+    ref: mirror-20260322  # replace with the latest mirror-YYYYMMDD tag
     path: registry.yaml
 ```
 

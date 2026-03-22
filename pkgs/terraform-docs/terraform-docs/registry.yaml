@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.0")
+        url: https://gh-proxy.org/https://github.com/terraform-docs/terraform-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: terraform-docs_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -16,11 +17,13 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.3.0"
+        url: https://gh-proxy.org/https://github.com/terraform-docs/terraform-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: terraform-docs_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: Version == "v0.4.0"
+        url: https://gh-proxy.org/https://github.com/terraform-docs/terraform-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: terraform-docs-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -31,6 +34,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.6.0")
+        url: https://gh-proxy.org/https://github.com/terraform-docs/terraform-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: terraform-docs-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -40,6 +44,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.10.1")
+        url: https://gh-proxy.org/https://github.com/terraform-docs/terraform-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: terraform-docs-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -53,6 +58,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.11.2")
+        url: https://gh-proxy.org/https://github.com/terraform-docs/terraform-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: terraform-docs-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -69,6 +75,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.16.0")
+        url: https://gh-proxy.org/https://github.com/terraform-docs/terraform-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: terraform-docs-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -80,6 +87,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/terraform-docs/terraform-docs/releases/download/{{.Version}}/{{.Asset}}
         asset: terraform-docs-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

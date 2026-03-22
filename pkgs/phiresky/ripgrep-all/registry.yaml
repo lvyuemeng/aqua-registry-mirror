@@ -12,6 +12,7 @@ packages:
       - version_constraint: Version == "v0.10.8"
         no_asset: true
       - version_constraint: Version == "v0.9.5"
+        url: https://gh-proxy.org/https://github.com/phiresky/ripgrep-all/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep_all-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -26,6 +27,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.10.9"
+        url: https://gh-proxy.org/https://github.com/phiresky/ripgrep-all/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep_all-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -46,6 +48,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.10.6")
+        url: https://gh-proxy.org/https://github.com/phiresky/ripgrep-all/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep_all-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -66,6 +69,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/phiresky/ripgrep-all/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep_all-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:

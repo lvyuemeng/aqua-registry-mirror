@@ -27,6 +27,7 @@ packages:
           linux: Linux
           windows: Windows
       - version_constraint: semver(">= 0.2.3")
+        url: https://gh-proxy.org/https://github.com/osteele/gojekyll/releases/download/{{.Version}}/{{.Asset}}
         asset: gojekyll_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         overrides:
           - goos: linux
@@ -42,6 +43,7 @@ packages:
         checksum:
           enabled: false
       - version_constraint: semver("< 0.2.3")
+        url: https://gh-proxy.org/https://github.com/osteele/gojekyll/releases/download/{{.Version}}/{{.Asset}}
         asset: gojekyll_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         overrides:
           - goos: darwin

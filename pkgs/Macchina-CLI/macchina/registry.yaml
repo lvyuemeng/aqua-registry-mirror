@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.5.9") or Version == "0.6.5"
         no_asset: true
       - version_constraint: semver("<= 0.8.0")
+        url: https://gh-proxy.org/https://github.com/Macchina-CLI/macchina/releases/download/{{.Version}}/{{.Asset}}
         asset: macchina-{{.OS}}
         format: raw
         replacements:
@@ -18,6 +19,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.0.0")
+        url: https://gh-proxy.org/https://github.com/Macchina-CLI/macchina/releases/download/{{.Version}}/{{.Asset}}
         asset: macchina-{{.OS}}
         format: raw
         replacements:
@@ -28,6 +30,7 @@ packages:
             goarch: arm64
             asset: macchina-{{.OS}}-{{.Arch}}
       - version_constraint: semver("<= 6.1.8")
+        url: https://gh-proxy.org/https://github.com/Macchina-CLI/macchina/releases/download/{{.Version}}/{{.Asset}}
         asset: macchina-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -37,6 +40,7 @@ packages:
           darwin: macos
           arm64: aarch64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/Macchina-CLI/macchina/releases/download/{{.Version}}/{{.Asset}}
         asset: macchina-{{.Version}}-{{.OS}}-gnu-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

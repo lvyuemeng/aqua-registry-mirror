@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.3.1")
         no_asset: true
       - version_constraint: semver("<= 0.11.1")
+        url: https://gh-proxy.org/https://github.com/bazelbuild/bazel/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -21,6 +22,7 @@ packages:
         supported_envs:
           - windows/amd64
       - version_constraint: semver("<= 3.3.1")
+        url: https://gh-proxy.org/https://github.com/bazelbuild/bazel/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -40,6 +42,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 4.0.0")
+        url: https://gh-proxy.org/https://github.com/bazelbuild/bazel/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -55,6 +58,7 @@ packages:
             format: zip
             asset: bazel-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
       - version_constraint: semver("<= 5.0.0")
+        url: https://gh-proxy.org/https://github.com/bazelbuild/bazel/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -69,6 +73,7 @@ packages:
             format: zip
             asset: bazel-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/bazelbuild/bazel/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

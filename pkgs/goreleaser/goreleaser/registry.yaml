@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("< 0.182.0")
+        url: https://gh-proxy.org/https://github.com/goreleaser/goreleaser/releases/download/{{.Version}}/{{.Asset}}
         asset: goreleaser_{{title .OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -19,6 +20,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.2.1")
+        url: https://gh-proxy.org/https://github.com/goreleaser/goreleaser/releases/download/{{.Version}}/{{.Asset}}
         asset: goreleaser_{{title .OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -33,6 +35,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("< 2.7.0")
+        url: https://gh-proxy.org/https://github.com/goreleaser/goreleaser/releases/download/{{.Version}}/{{.Asset}}
         asset: goreleaser_{{title .OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -57,6 +60,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.12.7")
+        url: https://gh-proxy.org/https://github.com/goreleaser/goreleaser/releases/download/{{.Version}}/{{.Asset}}
         asset: goreleaser_{{title .OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -83,6 +87,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/goreleaser/goreleaser/releases/download/{{.Version}}/{{.Asset}}
         asset: goreleaser_{{title .OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 1.2.2")
         no_asset: true
       - version_constraint: semver("<= 1.5.0")
+        url: https://gh-proxy.org/https://github.com/dimonomid/nerdlog/releases/download/{{.Version}}/{{.Asset}}
         asset: nerdlog_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -19,6 +20,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/dimonomid/nerdlog/releases/download/{{.Version}}/{{.Asset}}
         asset: nerdlog_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.0.1") or Version == "v0.1.1"
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/k1LoW/tbls-ask/releases/download/{{.Version}}/{{.Asset}}
         asset: tbls-ask_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

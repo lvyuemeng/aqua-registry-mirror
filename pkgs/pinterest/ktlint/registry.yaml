@@ -10,6 +10,7 @@ packages:
         complete_windows_ext: false
         asset: ktlint
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/pinterest/ktlint/releases/download/{{.Version}}/{{.Asset}}
         asset: "ktlint-{{.Version}}.{{.Format}}"
         format: zip
         files:

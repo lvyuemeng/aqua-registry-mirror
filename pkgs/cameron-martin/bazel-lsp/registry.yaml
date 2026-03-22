@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.3.0"
+        url: https://gh-proxy.org/https://github.com/cameron-martin/bazel-lsp/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-lsp-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -16,6 +17,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.3.1"
+        url: https://gh-proxy.org/https://github.com/cameron-martin/bazel-lsp/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-lsp-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         replacements:
@@ -24,11 +26,13 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.2.0")
+        url: https://gh-proxy.org/https://github.com/cameron-martin/bazel-lsp/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-lsp-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.6.1")
+        url: https://gh-proxy.org/https://github.com/cameron-martin/bazel-lsp/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-lsp-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         replacements:
@@ -37,6 +41,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.6.3")
+        url: https://gh-proxy.org/https://github.com/cameron-martin/bazel-lsp/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-lsp-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -47,6 +52,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/cameron-martin/bazel-lsp/releases/download/{{.Version}}/{{.Asset}}
         asset: bazel-lsp-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

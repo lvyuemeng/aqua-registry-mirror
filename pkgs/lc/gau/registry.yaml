@@ -23,6 +23,7 @@ packages:
         replacements:
           darwin: macOS
       - version_constraint: Version == "v1.0"
+        url: https://gh-proxy.org/https://github.com/lc/gau/releases/download/{{.Version}}/{{.Asset}}
         asset: gau-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar
         files:

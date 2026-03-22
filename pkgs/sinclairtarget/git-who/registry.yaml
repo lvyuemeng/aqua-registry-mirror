@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.2"
+        url: https://gh-proxy.org/https://github.com/sinclairtarget/git-who/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}_{{.Arch}}.{{.Format}}"
         format: tar.gz
         files:
@@ -16,6 +17,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/sinclairtarget/git-who/releases/download/{{.Version}}/{{.Asset}}
         asset: gitwho_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

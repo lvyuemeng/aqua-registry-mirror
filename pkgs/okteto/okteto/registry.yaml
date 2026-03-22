@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.6")
+        url: https://gh-proxy.org/https://github.com/okteto/okteto/releases/download/{{.Version}}/{{.Asset}}
         asset: cnd-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -21,6 +22,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.4.7")
+        url: https://gh-proxy.org/https://github.com/okteto/okteto/releases/download/{{.Version}}/{{.Asset}}
         asset: okteto-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -40,6 +42,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.6.4")
+        url: https://gh-proxy.org/https://github.com/okteto/okteto/releases/download/{{.Version}}/{{.Asset}}
         asset: okteto-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -55,6 +58,7 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: semver("<= 1.10.5")
+        url: https://gh-proxy.org/https://github.com/okteto/okteto/releases/download/{{.Version}}/{{.Asset}}
         asset: okteto-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -70,6 +74,7 @@ packages:
           - goos: windows
             asset: okteto
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/okteto/okteto/releases/download/{{.Version}}/{{.Asset}}
         asset: okteto-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

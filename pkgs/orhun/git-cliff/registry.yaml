@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v0.1.1"
         no_asset: true
       - version_constraint: Version == "v0.1.0-beta.2"
+        url: https://gh-proxy.org/https://github.com/orhun/git-cliff/releases/download/{{.Version}}/{{.Asset}}
         asset: git-cliff-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -27,6 +28,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.1.0-beta.3"
+        url: https://gh-proxy.org/https://github.com/orhun/git-cliff/releases/download/{{.Version}}/{{.Asset}}
         asset: git-cliff-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -57,6 +59,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.1.0-rc.2"
+        url: https://gh-proxy.org/https://github.com/orhun/git-cliff/releases/download/{{.Version}}/{{.Asset}}
         asset: git-cliff-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -72,6 +75,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.1.0-rc.1")
+        url: https://gh-proxy.org/https://github.com/orhun/git-cliff/releases/download/{{.Version}}/{{.Asset}}
         asset: git-cliff-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -98,6 +102,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.1.0-rc.5")
+        url: https://gh-proxy.org/https://github.com/orhun/git-cliff/releases/download/{{.Version}}/{{.Asset}}
         asset: git-cliff-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -113,6 +118,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.0.0")
+        url: https://gh-proxy.org/https://github.com/orhun/git-cliff/releases/download/{{.Version}}/{{.Asset}}
         asset: git-cliff-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -139,6 +145,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/orhun/git-cliff/releases/download/{{.Version}}/{{.Asset}}
         asset: git-cliff-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:

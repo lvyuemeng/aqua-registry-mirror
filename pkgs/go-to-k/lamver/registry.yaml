@@ -18,6 +18,7 @@ packages:
     version_constraint: semver(">= 0.4.2")
     version_overrides:
       - version_constraint: Version == "v0.4.1"
+        url: https://gh-proxy.org/https://github.com/go-to-k/lamver/releases/download/{{.Version}}/{{.Asset}}
         asset: lamver_.{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         checksum:
           enabled: false

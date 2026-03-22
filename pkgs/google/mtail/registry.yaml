@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 3.0.0-rc36")
+        url: https://gh-proxy.org/https://github.com/google/mtail/releases/download/{{.Version}}/{{.Asset}}
         asset: mtail_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -16,11 +17,13 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v3.0.0-rc38"
+        url: https://gh-proxy.org/https://github.com/google/mtail/releases/download/{{.Version}}/{{.Asset}}
         asset: mtail_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 3.0.0-rc44")
+        url: https://gh-proxy.org/https://github.com/google/mtail/releases/download/{{.Version}}/{{.Asset}}
         asset: mtail_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -35,6 +38,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 3.0.0-rc47")
+        url: https://gh-proxy.org/https://github.com/google/mtail/releases/download/{{.Version}}/{{.Asset}}
         asset: mtail_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -48,6 +52,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 3.0.0-rc51")
+        url: https://gh-proxy.org/https://github.com/google/mtail/releases/download/{{.Version}}/{{.Asset}}
         asset: mtail_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -60,6 +65,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 3.0.0-rc54")
+        url: https://gh-proxy.org/https://github.com/google/mtail/releases/download/{{.Version}}/{{.Asset}}
         asset: mtail_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -67,6 +73,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/google/mtail/releases/download/{{.Version}}/{{.Asset}}
         asset: mtail_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

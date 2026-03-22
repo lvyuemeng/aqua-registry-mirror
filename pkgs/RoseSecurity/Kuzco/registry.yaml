@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/RoseSecurity/Kuzco/releases/download/{{.Version}}/{{.Asset}}
         asset: Kuzco_{{.OS}}_{{.Arch}}.{{.Format}}
         files:
           - name: kuzco

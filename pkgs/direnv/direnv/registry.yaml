@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 2.3.0") or Version in ["v2.7.0", "v2.8.0"]
         no_asset: true
       - version_constraint: semver("<= 2.24.0")
+        url: https://gh-proxy.org/https://github.com/direnv/direnv/releases/download/{{.Version}}/{{.Asset}}
         asset: direnv.{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -18,15 +19,18 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.27.0")
+        url: https://gh-proxy.org/https://github.com/direnv/direnv/releases/download/{{.Version}}/{{.Asset}}
         asset: direnv.{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 2.36.0")
+        url: https://gh-proxy.org/https://github.com/direnv/direnv/releases/download/{{.Version}}/{{.Asset}}
         asset: direnv.{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/direnv/direnv/releases/download/{{.Version}}/{{.Asset}}
         asset: direnv.{{.OS}}-{{.Arch}}
         format: raw
         complete_windows_ext: false

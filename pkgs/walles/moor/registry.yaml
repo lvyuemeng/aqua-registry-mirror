@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.23.3"
+        url: https://gh-proxy.org/https://github.com/walles/moor/releases/download/{{.Version}}/{{.Asset}}
         asset: moar-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -17,6 +18,7 @@ packages:
       - version_constraint: semver("<= 0.9.7")
         no_asset: true
       - version_constraint: semver("<= 1.8.1")
+        url: https://gh-proxy.org/https://github.com/walles/moor/releases/download/{{.Version}}/{{.Asset}}
         asset: moar-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -25,6 +27,7 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("<= 1.11.4")
+        url: https://gh-proxy.org/https://github.com/walles/moor/releases/download/{{.Version}}/{{.Asset}}
         asset: moar-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -35,6 +38,7 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 1.23.7")
+        url: https://gh-proxy.org/https://github.com/walles/moor/releases/download/{{.Version}}/{{.Asset}}
         asset: moar-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -46,6 +50,7 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 1.31.4")
+        url: https://gh-proxy.org/https://github.com/walles/moor/releases/download/{{.Version}}/{{.Asset}}
         asset: moar-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -58,6 +63,7 @@ packages:
           - windows
           - linux/amd64
       - version_constraint: semver("<= 1.33.0")
+        url: https://gh-proxy.org/https://github.com/walles/moor/releases/download/{{.Version}}/{{.Asset}}
         asset: moar-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -69,6 +75,7 @@ packages:
           - windows
           - linux/amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/walles/moor/releases/download/{{.Version}}/{{.Asset}}
         asset: moor-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

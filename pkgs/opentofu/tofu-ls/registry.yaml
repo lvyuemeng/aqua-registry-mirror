@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.1-alpha1"
+        url: https://gh-proxy.org/https://github.com/opentofu/tofu-ls/releases/download/{{.Version}}/{{.Asset}}
         asset: tofu-ls_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -21,6 +22,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.0.1-alpha2"
+        url: https://gh-proxy.org/https://github.com/opentofu/tofu-ls/releases/download/{{.Version}}/{{.Asset}}
         asset: tofu-ls_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -36,6 +38,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/opentofu/tofu-ls/releases/download/{{.Version}}/{{.Asset}}
         asset: tofu-ls_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

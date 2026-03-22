@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.0.246")
         no_asset: true
       - version_constraint: semver("<= 0.1.7")
+        url: https://gh-proxy.org/https://github.com/astral-sh/ruff/releases/download/{{.Version}}/{{.Asset}}
         asset: ruff-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -25,6 +26,7 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: semver("<= 0.4.10")
+        url: https://gh-proxy.org/https://github.com/astral-sh/ruff/releases/download/{{.Version}}/{{.Asset}}
         asset: ruff-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -41,6 +43,7 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: semver("<= 0.15.1")
+        url: https://gh-proxy.org/https://github.com/astral-sh/ruff/releases/download/{{.Version}}/{{.Asset}}
         asset: ruff-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -62,6 +65,7 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/astral-sh/ruff/releases/download/{{.Version}}/{{.Asset}}
         asset: ruff-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:

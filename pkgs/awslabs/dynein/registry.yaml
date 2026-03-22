@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.2")
+        url: https://gh-proxy.org/https://github.com/awslabs/dynein/releases/download/{{.Version}}/{{.Asset}}
         asset: dynein-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -16,6 +17,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/awslabs/dynein/releases/download/{{.Version}}/{{.Asset}}
         asset: dynein-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.4")
+        url: https://gh-proxy.org/https://github.com/container-tools/spectrum/releases/download/{{.Version}}/{{.Asset}}
         asset: spectrum_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version in ["v0.3.7", "v0.6.44"]
+        url: https://gh-proxy.org/https://github.com/container-tools/spectrum/releases/download/{{.Version}}/{{.Asset}}
         asset: spectrum_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -37,6 +39,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.6.42")
+        url: https://gh-proxy.org/https://github.com/container-tools/spectrum/releases/download/{{.Version}}/{{.Asset}}
         asset: spectrum_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -51,6 +54,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/container-tools/spectrum/releases/download/{{.Version}}/{{.Asset}}
         asset: spectrum_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

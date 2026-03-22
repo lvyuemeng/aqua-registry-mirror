@@ -11,6 +11,7 @@ packages:
       - version_constraint: semver("< 0.3.0")
         no_asset: true
       - version_constraint: Version == "v0.3.0"
+        url: https://gh-proxy.org/https://github.com/sigstore/rekor/releases/download/{{.Version}}/{{.Asset}}
         asset: rekor-cli-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -19,6 +20,7 @@ packages:
           asset: rekor-cli_checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v0.4.0"
+        url: https://gh-proxy.org/https://github.com/sigstore/rekor/releases/download/{{.Version}}/{{.Asset}}
         asset: rekor-cli-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -27,6 +29,7 @@ packages:
           asset: rekor_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 1.4.2")
+        url: https://gh-proxy.org/https://github.com/sigstore/rekor/releases/download/{{.Version}}/{{.Asset}}
         asset: rekor-cli-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -45,6 +48,7 @@ packages:
               - --signature
               - https://github.com/sigstore/rekor/releases/download/{{.Version}}/rekor_checksums.txt-keyless.sig
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/sigstore/rekor/releases/download/{{.Version}}/{{.Asset}}
         asset: rekor-cli-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

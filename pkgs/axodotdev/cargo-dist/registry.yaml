@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.4-prerelease.1")
+        url: https://gh-proxy.org/https://github.com/axodotdev/cargo-dist/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-dist-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         rosetta2: true
@@ -31,6 +32,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.0.6-prerelease.7")
+        url: https://gh-proxy.org/https://github.com/axodotdev/cargo-dist/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-dist-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -55,6 +57,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.1.0-prerelease.2")
+        url: https://gh-proxy.org/https://github.com/axodotdev/cargo-dist/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-dist-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -79,6 +82,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.4.0-prerelease.2")
+        url: https://gh-proxy.org/https://github.com/axodotdev/cargo-dist/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-dist-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -107,6 +111,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.6.0-prerelease.2")
+        url: https://gh-proxy.org/https://github.com/axodotdev/cargo-dist/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-dist-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -135,6 +140,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.16.0-prerelease.5")
+        url: https://gh-proxy.org/https://github.com/axodotdev/cargo-dist/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-dist-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -157,6 +163,7 @@ packages:
             files:
               - name: cargo-dist
       - version_constraint: semver("<= 0.23.0")
+        url: https://gh-proxy.org/https://github.com/axodotdev/cargo-dist/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-dist-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -181,6 +188,7 @@ packages:
         github_artifact_attestations:
           signer_workflow: axodotdev/cargo-dist/.github/workflows/release.yml
       - version_constraint: Version == "v0.28.1-prerelease.1"
+        url: https://gh-proxy.org/https://github.com/axodotdev/cargo-dist/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-dist-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -209,6 +217,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver(">= 1.0.0-rc.1")
+        url: https://gh-proxy.org/https://github.com/axodotdev/cargo-dist/releases/download/{{.Version}}/{{.Asset}}
         asset: dist-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -233,6 +242,7 @@ packages:
         github_artifact_attestations:
           signer_workflow: axodotdev/cargo-dist/.github/workflows/release.yml
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/axodotdev/cargo-dist/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-dist-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true

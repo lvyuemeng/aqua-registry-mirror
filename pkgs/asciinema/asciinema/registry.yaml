@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("< 3.0.0")
         error_message: "asciinema v3.0.0 or later is required"
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/asciinema/asciinema/releases/download/{{.Version}}/{{.Asset}}
         asset: asciinema-{{.Arch}}-{{.OS}}
         format: raw
         overrides:

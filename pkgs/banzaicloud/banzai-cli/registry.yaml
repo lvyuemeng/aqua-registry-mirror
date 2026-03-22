@@ -11,6 +11,7 @@ packages:
       - version_constraint: Version in ["0.0.2-preview", "0.15.0"]
         no_asset: true
       - version_constraint: Version == "0.0.3"
+        url: https://gh-proxy.org/https://github.com/banzaicloud/banzai-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: banzai-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -24,6 +25,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.14.1")
+        url: https://gh-proxy.org/https://github.com/banzaicloud/banzai-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: banzai_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -40,6 +42,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.21.0")
+        url: https://gh-proxy.org/https://github.com/banzaicloud/banzai-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: banzai_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -53,6 +56,7 @@ packages:
       - version_constraint: semver("<= 0.21.2")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/banzaicloud/banzai-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: banzai_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true

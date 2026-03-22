@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 6.11.5")
         no_asset: true
       - version_constraint: semver("<= 6.12.1")
+        url: https://gh-proxy.org/https://github.com/pnpm/pnpm/releases/download/{{.Version}}/{{.Asset}}
         asset: pnpm-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 6.16.1")
+        url: https://gh-proxy.org/https://github.com/pnpm/pnpm/releases/download/{{.Version}}/{{.Asset}}
         asset: pnpm-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -34,6 +36,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 6.18.0")
+        url: https://gh-proxy.org/https://github.com/pnpm/pnpm/releases/download/{{.Version}}/{{.Asset}}
         asset: pnpm-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -42,6 +45,7 @@ packages:
           darwin: macos
           windows: win
       - version_constraint: semver("<= 6.20.0")
+        url: https://gh-proxy.org/https://github.com/pnpm/pnpm/releases/download/{{.Version}}/{{.Asset}}
         asset: pnpm-{{.OS}}-{{.Arch}}
         format: raw
         replacements:
@@ -49,6 +53,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 7.0.0-alpha.0")
+        url: https://gh-proxy.org/https://github.com/pnpm/pnpm/releases/download/{{.Version}}/{{.Asset}}
         asset: pnpm-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -59,6 +64,7 @@ packages:
       - version_constraint: Version == "v7.0.0-alpha.1"
         no_asset: true
       - version_constraint: semver("<= 10.26.1")
+        url: https://gh-proxy.org/https://github.com/pnpm/pnpm/releases/download/{{.Version}}/{{.Asset}}
         asset: pnpm-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -71,6 +77,7 @@ packages:
           darwin: macos
           windows: win
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/pnpm/pnpm/releases/download/{{.Version}}/{{.Asset}}
         asset: pnpm-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

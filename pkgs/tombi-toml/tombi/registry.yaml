@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v0.3.27" || semver("<= 0.2.23")
         no_asset: true
       - version_constraint: semver("<= 0.3.37")
+        url: https://gh-proxy.org/https://github.com/tombi-toml/tombi/releases/download/{{.Version}}/{{.Asset}}
         asset: tombi-cli-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         files:
@@ -21,6 +22,7 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("<= 0.3.38")
+        url: https://gh-proxy.org/https://github.com/tombi-toml/tombi/releases/download/{{.Version}}/{{.Asset}}
         asset: tombi-cli-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         windows_arm_emulation: true
@@ -43,6 +45,7 @@ packages:
           - linux/amd64
           - windows
       - version_constraint: semver("<= 0.3.39")
+        url: https://gh-proxy.org/https://github.com/tombi-toml/tombi/releases/download/{{.Version}}/{{.Asset}}
         asset: tombi-cli-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         windows_arm_emulation: true
@@ -61,6 +64,7 @@ packages:
             files:
               - name: tombi
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/tombi-toml/tombi/releases/download/{{.Version}}/{{.Asset}}
         asset: tombi-cli-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         files:

@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.1")
+        url: https://gh-proxy.org/https://github.com/xo/usql/releases/download/{{.Version}}/{{.Asset}}
         asset: usql-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -16,6 +17,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.10.0")
+        url: https://gh-proxy.org/https://github.com/xo/usql/releases/download/{{.Version}}/{{.Asset}}
         asset: usql-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         rosetta2: true
@@ -28,6 +30,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.15.2")
+        url: https://gh-proxy.org/https://github.com/xo/usql/releases/download/{{.Version}}/{{.Asset}}
         asset: usql-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         windows_arm_emulation: true
@@ -39,6 +42,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/xo/usql/releases/download/{{.Version}}/{{.Asset}}
         asset: usql-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         windows_arm_emulation: true

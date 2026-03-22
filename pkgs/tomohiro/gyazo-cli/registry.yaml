@@ -20,6 +20,7 @@ packages:
     version_constraint: semver(">= 1.0.0")
     version_overrides:
       - version_constraint: semver("< 1.0.0")
+        url: https://gh-proxy.org/https://github.com/tomohiro/gyazo-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gyazo_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         files:
           - name: gyazo

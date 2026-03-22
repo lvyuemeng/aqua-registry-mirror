@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.2.0")
         no_asset: true
       - version_constraint: semver("<= 0.2.3")
+        url: https://gh-proxy.org/https://github.com/aereal/jsondiff/releases/download/{{.Version}}/{{.Asset}}
         asset: jsondiff_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -18,6 +19,7 @@ packages:
       - version_constraint: semver("<= 0.4.0")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/aereal/jsondiff/releases/download/{{.Version}}/{{.Asset}}
         asset: jsondiff_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

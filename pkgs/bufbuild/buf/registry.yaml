@@ -11,6 +11,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.41.0")
+        url: https://gh-proxy.org/https://github.com/bufbuild/buf/releases/download/{{.Version}}/{{.Asset}}
         asset: buf-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -33,6 +34,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.42.0"
+        url: https://gh-proxy.org/https://github.com/bufbuild/buf/releases/download/{{.Version}}/{{.Asset}}
         asset: buf-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -54,6 +56,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.45.0")
+        url: https://gh-proxy.org/https://github.com/bufbuild/buf/releases/download/{{.Version}}/{{.Asset}}
         asset: buf-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -79,6 +82,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.53.0")
+        url: https://gh-proxy.org/https://github.com/bufbuild/buf/releases/download/{{.Version}}/{{.Asset}}
         asset: buf-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -108,6 +112,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("< 1.36.0")
+        url: https://gh-proxy.org/https://github.com/bufbuild/buf/releases/download/{{.Version}}/{{.Asset}}
         asset: buf-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -138,6 +143,7 @@ packages:
             format: raw
             asset: buf-{{.OS}}-{{.Arch}}
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/bufbuild/buf/releases/download/{{.Version}}/{{.Asset}}
         asset: buf-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

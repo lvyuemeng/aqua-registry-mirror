@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.1.0")
+        url: https://gh-proxy.org/https://github.com/editorconfig-checker/editorconfig-checker/releases/download/{{.Version}}/{{.Asset}}
         asset: ec-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -17,6 +18,7 @@ packages:
           - name: ec
             src: bin/ec-{{.OS}}-{{.Arch}}
       - version_constraint: semver("<= 2.3.5")
+        url: https://gh-proxy.org/https://github.com/editorconfig-checker/editorconfig-checker/releases/download/{{.Version}}/{{.Asset}}
         asset: ec-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -28,6 +30,7 @@ packages:
           - goos: windows
             asset: ec-{{.OS}}-{{.Arch}}.exe.{{.Format}}
       - version_constraint: semver("<= 2.5.0")
+        url: https://gh-proxy.org/https://github.com/editorconfig-checker/editorconfig-checker/releases/download/{{.Version}}/{{.Asset}}
         asset: ec-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -38,12 +41,14 @@ packages:
           - goos: windows
             asset: ec-{{.OS}}-{{.Arch}}.exe.{{.Format}}
       - version_constraint: Version == "2.6.0"
+        url: https://gh-proxy.org/https://github.com/editorconfig-checker/editorconfig-checker/releases/download/{{.Version}}/{{.Asset}}
         asset: ec-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
           - name: ec
             src: bin/ec-{{.OS}}-{{.Arch}}
       - version_constraint: semver("<= 3.0.3")
+        url: https://gh-proxy.org/https://github.com/editorconfig-checker/editorconfig-checker/releases/download/{{.Version}}/{{.Asset}}
         asset: ec-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -53,6 +58,7 @@ packages:
           - goos: windows
             asset: ec-{{.OS}}-{{.Arch}}.exe.{{.Format}}
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/editorconfig-checker/editorconfig-checker/releases/download/{{.Version}}/{{.Asset}}
         asset: ec-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

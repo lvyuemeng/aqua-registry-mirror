@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v0.0.10"
         no_asset: true
       - version_constraint: Version == "v0.0.1"
+        url: https://gh-proxy.org/https://github.com/terramate-io/terramate/releases/download/{{.Version}}/{{.Asset}}
         asset: terrastack-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -18,17 +19,20 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.0.2"
+        url: https://gh-proxy.org/https://github.com/terramate-io/terramate/releases/download/{{.Version}}/{{.Asset}}
         asset: terrastack-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v0.0.3"
+        url: https://gh-proxy.org/https://github.com/terramate-io/terramate/releases/download/{{.Version}}/{{.Asset}}
         asset: terramate-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.0.11"
+        url: https://gh-proxy.org/https://github.com/terramate-io/terramate/releases/download/{{.Version}}/{{.Asset}}
         asset: terramate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -45,6 +49,7 @@ packages:
       - version_constraint: semver("<= 0.0.7")
         no_asset: true
       - version_constraint: semver("<= 0.0.9")
+        url: https://gh-proxy.org/https://github.com/terramate-io/terramate/releases/download/{{.Version}}/{{.Asset}}
         asset: terramate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -59,6 +64,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.1.33")
+        url: https://gh-proxy.org/https://github.com/terramate-io/terramate/releases/download/{{.Version}}/{{.Asset}}
         asset: terramate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -71,6 +77,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.2.7")
+        url: https://gh-proxy.org/https://github.com/terramate-io/terramate/releases/download/{{.Version}}/{{.Asset}}
         asset: terramate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -84,6 +91,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.9.0")
+        url: https://gh-proxy.org/https://github.com/terramate-io/terramate/releases/download/{{.Version}}/{{.Asset}}
         asset: terramate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -96,6 +104,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/terramate-io/terramate/releases/download/{{.Version}}/{{.Asset}}
         asset: terramate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

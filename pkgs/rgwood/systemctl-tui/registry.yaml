@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v0.3.0"
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/rgwood/systemctl-tui/releases/download/{{.Version}}/{{.Asset}}
         asset: systemctl-tui-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

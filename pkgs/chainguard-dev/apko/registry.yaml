@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/chainguard-dev/apko/releases/download/{{.Version}}/{{.Asset}}
         asset: apko_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         files:
           - name: apko
@@ -39,6 +40,7 @@ packages:
               - --certificate
               - https://github.com/chainguard-dev/apko/releases/download/{{.Version}}/checksums.txt.crt
       - version_constraint: semver("<= 0.6.1")
+        url: https://gh-proxy.org/https://github.com/chainguard-dev/apko/releases/download/{{.Version}}/{{.Asset}}
         asset: apko_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -71,6 +73,7 @@ packages:
               - --certificate
               - https://github.com/chainguard-dev/apko/releases/download/{{.Version}}/checksums.txt.crt
       - version_constraint: semver("<= 0.11.0")
+        url: https://gh-proxy.org/https://github.com/chainguard-dev/apko/releases/download/{{.Version}}/{{.Asset}}
         asset: apko_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -104,6 +107,7 @@ packages:
               - --certificate
               - https://github.com/chainguard-dev/apko/releases/download/{{.Version}}/checksums.txt.crt
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/chainguard-dev/apko/releases/download/{{.Version}}/{{.Asset}}
         asset: apko_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         files:
           - name: apko

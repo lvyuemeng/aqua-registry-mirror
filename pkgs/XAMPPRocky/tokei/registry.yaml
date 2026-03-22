@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 9.1.0")
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -28,6 +29,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 10.0.1")
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -48,6 +50,7 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v10.1.0"
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Version}}-i686-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -65,6 +68,7 @@ packages:
         supported_envs:
           - linux
       - version_constraint: Version == "v10.1.1"
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -85,6 +89,7 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v10.1.2"
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -106,6 +111,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 11.1.1")
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -127,6 +133,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 12.0.3")
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -149,6 +156,7 @@ packages:
             format: raw
             asset: tokei-{{.Arch}}-{{.OS}}
       - version_constraint: Version == "v12.0.4a"
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -167,6 +175,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v12.0.4"
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -189,6 +198,7 @@ packages:
             format: raw
             asset: tokei-{{.Arch}}-{{.OS}}
       - version_constraint: Version == "v12.1.0"
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -204,6 +214,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 13.0.0-alpha.0")
+        url: https://gh-proxy.org/https://github.com/XAMPPRocky/tokei/releases/download/{{.Version}}/{{.Asset}}
         asset: tokei-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

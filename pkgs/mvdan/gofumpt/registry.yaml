@@ -7,15 +7,18 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
+        url: https://gh-proxy.org/https://github.com/mvdan/gofumpt/releases/download/{{.Version}}/{{.Asset}}
         asset: gofumpt_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/mvdan/gofumpt/releases/download/{{.Version}}/{{.Asset}}
         asset: gofumpt_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.9.1")
+        url: https://gh-proxy.org/https://github.com/mvdan/gofumpt/releases/download/{{.Version}}/{{.Asset}}
         asset: gofumpt_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -24,6 +27,7 @@ packages:
           asset: sha256sums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/mvdan/gofumpt/releases/download/{{.Version}}/{{.Asset}}
         asset: gofumpt_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true

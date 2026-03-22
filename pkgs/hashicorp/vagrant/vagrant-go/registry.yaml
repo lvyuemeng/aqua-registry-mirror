@@ -10,6 +10,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/hashicorp/vagrant/releases/download/{{.Version}}/{{.Asset}}
         asset: vagrant-go_{{.OS}}_{{.Arch}}
         format: raw
         checksum:

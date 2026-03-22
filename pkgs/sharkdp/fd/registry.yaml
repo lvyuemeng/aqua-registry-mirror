@@ -12,11 +12,13 @@ packages:
       - version_constraint: Version == "v10.4.0"
         no_asset: true
       - version_constraint: Version == "v1.1.0"
+        url: https://gh-proxy.org/https://github.com/sharkdp/fd/releases/download/{{.Version}}/{{.Asset}}
         asset: fd
         format: raw
         supported_envs:
           - windows/amd64
       - version_constraint: Version == "v4.0.0"
+        url: https://gh-proxy.org/https://github.com/sharkdp/fd/releases/download/{{.Version}}/{{.Asset}}
         asset: fd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -33,6 +35,7 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: Version == "v10.0.0"
+        url: https://gh-proxy.org/https://github.com/sharkdp/fd/releases/download/{{.Version}}/{{.Asset}}
         asset: fd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -49,6 +52,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v10.3.0"
+        url: https://gh-proxy.org/https://github.com/sharkdp/fd/releases/download/{{.Version}}/{{.Asset}}
         asset: fd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -63,6 +67,7 @@ packages:
       - version_constraint: semver("<= 3.1.0")
         error_message: The version is too old. Please upgrade to a newer version.
       - version_constraint: semver("<= 8.2.1")
+        url: https://gh-proxy.org/https://github.com/sharkdp/fd/releases/download/{{.Version}}/{{.Asset}}
         asset: fd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -82,6 +87,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 9.0.0")
+        url: https://gh-proxy.org/https://github.com/sharkdp/fd/releases/download/{{.Version}}/{{.Asset}}
         asset: fd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -103,6 +109,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 10.2.0")
+        url: https://gh-proxy.org/https://github.com/sharkdp/fd/releases/download/{{.Version}}/{{.Asset}}
         asset: fd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -116,6 +123,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/sharkdp/fd/releases/download/{{.Version}}/{{.Asset}}
         asset: fd-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

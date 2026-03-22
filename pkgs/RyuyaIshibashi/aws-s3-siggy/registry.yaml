@@ -10,6 +10,7 @@ packages:
       - version_constraint: Version == "v0.1.0"
         no_asset: true
       - version_constraint: Version == "v0.0.7"
+        url: https://gh-proxy.org/https://github.com/RyuyaIshibashi/aws-s3-siggy/releases/download/{{.Version}}/{{.Asset}}
         asset: aws-s3-siggy_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -27,6 +28,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.0.9"
+        url: https://gh-proxy.org/https://github.com/RyuyaIshibashi/aws-s3-siggy/releases/download/{{.Version}}/{{.Asset}}
         asset: siggy_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -42,6 +44,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.2.0"
+        url: https://gh-proxy.org/https://github.com/RyuyaIshibashi/aws-s3-siggy/releases/download/{{.Version}}/{{.Asset}}
         asset: siggy_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -53,6 +56,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/RyuyaIshibashi/aws-s3-siggy/releases/download/{{.Version}}/{{.Asset}}
         asset: siggy_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

@@ -9,12 +9,14 @@ packages:
       - version_constraint: Version == "v0.9.0-beta"
         no_asset: true
       - version_constraint: Version == "v0.9.1-beta"
+        url: https://gh-proxy.org/https://github.com/sqshq/sampler/releases/download/{{.Version}}/{{.Asset}}
         asset: sampler-0.9.1-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         supported_envs:
           - darwin
       - version_constraint: Version == "v1.0.0"
+        url: https://gh-proxy.org/https://github.com/sqshq/sampler/releases/download/{{.Version}}/{{.Asset}}
         asset: sampler-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -24,6 +26,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v1.0.1"
+        url: https://gh-proxy.org/https://github.com/sqshq/sampler/releases/download/{{.Version}}/{{.Asset}}
         asset: sampler-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -31,6 +34,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/sqshq/sampler/releases/download/{{.Version}}/{{.Asset}}
         asset: sampler-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true

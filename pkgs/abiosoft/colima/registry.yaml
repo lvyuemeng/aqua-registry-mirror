@@ -31,11 +31,13 @@ packages:
       - version_constraint: semver("<= 0.1.10")
         no_asset: true
       - version_constraint: semver("<= 0.2.2")
+        url: https://gh-proxy.org/https://github.com/abiosoft/colima/releases/download/{{.Version}}/{{.Asset}}
         asset: colima-amd64
         rosetta2: true
         supported_envs:
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/abiosoft/colima/releases/download/{{.Version}}/{{.Asset}}
         asset: colima-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

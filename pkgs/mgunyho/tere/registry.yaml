@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.0.0"
+        url: https://gh-proxy.org/https://github.com/mgunyho/tere/releases/download/{{.Version}}/{{.Asset}}
         asset: tere-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -15,6 +16,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v1.1.0"
+        url: https://gh-proxy.org/https://github.com/mgunyho/tere/releases/download/{{.Version}}/{{.Asset}}
         asset: tere-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -26,6 +28,7 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/mgunyho/tere/releases/download/{{.Version}}/{{.Asset}}
         asset: tere-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

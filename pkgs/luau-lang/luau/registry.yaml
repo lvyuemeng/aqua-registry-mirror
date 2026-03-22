@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.622")
+        url: https://gh-proxy.org/https://github.com/luau-lang/luau/releases/download/{{.Version}}/{{.Asset}}
         asset: luau-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -21,6 +22,7 @@ packages:
           - name: luau-analyze
           - name: luau-compile
       - version_constraint: semver("<= 0.644")
+        url: https://gh-proxy.org/https://github.com/luau-lang/luau/releases/download/{{.Version}}/{{.Asset}}
         asset: luau-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -35,6 +37,7 @@ packages:
           - name: luau-analyze
           - name: luau-compile
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/luau-lang/luau/releases/download/{{.Version}}/{{.Asset}}
         asset: luau-{{.OS}}.{{.Format}}
         format: zip
         replacements:

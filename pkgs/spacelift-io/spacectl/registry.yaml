@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
+        url: https://gh-proxy.org/https://github.com/spacelift-io/spacectl/releases/download/{{.Version}}/{{.Asset}}
         asset: spacelift-cli-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -18,10 +19,12 @@ packages:
           - name: spacelift-cli
             src: "{{.AssetWithoutExt}}"
       - version_constraint: Version == "v0.2.0"
+        url: https://gh-proxy.org/https://github.com/spacelift-io/spacectl/releases/download/{{.Version}}/{{.Asset}}
         asset: spacectl-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.8.1")
+        url: https://gh-proxy.org/https://github.com/spacelift-io/spacectl/releases/download/{{.Version}}/{{.Asset}}
         asset: spacectl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -30,6 +33,7 @@ packages:
           asset: spacectl_{{trimV .Version}}_SHA256SUMS
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/spacelift-io/spacectl/releases/download/{{.Version}}/{{.Asset}}
         asset: spacectl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:

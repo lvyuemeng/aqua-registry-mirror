@@ -51,9 +51,6 @@ registries:
 
 Then `aqua install` as normal. All downloads are routed through the configured mirrors.
 
-> **Note:** A new mirror release is published daily (around 02:00 UTC). If you pin `ref:` to a specific tag,
-> update it periodically to pick up registry changes from upstream.
-
 ### Policy as Code (required for aqua v2+)
 
 From aqua v2, only the Standard Registry is allowed by default. Because this mirror is a `github_content` or `github_release` registry, you must create a Policy file to allow it.

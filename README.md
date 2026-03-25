@@ -29,8 +29,7 @@ See [`mirror.yaml`](mirror.yaml) to change the proxy or add your own mirrors.
 | [`scripts/mirror.py`](scripts/mirror.py) | Rewrites `url:` fields; injects proxy URLs for `github_release` |
 | [`tests/test_mirror.py`](tests/test_mirror.py) | 49 unit + integration tests |
 | [`.github/workflows/mirror-test.yaml`](.github/workflows/mirror-test.yaml) | CI: tests on every relevant change |
-| [`.github/workflows/mirror-upstream.yaml`](.github/workflows/mirror-upstream.yaml) | Scheduled daily: rebase onto upstream, re-apply mirrors, push `mirror-YYYYMMDD` tag |
-| [`.github/workflows/mirror-release.yaml`](.github/workflows/mirror-release.yaml) | Triggered by `mirror-*` tag push: creates a GitHub Release so aqua can resolve `releases/latest` |
+| [`.github/workflows/mirror-upstream.yaml`](.github/workflows/mirror-upstream.yaml) | Scheduled daily: rebase onto upstream, re-apply mirrors, push `mirror-YYYYMMDD` tag, create GitHub Release |
 
 ### Quick start
 

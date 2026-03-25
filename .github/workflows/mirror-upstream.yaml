@@ -2,82 +2,91 @@
 name: Mirror upstream aquaproj/aqua-registry
 
 on:
-  schedule:
-    # Sync from upstream daily at 02:00 UTC
-    - cron: "0 2 * * *"
-  push:
-    branches:
-      - main
-    paths:
-      - mirror.yaml
-      - scripts/mirror.py
-  workflow_dispatch:
-    inputs:
-      upstream_ref:
-        type: string
-        description: "Upstream ref to sync from (default: main)"
-        default: main
-        required: false
+    schedule:
+        # Sync from upstream daily at 02:00 UTC
+        - cron: "0 2 * * *"
+    push:
+        branches:
+            - main
+        paths:
+            - mirror.yaml
+            - scripts/mirror.py
+    workflow_dispatch:
+        inputs:
+            upstream_ref:
+                type: string
+                description: "Upstream ref to sync from (default: main)"
+                default: main
+                required: false
 
 permissions: {}
 
 jobs:
-  mirror-upstream:
-    name: Sync upstream and re-apply mirror URLs
-    runs-on: ubuntu-24.04
-    timeout-minutes: 30
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: true
-          fetch-depth: 0
+    mirror-upstream:
+        name: Sync upstream and re-apply mirror URLs
+        runs-on: ubuntu-24.04
+        timeout-minutes: 30
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: true
+                  fetch-depth: 0
 
-      - name: Configure git
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+            - name: Configure git
+              run: |
+                  git config user.name  "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Install dependencies
-        run: pip install pyyaml --break-system-packages -q
+            - name: Install dependencies
+              run: pip install pyyaml --break-system-packages -q
 
-      # Only rebase from upstream on schedule or manual trigger, not on push.
-      # A push to mirror.yaml/scripts/mirror.py only needs re-apply, not rebase.
-      - name: Add upstream remote and rebase
-        env:
-          UPSTREAM_REF: ${{ inputs.upstream_ref || 'main' }}
-        run: |
-          git remote add upstream https://github.com/aquaproj/aqua-registry.git
-          git fetch upstream
-          git rebase upstream/"${UPSTREAM_REF}" || {
-            # On conflict: accept upstream changes for pkgs/ and continue
-            git checkout --theirs pkgs/
-            git add pkgs/
-            GIT_EDITOR=true git rebase --continue
-          }
+            # Only rebase from upstream on schedule or manual trigger, not on push.
+            # A push to mirror.yaml/scripts/mirror.py only needs re-apply, not rebase.
+            - name: Add upstream remote and rebase
+              env:
+                  UPSTREAM_REF: ${{ inputs.upstream_ref || 'main' }}
+              run: |
+                  git remote add upstream https://github.com/aquaproj/aqua-registry.git
+                  git fetch upstream
+                  git rebase upstream/"${UPSTREAM_REF}" || {
+                    # On conflict: accept upstream changes for pkgs/ and continue
+                    git checkout --theirs pkgs/
+                    git add pkgs/
+                    GIT_EDITOR=true git rebase --continue
+                  }
 
-      - name: Re-apply mirror URL replacements
-        run: python3 scripts/mirror.py
+            - name: Re-apply mirror URL replacements
+              run: python3 scripts/mirror.py
 
-      - name: Commit mirror re-application
-        run: |
-          if git diff --quiet; then
-            echo "No mirror changes needed."
-          else
-            git add pkgs/ registry.yaml
-            git commit -m "chore: re-apply mirror URLs"
-          fi
+            - name: Commit mirror re-application
+              run: |
+                  if git diff --quiet; then
+                    echo "No mirror changes needed."
+                  else
+                    git add pkgs/ registry.yaml
+                    git commit -m "chore: re-apply mirror URLs"
+                  fi
 
-      - name: Push changes
-        run: git push --force-with-lease
+            - name: Push changes
+              run: git push --force-with-lease
 
-      - name: Create and push mirror tag
-        run: |
-          TAG="mirror-$(date -u +%Y%m%d)"
-          # Delete the tag if it already exists (idempotent daily re-run)
-          git tag -d "${TAG}" 2>/dev/null || true
-          git push origin ":refs/tags/${TAG}" 2>/dev/null || true
-          git tag "${TAG}"
-          git push origin "${TAG}"
-          echo "Pushed tag ${TAG}"
+            - name: Create and push mirror tag
+              run: |
+                  TAG="mirror-$(date -u +%Y%m%d)"
+                  # Delete the tag if it already exists (idempotent daily re-run)
+                  git tag -d "${TAG}" 2>/dev/null || true
+                  git push origin ":refs/tags/${TAG}" 2>/dev/null || true
+                  git tag "${TAG}"
+                  git push origin "${TAG}"
+                  echo "TAG=${TAG}" >> "$GITHUB_ENV"
+                  echo "Pushed tag ${TAG}"
+
+            - name: Create GitHub Release for mirror tag
+              uses: softprops/action-gh-release@v2
+              with:
+                  tag_name: ${{ env.TAG }}
+                  name: "Mirror ${{ env.TAG }}"
+                  body: "Automated mirror of aquaproj/aqua-registry synced on ${{ env.TAG }}."
+                  make_latest: true

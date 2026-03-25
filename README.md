@@ -29,11 +29,14 @@ See [`mirror.yaml`](mirror.yaml) to change the proxy or add your own mirrors.
 | [`scripts/mirror.py`](scripts/mirror.py) | Rewrites `url:` fields; injects proxy URLs for `github_release` |
 | [`tests/test_mirror.py`](tests/test_mirror.py) | 49 unit + integration tests |
 | [`.github/workflows/mirror-test.yaml`](.github/workflows/mirror-test.yaml) | CI: tests on every relevant change |
-| [`.github/workflows/mirror-upstream.yaml`](.github/workflows/mirror-upstream.yaml) | Scheduled daily: rebase onto upstream, re-apply mirrors |
+| [`.github/workflows/mirror-upstream.yaml`](.github/workflows/mirror-upstream.yaml) | Scheduled daily: rebase onto upstream, re-apply mirrors, push `mirror-YYYYMMDD` tag |
+| [`.github/workflows/mirror-release.yaml`](.github/workflows/mirror-release.yaml) | Triggered by `mirror-*` tag push: creates a GitHub Release so aqua can resolve `releases/latest` |
 
 ### Quick start
 
-In your `aqua.yaml`, add the mirror registry:
+In your `aqua.yaml`, add the mirror registry.
+
+You can pin to a specific mirror tag (recommended for reproducibility):
 
 ```yaml
 registries:
@@ -48,6 +51,55 @@ registries:
 ```
 
 Then `aqua install` as normal. All downloads are routed through the configured mirrors.
+
+> **Note:** A new mirror release is published daily (around 02:00 UTC). If you pin `ref:` to a specific tag,
+> update it periodically to pick up registry changes from upstream.
+
+### Policy as Code (required for aqua v2+)
+
+From aqua v2, only the Standard Registry is allowed by default. Because this mirror is a `github_content` or `github_release` registry, you must create a Policy file to allow it.
+
+**1. Initialise a policy file** (requires a `.git` directory):
+
+```sh
+git init  # skip if already a git repo
+aqua policy init
+```
+
+**2. Edit `aqua-policy.yaml`** to allow the mirror registry:
+
+```yaml
+---
+# aqua Policy
+# https://aquaproj.github.io/
+registries:
+  - type: standard
+    ref: semver(">= 3.0.0")
+  - name: mirror
+    type: github_release
+    repo_owner: lvyuemeng
+    repo_name: aqua-registry-mirror
+packages:
+  - registry: standard
+  - registry: mirror
+```
+
+**3. Allow the policy file:**
+
+```sh
+aqua policy allow "/path/to/aqua-policy.yaml"
+```
+
+After this, `aqua install` will work with the mirror registry. If you modify `aqua-policy.yaml` later, run `aqua policy allow` again.
+
+> **CI usage:** If you use `aquaproj/aqua-installer` in GitHub Actions, add `policy_allow: "true"` to skip the manual step:
+>
+> ```yaml
+> - uses: aquaproj/aqua-installer@11dd79b4e498d471a9385aa9fb7f62bb5f52a73c # v4.0.4
+>   with:
+>     aqua_version: v2.48.3
+>     policy_allow: "true"
+> ```
 
 ### Local mirror commands
 

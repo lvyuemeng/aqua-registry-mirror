@@ -81,4 +81,3 @@ jobs:
           git tag "${TAG}"
           git push origin "${TAG}"
           echo "Pushed tag ${TAG}"
-

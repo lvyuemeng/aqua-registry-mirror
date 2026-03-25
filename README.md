@@ -65,7 +65,30 @@ git init  # skip if already a git repo
 aqua policy init
 ```
 
-**2. Edit `aqua-policy.yaml`** to allow the mirror registry:
+**2. Edit `aqua-policy.yaml`** to allow the mirror registry.
+
+The registry entry in the policy file **must match the `type` you declared in `aqua.yaml`**.
+
+If you used `type: github_content` (pinned tag):
+
+```yaml
+---
+# aqua Policy
+# https://aquaproj.github.io/
+registries:
+  - type: standard
+    ref: semver(">= 3.0.0")
+  - name: mirror
+    type: github_content
+    repo_owner: lvyuemeng
+    repo_name: aqua-registry-mirror
+    # ref is optional here; omitting it allows any ref
+packages:
+  - registry: standard
+  - registry: mirror
+```
+
+If you used `type: github_release` (latest release):
 
 ```yaml
 ---

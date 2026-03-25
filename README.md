@@ -58,19 +58,10 @@ Then `aqua install` as normal. All downloads are routed through the configured m
 
 From aqua v2, only the Standard Registry is allowed by default. Because this mirror is a `github_content` or `github_release` registry, you must create a Policy file to allow it.
 
-**1. Initialise a policy file** (requires a `.git` directory):
-
-```sh
-git init  # skip if already a git repo
-aqua policy init
-```
-
-**2. Edit `aqua-policy.yaml`** to allow the mirror registry.
+**Step 1 — Create `aqua-policy.yaml`**
 
 The registry entry in the policy file **must match the `type` you declared in `aqua.yaml`**.
 
-If you used `type: github_content` (pinned tag):
-
 ```yaml
 ---
 # aqua Policy
@@ -79,42 +70,56 @@ registries:
   - type: standard
     ref: semver(">= 3.0.0")
   - name: mirror
-    type: github_content
+    type: github_content  # must match the type in aqua.yaml
     repo_owner: lvyuemeng
     repo_name: aqua-registry-mirror
-    # ref is optional here; omitting it allows any ref
+    # ref is optional; omitting it allows any ref
+    path: registry.yaml
 packages:
   - registry: standard
   - registry: mirror
 ```
 
-If you used `type: github_release` (latest release):
+**Step 2 — Register the policy file**
 
-```yaml
+Choose one of the two approaches below depending on your setup.
+
 ---
-# aqua Policy
-# https://aquaproj.github.io/
-registries:
-  - type: standard
-    ref: semver(">= 3.0.0")
-  - name: mirror
-    type: github_release
-    repo_owner: lvyuemeng
-    repo_name: aqua-registry-mirror
-packages:
-  - registry: standard
-  - registry: mirror
-```
 
-**3. Allow the policy file:**
+#### Option A: User-space / global (recommended, no `.git` required)
+
+Set the `AQUA_POLICY_CONFIG` environment variable to the absolute path of your policy file.
+aqua trusts files listed here **without requiring `aqua policy allow`**.
+
+**Linux / macOS** (add to your shell profile for persistence):
 
 ```sh
-aqua policy allow "/path/to/aqua-policy.yaml"
+export AQUA_POLICY_CONFIG="/path/to/aqua-policy.yaml:$AQUA_POLICY_CONFIG"
 ```
 
-After this, `aqua install` will work with the mirror registry. If you modify `aqua-policy.yaml` later, run `aqua policy allow` again.
+**Windows PowerShell** (add to your `$PROFILE` for persistence):
 
-> **CI usage:** If you use `aquaproj/aqua-installer` in GitHub Actions, add `policy_allow: "true"` to skip the manual step:
+```powershell
+$env:AQUA_POLICY_CONFIG = "C:\path\to\aqua-policy.yaml"
+```
+
+That is all. `aqua install` will work immediately — no `aqua policy allow` step needed.
+
+---
+
+#### Option B: Inside a Git repository
+
+If your `aqua.yaml` lives inside a git repository, place `aqua-policy.yaml` at the repository root alongside `.git`, then run:
+
+```sh
+aqua policy allow "/absolute/path/to/aqua-policy.yaml"
+```
+
+If you modify `aqua-policy.yaml` later (even adding a blank line), run `aqua policy allow` again.
+
+---
+
+> **CI usage:** If you use `aquaproj/aqua-installer` in GitHub Actions, add `policy_allow: "true"` to avoid the manual allow step:
 >
 > ```yaml
 > - uses: aquaproj/aqua-installer@11dd79b4e498d471a9385aa9fb7f62bb5f52a73c # v4.0.4

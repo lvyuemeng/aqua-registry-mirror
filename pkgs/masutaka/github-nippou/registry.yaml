@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 3.2.0")
         no_asset: true
       - version_constraint: semver("<= 4.1.11")
+        url: https://gh-proxy.org/https://github.com/masutaka/github-nippou/releases/download/{{.Version}}/{{.Asset}}
         asset: github-nippou_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -18,6 +19,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 4.2.9")
+        url: https://gh-proxy.org/https://github.com/masutaka/github-nippou/releases/download/{{.Version}}/{{.Asset}}
         asset: github-nippou_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -26,6 +28,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/masutaka/github-nippou/releases/download/{{.Version}}/{{.Asset}}
         asset: github-nippou_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.11.0"
+        url: https://gh-proxy.org/https://github.com/ovh/venom/releases/download/{{.Version}}/{{.Asset}}
         asset: venom-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -14,6 +15,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.21.1"
+        url: https://gh-proxy.org/https://github.com/ovh/venom/releases/download/{{.Version}}/{{.Asset}}
         asset: venom.{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -21,6 +23,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.16.0")
+        url: https://gh-proxy.org/https://github.com/ovh/venom/releases/download/{{.Version}}/{{.Asset}}
         asset: venom-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -31,12 +34,14 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.0.1")
+        url: https://gh-proxy.org/https://github.com/ovh/venom/releases/download/{{.Version}}/{{.Asset}}
         asset: venom.{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
         complete_windows_ext: false
       - version_constraint: semver("<= 1.1.0-beta.2")
+        url: https://gh-proxy.org/https://github.com/ovh/venom/releases/download/{{.Version}}/{{.Asset}}
         asset: venom.{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -47,6 +52,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/ovh/venom/releases/download/{{.Version}}/{{.Asset}}
         asset: venom.{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

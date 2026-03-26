@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.2.0"
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -16,6 +17,7 @@ packages:
         supported_envs:
           - windows
       - version_constraint: Version == "v0.11.1-testing.1"
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -25,6 +27,7 @@ packages:
         supported_envs:
           - windows
       - version_constraint: Version == "v0.11.1-testing.2"
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -39,6 +42,7 @@ packages:
           - linux/amd64
           - windows
       - version_constraint: Version == "v0.11.1-testing.3"
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar
         rosetta2: true
@@ -58,6 +62,7 @@ packages:
       - version_constraint: semver("<= 0.7.0") or semver("> 0.10.0, <= 0.12.0") or Version in ["v0.11.0", "v0.15.0", "v0.16.0-beta.12", "v0.16.0-beta.16", "v0.16.0-beta.21", "v0.17.0"]
         no_asset: true
       - version_constraint: semver("<= 0.14.2") or Version == "v0.15.1"
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar
         rosetta2: true
@@ -77,6 +82,7 @@ packages:
       - version_constraint: semver("<= 0.16.0-beta.3")
         no_asset: true
       - version_constraint: semver("<= 0.16.0-beta.5")
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv-{{.Arch}}-{{.OS}}-{{.Version}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -94,6 +100,7 @@ packages:
           - linux/amd64
           - windows
       - version_constraint: semver("<= 0.16.0-beta.8")
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv-{{.Arch}}-{{.OS}}-{{.Version}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -116,6 +123,7 @@ packages:
       - version_constraint: semver("<= 0.16.0-beta.10")
         no_asset: true
       - version_constraint: Version == "v0.16.0-beta.11"
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv-{{.Arch}}-{{.OS}}-{{.Version}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -136,6 +144,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.16.0-beta.15")
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv-{{.Arch}}-{{.OS}}-{{.Version}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -156,6 +165,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.16.0-beta.20")
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv-{{.Arch}}-{{.OS}}-{{.Version}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -176,6 +186,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.16.1")
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv-{{.Arch}}-{{.OS}}-{{.Version}}.{{.Format}}
         format: tgz
         windows_arm_emulation: true
@@ -198,6 +209,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.16.3")
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv-{{.Arch}}-{{.OS}}-{{.Version}}.{{.Format}}
         format: tgz
         windows_arm_emulation: true
@@ -220,6 +232,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/foresterre/cargo-msrv/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-msrv-{{.Arch}}-{{.OS}}-{{.Version}}.{{.Format}}
         format: tgz
         windows_arm_emulation: true

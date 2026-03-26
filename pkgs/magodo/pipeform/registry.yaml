@@ -10,6 +10,7 @@ packages:
         # To keep the compatibility
         type: go_install
       - version_constraint: Version == "v0.1.0"
+        url: https://gh-proxy.org/https://github.com/magodo/pipeform/releases/download/{{.Version}}/{{.Asset}}
         asset: pipeform_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         files:
@@ -20,6 +21,7 @@ packages:
           asset: pipeform_{{trimV .Version}}_SHA256SUMS
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/magodo/pipeform/releases/download/{{.Version}}/{{.Asset}}
         asset: pipeform_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:

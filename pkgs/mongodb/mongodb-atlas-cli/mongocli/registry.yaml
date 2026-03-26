@@ -33,6 +33,7 @@ packages:
     version_overrides:
       # asset style was changed
       - version_constraint: semver(">= 1.15.0")
+        url: https://gh-proxy.org/https://github.com/mongodb/mongodb-atlas-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: mongocli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         supported_envs:
           - darwin
@@ -45,6 +46,7 @@ packages:
                 src: mongocli_{{trimV .Version}}_{{.OS}}_{{.Arch}}/bin/mongocli
       # arm64 wasn't supported
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/mongodb/mongodb-atlas-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: mongocli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         supported_envs:
           - amd64

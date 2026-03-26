@@ -10,6 +10,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "clang-tidy-sarif-v0.2.23"
+        url: https://gh-proxy.org/https://github.com/psastras/sarif-rs/releases/download/{{.Version}}/{{.Asset}}
         asset: clang-tidy-sarif-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tgz
         replacements:
@@ -21,6 +22,7 @@ packages:
           - name: clang-tidy-sarif
             src: target/release/{{.FileName}}-{{.Arch}}-{{.OS}}
       - version_constraint: Version in ["clang-tidy-sarif-v0.2.24", "clang-tidy-sarif-v0.6.2"]
+        url: https://gh-proxy.org/https://github.com/psastras/sarif-rs/releases/download/{{.Version}}/{{.Asset}}
         asset: clang-tidy-sarif-{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -29,6 +31,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.4.2")
+        url: https://gh-proxy.org/https://github.com/psastras/sarif-rs/releases/download/{{.Version}}/{{.Asset}}
         asset: clang-tidy-sarif-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -40,6 +43,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/psastras/sarif-rs/releases/download/{{.Version}}/{{.Asset}}
         asset: clang-tidy-sarif-{{.Arch}}-{{.OS}}
         format: raw
         replacements:

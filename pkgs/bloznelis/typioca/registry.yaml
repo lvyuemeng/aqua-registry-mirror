@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.1")
+        url: https://gh-proxy.org/https://github.com/bloznelis/typioca/releases/download/{{.Version}}/{{.Asset}}
         asset: typioca-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -21,6 +22,7 @@ packages:
       - version_constraint: semver("<= 1.4.1")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/bloznelis/typioca/releases/download/{{.Version}}/{{.Asset}}
         asset: typioca-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

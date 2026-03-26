@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.1")
+        url: https://gh-proxy.org/https://github.com/funbiscuit/spacedisplay-rs/releases/download/{{.Version}}/{{.Asset}}
         asset: spacedisplay-{{.Arch}}_{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -22,6 +23,7 @@ packages:
           - name: spacedisplay
             src: spacedisplay-rs
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/funbiscuit/spacedisplay-rs/releases/download/{{.Version}}/{{.Asset}}
         asset: spacedisplay-{{.OS}}
         format: raw
         rosetta2: true

@@ -13,6 +13,7 @@ packages:
       - version_constraint: Version in ["v0.0.1", "v0.1.0"]
         no_asset: true
       - version_constraint: semver("<= 0.2.1")
+        url: https://gh-proxy.org/https://github.com/bitnami-labs/sealed-secrets/releases/download/{{.Version}}/{{.Asset}}
         asset: ksonnet-seal-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -20,6 +21,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.7.0")
+        url: https://gh-proxy.org/https://github.com/bitnami-labs/sealed-secrets/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeseal-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -27,6 +29,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.8.2")
+        url: https://gh-proxy.org/https://github.com/bitnami-labs/sealed-secrets/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeseal-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -38,6 +41,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.8.3"
+        url: https://gh-proxy.org/https://github.com/bitnami-labs/sealed-secrets/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeseal-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -53,6 +57,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.16.0")
+        url: https://gh-proxy.org/https://github.com/bitnami-labs/sealed-secrets/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeseal-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -64,6 +69,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.17.0"
+        url: https://gh-proxy.org/https://github.com/bitnami-labs/sealed-secrets/releases/download/{{.Version}}/{{.Asset}}
         asset: sealed-secrets_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -77,6 +83,7 @@ packages:
           asset: sealed-secrets_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.17.3")
+        url: https://gh-proxy.org/https://github.com/bitnami-labs/sealed-secrets/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeseal-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -86,6 +93,7 @@ packages:
           asset: sealed-secrets_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.17.5")
+        url: https://gh-proxy.org/https://github.com/bitnami-labs/sealed-secrets/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeseal-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -94,6 +102,7 @@ packages:
           asset: sealed-secrets_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/bitnami-labs/sealed-secrets/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeseal-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

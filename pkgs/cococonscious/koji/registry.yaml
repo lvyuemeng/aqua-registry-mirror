@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.2.0")
+        url: https://gh-proxy.org/https://github.com/cococonscious/koji/releases/download/{{.Version}}/{{.Asset}}
         asset: koji-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -21,6 +22,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.4.0")
+        url: https://gh-proxy.org/https://github.com/cococonscious/koji/releases/download/{{.Version}}/{{.Asset}}
         asset: koji-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -32,6 +34,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.2.0")
+        url: https://gh-proxy.org/https://github.com/cococonscious/koji/releases/download/{{.Version}}/{{.Asset}}
         asset: koji-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -47,6 +50,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/cococonscious/koji/releases/download/{{.Version}}/{{.Asset}}
         asset: koji-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

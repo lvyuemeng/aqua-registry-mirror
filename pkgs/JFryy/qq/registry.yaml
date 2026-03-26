@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/JFryy/qq/releases/download/{{.Version}}/{{.Asset}}
         asset: qq-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

@@ -11,6 +11,7 @@ packages:
       - version_constraint: semver("<= 5.3.1")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/santhosh-tekuri/jsonschema/releases/download/{{.Version}}/{{.Asset}}
         asset: jv-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

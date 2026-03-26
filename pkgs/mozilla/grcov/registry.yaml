@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.4.0"
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         windows_arm_emulation: true
@@ -16,6 +17,7 @@ packages:
         supported_envs:
           - windows/amd64
       - version_constraint: Version == "v0.7.0"
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         replacements:
@@ -23,6 +25,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v0.7.1"
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         rosetta2: true
@@ -33,6 +36,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.1.1")
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         replacements:
@@ -40,6 +44,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.1.5")
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         windows_arm_emulation: true
@@ -50,6 +55,7 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: semver("<= 0.1.28")
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-standalone-{{.Arch}}.{{.Format}}
         format: tar.bz2
         windows_arm_emulation: true
@@ -63,6 +69,7 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: semver("<= 0.3.2")
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         rosetta2: true
@@ -76,6 +83,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.4.2")
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         windows_arm_emulation: true
@@ -86,6 +94,7 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: semver("<= 0.5.15")
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         rosetta2: true
@@ -99,6 +108,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.6.1")
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         rosetta2: true
@@ -109,6 +119,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.8.2")
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         replacements:
@@ -116,6 +127,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.8.6")
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -132,6 +144,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/mozilla/grcov/releases/download/{{.Version}}/{{.Asset}}
         asset: grcov-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.bz2
         replacements:

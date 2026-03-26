@@ -6,6 +6,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.2")
+        url: https://gh-proxy.org/https://github.com/Songmu/podbard/releases/download/{{.Version}}/{{.Asset}}
         asset: primcast_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:
@@ -22,6 +23,7 @@ packages:
           - name: primcast
             src: primcast_{{.Version}}_{{.OS}}_{{.Arch}}/primcast
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/Songmu/podbard/releases/download/{{.Version}}/{{.Asset}}
         asset: podbard_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:

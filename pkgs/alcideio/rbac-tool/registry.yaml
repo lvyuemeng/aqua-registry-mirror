@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.1.0")
         no_asset: true
       - version_constraint: semver("<= 0.6.2")
+        url: https://gh-proxy.org/https://github.com/alcideio/rbac-tool/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-tool-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -21,6 +22,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.10.1")
+        url: https://gh-proxy.org/https://github.com/alcideio/rbac-tool/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-tool_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -34,6 +36,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.1.0")
+        url: https://gh-proxy.org/https://github.com/alcideio/rbac-tool/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-tool_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -43,6 +46,7 @@ packages:
           asset: rbac-tool_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 1.1.4")
+        url: https://gh-proxy.org/https://github.com/alcideio/rbac-tool/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-tool_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -52,6 +56,7 @@ packages:
           asset: rbac-tool_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/alcideio/rbac-tool/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-tool_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

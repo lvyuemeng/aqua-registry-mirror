@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.1")
+        url: https://gh-proxy.org/https://github.com/aandrew-me/tgpt/releases/download/{{.Version}}/{{.Asset}}
         asset: tgpt-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -20,6 +21,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.2.1")
+        url: https://gh-proxy.org/https://github.com/aandrew-me/tgpt/releases/download/{{.Version}}/{{.Asset}}
         asset: tgpt-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -29,6 +31,7 @@ packages:
           - goos: windows
             asset: tgpt-{{.Arch}}
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/aandrew-me/tgpt/releases/download/{{.Version}}/{{.Asset}}
         asset: tgpt-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

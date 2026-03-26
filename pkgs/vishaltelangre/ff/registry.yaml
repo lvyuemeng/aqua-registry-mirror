@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.1"
+        url: https://gh-proxy.org/https://github.com/vishaltelangre/ff/releases/download/{{.Version}}/{{.Asset}}
         asset: ff-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -27,6 +28,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/vishaltelangre/ff/releases/download/{{.Version}}/{{.Asset}}
         asset: find-files-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

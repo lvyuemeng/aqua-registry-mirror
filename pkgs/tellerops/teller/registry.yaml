@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.4.0")
+        url: https://gh-proxy.org/https://github.com/tellerops/teller/releases/download/{{.Version}}/{{.Asset}}
         asset: teller_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -22,6 +23,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 1.5.6")
+        url: https://gh-proxy.org/https://github.com/tellerops/teller/releases/download/{{.Version}}/{{.Asset}}
         asset: teller_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -34,6 +36,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/tellerops/teller/releases/download/{{.Version}}/{{.Asset}}
         asset: teller-{{.Arch}}-{{.OS}}.{{.Format}}
         files:
           - name: teller

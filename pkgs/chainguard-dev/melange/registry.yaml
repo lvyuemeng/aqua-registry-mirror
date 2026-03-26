@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.0")
+        url: https://gh-proxy.org/https://github.com/chainguard-dev/melange/releases/download/{{.Version}}/{{.Asset}}
         asset: melange_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -39,6 +40,7 @@ packages:
               - --certificate
               - https://github.com/chainguard-dev/melange/releases/download/{{.Version}}/checksums.txt.crt
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/chainguard-dev/melange/releases/download/{{.Version}}/{{.Asset}}
         asset: melange_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

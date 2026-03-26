@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.4")
+        url: https://gh-proxy.org/https://github.com/amir20/dtop/releases/download/{{.Version}}/{{.Asset}}
         asset: dtop_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -22,6 +23,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.2.0")
+        url: https://gh-proxy.org/https://github.com/amir20/dtop/releases/download/{{.Version}}/{{.Asset}}
         asset: dtop_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -34,6 +36,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.3.8")
+        url: https://gh-proxy.org/https://github.com/amir20/dtop/releases/download/{{.Version}}/{{.Asset}}
         asset: dtop-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:
@@ -52,6 +55,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/amir20/dtop/releases/download/{{.Version}}/{{.Asset}}
         asset: dtop-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:

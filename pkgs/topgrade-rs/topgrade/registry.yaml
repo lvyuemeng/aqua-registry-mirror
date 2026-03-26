@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version in ["v9.1.0", "v10.2.5"]
         no_asset: true
       - version_constraint: Version == "v10.0.0"
+        url: https://gh-proxy.org/https://github.com/topgrade-rs/topgrade/releases/download/{{.Version}}/{{.Asset}}
         asset: topgrade-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -24,6 +25,7 @@ packages:
           - linux
           - windows/amd64
       - version_constraint: Version == "v10.0.1"
+        url: https://gh-proxy.org/https://github.com/topgrade-rs/topgrade/releases/download/{{.Version}}/{{.Asset}}
         asset: topgrade-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -43,6 +45,7 @@ packages:
             format: zip
             asset: topgrade-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
       - version_constraint: Version == "v11.0.0"
+        url: https://gh-proxy.org/https://github.com/topgrade-rs/topgrade/releases/download/{{.Version}}/{{.Asset}}
         asset: topgrade-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -54,6 +57,7 @@ packages:
       - version_constraint: semver("<= 10.1.0-cd1")
         no_asset: true
       - version_constraint: semver("<= 10.1.0-cd5")
+        url: https://gh-proxy.org/https://github.com/topgrade-rs/topgrade/releases/download/{{.Version}}/{{.Asset}}
         asset: topgrade-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -71,6 +75,7 @@ packages:
       - version_constraint: semver("<= 10.1.0-rc1")
         no_asset: true
       - version_constraint: semver("<= 10.2.2")
+        url: https://gh-proxy.org/https://github.com/topgrade-rs/topgrade/releases/download/{{.Version}}/{{.Asset}}
         asset: topgrade-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -87,6 +92,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 10.2.4")
+        url: https://gh-proxy.org/https://github.com/topgrade-rs/topgrade/releases/download/{{.Version}}/{{.Asset}}
         asset: topgrade-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -102,6 +108,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 14.0.1")
+        url: https://gh-proxy.org/https://github.com/topgrade-rs/topgrade/releases/download/{{.Version}}/{{.Asset}}
         asset: topgrade-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -118,6 +125,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("< 16.1.0")
+        url: https://gh-proxy.org/https://github.com/topgrade-rs/topgrade/releases/download/{{.Version}}/{{.Asset}}
         asset: topgrade-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -131,6 +139,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v16.2.0"
+        url: https://gh-proxy.org/https://github.com/topgrade-rs/topgrade/releases/download/{{.Version}}/{{.Asset}}
         asset: topgrade-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -144,6 +153,7 @@ packages:
         github_artifact_attestations:
           signer_workflow: topgrade-rs/topgrade/.github/workflows/create_release_assets.yml
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/topgrade-rs/topgrade/releases/download/{{.Version}}/{{.Asset}}
         asset: topgrade-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

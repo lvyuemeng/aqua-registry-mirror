@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.13.1"
+        url: https://gh-proxy.org/https://github.com/txn2/kubefwd/releases/download/{{.Version}}/{{.Asset}}
         asset: kubefwd_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -27,6 +28,7 @@ packages:
       - version_constraint: semver("< 1.4.10")
         no_asset: true
       - version_constraint: semver("<= 1.8.2")
+        url: https://gh-proxy.org/https://github.com/txn2/kubefwd/releases/download/{{.Version}}/{{.Asset}}
         asset: kubefwd_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -45,6 +47,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.9.4")
+        url: https://gh-proxy.org/https://github.com/txn2/kubefwd/releases/download/{{.Version}}/{{.Asset}}
         asset: kubefwd_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -63,6 +66,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.14.2")
+        url: https://gh-proxy.org/https://github.com/txn2/kubefwd/releases/download/{{.Version}}/{{.Asset}}
         asset: kubefwd_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -81,6 +85,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.14.7")
+        url: https://gh-proxy.org/https://github.com/txn2/kubefwd/releases/download/{{.Version}}/{{.Asset}}
         asset: kubefwd_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -104,6 +109,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.18.1")
+        url: https://gh-proxy.org/https://github.com/txn2/kubefwd/releases/download/{{.Version}}/{{.Asset}}
         asset: kubefwd_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -121,6 +127,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("< 1.24.1")
+        url: https://gh-proxy.org/https://github.com/txn2/kubefwd/releases/download/{{.Version}}/{{.Asset}}
         asset: kubefwd_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -137,6 +144,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/txn2/kubefwd/releases/download/{{.Version}}/{{.Asset}}
         asset: kubefwd_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

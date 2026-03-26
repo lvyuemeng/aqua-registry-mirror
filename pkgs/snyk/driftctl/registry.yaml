@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.4.0"
+        url: https://gh-proxy.org/https://github.com/snyk/driftctl/releases/download/{{.Version}}/{{.Asset}}
         asset: driftctl_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -16,11 +17,13 @@ packages:
           asset: driftctl_SHA256SUMS
           algorithm: sha256
       - version_constraint: semver("<= 0.3.1")
+        url: https://gh-proxy.org/https://github.com/snyk/driftctl/releases/download/{{.Version}}/{{.Asset}}
         asset: driftctl_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.18.5")
+        url: https://gh-proxy.org/https://github.com/snyk/driftctl/releases/download/{{.Version}}/{{.Asset}}
         asset: driftctl_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -29,6 +32,7 @@ packages:
           asset: driftctl_SHA256SUMS
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/snyk/driftctl/releases/download/{{.Version}}/{{.Asset}}
         asset: driftctl_{{.OS}}_{{.Arch}}
         format: raw
         checksum:

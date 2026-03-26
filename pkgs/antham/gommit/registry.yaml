@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2.3.0")
+        url: https://gh-proxy.org/https://github.com/antham/gommit/releases/download/{{.Version}}/{{.Asset}}
         asset: gommit_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -16,6 +17,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v2.4.0"
+        url: https://gh-proxy.org/https://github.com/antham/gommit/releases/download/{{.Version}}/{{.Asset}}
         asset: gommit_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -27,6 +29,7 @@ packages:
       - version_constraint: Version == "v2.5.0"
         no_asset: true
       - version_constraint: Version == "v2.6.0"
+        url: https://gh-proxy.org/https://github.com/antham/gommit/releases/download/{{.Version}}/{{.Asset}}
         asset: gommit_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -36,6 +39,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/antham/gommit/releases/download/{{.Version}}/{{.Asset}}
         asset: gommit_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true

@@ -8,6 +8,7 @@ packages:
     asset: fx_{{.OS}}_{{.Arch}}
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/antonmedv/fx/releases/download/{{.Version}}/{{.Asset}}
         asset: fx-{{.OS}}.zip
         replacements:
           darwin: macos

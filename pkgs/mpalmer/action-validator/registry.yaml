@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.4")
+        url: https://gh-proxy.org/https://github.com/mpalmer/action-validator/releases/download/{{.Version}}/{{.Asset}}
         asset: action-validator_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:
@@ -14,12 +15,14 @@ packages:
           - darwin
         rosetta2: true
       - version_constraint: semver("<= 0.5.1")
+        url: https://gh-proxy.org/https://github.com/mpalmer/action-validator/releases/download/{{.Version}}/{{.Asset}}
         asset: action-validator_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/mpalmer/action-validator/releases/download/{{.Version}}/{{.Asset}}
         asset: action-validator_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:

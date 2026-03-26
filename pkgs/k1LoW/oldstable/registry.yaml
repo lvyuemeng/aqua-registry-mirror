@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/k1LoW/oldstable/releases/download/{{.Version}}/{{.Asset}}
         asset: oldstable_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

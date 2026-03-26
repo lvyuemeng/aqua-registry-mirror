@@ -18,10 +18,12 @@ packages:
     version_constraint: semver(">= 0.2.6")
     version_overrides:
       - version_constraint: semver(">= 0.2.5")
+        url: https://gh-proxy.org/https://github.com/birdayz/kaf/releases/download/{{.Version}}/{{.Asset}}
         asset: kaf_.{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         checksum:
           enabled: false
       - version_constraint: semver(">= 0.2.4")
+        url: https://gh-proxy.org/https://github.com/birdayz/kaf/releases/download/{{.Version}}/{{.Asset}}
         asset: kaf_{{.OS}}_{{.Arch}}.{{.Format}}
       - version_constraint: semver(">= 0.1.44")
       - version_constraint: semver(">= 0.1.43")

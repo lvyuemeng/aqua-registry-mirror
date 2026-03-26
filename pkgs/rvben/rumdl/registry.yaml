@@ -9,10 +9,12 @@ packages:
       - version_constraint: Version == "v0.0.45"
         no_asset: true
       - version_constraint: semver("<= 0.0.43")
+        url: https://gh-proxy.org/https://github.com/rvben/rumdl/releases/download/{{.Version}}/{{.Asset}}
         asset: rumdl_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.0.49")
+        url: https://gh-proxy.org/https://github.com/rvben/rumdl/releases/download/{{.Version}}/{{.Asset}}
         asset: rumdl-{{trimV .Version}}-py3-none-many{{.OS}}_2_17_{{.Arch}}.manylinux2014_x86_64.whl
         format: zip
         append_ext: false
@@ -42,6 +44,7 @@ packages:
             replacements:
               amd64: amd64
       - version_constraint: semver("<= 0.0.97")
+        url: https://gh-proxy.org/https://github.com/rvben/rumdl/releases/download/{{.Version}}/{{.Asset}}
         asset: rumdl-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -52,6 +55,7 @@ packages:
           linux: unknown-linux-gnu
           windows: pc-windows-msvc
       - version_constraint: semver("<= 0.0.109")
+        url: https://gh-proxy.org/https://github.com/rvben/rumdl/releases/download/{{.Version}}/{{.Asset}}
         asset: rumdl-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -70,6 +74,7 @@ packages:
               asset: "{{.Asset}}.sha256"
               algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/rvben/rumdl/releases/download/{{.Version}}/{{.Asset}}
         asset: rumdl-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

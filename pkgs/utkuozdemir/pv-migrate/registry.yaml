@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
+        url: https://gh-proxy.org/https://github.com/utkuozdemir/pv-migrate/releases/download/{{.Version}}/{{.Asset}}
         asset: pv-migrate-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -17,6 +18,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.5.4"
+        url: https://gh-proxy.org/https://github.com/utkuozdemir/pv-migrate/releases/download/{{.Version}}/{{.Asset}}
         asset: pv-migrate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -33,6 +35,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.5.3")
+        url: https://gh-proxy.org/https://github.com/utkuozdemir/pv-migrate/releases/download/{{.Version}}/{{.Asset}}
         asset: pv-migrate_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -51,6 +54,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.6.2")
+        url: https://gh-proxy.org/https://github.com/utkuozdemir/pv-migrate/releases/download/{{.Version}}/{{.Asset}}
         asset: pv-migrate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -65,6 +69,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.8.0")
+        url: https://gh-proxy.org/https://github.com/utkuozdemir/pv-migrate/releases/download/{{.Version}}/{{.Asset}}
         asset: pv-migrate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -78,6 +83,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/utkuozdemir/pv-migrate/releases/download/{{.Version}}/{{.Asset}}
         asset: pv-migrate_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

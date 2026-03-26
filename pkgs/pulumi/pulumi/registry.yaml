@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v3.0.0-rc.1"
         no_asset: true
       - version_constraint: Version in ["v2.11.0", "v2.15.1", "v2.15.5", "v2.16.1"]
+        url: https://gh-proxy.org/https://github.com/pulumi/pulumi/releases/download/{{.Version}}/{{.Asset}}
         asset: pulumi-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v3.39.4"
+        url: https://gh-proxy.org/https://github.com/pulumi/pulumi/releases/download/{{.Version}}/{{.Asset}}
         asset: pulumi-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -38,6 +40,7 @@ packages:
       - version_constraint: semver("<= 2.20.0")
         no_asset: true
       - version_constraint: semver("<= 2.22.0")
+        url: https://gh-proxy.org/https://github.com/pulumi/pulumi/releases/download/{{.Version}}/{{.Asset}}
         asset: pulumi-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -54,6 +57,7 @@ packages:
           - name: pulumi
             src: pulumi/pulumi
       - version_constraint: semver("<= 3.2.1")
+        url: https://gh-proxy.org/https://github.com/pulumi/pulumi/releases/download/{{.Version}}/{{.Asset}}
         asset: pulumi-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -69,6 +73,7 @@ packages:
           - name: pulumi
             src: pulumi/pulumi
       - version_constraint: semver("<= 3.39.3")
+        url: https://gh-proxy.org/https://github.com/pulumi/pulumi/releases/download/{{.Version}}/{{.Asset}}
         asset: pulumi-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -88,6 +93,7 @@ packages:
           - name: pulumi
             src: pulumi/pulumi
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/pulumi/pulumi/releases/download/{{.Version}}/{{.Asset}}
         asset: pulumi-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

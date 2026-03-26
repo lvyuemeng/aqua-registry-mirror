@@ -33,6 +33,7 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver(">= 3.0.0")
+        url: https://gh-proxy.org/https://github.com/justmiles/go-markdown2confluence/releases/download/{{.Version}}/{{.Asset}}
         asset: markdown2confluence_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         overrides:
           - goos: windows
@@ -42,6 +43,7 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver(">= 2.0.0")
+        url: https://gh-proxy.org/https://github.com/justmiles/go-markdown2confluence/releases/download/{{.Version}}/{{.Asset}}
         asset: markdown2confluence-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         replacements: {}
@@ -52,6 +54,7 @@ packages:
         checksum:
           enabled: false
       - version_constraint: semver("< 2.0.0")
+        url: https://gh-proxy.org/https://github.com/justmiles/go-markdown2confluence/releases/download/{{.Version}}/{{.Asset}}
         asset: markdown2confluence.{{.OS}}-{{.Arch}}
         format: raw
         replacements: {}

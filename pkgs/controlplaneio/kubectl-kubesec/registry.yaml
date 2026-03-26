@@ -26,6 +26,7 @@ packages:
           - darwin
         rosetta2: true
       - version_constraint: semver("< 1.0.1")
+        url: https://gh-proxy.org/https://github.com/controlplaneio/kubectl-kubesec/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-kubesec_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         supported_envs:
           - darwin

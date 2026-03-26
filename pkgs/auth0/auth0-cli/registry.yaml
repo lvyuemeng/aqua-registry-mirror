@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.3")
+        url: https://gh-proxy.org/https://github.com/auth0/auth0-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: auth0-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -27,6 +28,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.5.1")
+        url: https://gh-proxy.org/https://github.com/auth0/auth0-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: auth0-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -48,6 +50,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.11.8")
+        url: https://gh-proxy.org/https://github.com/auth0/auth0-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: auth0-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -64,6 +67,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/auth0/auth0-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: auth0-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

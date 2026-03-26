@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v0.0.4"
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/ponkio-o/ec2x/releases/download/{{.Version}}/{{.Asset}}
         asset: ec2x_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

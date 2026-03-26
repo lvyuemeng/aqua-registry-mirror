@@ -49,6 +49,7 @@ packages:
           - name: func
             src: func_{{.OS}}_{{.Arch}}
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/knative/func/releases/download/{{.Version}}/{{.Asset}}
         asset: faas_{{.OS}}_{{.Arch}}.gz
         overrides:
           - goos: windows

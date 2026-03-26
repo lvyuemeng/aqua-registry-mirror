@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/jez/as-tree/releases/download/{{.Version}}/{{.Asset}}
         asset: as-tree-{{.Version}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:

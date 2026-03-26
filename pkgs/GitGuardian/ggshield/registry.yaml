@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 1.26.0")
         no_asset: true
       - version_constraint: semver("<= 1.28.0")
+        url: https://gh-proxy.org/https://github.com/GitGuardian/ggshield/releases/download/{{.Version}}/{{.Asset}}
         asset: ggshield-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: pkg
         replacements:
@@ -30,6 +31,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.30.2")
+        url: https://gh-proxy.org/https://github.com/GitGuardian/ggshield/releases/download/{{.Version}}/{{.Asset}}
         asset: ggshield-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -58,6 +60,7 @@ packages:
           - windows/amd64
           - linux/amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/GitGuardian/ggshield/releases/download/{{.Version}}/{{.Asset}}
         asset: ggshield-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:

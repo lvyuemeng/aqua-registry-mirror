@@ -9,16 +9,19 @@ packages:
       - version_constraint: semver("<= 2.0.9") || Version in ["v2.1.1", "v2.0.29", "v2.0.28", "v2.0.21"]
         no_asset: true
       - version_constraint: semver("<= 2.0.17") || Version in ["v2.0.20", "v2.0.24"]
+        url: https://gh-proxy.org/https://github.com/containers/conmon/releases/download/{{.Version}}/{{.Asset}}
         asset: conmon
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 2.0.19")
+        url: https://gh-proxy.org/https://github.com/containers/conmon/releases/download/{{.Version}}/{{.Asset}}
         asset: conmon-{{trimV .Version}}
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 2.0.23") || Version == "v2.0.25"
+        url: https://gh-proxy.org/https://github.com/containers/conmon/releases/download/{{.Version}}/{{.Asset}}
         asset: conmon-{{trimV .Version}}.{{.Format}}
         format: zip
         supported_envs:
@@ -27,6 +30,7 @@ packages:
           - name: conmon
             src: result/bin/conmon
       - version_constraint: semver("<= 2.0.32") && semver(">= 2.0.30")
+        url: https://gh-proxy.org/https://github.com/containers/conmon/releases/download/{{.Version}}/{{.Asset}}
         asset: conmon-{{.Arch}}.{{.Format}}
         format: zip
         supported_envs:
@@ -38,6 +42,7 @@ packages:
           - name: conmon
             src: bin/conmon
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/containers/conmon/releases/download/{{.Version}}/{{.Asset}}
         asset: conmon.{{.Arch}}
         format: raw
         supported_envs:

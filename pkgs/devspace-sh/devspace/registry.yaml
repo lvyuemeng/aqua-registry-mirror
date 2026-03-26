@@ -11,6 +11,7 @@ packages:
       - version_constraint: Version == "v6.2.0-alpha.0"
         no_asset: true
       - version_constraint: semver("<= 5.7.4")
+        url: https://gh-proxy.org/https://github.com/devspace-sh/devspace/releases/download/{{.Version}}/{{.Asset}}
         asset: devspace-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -24,6 +25,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 5.10.0")
+        url: https://gh-proxy.org/https://github.com/devspace-sh/devspace/releases/download/{{.Version}}/{{.Asset}}
         asset: devspace-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -36,6 +38,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/devspace-sh/devspace/releases/download/{{.Version}}/{{.Asset}}
         asset: devspace-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

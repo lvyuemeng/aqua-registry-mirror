@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2.1.0")
+        url: https://gh-proxy.org/https://github.com/arrow2nd/nekome/releases/download/{{.Version}}/{{.Asset}}
         asset: nekome_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -22,6 +23,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/arrow2nd/nekome/releases/download/{{.Version}}/{{.Asset}}
         asset: nekome_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

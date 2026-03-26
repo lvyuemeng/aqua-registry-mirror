@@ -1,5 +1,3 @@
-@CONTRIBUTING.md
-
 ## Checkout the document from aqua repository
 
 The document of aqua is hosted at <https://github.com/aquaproj/aqua>.

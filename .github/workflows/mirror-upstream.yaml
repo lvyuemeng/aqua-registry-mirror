@@ -42,40 +42,18 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml --break-system-packages -q
 
-      # Only rebase from upstream on schedule or manual trigger, not on push.
-      # A push to mirror.yaml/scripts/mirror.py only needs re-apply, not rebase.
-      - name: Add upstream remote and rebase
+      - name: Clone upstream repository
         env:
           UPSTREAM_REF: ${{ inputs.upstream_ref || 'main' }}
         run: |
-          git remote add upstream https://github.com/aquaproj/aqua-registry.git
-          git fetch upstream
-          git rebase upstream/"${UPSTREAM_REF}" || {
-            while [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; do
+          git clone --depth 1 --branch "${UPSTREAM_REF}" https://github.com/aquaproj/aqua-registry.git /tmp/upstream
 
-              echo "Resolving conflicts..."
-
-              # get all conflicted files
-              for f in $(git diff --name-only --diff-filter=U); do
-                case "$f" in
-                  pkgs/*|registry.yaml)
-                    echo "THEIRS  $f"
-                    git checkout --theirs -- "$f"
-                    ;;
-                  *)
-                    echo "OURS    $f"
-                    git checkout --ours -- "$f"
-                    ;;
-                esac
-              done
-
-              # mark resolved
-              git add -A
-
-              # continue rebase
-              GIT_EDITOR=true git rebase --continue
-            done
-          }
+      - name: Copy upstream files
+        run: |
+          cp /tmp/upstream/registry.yaml ./registry.yaml
+          rm -rf ./pkgs
+          cp -r /tmp/upstream/pkgs ./pkgs
+          rm -rf /tmp/upstream
 
       - name: Re-apply mirror URL replacements
         run: python3 scripts/mirror.py
@@ -86,7 +64,7 @@ jobs:
             echo "No mirror changes needed."
           else
             git add pkgs/ registry.yaml
-            git commit -m "chore: re-apply mirror URLs"
+            git commit -m "chore: sync from upstream"
           fi
 
       - name: Push changes

@@ -3,7 +3,7 @@ name: Fetch aqua Document
 description: Fetch the document of aqua from the other repository aquaproj/aqua. This skill is useful when you want to know the specification of aqua.
 ---
 
-The document of aqua is hosted at https://github.com/aquaproj/aqua.
+The document of aqua is hosted at <https://github.com/aquaproj/aqua>.
 So please checkout the repository and refer the document.
 
 ```sh

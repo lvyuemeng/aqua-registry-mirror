@@ -67,7 +67,7 @@ Therefore, you should first generate code without exclusion settings, and if unn
 Note that `version_filter` is not a feature for dropping support for old versions.
 `version_constraint`, `no_asset`, and `error_message` are used for dropping support for old versions.
 
-https://github.com/aquaproj/aqua-registry/blob/191f2136c10b1eb962dd43c8f421af417b1b3a16/pkgs/Shopify/ejson/registry.yaml#L8-L10
+<https://github.com/aquaproj/aqua-registry/blob/191f2136c10b1eb962dd43c8f421af417b1b3a16/pkgs/Shopify/ejson/registry.yaml#L8-L10>
 :::
 
 ## Retrying `argd s` Until It Works

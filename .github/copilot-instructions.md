@@ -5,9 +5,9 @@
 Please add a newline at the end of file.
 Note that this doesn't mean add an empty line at the end of file.
 
-# Guide
+## Guide
 
-## Do Not Change the Source of Existing Packages to a Fork
+### Do Not Change the Source of Existing Packages to a Fork
 
 Even if maintenance of an existing package’s source has stalled or the repository has been archived, **do not change the package source to point to a fork**.
 Instead, create a **new package** that points to the forked source.
@@ -15,14 +15,14 @@ Instead, create a **new package** that points to the forked source.
 For example, development of [99designs/aws-vault](https://github.com/99designs/aws-vault) has slowed down, and a fork, [ByteNess/aws-vault](https://github.com/ByteNess/aws-vault), was created.
 [Homebrew switched to using the forked repository](https://github.com/Homebrew/homebrew-core/pull/226185), but in the aqua registry, we decided to keep the original package as-is and add a new package instead.
 
-- https://github.com/99designs/aws-vault/issues/1269
-- https://github.com/aquaproj/aqua-registry/pull/45430
+- <https://github.com/99designs/aws-vault/issues/1269>
+- <https://github.com/aquaproj/aqua-registry/pull/45430>
 
 This is to prevent the maintainer of a package’s source from changing without users’ knowledge.
 Whether or not to switch to a fork should be a decision made by users, not by the maintainers of the aqua registry.
 By adding a new package, users can explicitly choose to switch packages themselves.
 
-## Modifying Existing Packages
+### Modifying Existing Packages
 
 When modifying existing packages, you need to modify code under `pkgs/<package name>`.
 There are several modification methods:
@@ -64,9 +64,9 @@ aqua gr -l 1 "<package name>"
 
 Fix this and add it to the end of `version_overrides` in the original code and modify version_constraint.
 
-# Style Style Guide of pkgs/\*\*/pkg.yaml
+## Style Style Guide of pkgs/\*\*/pkg.yaml
 
-## What's pkgs/\*\*/pkg.yaml for?
+### What's pkgs/\*\*/pkg.yaml for?
 
 `pkgs/**/pkg.yaml` are test data.
 `pkgs/**/pkg.yaml` are used to test if packages can be installed properly.
@@ -74,7 +74,7 @@ Fix this and add it to the end of `version_overrides` in the original code and m
 Note that `pkgs/**/pkg.yaml` aren't lists of available versions.
 You can install any versions not listed in `pkgs/**/pkg.yaml`.
 
-## packages must not be empty
+### packages must not be empty
 
 :thumbsdown:
 
@@ -84,7 +84,7 @@ packages: []
 
 If `cmdx s` fails to fetch versions, packages may become empty.
 
-## Test multiple versions
+### Test multiple versions
 
 If the package has the field [version_overrides](/docs/reference/registry-config/version-overrides),
 please add not only the latest version but also old versions in `pkg.yaml` to test if old versions can be installed properly.
@@ -96,7 +96,7 @@ packages:
     version: v2.4.0
 ```
 
-## Don't use the short syntax `<package name>@<version>` for the old versions
+### Don't use the short syntax `<package name>@<version>` for the old versions
 
 Don't use the short syntax `<package name>@<version>` for the old version to prevent aqua-registry-updater from updating the old version.
 
@@ -117,9 +117,9 @@ packages:
   - name: scaleway/scaleway-cli@v2.4.0
 ```
 
-# Style Guide of pkgs/\*\*/registry.yaml
+## Style Guide of pkgs/\*\*/registry.yaml
 
-## Tool Naming Convention
+### Tool Naming Convention
 
 To avoid name conflicts, tool names must include `/` (namespace-like meaning).
 
@@ -143,13 +143,13 @@ This is a kind of workaround, but it works without any particular issues.
 Platforms other than GitHub like GitLab are not actively supported, but some are supported as http type packages.
 [GitLab uses `gitlab.com/<repository name>`.](../pkgs/gitlab.com)
 
-## YAML Language Server Comment is necessary at the top of pkgs/\*\*/registry.yaml
+### YAML Language Server Comment is necessary at the top of pkgs/\*\*/registry.yaml
 
 ```yaml
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/registry.json
 ```
 
-## Remove spaces in the template `{{ ` and ` }}`
+### Remove spaces in the template `{{` and `}}`
 
 :thumbsup:
 
@@ -163,7 +163,7 @@ asset: tfcmt_{{.OS}}_{{.Arch}}.tar.gz
 asset: tfcmt_{{ .OS }}_{{ .Arch }}.tar.gz
 ```
 
-## Remove characters `.!` from the end of the description
+### Remove characters `.!` from the end of the description
 
 :thumbsup:
 
@@ -177,7 +177,7 @@ description: A command-line tool that makes git easier to use with GitHub
 description: A command-line tool that makes git easier to use with GitHub.
 ```
 
-## Trim spaces
+### Trim spaces
 
 :thumbsup:
 
@@ -191,7 +191,7 @@ description: A command-line tool that makes git easier to use with GitHub
 description: "  A command-line tool that makes git easier to use with GitHub  "
 ```
 
-## Remove unneeded quotes of strings
+### Remove unneeded quotes of strings
 
 :thumbsup:
 
@@ -205,7 +205,7 @@ description: A command-line tool that makes git easier to use with GitHub
 description: "A command-line tool that makes git easier to use with GitHub"
 ```
 
-## Avoid `if` and `for` statement in templates
+### Avoid `if` and `for` statement in templates
 
 :thumbsup:
 
@@ -223,7 +223,7 @@ overrides:
 asset: 'foo.{{if eq .GOOS "windows"}}zip{{else}}tar.gz{{end}}'
 ```
 
-## `version_overrides` Style Guide
+### `version_overrides` Style Guide
 
 We decided not to rely on base settings as much as possible.
 This means we don't define settings such as `asset`, `format`, `windows_arm_emulation`, and so on on the base settings.
@@ -250,7 +250,7 @@ version_overrides:
     # ...
 ```
 
-## If the `format` is `raw`, `files[].src` isn't needed
+### If the `format` is `raw`, `files[].src` isn't needed
 
 :thumbsup:
 
@@ -269,14 +269,14 @@ files:
     src: swagger_{{.OS}}_{{.Arch}} # unneeded
 ```
 
-## Consideration about Rust
+### Consideration about Rust
 
 :warning: The author [@suzuki-shunsuke](https://github.com/suzuki-shunsuke) isn't familiar with Rust. If you have any opinion, please let us know.
 
 - linux: use the asset for not `gnu` but `musl` if both of them are supported
-  - ref: https://github.com/aquaproj/aqua-registry/pull/2153#discussion_r805116879
+  - ref: <https://github.com/aquaproj/aqua-registry/pull/2153#discussion_r805116879>
 - windows: use the asset for not `gnu` but `msvc` if both of them are supported
-  - ref: https://rust-lang.github.io/rustup/installation/windows.html
+  - ref: <https://rust-lang.github.io/rustup/installation/windows.html>
 
 :thumbsup:
 
@@ -294,7 +294,7 @@ replacements:
   windows: pc-windows-gnu
 ```
 
-## Use `overrides` instead of `format_overrides`
+### Use `overrides` instead of `format_overrides`
 
 :thumbsup:
 
@@ -314,9 +314,9 @@ format_overrides:
     format: zip
 ```
 
-## Don't use emojis as much as possible
+### Don't use emojis as much as possible
 
-In some environments, emojis are corrupted. e.g. https://github.com/aquaproj/aqua/pull/1004#issuecomment-1183710603
+In some environments, emojis are corrupted. e.g. <https://github.com/aquaproj/aqua/pull/1004#issuecomment-1183710603>
 
 :thumbsup:
 
@@ -330,7 +330,7 @@ description: CLI and Go library for CODEOWNERS files
 description: 🔒 CLI and Go library for CODEOWNERS files
 ```
 
-## Omit the setting which is equivalent to the default value
+### Omit the setting which is equivalent to the default value
 
 When `repo_owner` and `repo_name` are set, you can omit some attributes.
 
@@ -352,7 +352,7 @@ files:
   - name: eksctl
 ```
 
-## Omit `.files[].src` if it is the same as `.files[].name`
+### Omit `.files[].src` if it is the same as `.files[].name`
 
 :thumbsup:
 
@@ -369,7 +369,7 @@ files:
     src: pinact
 ```
 
-## Don't add `.exe` to `.files[].name`
+### Don't add `.exe` to `.files[].name`
 
 :thumbsup:
 
@@ -385,7 +385,7 @@ files:
   - name: pinact.exe
 ```
 
-## Omit `.exe`
+### Omit `.exe`
 
 On Windows, `.exe` is appended by default. So you don't need to append `.exe`.
 
@@ -404,7 +404,7 @@ files:
     src: pinact.exe
 ```
 
-## Use `aliases` only for keeping the compatibility
+### Use `aliases` only for keeping the compatibility
 
 The same package should have only one name, and aliases should be used only to keep the compatibility.
 `aliases` is used when the package repository is transferred usually.
@@ -418,7 +418,7 @@ search_words:
   - kubebuilder
 ```
 
-## Select `type` according to the following order
+### Select `type` according to the following order
 
 1. github_release
 1. github_content
@@ -429,7 +429,7 @@ search_words:
 
 For example, you can also use `http` type to install the package from GitHub Releases, but in that case you should use `github_release` rather than `http`.
 
-## `cargo` package name should be `crates.io/<crate name>`
+### `cargo` package name should be `crates.io/<crate name>`
 
 If you add a crate hosted at crates.io, we recommend the package name is crates.io/<crate name> such as crates.io/skim because
 

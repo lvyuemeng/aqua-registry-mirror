@@ -49,7 +49,7 @@ When there are no assets, the following causes are possible:
 3. CI skipped the release
 
 These are not problems with aqua or aqua-registry.
-For example, if such a problem occurs with [suzuki-shunsuke/pinact](https://github.com/suzuki-shunsuke/pinact) and you want to take action, it would be good to create an issue or PR at https://github.com/suzuki-shunsuke/pinact.
+For example, if such a problem occurs with [suzuki-shunsuke/pinact](https://github.com/suzuki-shunsuke/pinact) and you want to take action, it would be good to create an issue or PR at <https://github.com/suzuki-shunsuke/pinact>.
 As aqua-registry maintainers, we often encounter these problems.
 Each time, we report problems to various repositories or fix CI.
 
@@ -98,7 +98,7 @@ files:
     src: gh_{{trimV .Version}}_{{.OS}}_{{.Arch}}/bin/gh
 ```
 
-https://github.com/aquaproj/aqua-registry/blob/dc98ca0c3314ae3cface74556a295a4cb0a95918/pkgs/cli/cli/registry.yaml#L7-L9
+<https://github.com/aquaproj/aqua-registry/blob/dc98ca0c3314ae3cface74556a295a4cb0a95918/pkgs/cli/cli/registry.yaml#L7-L9>
 
 The auto-generation tool currently cannot auto-generate `files`.
 Therefore, manual modification is necessary.

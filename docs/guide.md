@@ -8,8 +8,8 @@ Instead, create a **new package** that points to the forked source.
 For example, development of [99designs/aws-vault](https://github.com/99designs/aws-vault) has slowed down, and a fork, [ByteNess/aws-vault](https://github.com/ByteNess/aws-vault), was created.
 [Homebrew switched to using the forked repository](https://github.com/Homebrew/homebrew-core/pull/226185), but in the aqua registry, we decided to keep the original package as-is and add a new package instead.
 
-- https://github.com/99designs/aws-vault/issues/1269
-- https://github.com/aquaproj/aqua-registry/pull/45430
+- <https://github.com/99designs/aws-vault/issues/1269>
+- <https://github.com/aquaproj/aqua-registry/pull/45430>
 
 This is to prevent the maintainer of a package’s source from changing without users’ knowledge.
 Whether or not to switch to a fork should be a decision made by users, not by the maintainers of the aqua registry.

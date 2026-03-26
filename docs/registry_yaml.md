@@ -30,7 +30,7 @@ Platforms other than GitHub like GitLab are not actively supported, but some are
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/registry.json
 ```
 
-## Remove spaces in the template `{{ ` and ` }}`
+## Remove spaces in the template `{{` and `}}`
 
 :thumbsup:
 
@@ -155,9 +155,9 @@ files:
 :warning: The author [@suzuki-shunsuke](https://github.com/suzuki-shunsuke) isn't familiar with Rust. If you have any opinion, please let us know.
 
 - linux: use the asset for not `gnu` but `musl` if both of them are supported
-  - ref: https://github.com/aquaproj/aqua-registry/pull/2153#discussion_r805116879
+  - ref: <https://github.com/aquaproj/aqua-registry/pull/2153#discussion_r805116879>
 - windows: use the asset for not `gnu` but `msvc` if both of them are supported
-  - ref: https://rust-lang.github.io/rustup/installation/windows.html
+  - ref: <https://rust-lang.github.io/rustup/installation/windows.html>
 
 :thumbsup:
 
@@ -197,7 +197,7 @@ format_overrides:
 
 ## Don't use emojis as much as possible
 
-In some environments, emojis are corrupted. e.g. https://github.com/aquaproj/aqua/pull/1004#issuecomment-1183710603
+In some environments, emojis are corrupted. e.g. <https://github.com/aquaproj/aqua/pull/1004#issuecomment-1183710603>
 
 :thumbsup:
 

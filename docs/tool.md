@@ -55,7 +55,7 @@ argd con [<os>] [<arch>] # Connect a container by docker exec. This is useful fo
 
 ## Format with prettier
 
-https://prettier.io/
+<https://prettier.io/>
 
 ```sh
 npm i -g prettier

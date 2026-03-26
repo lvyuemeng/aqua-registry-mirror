@@ -2,7 +2,7 @@
 
 ## Checkout the document from aqua repository
 
-The document of aqua is hosted at https://github.com/aquaproj/aqua.
+The document of aqua is hosted at <https://github.com/aquaproj/aqua>.
 So please checkout the repository and refer the document.
 
 ```sh
@@ -21,5 +21,5 @@ JSON Schema:
 
 - registry.yaml: .ai/aqua/json-schema/registry.json
 
-The link to the document https://aquaproj.github.io/docs/... can be found at .ai/aqua/website/docs/...
-If the document includes a link to https://aquaproj.github.io/docs/, please look at .ai/aqua/website/docs/...
+The link to the document <https://aquaproj.github.io/docs/>... can be found at .ai/aqua/website/docs/...
+If the document includes a link to <https://aquaproj.github.io/docs/>, please look at .ai/aqua/website/docs/...

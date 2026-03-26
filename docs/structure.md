@@ -1,6 +1,6 @@
 # Repository Structure
 
-Package-related code is located in the `pkgs/<package name>` directory of https://github.com/aquaproj/aqua-registry.
+Package-related code is located in the `pkgs/<package name>` directory of <https://github.com/aquaproj/aqua-registry>.
 e.g. [cli/cli](https://github.com/aquaproj/aqua-registry/tree/main/pkgs/cli/cli)
 Each package directory contains the following files:
 

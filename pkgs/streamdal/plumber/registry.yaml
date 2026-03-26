@@ -9,12 +9,14 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.3")
+        url: https://gh-proxy.org/https://github.com/streamdal/plumber/releases/download/{{.Version}}/{{.Asset}}
         asset: plumber-{{.OS}}
         format: raw
         supported_envs:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.6.1")
+        url: https://gh-proxy.org/https://github.com/streamdal/plumber/releases/download/{{.Version}}/{{.Asset}}
         asset: plumber-{{.OS}}
         format: raw
         supported_envs:
@@ -22,6 +24,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/streamdal/plumber/releases/download/{{.Version}}/{{.Asset}}
         asset: plumber-{{.OS}}
         format: raw
         overrides:

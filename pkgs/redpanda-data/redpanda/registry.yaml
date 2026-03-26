@@ -11,11 +11,13 @@ packages:
       - version_constraint: Version == "v21.6.3"
         no_asset: true
       - version_constraint: Version in ["v21.11.18", "v22.1.6"]
+        url: https://gh-proxy.org/https://github.com/redpanda-data/redpanda/releases/download/{{.Version}}/{{.Asset}}
         asset: rpk-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         supported_envs:
           - linux
       - version_constraint: semver("<= 21.5.5")
+        url: https://gh-proxy.org/https://github.com/redpanda-data/redpanda/releases/download/{{.Version}}/{{.Asset}}
         asset: rpk-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -23,12 +25,14 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 22.3.5")
+        url: https://gh-proxy.org/https://github.com/redpanda-data/redpanda/releases/download/{{.Version}}/{{.Asset}}
         asset: rpk-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         supported_envs:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/redpanda-data/redpanda/releases/download/{{.Version}}/{{.Asset}}
         asset: rpk-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         checksum:

@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.7.4")
+        url: https://gh-proxy.org/https://github.com/arl/gitmux/releases/download/{{.Version}}/{{.Asset}}
         asset: gitmux_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -20,6 +21,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.7.10")
+        url: https://gh-proxy.org/https://github.com/arl/gitmux/releases/download/{{.Version}}/{{.Asset}}
         asset: gitmux_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -32,6 +34,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/arl/gitmux/releases/download/{{.Version}}/{{.Asset}}
         asset: gitmux_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

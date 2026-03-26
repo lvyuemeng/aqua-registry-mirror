@@ -9,18 +9,22 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.5.0-rc1")
+        url: https://gh-proxy.org/https://github.com/docker/buildx/releases/download/{{.Version}}/{{.Asset}}
         asset: buildx-{{.Version}}.{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.5.1")
+        url: https://gh-proxy.org/https://github.com/docker/buildx/releases/download/{{.Version}}/{{.Asset}}
         asset: buildx-{{.Version}}.{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.6.3")
+        url: https://gh-proxy.org/https://github.com/docker/buildx/releases/download/{{.Version}}/{{.Asset}}
         asset: buildx-{{.Version}}.{{.OS}}-{{.Arch}}
         format: raw
       - version_constraint: semver("<= 0.10.0-rc1")
+        url: https://gh-proxy.org/https://github.com/docker/buildx/releases/download/{{.Version}}/{{.Asset}}
         asset: buildx-{{.Version}}.{{.OS}}-{{.Arch}}
         format: raw
         checksum:
@@ -32,6 +36,7 @@ packages:
             checksum:
               enabled: false # https://github.com/docker/buildx/issues/945
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/docker/buildx/releases/download/{{.Version}}/{{.Asset}}
         asset: buildx-{{.Version}}.{{.OS}}-{{.Arch}}
         format: raw
         checksum:

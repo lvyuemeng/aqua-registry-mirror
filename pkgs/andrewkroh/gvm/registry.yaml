@@ -7,15 +7,18 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.3.1-rc1"
+        url: https://gh-proxy.org/https://github.com/andrewkroh/gvm/releases/download/{{.Version}}/{{.Asset}}
         asset: gvm-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: Version == "v0.3.1"
+        url: https://gh-proxy.org/https://github.com/andrewkroh/gvm/releases/download/{{.Version}}/{{.Asset}}
         asset: gvm-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.0.3")
+        url: https://gh-proxy.org/https://github.com/andrewkroh/gvm/releases/download/{{.Version}}/{{.Asset}}
         asset: gvm-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -25,15 +28,18 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/andrewkroh/gvm/releases/download/{{.Version}}/{{.Asset}}
         asset: gvm-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/andrewkroh/gvm/releases/download/{{.Version}}/{{.Asset}}
         asset: gvm-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/andrewkroh/gvm/releases/download/{{.Version}}/{{.Asset}}
         asset: gvm-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

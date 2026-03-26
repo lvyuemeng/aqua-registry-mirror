@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.9")
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: xrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -20,6 +21,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.0.11")
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: xrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -39,6 +41,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.0.12"
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: rg-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -55,6 +58,7 @@ packages:
         supported_envs:
           - windows/amd64
       - version_constraint: Version == "0.0.13"
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: xrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -81,6 +85,7 @@ packages:
       # update project name. xrep => ripgrep
       # https://github.com/BurntSushi/ripgrep/commit/48878bbb8f5f18586ebf73fcafed46de7dc82da4
       - version_constraint: Version == "0.0.14"
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: xrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -95,6 +100,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "0.0.15"
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -109,6 +115,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.1.1")
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -131,6 +138,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.1.2"
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -145,6 +153,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.1.5")
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -167,6 +176,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.1.10")
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -181,6 +191,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "0.1.11"
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -203,6 +214,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.1.12"
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -217,6 +229,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.1.16")
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -239,6 +252,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.1.17"
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -260,6 +274,7 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: semver("<= 13.0.0")
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -280,6 +295,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/BurntSushi/ripgrep/releases/download/{{.Version}}/{{.Asset}}
         asset: ripgrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version in ["v3.00", "v3.99"]
         no_asset: true
       - version_constraint: Version == "v3.91"
+        url: https://gh-proxy.org/https://github.com/upx/upx/releases/download/{{.Version}}/{{.Asset}}
         asset: upx-{{trimV .Version}}-{{.Arch}}_{{.OS}}.{{.Format}}
         format: tar.bz2
         files:
@@ -17,6 +18,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 3.94.0")
+        url: https://gh-proxy.org/https://github.com/upx/upx/releases/download/{{.Version}}/{{.Asset}}
         asset: upx-{{trimV .Version}}-{{.Arch}}_{{.OS}}.{{.Format}}
         format: tar.xz
         files:
@@ -25,6 +27,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/upx/upx/releases/download/{{.Version}}/{{.Asset}}
         asset: upx-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: zip
         files:

@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 2.14.0")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/kiali/kiali/releases/download/{{.Version}}/{{.Asset}}
         asset: kiali-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:

@@ -24,6 +24,7 @@ packages:
     version_constraint: semver(">= 0.5.8")
     version_overrides:
       - version_constraint: semver(">= 0.3.20")
+        url: https://gh-proxy.org/https://github.com/jumppad-labs/jumppad/releases/download/{{.Version}}/{{.Asset}}
         asset: shipyard_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         checksum:
           enabled: false
@@ -66,6 +67,7 @@ packages:
           windows: Windows
         rosetta2: true
       - version_constraint: semver(">= 0.0.2")
+        url: https://gh-proxy.org/https://github.com/jumppad-labs/jumppad/releases/download/{{.Version}}/{{.Asset}}
         asset: shipyard_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         files:
           - name: shipyard

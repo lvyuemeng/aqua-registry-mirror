@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2022-03-26")
+        url: https://gh-proxy.org/https://github.com/artempyanykh/marksman/releases/download/{{.Version}}/{{.Asset}}
         asset: zeta-note-{{.OS}}
         format: raw
         replacements:
@@ -16,6 +17,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2023-04-12")
+        url: https://gh-proxy.org/https://github.com/artempyanykh/marksman/releases/download/{{.Version}}/{{.Asset}}
         asset: marksman-{{.OS}}
         format: raw
         replacements:
@@ -28,6 +30,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/artempyanykh/marksman/releases/download/{{.Version}}/{{.Asset}}
         asset: marksman-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

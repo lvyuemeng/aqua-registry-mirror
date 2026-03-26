@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.4"
+        url: https://gh-proxy.org/https://github.com/incu6us/goimports-reviser/releases/download/{{.Version}}/{{.Asset}}
         asset: goimports-reviser_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.5.1")
+        url: https://gh-proxy.org/https://github.com/incu6us/goimports-reviser/releases/download/{{.Version}}/{{.Asset}}
         asset: goimports-reviser_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -35,6 +37,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.9.0")
+        url: https://gh-proxy.org/https://github.com/incu6us/goimports-reviser/releases/download/{{.Version}}/{{.Asset}}
         asset: goimports-reviser_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -47,6 +50,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/incu6us/goimports-reviser/releases/download/{{.Version}}/{{.Asset}}
         asset: goimports-reviser_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

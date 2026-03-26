@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.2.1"
+        url: https://gh-proxy.org/https://github.com/microsoft/edit/releases/download/{{.Version}}/{{.Asset}}
         asset: edit-1.2.0-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.zst
         overrides:
@@ -24,6 +25,7 @@ packages:
           - linux
           - windows
       - version_constraint: Version == "v1.0.0"
+        url: https://gh-proxy.org/https://github.com/microsoft/edit/releases/download/{{.Version}}/{{.Asset}}
         asset: edit-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: xz
         files:
@@ -43,6 +45,7 @@ packages:
           - linux
           - windows
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/microsoft/edit/releases/download/{{.Version}}/{{.Asset}}
         asset: edit-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.zst
         overrides:

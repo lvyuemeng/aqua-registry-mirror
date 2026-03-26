@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.2")
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -26,6 +27,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.5.0")
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -45,6 +47,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.0.1")
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -66,6 +69,7 @@ packages:
       - version_constraint: Version == "v3.0.2"
         no_asset: true
       - version_constraint: semver("<= 3.0.6")
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -87,6 +91,7 @@ packages:
       - version_constraint: Version == "v3.0.7"
         no_asset: true
       - version_constraint: semver("<= 4.0.3")
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -106,6 +111,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 8.6.7")
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -126,6 +132,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 9.3.0")
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -143,6 +150,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 9.5.6")
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -159,6 +167,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v9.6.0"
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -179,6 +188,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 9.6.6")
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -195,6 +205,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/schollz/croc/releases/download/{{.Version}}/{{.Asset}}
         asset: croc_{{.Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

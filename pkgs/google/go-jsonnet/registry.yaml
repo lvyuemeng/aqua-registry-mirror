@@ -13,6 +13,7 @@ packages:
       - version_constraint: semver("<= 0.16.0")
         no_asset: true
       - version_constraint: Version == "v0.17.0"
+        url: https://gh-proxy.org/https://github.com/google/go-jsonnet/releases/download/{{.Version}}/{{.Asset}}
         asset: go-jsonnet_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -31,6 +32,7 @@ packages:
           - linux
           - windows/amd64
       - version_constraint: Version == "v0.18.0"
+        url: https://gh-proxy.org/https://github.com/google/go-jsonnet/releases/download/{{.Version}}/{{.Asset}}
         asset: go-jsonnet_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -48,6 +50,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("< 0.20.0")
+        url: https://gh-proxy.org/https://github.com/google/go-jsonnet/releases/download/{{.Version}}/{{.Asset}}
         asset: go-jsonnet_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -63,6 +66,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v0.20.0"
+        url: https://gh-proxy.org/https://github.com/google/go-jsonnet/releases/download/{{.Version}}/{{.Asset}}
         asset: go-jsonnet_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -75,6 +79,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v0.21.0"
+        url: https://gh-proxy.org/https://github.com/google/go-jsonnet/releases/download/{{.Version}}/{{.Asset}}
         asset: go-jsonnet_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -87,6 +92,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/google/go-jsonnet/releases/download/{{.Version}}/{{.Asset}}
         asset: go-jsonnet_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

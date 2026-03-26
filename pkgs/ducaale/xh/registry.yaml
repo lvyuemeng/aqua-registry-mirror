@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.7.0"
+        url: https://gh-proxy.org/https://github.com/ducaale/xh/releases/download/{{.Version}}/{{.Asset}}
         asset: xh-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -26,6 +27,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.3.3")
+        url: https://gh-proxy.org/https://github.com/ducaale/xh/releases/download/{{.Version}}/{{.Asset}}
         asset: ht-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -45,6 +47,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.6.0")
+        url: https://gh-proxy.org/https://github.com/ducaale/xh/releases/download/{{.Version}}/{{.Asset}}
         asset: ht-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -64,6 +67,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.14.1")
+        url: https://gh-proxy.org/https://github.com/ducaale/xh/releases/download/{{.Version}}/{{.Asset}}
         asset: xh-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -84,6 +88,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.21.0")
+        url: https://gh-proxy.org/https://github.com/ducaale/xh/releases/download/{{.Version}}/{{.Asset}}
         asset: xh-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -101,6 +106,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/ducaale/xh/releases/download/{{.Version}}/{{.Asset}}
         asset: xh-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

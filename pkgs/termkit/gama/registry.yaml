@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.7")
+        url: https://gh-proxy.org/https://github.com/termkit/gama/releases/download/{{.Version}}/{{.Asset}}
         asset: gama-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -17,12 +18,14 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.1.2")
+        url: https://gh-proxy.org/https://github.com/termkit/gama/releases/download/{{.Version}}/{{.Asset}}
         asset: gama-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
         replacements:
           darwin: macos
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/termkit/gama/releases/download/{{.Version}}/{{.Asset}}
         asset: gama-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

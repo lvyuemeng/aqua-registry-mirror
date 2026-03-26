@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.4")
+        url: https://gh-proxy.org/https://github.com/hirosassa/tfcmt-gitlab/releases/download/{{.Version}}/{{.Asset}}
         asset: tfcmt-gitlab_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -17,6 +18,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/hirosassa/tfcmt-gitlab/releases/download/{{.Version}}/{{.Asset}}
         asset: tfcmt-gitlab_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

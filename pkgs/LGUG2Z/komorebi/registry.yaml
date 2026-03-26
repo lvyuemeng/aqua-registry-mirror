@@ -11,6 +11,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.29")
+        url: https://gh-proxy.org/https://github.com/LGUG2Z/komorebi/releases/download/{{.Version}}/{{.Asset}}
         asset: komorebi-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -24,6 +25,7 @@ packages:
         supported_envs:
           - windows
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/LGUG2Z/komorebi/releases/download/{{.Version}}/{{.Asset}}
         asset: komorebi-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:

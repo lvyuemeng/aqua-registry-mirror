@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.5.0")
+        url: https://gh-proxy.org/https://github.com/zaghaghi/openapi-tui/releases/download/{{.Version}}/{{.Asset}}
         asset: openapi-tui-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -18,6 +19,7 @@ packages:
           asset: openapi-tui-{{.Version}}-{{.OS}}-{{.Arch}}.sha256
           algorithm: sha256
       - version_constraint: Version == "0.6.0"
+        url: https://gh-proxy.org/https://github.com/zaghaghi/openapi-tui/releases/download/{{.Version}}/{{.Asset}}
         asset: openapi-tui-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -32,6 +34,7 @@ packages:
           - darwin
           - windows
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/zaghaghi/openapi-tui/releases/download/{{.Version}}/{{.Asset}}
         asset: openapi-tui-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

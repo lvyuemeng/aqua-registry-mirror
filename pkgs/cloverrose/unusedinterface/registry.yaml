@@ -6,6 +6,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/cloverrose/unusedinterface/releases/download/{{.Version}}/{{.Asset}}
         asset: unusedinterface_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

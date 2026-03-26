@@ -11,6 +11,7 @@ packages:
       - version_constraint: Version in ["v0.16.0", "v0.17.0"]
         no_asset: true
       - version_constraint: Version == "v0.16.1"
+        url: https://gh-proxy.org/https://github.com/helmfile/vals/releases/download/{{.Version}}/{{.Asset}}
         asset: vals_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -21,6 +22,7 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v0.16.2"
+        url: https://gh-proxy.org/https://github.com/helmfile/vals/releases/download/{{.Version}}/{{.Asset}}
         asset: vals_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -28,6 +30,7 @@ packages:
           asset: vals_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.11.0")
+        url: https://gh-proxy.org/https://github.com/helmfile/vals/releases/download/{{.Version}}/{{.Asset}}
         asset: vals_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -39,6 +42,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.15.0")
+        url: https://gh-proxy.org/https://github.com/helmfile/vals/releases/download/{{.Version}}/{{.Asset}}
         asset: vals_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -50,6 +54,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/helmfile/vals/releases/download/{{.Version}}/{{.Asset}}
         asset: vals_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

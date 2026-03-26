@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.1.4")
         no_asset: true
       - version_constraint: semver("<= 0.5.4")
+        url: https://gh-proxy.org/https://github.com/Epistates/treemd/releases/download/{{.Version}}/{{.Asset}}
         asset: treemd-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -30,6 +31,7 @@ packages:
             format: zip
             asset: treemd-{{.Arch}}-{{.OS}}.exe.{{.Format}}
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/Epistates/treemd/releases/download/{{.Version}}/{{.Asset}}
         asset: treemd-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

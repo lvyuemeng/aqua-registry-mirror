@@ -8,6 +8,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
+        url: https://gh-proxy.org/https://github.com/vmware/govmomi/releases/download/{{.Version}}/{{.Asset}}
         asset: govc_{{.OS}}_{{.Arch}}.{{.Format}}
         format: gz
         rosetta2: true
@@ -23,6 +24,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.18.0"
+        url: https://gh-proxy.org/https://github.com/vmware/govmomi/releases/download/{{.Version}}/{{.Asset}}
         asset: govc_{{.OS}}_{{.Arch}}.{{.Format}}
         format: gz
         rosetta2: true
@@ -45,6 +47,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.24.0")
+        url: https://gh-proxy.org/https://github.com/vmware/govmomi/releases/download/{{.Version}}/{{.Asset}}
         asset: govc_{{.OS}}_{{.Arch}}.{{.Format}}
         format: gz
         rosetta2: true
@@ -61,6 +64,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.25.0"
+        url: https://gh-proxy.org/https://github.com/vmware/govmomi/releases/download/{{.Version}}/{{.Asset}}
         asset: govc_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -77,6 +81,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.27.4")
+        url: https://gh-proxy.org/https://github.com/vmware/govmomi/releases/download/{{.Version}}/{{.Asset}}
         asset: govc_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -94,6 +99,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/vmware/govmomi/releases/download/{{.Version}}/{{.Asset}}
         asset: govc_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

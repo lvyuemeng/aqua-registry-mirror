@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.1.0"
+        url: https://gh-proxy.org/https://github.com/caarlos0/fork-cleaner/releases/download/{{.Version}}/{{.Asset}}
         asset: fork-cleaner_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v2.1.0"
+        url: https://gh-proxy.org/https://github.com/caarlos0/fork-cleaner/releases/download/{{.Version}}/{{.Asset}}
         asset: fork-cleaner_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -31,6 +33,7 @@ packages:
           asset: fork-cleaner_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v2.2.0"
+        url: https://gh-proxy.org/https://github.com/caarlos0/fork-cleaner/releases/download/{{.Version}}/{{.Asset}}
         asset: fork-cleaner_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -39,6 +42,7 @@ packages:
           asset: fork-cleaner_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v2.2.1"
+        url: https://gh-proxy.org/https://github.com/caarlos0/fork-cleaner/releases/download/{{.Version}}/{{.Asset}}
         asset: fork-cleaner_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -49,6 +53,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.0.8")
+        url: https://gh-proxy.org/https://github.com/caarlos0/fork-cleaner/releases/download/{{.Version}}/{{.Asset}}
         asset: fork-cleaner_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -60,6 +65,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.2.0")
+        url: https://gh-proxy.org/https://github.com/caarlos0/fork-cleaner/releases/download/{{.Version}}/{{.Asset}}
         asset: fork-cleaner_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -75,6 +81,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.8.0")
+        url: https://gh-proxy.org/https://github.com/caarlos0/fork-cleaner/releases/download/{{.Version}}/{{.Asset}}
         asset: fork-cleaner_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -86,6 +93,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.0.3")
+        url: https://gh-proxy.org/https://github.com/caarlos0/fork-cleaner/releases/download/{{.Version}}/{{.Asset}}
         asset: fork-cleaner_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -97,6 +105,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 2.3.1")
+        url: https://gh-proxy.org/https://github.com/caarlos0/fork-cleaner/releases/download/{{.Version}}/{{.Asset}}
         asset: fork-cleaner_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -109,6 +118,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/caarlos0/fork-cleaner/releases/download/{{.Version}}/{{.Asset}}
         asset: fork-cleaner_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

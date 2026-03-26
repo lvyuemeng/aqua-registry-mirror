@@ -11,11 +11,13 @@ packages:
       - version_constraint: semver("<= 0.3.0") || Version == "v1.2.1"
         no_asset: true
       - version_constraint: Version == "v0.4.0"
+        url: https://gh-proxy.org/https://github.com/gitleaks/gitleaks/releases/download/{{.Version}}/{{.Asset}}
         asset: gitleaks-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 7.6.1")
+        url: https://gh-proxy.org/https://github.com/gitleaks/gitleaks/releases/download/{{.Version}}/{{.Asset}}
         asset: gitleaks-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -25,6 +27,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 8.1.2")
+        url: https://gh-proxy.org/https://github.com/gitleaks/gitleaks/releases/download/{{.Version}}/{{.Asset}}
         asset: gitleaks_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -43,6 +46,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 8.2.7")
+        url: https://gh-proxy.org/https://github.com/gitleaks/gitleaks/releases/download/{{.Version}}/{{.Asset}}
         asset: gitleaks_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -56,6 +60,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 8.17.0")
+        url: https://gh-proxy.org/https://github.com/gitleaks/gitleaks/releases/download/{{.Version}}/{{.Asset}}
         asset: gitleaks_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -68,6 +73,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/gitleaks/gitleaks/releases/download/{{.Version}}/{{.Asset}}
         asset: gitleaks_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

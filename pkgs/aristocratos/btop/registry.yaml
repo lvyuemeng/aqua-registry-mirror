@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.7")
+        url: https://gh-proxy.org/https://github.com/aristocratos/btop/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{trimV .Version}}-{{.OS}}-armel.{{.Format}}
         format: tbz
         files:
@@ -21,6 +22,7 @@ packages:
         supported_envs:
           - linux
       - version_constraint: semver("<= 1.0.16")
+        url: https://gh-proxy.org/https://github.com/aristocratos/btop/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tbz
         files:
@@ -32,6 +34,7 @@ packages:
         supported_envs:
           - linux
       - version_constraint: semver("<= 1.0.24")
+        url: https://gh-proxy.org/https://github.com/aristocratos/btop/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{trimV .Version}}-{{.Arch}}-{{.OS}}-musl.{{.Format}}
         format: tbz
         files:
@@ -43,6 +46,7 @@ packages:
         supported_envs:
           - linux
       - version_constraint: Version == "v1.1.0"
+        url: https://gh-proxy.org/https://github.com/aristocratos/btop/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{trimV .Version}}-{{.Arch}}-{{.OS}}-musl.{{.Format}}
         format: tbz
         files:
@@ -61,6 +65,7 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v1.1.1"
+        url: https://gh-proxy.org/https://github.com/aristocratos/btop/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{trimV .Version}}-{{.Arch}}-{{.OS}}-musl.{{.Format}}
         format: tbz
         files:
@@ -79,6 +84,7 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v1.1.2"
+        url: https://gh-proxy.org/https://github.com/aristocratos/btop/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{trimV .Version}}-{{.Arch}}-{{.OS}}-musl.{{.Format}}
         format: tbz
         files:
@@ -97,6 +103,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.2.13")
+        url: https://gh-proxy.org/https://github.com/aristocratos/btop/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{.Arch}}-{{.OS}}-musl.{{.Format}}
         format: tbz
         files:
@@ -115,6 +122,7 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v1.2.13"
+        url: https://gh-proxy.org/https://github.com/aristocratos/btop/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{.Arch}}-{{.OS}}-musl.{{.Format}}
         format: tbz
         files:
@@ -133,6 +141,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.4.5")
+        url: https://gh-proxy.org/https://github.com/aristocratos/btop/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{.Arch}}-{{.OS}}-musl.{{.Format}}
         format: tbz
         files:
@@ -144,6 +153,7 @@ packages:
         supported_envs:
           - linux
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/aristocratos/btop/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tbz
         files:

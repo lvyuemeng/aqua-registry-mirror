@@ -8,6 +8,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.1.0")
+        url: https://gh-proxy.org/https://github.com/SUPERCILEX/fuc/releases/download/{{.Version}}/{{.Asset}}
         asset: rmz-{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -21,6 +22,7 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 2.2.0")
+        url: https://gh-proxy.org/https://github.com/SUPERCILEX/fuc/releases/download/{{.Version}}/{{.Asset}}
         asset: rmz-{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -38,6 +40,7 @@ packages:
             replacements:
               linux: unknown-linux-gnu
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/SUPERCILEX/fuc/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Arch}}-{{.OS}}-rmz"
         format: raw
         replacements:

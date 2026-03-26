@@ -8,6 +8,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.1.6")
+        url: https://gh-proxy.org/https://github.com/huseyinbabal/taws/releases/download/{{.Version}}/{{.Asset}}
         asset: taws-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -25,6 +26,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/huseyinbabal/taws/releases/download/{{.Version}}/{{.Asset}}
         asset: taws-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

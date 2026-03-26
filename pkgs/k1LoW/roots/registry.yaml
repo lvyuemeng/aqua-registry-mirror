@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.1.0")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/k1LoW/roots/releases/download/{{.Version}}/{{.Asset}}
         asset: roots_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

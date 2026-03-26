@@ -24,6 +24,7 @@ packages:
     asset: comtrya-{{.Arch}}-{{.OS}}
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/comtrya/comtrya/releases/download/{{.Version}}/{{.Asset}}
         asset: comtrya
         supported_envs:
           - linux/amd64

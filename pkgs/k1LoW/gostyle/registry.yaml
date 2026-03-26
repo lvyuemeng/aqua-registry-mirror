@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version in ["v0.14.1", "v0.20.1"]
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/k1LoW/gostyle/releases/download/{{.Version}}/{{.Asset}}
         asset: gostyle_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

@@ -10,6 +10,7 @@ packages:
       - version_constraint: semver("<= 0.1.1-alpha.10")
         no_asset: true
       - version_constraint: semver("<= 0.1.2-alpha.1")
+        url: https://gh-proxy.org/https://github.com/IvanIsCoding/celq/releases/download/{{.Version}}/{{.Asset}}
         asset: celq-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -30,6 +31,7 @@ packages:
           - darwin/arm64
           - windows/amd64
       - version_constraint: semver("<= 0.2.0-alpha.1")
+        url: https://gh-proxy.org/https://github.com/IvanIsCoding/celq/releases/download/{{.Version}}/{{.Asset}}
         asset: celq-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -43,6 +45,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.2.0-beta.1")
+        url: https://gh-proxy.org/https://github.com/IvanIsCoding/celq/releases/download/{{.Version}}/{{.Asset}}
         asset: celq-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -60,6 +63,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/IvanIsCoding/celq/releases/download/{{.Version}}/{{.Asset}}
         asset: celq-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

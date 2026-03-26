@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.0.10")
         type: go_install
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/edoardottt/depsdev/releases/download/{{.Version}}/{{.Asset}}
         asset: depsdev_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

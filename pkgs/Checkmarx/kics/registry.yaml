@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.1.2")
+        url: https://gh-proxy.org/https://github.com/Checkmarx/kics/releases/download/{{.Version}}/{{.Asset}}
         asset: kics_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -23,6 +24,7 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: semver("<= 1.2.3")
+        url: https://gh-proxy.org/https://github.com/Checkmarx/kics/releases/download/{{.Version}}/{{.Asset}}
         asset: kics_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -41,6 +43,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.4.4")
+        url: https://gh-proxy.org/https://github.com/Checkmarx/kics/releases/download/{{.Version}}/{{.Asset}}
         asset: kics_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -54,6 +57,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.5.1")
+        url: https://gh-proxy.org/https://github.com/Checkmarx/kics/releases/download/{{.Version}}/{{.Asset}}
         asset: kics_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

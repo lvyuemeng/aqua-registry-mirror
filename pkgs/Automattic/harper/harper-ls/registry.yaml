@@ -10,6 +10,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.11.0")
+        url: https://gh-proxy.org/https://github.com/Automattic/harper/releases/download/{{.Version}}/{{.Asset}}
         asset: harper-ls-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -23,6 +24,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/Automattic/harper/releases/download/{{.Version}}/{{.Asset}}
         asset: harper-ls-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

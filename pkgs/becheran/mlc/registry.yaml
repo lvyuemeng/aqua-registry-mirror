@@ -9,10 +9,12 @@ packages:
       - version_constraint: Version in ["v0.13.2", "v0.13.10", "v0.15.1"]
         no_asset: true
       - version_constraint: semver("<= 0.13.5")
+        url: https://gh-proxy.org/https://github.com/becheran/mlc/releases/download/{{.Version}}/{{.Asset}}
         asset: mlc
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.14.3")
+        url: https://gh-proxy.org/https://github.com/becheran/mlc/releases/download/{{.Version}}/{{.Asset}}
         asset: mlc-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -23,6 +25,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.15.4")
+        url: https://gh-proxy.org/https://github.com/becheran/mlc/releases/download/{{.Version}}/{{.Asset}}
         asset: mlc-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -40,6 +43,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.0.0")
+        url: https://gh-proxy.org/https://github.com/becheran/mlc/releases/download/{{.Version}}/{{.Asset}}
         asset: mlc-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -52,6 +56,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/becheran/mlc/releases/download/{{.Version}}/{{.Asset}}
         asset: mlc-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true

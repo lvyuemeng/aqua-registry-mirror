@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version in ["v0.5.9-beta-1", "v0.5.9"]
         no_asset: true
       - version_constraint: Version == "v0.3.5"
+        url: https://gh-proxy.org/https://github.com/abice/go-enum/releases/download/{{.Version}}/{{.Asset}}
         asset: go-enum_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -22,6 +23,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v0.3.6"
+        url: https://gh-proxy.org/https://github.com/abice/go-enum/releases/download/{{.Version}}/{{.Asset}}
         asset: go-enum_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -33,6 +35,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.5.9-beta-2"
+        url: https://gh-proxy.org/https://github.com/abice/go-enum/releases/download/{{.Version}}/{{.Asset}}
         asset: go-enum_{{.OS}}_{{.Arch}}
         format: raw
         replacements:
@@ -47,6 +50,7 @@ packages:
       - version_constraint: semver("<= 0.3.4")
         no_asset: true
       - version_constraint: semver("<= 0.3.11")
+        url: https://gh-proxy.org/https://github.com/abice/go-enum/releases/download/{{.Version}}/{{.Asset}}
         asset: go-enum_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -60,6 +64,7 @@ packages:
           asset: go-enum_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/abice/go-enum/releases/download/{{.Version}}/{{.Asset}}
         asset: go-enum_{{.OS}}_{{.Arch}}
         format: raw
         replacements:

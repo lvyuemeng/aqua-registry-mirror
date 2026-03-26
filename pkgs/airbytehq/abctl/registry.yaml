@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.2"
+        url: https://gh-proxy.org/https://github.com/airbytehq/abctl/releases/download/{{.Version}}/{{.Asset}}
         asset: abctl-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -19,6 +20,7 @@ packages:
               - darwin/amd64
             format: tar.gz
       - version_constraint: semver("<= 0.13.1")
+        url: https://gh-proxy.org/https://github.com/airbytehq/abctl/releases/download/{{.Version}}/{{.Asset}}
         asset: abctl-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -29,6 +31,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/airbytehq/abctl/releases/download/{{.Version}}/{{.Asset}}
         asset: abctl-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

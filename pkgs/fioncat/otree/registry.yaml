@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/fioncat/otree/releases/download/{{.Version}}/{{.Asset}}
         asset: otree-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -23,6 +24,7 @@ packages:
           - linux/amd64
           - darwin/arm64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/fioncat/otree/releases/download/{{.Version}}/{{.Asset}}
         asset: otree-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v2.3.2.post0"
+        url: https://gh-proxy.org/https://github.com/localstack/localstack-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: localstack-cli-2.3.2-{{.OS}}-{{.Arch}}-onefile.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -22,6 +23,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v3.0.2.post0"
+        url: https://gh-proxy.org/https://github.com/localstack/localstack-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: localstack-cli-3.0.2-{{.OS}}-{{.Arch}}-onefile.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -37,6 +39,7 @@ packages:
       - version_constraint: semver("<= 2.0.1")
         no_asset: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/localstack/localstack-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: localstack-cli-{{trimV .Version}}-{{.OS}}-{{.Arch}}-onefile.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

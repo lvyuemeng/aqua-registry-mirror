@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.1")
+        url: https://gh-proxy.org/https://github.com/KusionStack/kusion/releases/download/{{.Version}}/{{.Asset}}
         asset: kusion-{{.OS}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -21,6 +22,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.5.3")
+        url: https://gh-proxy.org/https://github.com/KusionStack/kusion/releases/download/{{.Version}}/{{.Asset}}
         asset: kusion-{{.OS}}.{{.Format}}
         format: tgz
         files:
@@ -42,6 +44,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.7.2")
+        url: https://gh-proxy.org/https://github.com/KusionStack/kusion/releases/download/{{.Version}}/{{.Asset}}
         asset: kusion-{{.OS}}.{{.Format}}
         format: tgz
         files:
@@ -65,6 +68,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.10.0")
+        url: https://gh-proxy.org/https://github.com/KusionStack/kusion/releases/download/{{.Version}}/{{.Asset}}
         asset: kusion_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -75,6 +79,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/KusionStack/kusion/releases/download/{{.Version}}/{{.Asset}}
         asset: kusion_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

@@ -10,6 +10,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.5.0")
+        url: https://gh-proxy.org/https://github.com/int128/kubelogin/releases/download/{{.Version}}/{{.Asset}}
         asset: kubelogin_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -19,6 +20,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.8.2")
+        url: https://gh-proxy.org/https://github.com/int128/kubelogin/releases/download/{{.Version}}/{{.Asset}}
         asset: kubelogin_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -32,6 +34,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.18.0")
+        url: https://gh-proxy.org/https://github.com/int128/kubelogin/releases/download/{{.Version}}/{{.Asset}}
         asset: kubelogin_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -45,6 +48,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.22.1")
+        url: https://gh-proxy.org/https://github.com/int128/kubelogin/releases/download/{{.Version}}/{{.Asset}}
         asset: kubelogin_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -54,6 +58,7 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: semver("<= 1.31.1")
+        url: https://gh-proxy.org/https://github.com/int128/kubelogin/releases/download/{{.Version}}/{{.Asset}}
         asset: kubelogin_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -62,6 +67,7 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/int128/kubelogin/releases/download/{{.Version}}/{{.Asset}}
         asset: kubelogin_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:

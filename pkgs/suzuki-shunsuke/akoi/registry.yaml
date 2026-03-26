@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "0.3.0"
         no_asset: true
       - version_constraint: semver("<= 0.12.0")
+        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/akoi/releases/download/{{.Version}}/{{.Asset}}
         asset: akoi_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -22,6 +23,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/akoi/releases/download/{{.Version}}/{{.Asset}}
         asset: akoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true

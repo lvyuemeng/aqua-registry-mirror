@@ -11,6 +11,7 @@ packages:
     asset: scaleway-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}
     version_overrides:
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/scaleway/scaleway-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: scw-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         supported_envs:
           - darwin

@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v1.9-alpha.30"
         no_asset: true
       - version_constraint: Version == "release-0.1.6"
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/kubebuilder/releases/download/{{.Version}}/{{.Asset}}
         asset: kubebuilder_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -23,6 +24,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v1beta1.2"
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/kubebuilder/releases/download/{{.Version}}/{{.Asset}}
         asset: kubebuilder-release-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -33,6 +35,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.1.12")
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/kubebuilder/releases/download/{{.Version}}/{{.Asset}}
         asset: kubebuilder_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -49,6 +52,7 @@ packages:
       - version_constraint: semver("<= 1.0.0-beta1.1")
         no_asset: true
       - version_constraint: semver("<= 2.0.0")
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/kubebuilder/releases/download/{{.Version}}/{{.Asset}}
         asset: kubebuilder_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -63,6 +67,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.3.2")
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/kubebuilder/releases/download/{{.Version}}/{{.Asset}}
         asset: kubebuilder_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -77,6 +82,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 3.3.0")
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/kubebuilder/releases/download/{{.Version}}/{{.Asset}}
         asset: kubebuilder_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -88,6 +94,7 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/kubebuilder/releases/download/{{.Version}}/{{.Asset}}
         asset: kubebuilder_{{.OS}}_{{.Arch}}
         format: raw
         checksum:

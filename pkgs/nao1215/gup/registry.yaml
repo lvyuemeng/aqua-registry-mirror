@@ -9,6 +9,7 @@ packages:
       - version_constraint: semver("<= 0.7.1")
         no_asset: true
       - version_constraint: semver("<= 0.22.0")
+        url: https://gh-proxy.org/https://github.com/nao1215/gup/releases/download/{{.Version}}/{{.Asset}}
         asset: gup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -24,6 +25,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/nao1215/gup/releases/download/{{.Version}}/{{.Asset}}
         asset: gup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

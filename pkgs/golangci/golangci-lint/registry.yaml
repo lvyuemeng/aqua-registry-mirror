@@ -12,6 +12,7 @@ packages:
       - version_constraint: semver("<= 1.3.4")
         no_asset: true
       - version_constraint: semver("<= 1.17.1")
+        url: https://gh-proxy.org/https://github.com/golangci/golangci-lint/releases/download/{{.Version}}/{{.Asset}}
         asset: golangci-lint-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -28,6 +29,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.36.0")
+        url: https://gh-proxy.org/https://github.com/golangci/golangci-lint/releases/download/{{.Version}}/{{.Asset}}
         asset: golangci-lint-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -40,6 +42,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.42.0")
+        url: https://gh-proxy.org/https://github.com/golangci/golangci-lint/releases/download/{{.Version}}/{{.Asset}}
         asset: golangci-lint-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -51,6 +54,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("< 2.8.0")
+        url: https://gh-proxy.org/https://github.com/golangci/golangci-lint/releases/download/{{.Version}}/{{.Asset}}
         asset: golangci-lint-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -61,6 +65,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/golangci/golangci-lint/releases/download/{{.Version}}/{{.Asset}}
         asset: golangci-lint-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

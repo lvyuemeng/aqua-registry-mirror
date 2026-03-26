@@ -9,6 +9,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.1.0")
+        url: https://gh-proxy.org/https://github.com/buildkite/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: bk-{{.OS}}-{{.Arch}}-{{trimV .Version}}
         format: raw
         rosetta2: true
@@ -18,25 +19,31 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v1.2.0"
+        url: https://gh-proxy.org/https://github.com/buildkite/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: cli-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: Version == "v2.0.0"
+        url: https://gh-proxy.org/https://github.com/buildkite/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: cli-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
         complete_windows_ext: false
       - version_constraint: Version == "v3.0.0-beta.20240202"
+        url: https://gh-proxy.org/https://github.com/buildkite/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: bk_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
       - version_constraint: Version == "v3.0.0-beta.20240326"
+        url: https://gh-proxy.org/https://github.com/buildkite/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: bk_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
       - version_constraint: Version == "v3.0.0-beta.20240418"
+        url: https://gh-proxy.org/https://github.com/buildkite/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Version}}_{{.OS}}_{{.Arch}}"
         format: raw
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/buildkite/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: bk_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         files:

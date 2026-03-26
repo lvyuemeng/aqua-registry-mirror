@@ -6,6 +6,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.8.4")
+        url: https://gh-proxy.org/https://github.com/mashiike/stefunny/releases/download/{{.Version}}/{{.Asset}}
         asset: stefunny_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -13,6 +14,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/mashiike/stefunny/releases/download/{{.Version}}/{{.Asset}}
         asset: stefunny_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

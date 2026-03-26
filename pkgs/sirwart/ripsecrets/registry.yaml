@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.2"
+        url: https://gh-proxy.org/https://github.com/sirwart/ripsecrets/releases/download/{{.Version}}/{{.Asset}}
         asset: secrets-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -24,6 +25,7 @@ packages:
           - name: ripsecrets
             src: secrets-{{trimV .Version}}-{{.Arch}}-{{.OS}}/secrets
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/sirwart/ripsecrets/releases/download/{{.Version}}/{{.Asset}}
         asset: ripsecrets-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

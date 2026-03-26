@@ -9,6 +9,7 @@ packages:
       - version_constraint: Version == "v0.1.16"
         no_asset: true
       - version_constraint: semver("<= 0.7.0")
+        url: https://gh-proxy.org/https://github.com/jdx/usage/releases/download/{{.Version}}/{{.Asset}}
         asset: usage-universal-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -26,6 +27,7 @@ packages:
       - version_constraint: semver("<= 0.7.2")
         no_asset: true
       - version_constraint: semver("<= 2.2.0")
+        url: https://gh-proxy.org/https://github.com/jdx/usage/releases/download/{{.Version}}/{{.Asset}}
         asset: usage-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -42,6 +44,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 2.15.1")
+        url: https://gh-proxy.org/https://github.com/jdx/usage/releases/download/{{.Version}}/{{.Asset}}
         asset: usage-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -59,6 +62,7 @@ packages:
           - darwin
         github_immutable_release: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/jdx/usage/releases/download/{{.Version}}/{{.Asset}}
         asset: usage-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

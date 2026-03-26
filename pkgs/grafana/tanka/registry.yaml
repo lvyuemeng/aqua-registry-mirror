@@ -11,6 +11,7 @@ packages:
       - version_constraint: Version == "v0.27.0"
         no_asset: true
       - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/grafana/tanka/releases/download/{{.Version}}/{{.Asset}}
         asset: tk_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -18,6 +19,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.10.0")
+        url: https://gh-proxy.org/https://github.com/grafana/tanka/releases/download/{{.Version}}/{{.Asset}}
         asset: tk-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -25,11 +27,13 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.20.0")
+        url: https://gh-proxy.org/https://github.com/grafana/tanka/releases/download/{{.Version}}/{{.Asset}}
         asset: tk-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/grafana/tanka/releases/download/{{.Version}}/{{.Asset}}
         asset: tk-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

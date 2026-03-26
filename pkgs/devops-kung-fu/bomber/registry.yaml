@@ -7,6 +7,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.1")
+        url: https://gh-proxy.org/https://github.com/devops-kung-fu/bomber/releases/download/{{.Version}}/{{.Asset}}
         asset: bomber_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -26,6 +27,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.3.2")
+        url: https://gh-proxy.org/https://github.com/devops-kung-fu/bomber/releases/download/{{.Version}}/{{.Asset}}
         asset: bomber_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -40,6 +42,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.3.5")
+        url: https://gh-proxy.org/https://github.com/devops-kung-fu/bomber/releases/download/{{.Version}}/{{.Asset}}
         asset: bomber_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -51,6 +54,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.4.1")
+        url: https://gh-proxy.org/https://github.com/devops-kung-fu/bomber/releases/download/{{.Version}}/{{.Asset}}
         asset: bomber_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -62,6 +66,7 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/devops-kung-fu/bomber/releases/download/{{.Version}}/{{.Asset}}
         asset: bomber_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:

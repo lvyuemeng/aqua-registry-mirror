@@ -8,7 +8,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "1.0.1"
-        url: https://gh-proxy.org/https://github.com/qarmin/czkawka/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}_czkawka_cli"
         format: raw
         replacements:
@@ -25,7 +24,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "1.3.0"
-        url: https://gh-proxy.org/https://github.com/qarmin/czkawka/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}_czkawka_cli"
         format: raw
         replacements:
@@ -38,13 +36,11 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.0.0")
-        url: https://gh-proxy.org/https://github.com/qarmin/czkawka/releases/download/{{.Version}}/{{.Asset}}
         asset: czkawka_cli
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 2.3.0")
-        url: https://gh-proxy.org/https://github.com/qarmin/czkawka/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}_czkawka_cli"
         format: raw
         replacements:
@@ -56,7 +52,6 @@ packages:
       - version_constraint: semver("<= 2.3.2")
         no_asset: true
       - version_constraint: semver("<= 9.0.0")
-        url: https://gh-proxy.org/https://github.com/qarmin/czkawka/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}_czkawka_cli"
         format: raw
         replacements:
@@ -67,7 +62,6 @@ packages:
               - linux/arm64
             asset: "{{.OS}}_czkawka_cli_arm"
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/qarmin/czkawka/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}_czkawka_cli_{{.Arch}}"
         format: raw
         overrides:

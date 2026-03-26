@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.1-alpha")
-        url: https://gh-proxy.org/https://github.com/amber-lang/amber/releases/download/{{.Version}}/{{.Asset}}
         asset: amber_{{.OS}}_{{.Arch}}
         format: raw
         replacements:
@@ -20,7 +19,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/amber-lang/amber/releases/download/{{.Version}}/{{.Asset}}
         asset: amber-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:

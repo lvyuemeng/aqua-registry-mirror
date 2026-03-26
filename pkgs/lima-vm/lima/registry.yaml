@@ -20,7 +20,6 @@ packages:
       - version_constraint: Version == "v0.7.0"
         no_asset: true
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/lima-vm/lima/releases/download/{{.Version}}/{{.Asset}}
         asset: lima-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -33,7 +32,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("< 0.23.0")
-        url: https://gh-proxy.org/https://github.com/lima-vm/lima/releases/download/{{.Version}}/{{.Asset}}
         asset: lima-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -52,7 +50,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/lima-vm/lima/releases/download/{{.Version}}/{{.Asset}}
         asset: lima-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

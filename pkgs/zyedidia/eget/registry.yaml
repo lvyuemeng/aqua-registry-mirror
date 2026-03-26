@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/zyedidia/eget/releases/download/{{.Version}}/{{.Asset}}
         asset: eget-{{trimV .Version}}-{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -18,7 +17,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.0.1")
-        url: https://gh-proxy.org/https://github.com/zyedidia/eget/releases/download/{{.Version}}/{{.Asset}}
         asset: eget-{{trimV .Version}}-{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -30,7 +28,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/zyedidia/eget/releases/download/{{.Version}}/{{.Asset}}
         asset: eget-{{trimV .Version}}-{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

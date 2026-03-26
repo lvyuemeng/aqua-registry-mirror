@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version in ["v3.2.0", "3.2.381", "3.2.382", "3.2.383", "v3.5.19", "v3.7.0", "v3.10.159"]
         no_asset: true
       - version_constraint: Version == "v3.2.6"
-        url: https://gh-proxy.org/https://github.com/jenkins-x/jx/releases/download/{{.Version}}/{{.Asset}}
         asset: jx-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -25,7 +24,6 @@ packages:
           - darwin
           - windows
       - version_constraint: Version == "v2.1.156"
-        url: https://gh-proxy.org/https://github.com/jenkins-x/jx/releases/download/{{.Version}}/{{.Asset}}
         asset: jx-cli-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -38,7 +36,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.0.1")
-        url: https://gh-proxy.org/https://github.com/jenkins-x/jx/releases/download/{{.Version}}/{{.Asset}}
         asset: jx-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -49,7 +46,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.1.155")
-        url: https://gh-proxy.org/https://github.com/jenkins-x/jx/releases/download/{{.Version}}/{{.Asset}}
         asset: jx-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -66,7 +62,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.2.5")
-        url: https://gh-proxy.org/https://github.com/jenkins-x/jx/releases/download/{{.Version}}/{{.Asset}}
         asset: jx-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -79,7 +74,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 3.2.261")
-        url: https://gh-proxy.org/https://github.com/jenkins-x/jx/releases/download/{{.Version}}/{{.Asset}}
         asset: jx-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -92,7 +86,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 3.3.4")
-        url: https://gh-proxy.org/https://github.com/jenkins-x/jx/releases/download/{{.Version}}/{{.Asset}}
         asset: jx-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -105,7 +98,6 @@ packages:
       - version_constraint: semver("<= 3.4.2")
         no_asset: true
       - version_constraint: semver("<= 3.10.182")
-        url: https://gh-proxy.org/https://github.com/jenkins-x/jx/releases/download/{{.Version}}/{{.Asset}}
         asset: jx-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -116,7 +108,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/jenkins-x/jx/releases/download/{{.Version}}/{{.Asset}}
         asset: jx-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

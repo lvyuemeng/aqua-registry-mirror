@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.4")
-        url: https://gh-proxy.org/https://github.com/projectdiscovery/proxify/releases/download/{{.Version}}/{{.Asset}}
         asset: proxify_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -22,7 +21,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.0.6")
-        url: https://gh-proxy.org/https://github.com/projectdiscovery/proxify/releases/download/{{.Version}}/{{.Asset}}
         asset: proxify_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         replacements:
@@ -34,7 +32,6 @@ packages:
       - version_constraint: Version == "v0.0.7"
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/projectdiscovery/proxify/releases/download/{{.Version}}/{{.Asset}}
         asset: proxify_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

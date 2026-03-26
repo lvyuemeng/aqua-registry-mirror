@@ -14,7 +14,6 @@ packages:
         type: cargo
         crate: shellharden
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/anordal/shellharden/releases/download/{{.Version}}/{{.Asset}}
         asset: shellharden-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

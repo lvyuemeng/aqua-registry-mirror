@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version in ["0.0.1", "v0.8.0"]
         no_asset: true
       - version_constraint: Version == "v0.6.8"
-        url: https://gh-proxy.org/https://github.com/stackrox/kube-linter/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-linter-{{.OS}}
         format: raw
         overrides:
@@ -32,7 +31,6 @@ packages:
             - --signature
             - https://github.com/stackrox/kube-linter/releases/download/{{.Version}}/{{.Asset}}.sig
       - version_constraint: semver("<= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/stackrox/kube-linter/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-linter-{{.OS}}.{{.Format}}
         format: tar.gz
         supported_envs:
@@ -40,7 +38,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.6.7")
-        url: https://gh-proxy.org/https://github.com/stackrox/kube-linter/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-linter-{{.OS}}
         format: raw
         overrides:
@@ -57,7 +54,6 @@ packages:
             - --signature
             - https://github.com/stackrox/kube-linter/releases/download/{{.Version}}/{{.Asset}}.sig
       - version_constraint: semver("<= 0.7.6")
-        url: https://gh-proxy.org/https://github.com/stackrox/kube-linter/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-linter-{{.OS}}
         format: raw
         overrides:
@@ -80,7 +76,6 @@ packages:
             - --signature
             - https://github.com/stackrox/kube-linter/releases/download/{{.Version}}/{{.Asset}}.sig
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/stackrox/kube-linter/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-linter-{{.OS}}
         format: raw
         overrides:

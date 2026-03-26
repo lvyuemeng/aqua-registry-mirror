@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.8")
-        url: https://gh-proxy.org/https://github.com/tkuchiki/alp/releases/download/{{.Version}}/{{.Asset}}
         asset: alp_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -20,7 +19,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/tkuchiki/alp/releases/download/{{.Version}}/{{.Asset}}
         asset: alp_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

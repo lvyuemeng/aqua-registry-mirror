@@ -45,7 +45,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver(">= 1.0.35")
-        url: https://gh-proxy.org/https://github.com/WebAssembly/wabt/releases/download/{{.Version}}/{{.Asset}}
         asset: wabt-{{.Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

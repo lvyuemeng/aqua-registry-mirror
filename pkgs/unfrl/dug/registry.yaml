@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.74")
-        url: https://gh-proxy.org/https://github.com/unfrl/dug/releases/download/{{.Version}}/{{.Asset}}
         asset: dug-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -23,7 +22,6 @@ packages:
           - goos: windows
             asset: dug
       - version_constraint: Version == "0.0.75"
-        url: https://gh-proxy.org/https://github.com/unfrl/dug/releases/download/{{.Version}}/{{.Asset}}
         asset: dug.{{.Version}}.{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -42,7 +40,6 @@ packages:
             format: raw
             asset: dug
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/unfrl/dug/releases/download/{{.Version}}/{{.Asset}}
         asset: dug.{{.Version}}.{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true

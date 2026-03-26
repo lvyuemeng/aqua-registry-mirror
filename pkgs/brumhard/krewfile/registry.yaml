@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.6.1")
         type: go_install
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/brumhard/krewfile/releases/download/{{.Version}}/{{.Asset}}
         asset: krewfile_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

@@ -24,12 +24,10 @@ packages:
       - version_constraint: semver(">= 4.5.0")
         rosetta2: false
       - version_constraint: semver(">= 4.0.3")
-        url: https://gh-proxy.org/https://github.com/kastenhq/external-tools/releases/download/{{.Version}}/{{.Asset}}
         asset: k10multicluster_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: false
       - version_constraint: semver("< 4.0.3")
-        url: https://gh-proxy.org/https://github.com/kastenhq/external-tools/releases/download/{{.Version}}/{{.Asset}}
         asset: k10multicluster_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:

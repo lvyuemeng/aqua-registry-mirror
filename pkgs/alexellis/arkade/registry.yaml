@@ -12,7 +12,6 @@ packages:
       - version_constraint: Version in ["0.6.6", "0.6.26", "0.6.32", "0.6.34", "0.7.2"]
         no_asset: true
       - version_constraint: Version == "0.1.0"
-        url: https://gh-proxy.org/https://github.com/alexellis/arkade/releases/download/{{.Version}}/{{.Asset}}
         asset: bazaar
         format: raw
         files:
@@ -24,7 +23,6 @@ packages:
           - goos: darwin
             asset: bazaar-darwin
       - version_constraint: semver("<= 0.8.12")
-        url: https://gh-proxy.org/https://github.com/alexellis/arkade/releases/download/{{.Version}}/{{.Asset}}
         asset: arkade
         format: raw
         checksum:
@@ -38,7 +36,6 @@ packages:
           - goos: darwin
             asset: arkade-darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/alexellis/arkade/releases/download/{{.Version}}/{{.Asset}}
         asset: arkade
         format: raw
         checksum:

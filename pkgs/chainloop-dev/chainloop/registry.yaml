@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.0-rc.3")
-        url: https://gh-proxy.org/https://github.com/chainloop-dev/chainloop/releases/download/{{.Version}}/{{.Asset}}
         asset: chainloop-cli-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -24,7 +23,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/chainloop-dev/chainloop/releases/download/{{.Version}}/{{.Asset}}
         asset: chainloop-{{.OS}}-{{.Arch}}
         format: raw
         checksum:

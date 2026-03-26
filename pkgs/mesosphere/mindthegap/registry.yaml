@@ -23,7 +23,6 @@ packages:
             format: zip
       - version_constraint: semver(">= 0.6.6")
       - version_constraint: semver("< 0.6.6")
-        url: https://gh-proxy.org/https://github.com/mesosphere/mindthegap/releases/download/{{.Version}}/{{.Asset}}
         asset: mindthegap_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         overrides:
           - goos: darwin

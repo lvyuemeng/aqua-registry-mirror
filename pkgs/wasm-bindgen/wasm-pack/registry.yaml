@@ -1,17 +1,17 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/registry.json
 packages:
   - type: github_release
-    repo_owner: drager
+    repo_owner: wasm-bindgen
     repo_name: wasm-pack
     aliases:
       - name: rustwasm/wasm-pack
+      - name: drager/wasm-pack
     description: your favorite rust -> wasm workflow tool
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.0")
         no_asset: true
       - version_constraint: semver("<= 0.4.2")
-        url: https://gh-proxy.org/https://github.com/drager/wasm-pack/releases/download/{{.Version}}/{{.Asset}}
         asset: wasm-pack-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -26,7 +26,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.10.1")
-        url: https://gh-proxy.org/https://github.com/drager/wasm-pack/releases/download/{{.Version}}/{{.Asset}}
         asset: wasm-pack-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -44,7 +43,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/drager/wasm-pack/releases/download/{{.Version}}/{{.Asset}}
         asset: wasm-pack-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.1"
-        url: https://gh-proxy.org/https://github.com/stacklok/frizbee/releases/download/{{.Version}}/{{.Asset}}
         asset: frizbee_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -18,7 +17,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.1.5"
-        url: https://gh-proxy.org/https://github.com/stacklok/frizbee/releases/download/{{.Version}}/{{.Asset}}
         asset: frizbee_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -29,7 +27,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.1.6"
-        url: https://gh-proxy.org/https://github.com/stacklok/frizbee/releases/download/{{.Version}}/{{.Asset}}
         asset: frizbee_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -53,7 +50,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/stacklok/frizbee/releases/download/{{.Version}}/{{.Asset}}
         asset: frizbee_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

@@ -7,11 +7,9 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.13"
-        url: https://gh-proxy.org/https://github.com/in-toto/witness/releases/download/{{.Version}}/{{.Asset}}
         asset: witness_{{trimV .Version}}-{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
       - version_constraint: semver("<= 0.1.11")
-        url: https://gh-proxy.org/https://github.com/in-toto/witness/releases/download/{{.Version}}/{{.Asset}}
         asset: witness_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -19,7 +17,6 @@ packages:
           asset: witness_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.6.0")
-        url: https://gh-proxy.org/https://github.com/in-toto/witness/releases/download/{{.Version}}/{{.Asset}}
         asset: witness_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -27,7 +24,6 @@ packages:
           asset: witness_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/in-toto/witness/releases/download/{{.Version}}/{{.Asset}}
         asset: witness_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

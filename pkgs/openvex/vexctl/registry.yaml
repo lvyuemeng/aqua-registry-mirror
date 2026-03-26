@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.5")
-        url: https://gh-proxy.org/https://github.com/openvex/vexctl/releases/download/{{.Version}}/{{.Asset}}
         asset: vexctl-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -36,7 +35,6 @@ packages:
             - --certificate
             - https://github.com/openvex/vexctl/releases/download/{{.Version}}/{{.Asset}}.pem
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/openvex/vexctl/releases/download/{{.Version}}/{{.Asset}}
         asset: vexctl-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

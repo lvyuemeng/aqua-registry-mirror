@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version in ["v2.9.6", "v2.9.9"]
         no_asset: true
       - version_constraint: semver("<= 0.1.0")
-        url: https://gh-proxy.org/https://github.com/ikawaha/kagome/releases/download/{{.Version}}/{{.Asset}}
         asset: kagome_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -30,7 +29,6 @@ packages:
       - version_constraint: semver("<= 2.2.0")
         no_asset: true
       - version_constraint: semver("<= 2.6.0")
-        url: https://gh-proxy.org/https://github.com/ikawaha/kagome/releases/download/{{.Version}}/{{.Asset}}
         asset: kagome_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -40,7 +38,6 @@ packages:
           asset: kagome_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 2.6.3")
-        url: https://gh-proxy.org/https://github.com/ikawaha/kagome/releases/download/{{.Version}}/{{.Asset}}
         asset: kagome_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -49,7 +46,6 @@ packages:
           asset: kagome_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 2.9.2")
-        url: https://gh-proxy.org/https://github.com/ikawaha/kagome/releases/download/{{.Version}}/{{.Asset}}
         asset: kagome_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -57,7 +53,6 @@ packages:
           asset: kagome_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ikawaha/kagome/releases/download/{{.Version}}/{{.Asset}}
         asset: kagome_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

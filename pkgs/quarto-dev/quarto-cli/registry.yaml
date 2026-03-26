@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version in ["v1.1.106", "v1.3.6"]
-        url: https://gh-proxy.org/https://github.com/quarto-dev/quarto-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: quarto-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -27,7 +26,6 @@ packages:
           - darwin
           - linux/amd64
       - version_constraint: Version in ["v1.2.127", "v1.4.49"]
-        url: https://gh-proxy.org/https://github.com/quarto-dev/quarto-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: quarto-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -36,7 +34,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.1.29")
-        url: https://gh-proxy.org/https://github.com/quarto-dev/quarto-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: quarto-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -58,7 +55,6 @@ packages:
           - darwin
           - linux/amd64
       - version_constraint: semver("<= 1.1.33")
-        url: https://gh-proxy.org/https://github.com/quarto-dev/quarto-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: quarto-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -67,7 +63,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.2.3")
-        url: https://gh-proxy.org/https://github.com/quarto-dev/quarto-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: quarto-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -90,7 +85,6 @@ packages:
           - darwin
           - linux/amd64
       - version_constraint: semver("<= 1.2.7")
-        url: https://gh-proxy.org/https://github.com/quarto-dev/quarto-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: quarto-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -110,7 +104,6 @@ packages:
           - darwin
           - linux/amd64
       - version_constraint: semver("<= 1.3.179")
-        url: https://gh-proxy.org/https://github.com/quarto-dev/quarto-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: quarto-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -136,7 +129,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/quarto-dev/quarto-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: quarto-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:

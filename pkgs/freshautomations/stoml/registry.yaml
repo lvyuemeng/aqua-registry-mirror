@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.7.0")
-        url: https://gh-proxy.org/https://github.com/freshautomations/stoml/releases/download/{{.Version}}/{{.Asset}}
         asset: stoml_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -18,7 +17,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/freshautomations/stoml/releases/download/{{.Version}}/{{.Asset}}
         asset: stoml_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true

@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.28.2"
         no_asset: true
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/runatlantis/atlantis/releases/download/{{.Version}}/{{.Asset}}
         asset: atlantis_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.15.1")
-        url: https://gh-proxy.org/https://github.com/runatlantis/atlantis/releases/download/{{.Version}}/{{.Asset}}
         asset: atlantis_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -25,7 +23,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.17.3")
-        url: https://gh-proxy.org/https://github.com/runatlantis/atlantis/releases/download/{{.Version}}/{{.Asset}}
         asset: atlantis_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -33,7 +30,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/runatlantis/atlantis/releases/download/{{.Version}}/{{.Asset}}
         asset: atlantis_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

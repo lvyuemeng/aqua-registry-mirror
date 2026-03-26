@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.3.0"
-        url: https://gh-proxy.org/https://github.com/go-task/task/releases/download/{{.Version}}/{{.Asset}}
         asset: task_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -26,7 +25,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v1.3.1"
-        url: https://gh-proxy.org/https://github.com/go-task/task/releases/download/{{.Version}}/{{.Asset}}
         asset: task_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -46,7 +44,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.2.0")
-        url: https://gh-proxy.org/https://github.com/go-task/task/releases/download/{{.Version}}/{{.Asset}}
         asset: task_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -61,7 +58,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.4.2")
-        url: https://gh-proxy.org/https://github.com/go-task/task/releases/download/{{.Version}}/{{.Asset}}
         asset: task_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -78,7 +74,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.4.4")
-        url: https://gh-proxy.org/https://github.com/go-task/task/releases/download/{{.Version}}/{{.Asset}}
         asset: task_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -95,7 +90,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.0.1")
-        url: https://gh-proxy.org/https://github.com/go-task/task/releases/download/{{.Version}}/{{.Asset}}
         asset: task_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -112,7 +106,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.7.0")
-        url: https://gh-proxy.org/https://github.com/go-task/task/releases/download/{{.Version}}/{{.Asset}}
         asset: task_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -125,7 +118,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/go-task/task/releases/download/{{.Version}}/{{.Asset}}
         asset: task_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

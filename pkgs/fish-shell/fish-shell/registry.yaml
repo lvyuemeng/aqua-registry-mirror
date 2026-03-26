@@ -15,7 +15,6 @@ packages:
         # > fish’s core code has been ported from C++ to Rust
         no_asset: true
       - version_constraint: Version == "4.0.1"
-        url: https://gh-proxy.org/https://github.com/fish-shell/fish-shell/releases/download/{{.Version}}/{{.Asset}}
         asset: fish-static-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.xz
         replacements:
@@ -36,7 +35,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 4.0.2")
-        url: https://gh-proxy.org/https://github.com/fish-shell/fish-shell/releases/download/{{.Version}}/{{.Asset}}
         asset: fish-static-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.xz
         replacements:
@@ -56,7 +54,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/fish-shell/fish-shell/releases/download/{{.Version}}/{{.Asset}}
         asset: fish-{{.Version}}-linux-{{.Arch}}.{{.Format}}
         format: tar.xz
         files:

@@ -12,7 +12,6 @@ packages:
       - version_constraint: Version in ["v0.2.0", "v0.6.0", "v0.9.0", "v0.21.0", "v0.42.0"]
         no_asset: true
       - version_constraint: semver("<= 0.3.1")
-        url: https://gh-proxy.org/https://github.com/perses/perses/releases/download/{{.Version}}/{{.Asset}}
         asset: perses_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -28,7 +27,6 @@ packages:
       - version_constraint: semver("<= 0.4.1")
         no_asset: true
       - version_constraint: semver("<= 0.29.1")
-        url: https://gh-proxy.org/https://github.com/perses/perses/releases/download/{{.Version}}/{{.Asset}}
         asset: perses_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -42,7 +40,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/perses/perses/releases/download/{{.Version}}/{{.Asset}}
         asset: perses_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

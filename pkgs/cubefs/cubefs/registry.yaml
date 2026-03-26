@@ -27,7 +27,6 @@ packages:
       - version_constraint: semver("<= 2.4.3")
         no_asset: true
       - version_constraint: semver("<= 3.5.2")
-        url: https://gh-proxy.org/https://github.com/cubefs/cubefs/releases/download/{{.Version}}/{{.Asset}}
         asset: cubefs-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -37,7 +36,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/cubefs/cubefs/releases/download/{{.Version}}/{{.Asset}}
         asset: cubefs-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

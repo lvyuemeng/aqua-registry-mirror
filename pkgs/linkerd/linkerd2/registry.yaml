@@ -34,7 +34,6 @@ packages:
           - goos: linux
             asset: linkerd2-cli-{{.Version}}-{{.OS}}-{{.Arch}}
       - version_constraint: Version startsWith "stable-"
-        url: https://gh-proxy.org/https://github.com/linkerd/linkerd2/releases/download/{{.Version}}/{{.Asset}}
         asset: linkerd2-cli-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         checksum:
@@ -85,7 +84,6 @@ packages:
           - goos: windows
             asset: linkerd2-cli-{{.Version}}-{{.OS}}
       - version_constraint: Version startsWith "edge-"
-        url: https://gh-proxy.org/https://github.com/linkerd/linkerd2/releases/download/{{.Version}}/{{.Asset}}
         asset: linkerd2-cli-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         overrides:

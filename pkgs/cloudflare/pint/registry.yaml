@@ -29,7 +29,6 @@ packages:
           linux: Linux
           windows: Windows
       - version_constraint: semver("< 0.1.5")
-        url: https://gh-proxy.org/https://github.com/cloudflare/pint/releases/download/{{.Version}}/{{.Asset}}
         asset: pint_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         replacements:
           amd64: x86_64

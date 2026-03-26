@@ -13,7 +13,7 @@ packages:
       - version_constraint: semver("<= 2.4.1.0")
         no_asset: true
       - version_constraint: Version == "cabal-install-v3.0.0.0"
-        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-alpine-{{.OS}}-musl.{{.Format}}
+        url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-alpine-{{.OS}}-musl.{{.Format}}
         format: tar.xz
         rosetta2: true
         replacements:
@@ -21,16 +21,16 @@ packages:
           darwin: apple-darwin
         checksum:
           type: http
-          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
           algorithm: sha256
         overrides:
           - goos: darwin
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}17.7.0.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}17.7.0.{{.Format}}
         supported_envs:
           - linux/amd64
           - darwin
       - version_constraint: Version == "cabal-install-v3.2.0.0"
-        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-alpine-{{.OS}}-musl.{{.Format}}
+        url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-alpine-{{.OS}}-musl.{{.Format}}
         format: tar.xz
         rosetta2: true
         replacements:
@@ -38,16 +38,16 @@ packages:
           darwin: apple-darwin
         checksum:
           type: http
-          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
           algorithm: sha256
         overrides:
           - goos: darwin
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}17.7.0.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}17.7.0.{{.Format}}
         supported_envs:
           - linux/amd64
           - darwin
       - version_constraint: Version == "cabal-install-v3.4.0.0"
-        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
         windows_arm_emulation: true
@@ -55,17 +55,17 @@ packages:
           amd64: x86_64
         checksum:
           type: http
-          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
           algorithm: sha256
         overrides:
           - goos: darwin
             format: tar.xz
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-3.4.0.0-{{.Arch}}-{{.OS}}-sierra.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-3.4.0.0-{{.Arch}}-{{.OS}}-sierra.{{.Format}}
         supported_envs:
           - darwin
           - windows/amd64
       - version_constraint: semver("<= 3.6.0.0")
-        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine.{{.Format}}
+        url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine.{{.Format}}
         format: tar.xz
         rosetta2: true
         windows_arm_emulation: true
@@ -73,21 +73,21 @@ packages:
           amd64: x86_64
         checksum:
           type: http
-          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
           algorithm: sha256
         overrides:
           - goos: linux
             goarch: arm64
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-deb10.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-deb10.{{.Format}}
             replacements:
               arm64: aarch64
           - goos: darwin
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
           - goos: windows
             format: zip
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
       - version_constraint: semver("<= 3.6.2.0")
-        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine-static.{{.Format}}
+        url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine-static.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
         replacements:
@@ -95,20 +95,20 @@ packages:
           arm64: aarch64
         checksum:
           type: http
-          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
           algorithm: sha256
         overrides:
           - goos: linux
             goarch: arm64
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-deb10.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-deb10.{{.Format}}
           - goos: darwin
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
           - goos: windows
             format: zip
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
             replacements: {}
       - version_constraint: Version == "cabal-install-v3.8.1.0"
-        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-3.8.1.0-{{.Arch}}-{{.OS}}-alpine.{{.Format}}
+        url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-3.8.1.0-{{.Arch}}-{{.OS}}-alpine.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
         replacements:
@@ -116,42 +116,42 @@ packages:
           arm64: aarch64
         checksum:
           type: http
-          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
           algorithm: sha256
         overrides:
           - goos: linux
             goarch: arm64
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-3.8.1.0-{{.Arch}}-{{.OS}}-deb10.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-3.8.1.0-{{.Arch}}-{{.OS}}-deb10.{{.Format}}
           - goos: darwin
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-3.8.1.0-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-3.8.1.0-{{.Arch}}-{{.OS}}.{{.Format}}
           - goos: windows
             format: zip
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-3.8.1.0-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-3.8.1.0-{{.Arch}}-{{.OS}}.{{.Format}}
             replacements: {}
       - version_constraint: semver("<= 3.10.1.0")
-        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine.{{.Format}}
+        url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
         replacements:
           amd64: x86_64
         checksum:
           type: http
-          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
           algorithm: sha256
         overrides:
           - goos: darwin
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
             replacements:
               arm64: aarch64
           - goos: windows
             format: zip
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
         supported_envs:
           - darwin
           - windows
           - amd64
       - version_constraint: semver("<= 3.10.3.0")
-        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_12.{{.Format}}
+        url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_12.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
         replacements:
@@ -159,20 +159,20 @@ packages:
           arm64: aarch64
         checksum:
           type: http
-          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
           algorithm: sha256
         overrides:
           - goos: linux
             goarch: arm64
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-deb10.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-deb10.{{.Format}}
           - goos: darwin
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
           - goos: windows
             format: zip
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
             replacements: {}
       - version_constraint: semver("<= 3.16.0.0")
-        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_12.{{.Format}}
+        url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_12.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
         replacements:
@@ -180,20 +180,20 @@ packages:
           arm64: aarch64
         checksum:
           type: http
-          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
           algorithm: sha256
         overrides:
           - goos: linux
             goarch: arm64
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_18.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_18.{{.Format}}
           - goos: darwin
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
           - goos: windows
             format: zip
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
             replacements: {}
       - version_constraint: "true"
-        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_12.{{.Format}}
+        url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_12.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
         replacements:
@@ -201,15 +201,15 @@ packages:
           arm64: aarch64
         checksum:
           type: http
-          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
           algorithm: sha256
         overrides:
           - goos: linux
             goarch: arm64
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_22.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_22.{{.Format}}
           - goos: darwin
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
           - goos: windows
             format: zip
-            url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            url: https://downloads.haskell.org/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
             replacements: {}

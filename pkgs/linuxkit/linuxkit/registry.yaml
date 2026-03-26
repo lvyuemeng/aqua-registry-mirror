@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.8"
-        url: https://gh-proxy.org/https://github.com/linuxkit/linuxkit/releases/download/{{.Version}}/{{.Asset}}
         asset: linuxkit-linux-{{.Arch}}
         format: raw
         rosetta2: true
@@ -15,13 +14,11 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.7.0")
-        url: https://gh-proxy.org/https://github.com/linuxkit/linuxkit/releases/download/{{.Version}}/{{.Asset}}
         asset: linuxkit-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/linuxkit/linuxkit/releases/download/{{.Version}}/{{.Asset}}
         asset: linuxkit-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

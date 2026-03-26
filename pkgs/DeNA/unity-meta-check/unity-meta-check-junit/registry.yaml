@@ -8,7 +8,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 3.3.0")
-        url: https://gh-proxy.org/https://github.com/DeNA/unity-meta-check/releases/download/{{.Version}}/{{.Asset}}
         asset: unity-meta-check-junit-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -20,7 +19,6 @@ packages:
         checksum:
           enabled: false
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/DeNA/unity-meta-check/releases/download/{{.Version}}/{{.Asset}}
         asset: unity-meta-check-junit-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

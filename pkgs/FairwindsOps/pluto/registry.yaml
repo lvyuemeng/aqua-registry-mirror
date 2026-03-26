@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 3.4.1")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/pluto/releases/download/{{.Version}}/{{.Asset}}
         asset: pluto_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -19,7 +18,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 4.2.0")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/pluto/releases/download/{{.Version}}/{{.Asset}}
         asset: pluto_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -31,7 +29,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 5.0.0")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/pluto/releases/download/{{.Version}}/{{.Asset}}
         asset: pluto_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -42,7 +39,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 5.1.0")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/pluto/releases/download/{{.Version}}/{{.Asset}}
         asset: pluto_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -51,7 +47,6 @@ packages:
           asset: pluto_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 5.19.0")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/pluto/releases/download/{{.Version}}/{{.Asset}}
         asset: pluto_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -59,7 +54,6 @@ packages:
           asset: pluto_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 5.21.4")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/pluto/releases/download/{{.Version}}/{{.Asset}}
         asset: pluto_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -73,7 +67,6 @@ packages:
               - --signature
               - https://github.com/FairwindsOps/pluto/releases/download/{{.Version}}/checksums.txt.sig
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/pluto/releases/download/{{.Version}}/{{.Asset}}
         asset: pluto_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

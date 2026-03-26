@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/daichirata/hammer/releases/download/{{.Version}}/{{.Asset}}
         asset: hammer_{{trimV .Version}}_{{.Arch}}_{{.OS}}
         format: raw
         rosetta2: true
@@ -15,7 +14,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.5.4")
-        url: https://gh-proxy.org/https://github.com/daichirata/hammer/releases/download/{{.Version}}/{{.Asset}}
         asset: hammer-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         files:
           - name: hammer
@@ -31,7 +29,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.5.9")
-        url: https://gh-proxy.org/https://github.com/daichirata/hammer/releases/download/{{.Version}}/{{.Asset}}
         asset: hammer-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         files:
           - name: hammer
@@ -46,7 +43,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/daichirata/hammer/releases/download/{{.Version}}/{{.Asset}}
         asset: hammer-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         files:
           - name: hammer

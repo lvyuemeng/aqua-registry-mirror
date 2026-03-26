@@ -28,7 +28,6 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver(">= 1.2.0-rc1")
-        url: https://gh-proxy.org/https://github.com/kyma-project/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: kyma_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         overrides: []
         replacements:
@@ -40,7 +39,6 @@ packages:
           - darwin
         rosetta2: true
       - version_constraint: semver(">= 0.2.0")
-        url: https://gh-proxy.org/https://github.com/kyma-project/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: kyma-{{.OS}}
         format: raw
         overrides:
@@ -54,7 +52,6 @@ packages:
         checksum:
           enabled: false
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/kyma-project/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: kymactl-{{.OS}}
         format: raw
         overrides:

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.6.0-beta4")
-        url: https://gh-proxy.org/https://github.com/opentofu/opentofu/releases/download/{{.Version}}/{{.Asset}}
         asset: tofu_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -28,7 +27,6 @@ packages:
               - --signature
               - https://github.com/opentofu/opentofu/releases/download/{{.Version}}/tofu_{{trimV .Version}}_SHA256SUMS.sig
       - version_constraint: semver("<= 1.6.0-rc1")
-        url: https://gh-proxy.org/https://github.com/opentofu/opentofu/releases/download/{{.Version}}/{{.Asset}}
         asset: tofu_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -49,7 +47,6 @@ packages:
               - --signature
               - https://github.com/opentofu/opentofu/releases/download/{{.Version}}/tofu_{{trimV .Version}}_SHA256SUMS.sig
       - version_constraint: semver("<= 1.6.2")
-        url: https://gh-proxy.org/https://github.com/opentofu/opentofu/releases/download/{{.Version}}/{{.Asset}}
         asset: tofu_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -80,7 +77,6 @@ packages:
             - --signature
             - https://github.com/opentofu/opentofu/releases/download/{{.Version}}/{{.Asset}}.sig
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/opentofu/opentofu/releases/download/{{.Version}}/{{.Asset}}
         asset: tofu_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

@@ -14,7 +14,6 @@ packages:
       - version_constraint: semver("<= 0.6.13")
         no_asset: true
       - version_constraint: semver("<= 0.9.1")
-        url: https://gh-proxy.org/https://github.com/bufbuild/protoc-gen-validate/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-validate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -25,7 +24,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.0.2")
-        url: https://gh-proxy.org/https://github.com/bufbuild/protoc-gen-validate/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-validate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -35,7 +33,6 @@ packages:
       - version_constraint: semver("<= 1.1.0")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/bufbuild/protoc-gen-validate/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-validate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

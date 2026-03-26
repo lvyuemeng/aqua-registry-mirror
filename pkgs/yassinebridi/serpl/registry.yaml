@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.1.0")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/yassinebridi/serpl/releases/download/{{.Version}}/{{.Asset}}
         asset: serpl-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

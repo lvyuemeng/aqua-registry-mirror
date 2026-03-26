@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2.10.0")
-        url: https://gh-proxy.org/https://github.com/Canop/dysk/releases/download/{{.Version}}/{{.Asset}}
         asset: dysk_{{trimV .Version}}.{{.Format}}
         format: zip
         files:
@@ -20,7 +19,6 @@ packages:
         supported_envs:
           - linux
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Canop/dysk/releases/download/{{.Version}}/{{.Asset}}
         asset: dysk_{{trimV .Version}}.{{.Format}}
         format: zip
         files:

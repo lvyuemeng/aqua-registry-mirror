@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.6.2")
-        url: https://gh-proxy.org/https://github.com/minamijoyo/tfupdate/releases/download/{{.Version}}/{{.Asset}}
         asset: tfupdate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -21,7 +20,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/minamijoyo/tfupdate/releases/download/{{.Version}}/{{.Asset}}
         asset: tfupdate_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

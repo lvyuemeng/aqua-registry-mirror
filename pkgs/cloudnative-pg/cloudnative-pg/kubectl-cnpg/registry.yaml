@@ -8,7 +8,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/cloudnative-pg/cloudnative-pg/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-cnpg_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v2.15.0"
-        url: https://gh-proxy.org/https://github.com/denisidoro/navi/releases/download/{{.Version}}/{{.Asset}}
         asset: navi-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: Version == "v2.15.1"
-        url: https://gh-proxy.org/https://github.com/denisidoro/navi/releases/download/{{.Version}}/{{.Asset}}
         asset: navi-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -43,7 +41,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v2.24.0"
-        url: https://gh-proxy.org/https://github.com/denisidoro/navi/releases/download/{{.Version}}/{{.Asset}}
         asset: navi-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -68,7 +65,6 @@ packages:
       - version_constraint: semver("<= 1.0.0")
         no_asset: true
       - version_constraint: semver("<= 2.1.1")
-        url: https://gh-proxy.org/https://github.com/denisidoro/navi/releases/download/{{.Version}}/{{.Asset}}
         asset: navi-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -80,7 +76,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.14.0")
-        url: https://gh-proxy.org/https://github.com/denisidoro/navi/releases/download/{{.Version}}/{{.Asset}}
         asset: navi-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -92,7 +87,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.19.0")
-        url: https://gh-proxy.org/https://github.com/denisidoro/navi/releases/download/{{.Version}}/{{.Asset}}
         asset: navi-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -118,7 +112,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.20.1")
-        url: https://gh-proxy.org/https://github.com/denisidoro/navi/releases/download/{{.Version}}/{{.Asset}}
         asset: navi-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -147,7 +140,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/denisidoro/navi/releases/download/{{.Version}}/{{.Asset}}
         asset: navi-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

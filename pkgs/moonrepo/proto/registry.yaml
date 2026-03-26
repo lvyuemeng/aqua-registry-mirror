@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.8.2")
-        url: https://gh-proxy.org/https://github.com/moonrepo/proto/releases/download/{{.Version}}/{{.Asset}}
         asset: proto_cli-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:
@@ -32,7 +31,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.14.1")
-        url: https://gh-proxy.org/https://github.com/moonrepo/proto/releases/download/{{.Version}}/{{.Asset}}
         asset: proto_cli-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:
@@ -57,7 +55,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.20.4")
-        url: https://gh-proxy.org/https://github.com/moonrepo/proto/releases/download/{{.Version}}/{{.Asset}}
         asset: proto_cli-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:
@@ -86,7 +83,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.24.2")
-        url: https://gh-proxy.org/https://github.com/moonrepo/proto/releases/download/{{.Version}}/{{.Asset}}
         asset: proto_cli-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:
@@ -115,7 +111,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/moonrepo/proto/releases/download/{{.Version}}/{{.Asset}}
         asset: proto_cli-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         files:

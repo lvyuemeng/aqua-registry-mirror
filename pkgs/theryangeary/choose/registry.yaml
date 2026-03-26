@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v1.3.0"
         no_asset: true
       - version_constraint: Version == "v1.3.6"
-        url: https://gh-proxy.org/https://github.com/theryangeary/choose/releases/download/{{.Version}}/{{.Asset}}
         asset: choose-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -36,7 +35,6 @@ packages:
           - darwin/arm64
           - windows/amd64
       - version_constraint: Version == "v1.3.5"
-        url: https://gh-proxy.org/https://github.com/theryangeary/choose/releases/download/{{.Version}}/{{.Asset}}
         asset: choose-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -62,7 +60,6 @@ packages:
           - darwin/arm64
           - windows/amd64
       - version_constraint: semver("<= 1.3.4")
-        url: https://gh-proxy.org/https://github.com/theryangeary/choose/releases/download/{{.Version}}/{{.Asset}}
         asset: choose-{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -71,7 +68,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/theryangeary/choose/releases/download/{{.Version}}/{{.Asset}}
         asset: choose-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true

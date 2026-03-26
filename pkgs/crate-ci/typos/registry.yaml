@@ -8,7 +8,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.13.17"
-        url: https://gh-proxy.org/https://github.com/crate-ci/typos/releases/download/{{.Version}}/{{.Asset}}
         asset: typos-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -24,7 +23,6 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: semver("<= 1.0.11")
-        url: https://gh-proxy.org/https://github.com/crate-ci/typos/releases/download/{{.Version}}/{{.Asset}}
         asset: typos-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -42,7 +40,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.17.0")
-        url: https://gh-proxy.org/https://github.com/crate-ci/typos/releases/download/{{.Version}}/{{.Asset}}
         asset: typos-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -60,7 +57,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.22.4")
-        url: https://gh-proxy.org/https://github.com/crate-ci/typos/releases/download/{{.Version}}/{{.Asset}}
         asset: typos-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -80,7 +76,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.22.6")
-        url: https://gh-proxy.org/https://github.com/crate-ci/typos/releases/download/{{.Version}}/{{.Asset}}
         asset: typos-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -97,7 +92,6 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: semver("<= 1.29.7")
-        url: https://gh-proxy.org/https://github.com/crate-ci/typos/releases/download/{{.Version}}/{{.Asset}}
         asset: typos-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -117,7 +111,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/crate-ci/typos/releases/download/{{.Version}}/{{.Asset}}
         asset: typos-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

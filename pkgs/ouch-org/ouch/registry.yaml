@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "0.1.4"
-        url: https://gh-proxy.org/https://github.com/ouch-org/ouch/releases/download/{{.Version}}/{{.Asset}}
         asset: ouch
         format: raw
         replacements:
@@ -19,7 +18,6 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: Version == "0.1.5"
-        url: https://gh-proxy.org/https://github.com/ouch-org/ouch/releases/download/{{.Version}}/{{.Asset}}
         asset: ouch-{{.OS}}-x86-64-musl
         format: raw
         replacements:
@@ -31,7 +29,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "0.1.6"
-        url: https://gh-proxy.org/https://github.com/ouch-org/ouch/releases/download/{{.Version}}/{{.Asset}}
         asset: ouch-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -48,7 +45,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.2.0"
-        url: https://gh-proxy.org/https://github.com/ouch-org/ouch/releases/download/{{.Version}}/{{.Asset}}
         asset: ouch-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -66,7 +62,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.3.1")
-        url: https://gh-proxy.org/https://github.com/ouch-org/ouch/releases/download/{{.Version}}/{{.Asset}}
         asset: ouch-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -83,7 +78,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.4.1")
-        url: https://gh-proxy.org/https://github.com/ouch-org/ouch/releases/download/{{.Version}}/{{.Asset}}
         asset: ouch-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -103,7 +97,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ouch-org/ouch/releases/download/{{.Version}}/{{.Asset}}
         asset: ouch-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

@@ -7,6 +7,5 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/yashikota/genenv/releases/download/{{.Version}}/{{.Asset}}
         asset: genenv-{{.OS}}-{{.Arch}}
         format: raw

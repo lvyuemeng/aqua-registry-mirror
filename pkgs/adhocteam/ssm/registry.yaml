@@ -3,13 +3,12 @@ packages:
   - type: github_release
     repo_owner: adhocteam
     repo_name: ssm
-    description: AWS SSM Paramater Store CLI
+    description: AWS SSM Parameter Store CLI
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.3.0"
         no_asset: true
       - version_constraint: semver("<= 1.1.0")
-        url: https://gh-proxy.org/https://github.com/adhocteam/ssm/releases/download/{{.Version}}/{{.Asset}}
         asset: ssm-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
@@ -19,7 +18,6 @@ packages:
           asset: "{{.Asset}}.sha"
           algorithm: sha256
       - version_constraint: semver("<= 1.4.2")
-        url: https://gh-proxy.org/https://github.com/adhocteam/ssm/releases/download/{{.Version}}/{{.Asset}}
         asset: ssm-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -37,7 +35,6 @@ packages:
           asset: "{{.Asset}}.sha"
           algorithm: sha256
       - version_constraint: semver("<= 1.5.1")
-        url: https://gh-proxy.org/https://github.com/adhocteam/ssm/releases/download/{{.Version}}/{{.Asset}}
         asset: ssm-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:

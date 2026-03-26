@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.5")
-        url: https://gh-proxy.org/https://github.com/genuinetools/amicontained/releases/download/{{.Version}}/{{.Asset}}
         asset: amicontained-{{.OS}}-{{.Arch}}
         format: raw
         checksum:
@@ -17,7 +16,6 @@ packages:
         supported_envs:
           - linux
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/genuinetools/amicontained/releases/download/{{.Version}}/{{.Asset}}
         asset: amicontained-{{.OS}}-{{.Arch}}
         format: raw
         checksum:

@@ -11,7 +11,6 @@ packages:
       - version_constraint: Version == "v1.2.0"
         no_asset: true
       - version_constraint: Version == "v0.13.0"
-        url: https://gh-proxy.org/https://github.com/mistakenelf/fm/releases/download/{{.Version}}/{{.Asset}}
         asset: fm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -27,7 +26,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/mistakenelf/fm/releases/download/{{.Version}}/{{.Asset}}
         asset: fm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -38,7 +36,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.9.0")
-        url: https://gh-proxy.org/https://github.com/mistakenelf/fm/releases/download/{{.Version}}/{{.Asset}}
         asset: fm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -52,7 +49,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.12.1")
-        url: https://gh-proxy.org/https://github.com/mistakenelf/fm/releases/download/{{.Version}}/{{.Asset}}
         asset: fm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -60,7 +56,6 @@ packages:
           asset: fm_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mistakenelf/fm/releases/download/{{.Version}}/{{.Asset}}
         asset: fm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

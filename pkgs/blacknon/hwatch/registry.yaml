@@ -19,7 +19,6 @@ packages:
         src: bin/hwatch
     version_overrides:
       - version_constraint: semver("= 0.3.0")
-        url: https://gh-proxy.org/https://github.com/blacknon/hwatch/releases/download/{{.Version}}/{{.Asset}}
         asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
         rosetta2: true
         supported_envs:
@@ -34,7 +33,6 @@ packages:
       - version_constraint: semver("= 0.2.1") || semver("= 0.1.6")
         supported_envs: []
       - version_constraint: semver("= 0.1.0")
-        url: https://gh-proxy.org/https://github.com/blacknon/hwatch/releases/download/{{.Version}}/{{.Asset}}
         asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
         rosetta2: true
         replacements:
@@ -45,7 +43,6 @@ packages:
           - name: hwatch
             src: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}/hwatch
       - version_constraint: semver("<= 0.1.2")
-        url: https://gh-proxy.org/https://github.com/blacknon/hwatch/releases/download/{{.Version}}/{{.Asset}}
         asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
         rosetta2: true
         replacements:
@@ -56,7 +53,6 @@ packages:
           - name: hwatch
             src: hwatch
       - version_constraint: semver("< 0.3.1")
-        url: https://gh-proxy.org/https://github.com/blacknon/hwatch/releases/download/{{.Version}}/{{.Asset}}
         asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
         rosetta2: true
         replacements:

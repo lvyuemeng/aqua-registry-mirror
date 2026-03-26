@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.126")
-        url: https://gh-proxy.org/https://github.com/a-h/templ/releases/download/{{.Version}}/{{.Asset}}
         asset: templ_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -22,7 +21,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.0.148")
-        url: https://gh-proxy.org/https://github.com/a-h/templ/releases/download/{{.Version}}/{{.Asset}}
         asset: templ_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -36,7 +34,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.2.194")
-        url: https://gh-proxy.org/https://github.com/a-h/templ/releases/download/{{.Version}}/{{.Asset}}
         asset: templ_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -49,7 +46,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("< 0.2.639")
-        url: https://gh-proxy.org/https://github.com/a-h/templ/releases/download/{{.Version}}/{{.Asset}}
         asset: templ_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -62,7 +58,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/a-h/templ/releases/download/{{.Version}}/{{.Asset}}
         asset: templ_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

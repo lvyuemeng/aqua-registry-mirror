@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 6.1.6")
-        url: https://gh-proxy.org/https://github.com/PowerShell/PowerShell/releases/download/{{.Version}}/{{.Asset}}
         asset: powershell-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -26,7 +25,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 7.0.13")
-        url: https://gh-proxy.org/https://github.com/PowerShell/PowerShell/releases/download/{{.Version}}/{{.Asset}}
         asset: powershell-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -57,7 +55,6 @@ packages:
             format: zip
             asset: PowerShell-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/PowerShell/PowerShell/releases/download/{{.Version}}/{{.Asset}}
         asset: powershell-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

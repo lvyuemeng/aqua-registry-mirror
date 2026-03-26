@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.1.0")
-        url: https://gh-proxy.org/https://github.com/makew0rld/didder/releases/download/{{.Version}}/{{.Asset}}
         asset: didder_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -19,7 +18,6 @@ packages:
           asset: didder_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/makew0rld/didder/releases/download/{{.Version}}/{{.Asset}}
         asset: didder_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         replacements:

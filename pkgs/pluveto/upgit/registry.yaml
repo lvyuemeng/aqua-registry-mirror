@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.0")
-        url: https://gh-proxy.org/https://github.com/pluveto/upgit/releases/download/{{.Version}}/{{.Asset}}
         asset: upgit_{{.OS}}_{{.Arch}}
         format: raw
         replacements:
@@ -16,7 +15,6 @@ packages:
           - linux
           - windows
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/pluveto/upgit/releases/download/{{.Version}}/{{.Asset}}
         asset: upgit_{{.OS}}_{{.Arch}}
         format: raw
         replacements:

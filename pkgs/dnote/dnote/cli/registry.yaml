@@ -28,7 +28,6 @@ packages:
         checksum:
           enabled: false
       - version_constraint: semver(">= 0.4.8")
-        url: https://gh-proxy.org/https://github.com/dnote/dnote/releases/download/{{.Version}}/{{.Asset}}
         asset: dnote_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         supported_envs:
           - darwin
@@ -36,7 +35,6 @@ packages:
         checksum:
           enabled: false
       - version_constraint: semver("= 0.4.7")
-        url: https://gh-proxy.org/https://github.com/dnote/dnote/releases/download/{{.Version}}/{{.Asset}}
         asset: dnote_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         supported_envs:
           - darwin
@@ -44,7 +42,6 @@ packages:
         checksum:
           enabled: false
       - version_constraint: semver("< 0.4.7")
-        url: https://gh-proxy.org/https://github.com/dnote/dnote/releases/download/{{.Version}}/{{.Asset}}
         asset: dnote_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         supported_envs:
           - darwin

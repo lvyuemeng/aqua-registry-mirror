@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.2.2")
         no_asset: true
       - version_constraint: semver("<= 0.3.6")
-        url: https://gh-proxy.org/https://github.com/kyoh86/richgo/releases/download/{{.Version}}/{{.Asset}}
         asset: richgo_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:
@@ -21,7 +20,6 @@ packages:
           asset: richgo_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.3.8")
-        url: https://gh-proxy.org/https://github.com/kyoh86/richgo/releases/download/{{.Version}}/{{.Asset}}
         asset: richgo_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:
@@ -33,7 +31,6 @@ packages:
           asset: richgo_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.3.10")
-        url: https://gh-proxy.org/https://github.com/kyoh86/richgo/releases/download/{{.Version}}/{{.Asset}}
         asset: richgo_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:
@@ -44,7 +41,6 @@ packages:
           asset: richgo_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kyoh86/richgo/releases/download/{{.Version}}/{{.Asset}}
         asset: richgo_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:

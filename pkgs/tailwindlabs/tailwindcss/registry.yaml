@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 3.0.2")
         no_asset: true
       - version_constraint: semver("<= 3.0.7")
-        url: https://gh-proxy.org/https://github.com/tailwindlabs/tailwindcss/releases/download/{{.Version}}/{{.Asset}}
         asset: tailwindcss-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -21,7 +20,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.2.4")
-        url: https://gh-proxy.org/https://github.com/tailwindlabs/tailwindcss/releases/download/{{.Version}}/{{.Asset}}
         asset: tailwindcss-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -29,14 +27,12 @@ packages:
           amd64: x64
           darwin: macos
       - version_constraint: semver("<= 3.2.7")
-        url: https://gh-proxy.org/https://github.com/tailwindlabs/tailwindcss/releases/download/{{.Version}}/{{.Asset}}
         asset: tailwindcss-{{.OS}}-{{.Arch}}
         format: raw
         replacements:
           amd64: x64
           darwin: macos
       - version_constraint: semver("<= 3.4.17")
-        url: https://gh-proxy.org/https://github.com/tailwindlabs/tailwindcss/releases/download/{{.Version}}/{{.Asset}}
         asset: tailwindcss-{{.OS}}-{{.Arch}}
         format: raw
         replacements:
@@ -47,7 +43,6 @@ packages:
           asset: sha256sums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/tailwindlabs/tailwindcss/releases/download/{{.Version}}/{{.Asset}}
         asset: tailwindcss-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.17.1"
-        url: https://gh-proxy.org/https://github.com/marcosnils/bin/releases/download/{{.Version}}/{{.Asset}}
         asset: bin_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -15,7 +14,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.3.0")
-        url: https://gh-proxy.org/https://github.com/marcosnils/bin/releases/download/{{.Version}}/{{.Asset}}
         asset: bin_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -34,7 +32,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.8.0")
-        url: https://gh-proxy.org/https://github.com/marcosnils/bin/releases/download/{{.Version}}/{{.Asset}}
         asset: bin_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -48,7 +45,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.17.0")
-        url: https://gh-proxy.org/https://github.com/marcosnils/bin/releases/download/{{.Version}}/{{.Asset}}
         asset: bin_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         replacements:
@@ -61,7 +57,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/marcosnils/bin/releases/download/{{.Version}}/{{.Asset}}
         asset: bin_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         checksum:

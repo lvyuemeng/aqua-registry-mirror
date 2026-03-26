@@ -7,14 +7,12 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "22.8.0"
-        url: https://gh-proxy.org/https://github.com/psf/black/releases/download/{{.Version}}/{{.Asset}}
         asset: black_{{.OS}}
         format: raw
         supported_envs:
           - linux/amd64
           - windows
       - version_constraint: semver("<= 19.10b0")
-        url: https://gh-proxy.org/https://github.com/psf/black/releases/download/{{.Version}}/{{.Asset}}
         asset: black
         format: raw
         supported_envs:
@@ -22,13 +20,11 @@ packages:
       - version_constraint: semver("<= 20.8b1")
         no_asset: true
       - version_constraint: semver("<= 21.5b1")
-        url: https://gh-proxy.org/https://github.com/psf/black/releases/download/{{.Version}}/{{.Asset}}
         asset: black
         format: raw
         supported_envs:
           - windows
       - version_constraint: semver("<= 25.9.0")
-        url: https://gh-proxy.org/https://github.com/psf/black/releases/download/{{.Version}}/{{.Asset}}
         asset: black_{{.OS}}
         format: raw
         replacements:
@@ -38,7 +34,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/psf/black/releases/download/{{.Version}}/{{.Asset}}
         asset: black_{{.OS}}
         format: raw
         replacements:

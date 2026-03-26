@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.6.1"
         no_asset: true
       - version_constraint: semver("<= 1.12.0")
-        url: https://gh-proxy.org/https://github.com/windvalley/gossh/releases/download/{{.Version}}/{{.Asset}}
         asset: gossh-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/windvalley/gossh/releases/download/{{.Version}}/{{.Asset}}
         asset: gossh-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:

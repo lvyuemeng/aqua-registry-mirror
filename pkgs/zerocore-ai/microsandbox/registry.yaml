@@ -5,14 +5,13 @@ packages:
     repo_name: microsandbox
     aliases:
       - name: microsandbox/microsandbox
-    description: Self-Hosted Plaform for Secure Execution of Untrusted User/AI Code
+    description: Self-Hosted Platform for Secure Execution of Untrusted User/AI Code
     files:
       - name: msb
     version_prefix: microsandbox-v
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/zerocore-ai/microsandbox/releases/download/{{.Version}}/{{.Asset}}
         asset: microsandbox-{{.SemVer}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

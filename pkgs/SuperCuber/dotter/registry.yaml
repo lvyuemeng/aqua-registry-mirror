@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.12.15")
-        url: https://gh-proxy.org/https://github.com/SuperCuber/dotter/releases/download/{{.Version}}/{{.Asset}}
         asset: dotter
         format: raw
         windows_arm_emulation: true
@@ -15,7 +14,6 @@ packages:
           - linux
           - windows
       - version_constraint: semver("<= 0.13.0")
-        url: https://gh-proxy.org/https://github.com/SuperCuber/dotter/releases/download/{{.Version}}/{{.Asset}}
         asset: dotter
         format: raw
         windows_arm_emulation: true
@@ -27,7 +25,6 @@ packages:
           - darwin/arm64
           - windows
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/SuperCuber/dotter/releases/download/{{.Version}}/{{.Asset}}
         asset: dotter-{{.OS}}-{{.Arch}}-musl
         format: raw
         windows_arm_emulation: true

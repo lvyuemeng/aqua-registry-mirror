@@ -15,7 +15,6 @@ packages:
       darwin: macos
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/harelba/q/releases/download/{{.Version}}/{{.Asset}}
         asset: q-{{.Arch}}-{{.OS}}
         replacements:
           darwin: Darwin

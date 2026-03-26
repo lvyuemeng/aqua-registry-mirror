@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 3.7.1")
-        url: https://gh-proxy.org/https://github.com/getsops/sops/releases/download/{{.Version}}/{{.Asset}}
         asset: sops-{{.Version}}.{{.OS}}
         format: raw
         overrides:
@@ -20,14 +19,12 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.7.3")
-        url: https://gh-proxy.org/https://github.com/getsops/sops/releases/download/{{.Version}}/{{.Asset}}
         asset: sops-{{.Version}}.{{.OS}}.{{.Arch}}
         format: raw
         overrides:
           - goos: windows
             asset: sops-{{.Version}}
       - version_constraint: semver("<= 3.9.4")
-        url: https://gh-proxy.org/https://github.com/getsops/sops/releases/download/{{.Version}}/{{.Asset}}
         asset: sops-{{.Version}}.{{.OS}}.{{.Arch}}
         format: raw
         checksum:
@@ -51,7 +48,6 @@ packages:
           - goos: windows
             asset: sops-{{.Version}}
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/getsops/sops/releases/download/{{.Version}}/{{.Asset}}
         asset: sops-{{.Version}}.{{.OS}}.{{.Arch}}
         format: raw
         checksum:

@@ -10,7 +10,6 @@ packages:
         type: cargo
         crate: eza
       - version_constraint: Version == "v0.11.0"
-        url: https://gh-proxy.org/https://github.com/eza-community/eza/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Arch}}-{{.OS}}-eza"
         format: raw
         windows_arm_emulation: true
@@ -28,7 +27,6 @@ packages:
             replacements:
               arm64: aarch64
       - version_constraint: Version == "v0.11.1"
-        url: https://gh-proxy.org/https://github.com/eza-community/eza/releases/download/{{.Version}}/{{.Asset}}
         asset: eza_{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -47,7 +45,6 @@ packages:
             replacements:
               arm64: aarch64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/eza-community/eza/releases/download/{{.Version}}/{{.Asset}}
         asset: eza_{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

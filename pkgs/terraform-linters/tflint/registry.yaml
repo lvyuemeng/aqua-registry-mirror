@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.32.0"
-        url: https://gh-proxy.org/https://github.com/terraform-linters/tflint/releases/download/{{.Version}}/{{.Asset}}
         asset: tflint_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v0.32.1"
-        url: https://gh-proxy.org/https://github.com/terraform-linters/tflint/releases/download/{{.Version}}/{{.Asset}}
         asset: tflint_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:
@@ -25,7 +23,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.7.6")
-        url: https://gh-proxy.org/https://github.com/terraform-linters/tflint/releases/download/{{.Version}}/{{.Asset}}
         asset: tflint_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -35,7 +32,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.29.0")
-        url: https://gh-proxy.org/https://github.com/terraform-linters/tflint/releases/download/{{.Version}}/{{.Asset}}
         asset: tflint_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -49,7 +45,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.35.0")
-        url: https://gh-proxy.org/https://github.com/terraform-linters/tflint/releases/download/{{.Version}}/{{.Asset}}
         asset: tflint_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -58,7 +53,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.51.0")
-        url: https://gh-proxy.org/https://github.com/terraform-linters/tflint/releases/download/{{.Version}}/{{.Asset}}
         asset: tflint_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -77,7 +71,6 @@ packages:
               - --certificate
               - https://github.com/terraform-linters/tflint/releases/download/{{.Version}}/checksums.txt.pem
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/terraform-linters/tflint/releases/download/{{.Version}}/{{.Asset}}
         asset: tflint_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

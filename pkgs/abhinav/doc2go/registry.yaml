@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/abhinav/doc2go/releases/download/{{.Version}}/{{.Asset}}
         asset: doc2go-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

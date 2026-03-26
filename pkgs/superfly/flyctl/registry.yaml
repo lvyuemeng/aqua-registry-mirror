@@ -13,7 +13,6 @@ packages:
       - version_constraint: Version in ["v0.1.144", "v0.2.73", "v0.3.0", "v0.3.11"]
         no_asset: true
       - version_constraint: Version == "v0.0.517"
-        url: https://gh-proxy.org/https://github.com/superfly/flyctl/releases/download/{{.Version}}/{{.Asset}}
         asset: flyctl_{{trimV .Version}}_{{.OS}}{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -37,7 +36,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.0.158")
-        url: https://gh-proxy.org/https://github.com/superfly/flyctl/releases/download/{{.Version}}/{{.Asset}}
         asset: flyctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -56,7 +54,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.0.175")
-        url: https://gh-proxy.org/https://github.com/superfly/flyctl/releases/download/{{.Version}}/{{.Asset}}
         asset: flyctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -71,7 +68,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.0.201")
-        url: https://gh-proxy.org/https://github.com/superfly/flyctl/releases/download/{{.Version}}/{{.Asset}}
         asset: flyctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -85,7 +81,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.0.243")
-        url: https://gh-proxy.org/https://github.com/superfly/flyctl/releases/download/{{.Version}}/{{.Asset}}
         asset: flyctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -102,7 +97,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.2.72")
-        url: https://gh-proxy.org/https://github.com/superfly/flyctl/releases/download/{{.Version}}/{{.Asset}}
         asset: flyctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -118,7 +112,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.2.80"
-        url: https://gh-proxy.org/https://github.com/superfly/flyctl/releases/download/{{.Version}}/{{.Asset}}
         asset: flyctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -133,7 +126,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.2.84"
-        url: https://gh-proxy.org/https://github.com/superfly/flyctl/releases/download/{{.Version}}/{{.Asset}}
         asset: flyctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -148,7 +140,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/superfly/flyctl/releases/download/{{.Version}}/{{.Asset}}
         asset: flyctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

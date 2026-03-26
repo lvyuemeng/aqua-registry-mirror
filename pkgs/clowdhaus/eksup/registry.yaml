@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.1.0-alpha"
         no_asset: true
       - version_constraint: semver("<= 0.10.0")
-        url: https://gh-proxy.org/https://github.com/clowdhaus/eksup/releases/download/{{.Version}}/{{.Asset}}
         asset: eksup-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -37,7 +36,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/clowdhaus/eksup/releases/download/{{.Version}}/{{.Asset}}
         asset: eksup-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

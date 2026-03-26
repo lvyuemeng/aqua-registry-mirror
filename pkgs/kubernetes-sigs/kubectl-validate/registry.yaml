@@ -6,14 +6,12 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.1"
-        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/kubectl-validate/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-validate_{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         supported_envs:
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/kubectl-validate/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-validate_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:

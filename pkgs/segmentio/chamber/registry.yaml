@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version in ["v2.10.2", "v2.10.5"]
         no_asset: true
       - version_constraint: semver("<= 2.1.0")
-        url: https://gh-proxy.org/https://github.com/segmentio/chamber/releases/download/{{.Version}}/{{.Asset}}
         asset: chamber-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.3.2")
-        url: https://gh-proxy.org/https://github.com/segmentio/chamber/releases/download/{{.Version}}/{{.Asset}}
         asset: chamber-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -29,7 +27,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.10.7")
-        url: https://gh-proxy.org/https://github.com/segmentio/chamber/releases/download/{{.Version}}/{{.Asset}}
         asset: chamber-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -43,7 +40,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/segmentio/chamber/releases/download/{{.Version}}/{{.Asset}}
         asset: chamber-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

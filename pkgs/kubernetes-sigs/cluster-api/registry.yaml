@@ -10,7 +10,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.0-alpha.2")
-        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/cluster-api/releases/download/{{.Version}}/{{.Asset}}
         asset: clusterctl-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -24,7 +23,6 @@ packages:
       - version_constraint: semver("<= 0.1.10")
         no_asset: true
       - version_constraint: semver("<= 0.3.23")
-        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/cluster-api/releases/download/{{.Version}}/{{.Asset}}
         asset: clusterctl-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -32,7 +30,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.3.25")
-        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/cluster-api/releases/download/{{.Version}}/{{.Asset}}
         asset: clusterctl-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -40,7 +37,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/cluster-api/releases/download/{{.Version}}/{{.Asset}}
         asset: clusterctl-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -48,14 +44,12 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.0.5")
-        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/cluster-api/releases/download/{{.Version}}/{{.Asset}}
         asset: clusterctl-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/cluster-api/releases/download/{{.Version}}/{{.Asset}}
         asset: clusterctl-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

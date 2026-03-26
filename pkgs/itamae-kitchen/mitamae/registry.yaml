@@ -10,7 +10,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.11.2"
-        url: https://gh-proxy.org/https://github.com/itamae-kitchen/mitamae/releases/download/{{.Version}}/{{.Asset}}
         asset: mitamae-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -24,7 +23,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.0.4")
-        url: https://gh-proxy.org/https://github.com/itamae-kitchen/mitamae/releases/download/{{.Version}}/{{.Asset}}
         asset: itamae-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -34,7 +32,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.0.16")
-        url: https://gh-proxy.org/https://github.com/itamae-kitchen/mitamae/releases/download/{{.Version}}/{{.Asset}}
         asset: itamae-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -47,7 +44,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.3.0")
-        url: https://gh-proxy.org/https://github.com/itamae-kitchen/mitamae/releases/download/{{.Version}}/{{.Asset}}
         asset: itamae-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -63,7 +59,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.4.2")
-        url: https://gh-proxy.org/https://github.com/itamae-kitchen/mitamae/releases/download/{{.Version}}/{{.Asset}}
         asset: mitamae-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -76,7 +71,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.11.1")
-        url: https://gh-proxy.org/https://github.com/itamae-kitchen/mitamae/releases/download/{{.Version}}/{{.Asset}}
         asset: mitamae-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -86,7 +80,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.11.7")
-        url: https://gh-proxy.org/https://github.com/itamae-kitchen/mitamae/releases/download/{{.Version}}/{{.Asset}}
         asset: mitamae-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -100,7 +93,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("< 1.14.4")
-        url: https://gh-proxy.org/https://github.com/itamae-kitchen/mitamae/releases/download/{{.Version}}/{{.Asset}}
         asset: mitamae-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -110,7 +102,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/itamae-kitchen/mitamae/releases/download/{{.Version}}/{{.Asset}}
         asset: mitamae-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

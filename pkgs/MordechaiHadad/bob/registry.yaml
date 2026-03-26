@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.2.0")
-        url: https://gh-proxy.org/https://github.com/MordechaiHadad/bob/releases/download/{{.Version}}/{{.Asset}}
         asset: bob-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -20,7 +19,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.0.0")
-        url: https://gh-proxy.org/https://github.com/MordechaiHadad/bob/releases/download/{{.Version}}/{{.Asset}}
         asset: bob-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -36,7 +34,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.6.0")
-        url: https://gh-proxy.org/https://github.com/MordechaiHadad/bob/releases/download/{{.Version}}/{{.Asset}}
         asset: bob-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -51,7 +48,6 @@ packages:
             replacements:
               arm64: arm
       - version_constraint: semver("<= 4.0.3")
-        url: https://gh-proxy.org/https://github.com/MordechaiHadad/bob/releases/download/{{.Version}}/{{.Asset}}
         asset: bob-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -69,7 +65,6 @@ packages:
             replacements:
               arm64: arm
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/MordechaiHadad/bob/releases/download/{{.Version}}/{{.Asset}}
         asset: bob-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

@@ -12,7 +12,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 24.10.0")
-        url: https://mirrors.ustc.edu.cn/node/{{.Version}}/node-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        url: https://nodejs.org/dist/{{.Version}}/node-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
         replacements:
@@ -40,7 +40,7 @@ packages:
               - name: npx
                 src: node-{{.Version}}-{{.OS}}-{{.Arch}}/npx.cmd
       - version_constraint: "true"
-        url: https://mirrors.ustc.edu.cn/node/{{.Version}}/node-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        url: https://nodejs.org/dist/{{.Version}}/node-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
         replacements:

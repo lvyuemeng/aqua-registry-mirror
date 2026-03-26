@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version in ["2.0.97", "v3.6.5", "v3.7.1", "v3.41.0", "v3.80.0", "3.80.4", "v3.82.10"]
         no_asset: true
       - version_constraint: semver("<= 3.63.1")
-        url: https://gh-proxy.org/https://github.com/trufflesecurity/trufflehog/releases/download/{{.Version}}/{{.Asset}}
         asset: trufflehog_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -17,7 +16,6 @@ packages:
           asset: trufflehog_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/trufflesecurity/trufflehog/releases/download/{{.Version}}/{{.Asset}}
         asset: trufflehog_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

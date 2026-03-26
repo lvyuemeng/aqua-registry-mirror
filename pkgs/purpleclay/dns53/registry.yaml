@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/purpleclay/dns53/releases/download/{{.Version}}/{{.Asset}}
         asset: dns53_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

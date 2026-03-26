@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.1")
-        url: https://gh-proxy.org/https://github.com/FiloSottile/mkcert/releases/download/{{.Version}}/{{.Asset}}
         asset: mkcert-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -15,7 +14,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.4.1")
-        url: https://gh-proxy.org/https://github.com/FiloSottile/mkcert/releases/download/{{.Version}}/{{.Asset}}
         asset: mkcert-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -25,12 +23,10 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.4.3")
-        url: https://gh-proxy.org/https://github.com/FiloSottile/mkcert/releases/download/{{.Version}}/{{.Asset}}
         asset: mkcert-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/FiloSottile/mkcert/releases/download/{{.Version}}/{{.Asset}}
         asset: mkcert-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw

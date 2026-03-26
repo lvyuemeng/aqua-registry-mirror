@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.0.13")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Bearer/gon/releases/download/{{.Version}}/{{.Asset}}
         asset: gon_{{.OS}}.{{.Format}}
         format: zip
         replacements:

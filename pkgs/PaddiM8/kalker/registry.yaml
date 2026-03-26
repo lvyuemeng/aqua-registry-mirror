@@ -22,7 +22,6 @@ packages:
     version_constraint: semver(">= 1.0.0")
     version_overrides:
       - version_constraint: semver(">= 0.3.4")
-        url: https://gh-proxy.org/https://github.com/PaddiM8/kalker/releases/download/{{.Version}}/{{.Asset}}
         asset: kalk-{{.OS}}.{{.Format}}
         overrides:
           - goos: linux
@@ -32,7 +31,6 @@ packages:
           - name: kalker
             src: target/release/kalk
       - version_constraint: semver(">= 0.3.3")
-        url: https://gh-proxy.org/https://github.com/PaddiM8/kalker/releases/download/{{.Version}}/{{.Asset}}
         asset: kalk-{{.OS}}
         format: raw
         overrides:
@@ -48,7 +46,6 @@ packages:
           - name: kalker
             src: target/release/kalk
       - version_constraint: semver(">= 0.2.0")
-        url: https://gh-proxy.org/https://github.com/PaddiM8/kalker/releases/download/{{.Version}}/{{.Asset}}
         asset: kalk_cli_{{.OS}}64
         format: raw
         overrides: []
@@ -59,7 +56,6 @@ packages:
           - windows/amd64
         rosetta2: false
       - version_constraint: semver("< 0.2.0")
-        url: https://gh-proxy.org/https://github.com/PaddiM8/kalker/releases/download/{{.Version}}/{{.Asset}}
         asset: kalk_cli
         format: raw
         overrides: []

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.1"
-        url: https://gh-proxy.org/https://github.com/rs/curlie/releases/download/{{.Version}}/{{.Asset}}
         asset: curl-httpie_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -20,7 +19,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("<= 1.0.0")
-        url: https://gh-proxy.org/https://github.com/rs/curlie/releases/download/{{.Version}}/{{.Asset}}
         asset: curl-httpie_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -36,7 +34,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.6.0")
-        url: https://gh-proxy.org/https://github.com/rs/curlie/releases/download/{{.Version}}/{{.Asset}}
         asset: curlie_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -50,7 +47,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.7.2")
-        url: https://gh-proxy.org/https://github.com/rs/curlie/releases/download/{{.Version}}/{{.Asset}}
         asset: curlie_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -59,7 +55,6 @@ packages:
           asset: curlie_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/rs/curlie/releases/download/{{.Version}}/{{.Asset}}
         asset: curlie_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

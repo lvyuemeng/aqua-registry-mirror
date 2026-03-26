@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/uzimaru0000/tv/releases/download/{{.Version}}/{{.Asset}}
         asset: tv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true

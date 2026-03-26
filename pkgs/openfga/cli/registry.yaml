@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0-beta1"
-        url: https://gh-proxy.org/https://github.com/openfga/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: openfga-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -27,7 +26,6 @@ packages:
               - --signature
               - https://github.com/openfga/cli/releases/download/{{.Version}}/checksums.txt.sig
       - version_constraint: semver("<= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/openfga/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: fga_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -45,7 +43,6 @@ packages:
               - --signature
               - https://github.com/openfga/cli/releases/download/{{.Version}}/checksums.txt.sig
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/openfga/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: fga_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

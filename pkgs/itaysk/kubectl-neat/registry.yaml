@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.0")
-        url: https://gh-proxy.org/https://github.com/itaysk/kubectl-neat/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-neat_{{.OS}}.{{.Format}}
         format: tar.gz
         supported_envs:
@@ -17,7 +16,6 @@ packages:
           - name: kubectl-neat
             src: dist/{{.OS}}/kubectl-neat
       - version_constraint: semver("<= 2.0.2")
-        url: https://gh-proxy.org/https://github.com/itaysk/kubectl-neat/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-neat_{{.OS}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -28,7 +26,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/itaysk/kubectl-neat/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-neat_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

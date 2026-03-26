@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.29.0"
         no_asset: true
       - version_constraint: Version == "v0.6.2"
-        url: https://gh-proxy.org/https://github.com/pamburus/hl/releases/download/{{.Version}}/{{.Asset}}
         asset: hl-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -21,7 +20,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.6.7")
-        url: https://gh-proxy.org/https://github.com/pamburus/hl/releases/download/{{.Version}}/{{.Asset}}
         asset: hl-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -34,7 +32,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.8.14")
-        url: https://gh-proxy.org/https://github.com/pamburus/hl/releases/download/{{.Version}}/{{.Asset}}
         asset: hl-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -47,7 +44,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.10.5")
-        url: https://gh-proxy.org/https://github.com/pamburus/hl/releases/download/{{.Version}}/{{.Asset}}
         asset: hl-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -58,7 +54,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.15.2")
-        url: https://gh-proxy.org/https://github.com/pamburus/hl/releases/download/{{.Version}}/{{.Asset}}
         asset: hl-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -72,7 +67,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/pamburus/hl/releases/download/{{.Version}}/{{.Asset}}
         asset: hl-{{.OS}}-{{.Arch}}-gnu.{{.Format}}
         format: tar.gz
         replacements:

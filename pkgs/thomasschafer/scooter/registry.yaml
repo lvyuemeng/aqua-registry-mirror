@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.1.1"
         no_asset: true
       - version_constraint: semver("<= 0.2.2")
-        url: https://gh-proxy.org/https://github.com/thomasschafer/scooter/releases/download/{{.Version}}/{{.Asset}}
         asset: scooter-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -30,7 +29,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/thomasschafer/scooter/releases/download/{{.Version}}/{{.Asset}}
         asset: scooter-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

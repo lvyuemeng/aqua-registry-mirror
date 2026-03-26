@@ -15,7 +15,6 @@ packages:
     version_constraint: semver(">= 1.0.0")
     version_overrides:
       - version_constraint: Version == "v0.14.2"
-        url: https://gh-proxy.org/https://github.com/pkgxdev/pkgx/releases/download/{{.Version}}/{{.Asset}}
         asset: tea-{{trimV .Version}}+{{.OS}}+{{.Arch}}.{{.Format}}
         files:
           - name: tea
@@ -24,12 +23,10 @@ packages:
             goarch: arm64
             asset: tea-+{{.OS}}+{{.Arch}}.{{.Format}}
       - version_constraint: semver(">= 0.11.14")
-        url: https://gh-proxy.org/https://github.com/pkgxdev/pkgx/releases/download/{{.Version}}/{{.Asset}}
         asset: tea-{{trimV .Version}}+{{.OS}}+{{.Arch}}.{{.Format}}
         files:
           - name: tea
       - version_constraint: semver(">= 0.8.8")
-        url: https://gh-proxy.org/https://github.com/pkgxdev/pkgx/releases/download/{{.Version}}/{{.Asset}}
         asset: tea-{{trimV .Version}}+{{.OS}}+{{.Arch}}.{{.Format}}
         files:
           - name: tea
@@ -39,7 +36,6 @@ packages:
       - version_constraint: semver(">= 0.6.6")
         no_asset: true
       - version_constraint: semver("< 0.6.6")
-        url: https://gh-proxy.org/https://github.com/pkgxdev/pkgx/releases/download/{{.Version}}/{{.Asset}}
         asset: tea-{{trimV .Version}}+{{.OS}}+{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

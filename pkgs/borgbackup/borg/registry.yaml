@@ -9,20 +9,17 @@ packages:
       - version_constraint: Version in ["0.28.0", "0.28.1", "0.30.1"] || semver(">= 1.2.0-a2, <= 1.2.0-a5")
         no_asset: true
       - version_constraint: Version in ["1.0.1", "1.1.15b1"]
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}64
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "1.0.3"
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}64
         format: raw
         supported_envs:
           - linux/amd64
           - darwin
       - version_constraint: Version in ["0.26.1", "0.27.0"] || semver("<= 1.2.0b3")
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}64
         format: raw
         replacements:
@@ -31,7 +28,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.2.0") || Version == "1.3.0a1"
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}64
         format: raw
         replacements:
@@ -40,7 +36,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version in ["1.2.7", "1.2.8", "1.2.9"]
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}64
         format: raw
         replacements:
@@ -50,7 +45,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.2.6") || semver(">= 2.0.0a2, <= 2.0.0-b1") || Version in ["2.0.0b2", "2.0.0b3", "2.0.0b6", "2.0.0b7"]
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}64
         format: raw
         replacements:
@@ -60,7 +54,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "2.0.0b4"
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}64
         format: raw
         replacements:
@@ -68,7 +61,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "2.0.0b5"
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}{{.Arch}}
         format: raw
         replacements:
@@ -80,7 +72,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.4.0-rc1") || Version == "2.0.0b8"
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}
         format: raw
         replacements:
@@ -90,13 +81,11 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version in ["2.0.0b12", "2.0.0b13", "2.0.0b14", "2.0.0b19"]
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}-glibc236
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.4.1") || semver(">= 2.0.0b10, <= 2.0.0b18") || Version == "2.0.0b9"
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}
         format: raw
         replacements:
@@ -106,7 +95,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.4.2") || Version == "2.0.0b19"
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}-{{.Arch}}-gh
         format: raw
         replacements:
@@ -125,7 +113,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.4.3")
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}-{{.Arch}}-gh
         format: raw
         replacements:
@@ -146,7 +133,6 @@ packages:
         github_artifact_attestations:
           signer_workflow: borgbackup/borg/.github/workflows/ci.yml
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/borgbackup/borg/releases/download/{{.Version}}/{{.Asset}}
         asset: borg-{{.OS}}-{{.Arch}}-gh
         format: raw
         replacements:

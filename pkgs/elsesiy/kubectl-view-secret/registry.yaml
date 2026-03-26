@@ -21,7 +21,6 @@ packages:
       - version_constraint: semver("= 0.7.0")
         rosetta2: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/elsesiy/kubectl-view-secret/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-view-secret_{{trimV .Version}}_{{.OS}}_{{.Arch}}.tar.gz
         rosetta2: true
         supported_envs:

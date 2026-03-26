@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.2.0")
         no_asset: true
       - version_constraint: semver("< 0.3.2")
-        url: https://gh-proxy.org/https://github.com/owenlamont/ryl/releases/download/{{.Version}}/{{.Asset}}
         asset: ryl-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -22,7 +21,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/owenlamont/ryl/releases/download/{{.Version}}/{{.Asset}}
         asset: ryl-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

@@ -7,21 +7,18 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/grampelberg/kty/releases/download/{{.Version}}/{{.Asset}}
         asset: kuberift-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux/amd64
           - darwin/arm64
       - version_constraint: semver("<= 0.2.0")
-        url: https://gh-proxy.org/https://github.com/grampelberg/kty/releases/download/{{.Version}}/{{.Asset}}
         asset: kuberift-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux
           - darwin/arm64
       - version_constraint: Version == "v0.2.1"
-        url: https://gh-proxy.org/https://github.com/grampelberg/kty/releases/download/{{.Version}}/{{.Asset}}
         asset: kty-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -33,7 +30,6 @@ packages:
           # opening tar archive for reading: wrapping file reader: gzip: invalid header
           # - darwin/arm64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/grampelberg/kty/releases/download/{{.Version}}/{{.Asset}}
         asset: kty-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:

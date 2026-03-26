@@ -10,7 +10,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/cli/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gh_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -32,7 +31,6 @@ packages:
           asset: gh_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.5.2")
-        url: https://gh-proxy.org/https://github.com/cli/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gh_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -46,7 +44,6 @@ packages:
           asset: gh_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.5.5")
-        url: https://gh-proxy.org/https://github.com/cli/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gh_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -68,7 +65,6 @@ packages:
           asset: gh_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 2.20.0")
-        url: https://gh-proxy.org/https://github.com/cli/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gh_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -86,7 +82,6 @@ packages:
           asset: gh_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 2.23.0")
-        url: https://gh-proxy.org/https://github.com/cli/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gh_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -103,7 +98,6 @@ packages:
           asset: gh_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 2.27.0")
-        url: https://gh-proxy.org/https://github.com/cli/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gh_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -119,7 +113,6 @@ packages:
           asset: gh_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("< 2.50.0")
-        url: https://gh-proxy.org/https://github.com/cli/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gh_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         overrides:
@@ -136,7 +129,6 @@ packages:
           asset: gh_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/cli/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gh_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         overrides:

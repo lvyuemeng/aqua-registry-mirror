@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "0.0.4"
-        url: https://gh-proxy.org/https://github.com/mvisonneau/vac/releases/download/{{.Version}}/{{.Asset}}
         asset: vac_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -20,7 +19,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "edge"
-        url: https://gh-proxy.org/https://github.com/mvisonneau/vac/releases/download/{{.Version}}/{{.Asset}}
         asset: vac_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -32,7 +30,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.0.5"
-        url: https://gh-proxy.org/https://github.com/mvisonneau/vac/releases/download/{{.Version}}/{{.Asset}}
         asset: vac_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -45,7 +42,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.0.3")
-        url: https://gh-proxy.org/https://github.com/mvisonneau/vac/releases/download/{{.Version}}/{{.Asset}}
         asset: vac_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -58,7 +54,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mvisonneau/vac/releases/download/{{.Version}}/{{.Asset}}
         asset: vac_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

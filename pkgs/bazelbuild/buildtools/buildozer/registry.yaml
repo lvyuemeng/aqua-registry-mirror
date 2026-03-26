@@ -8,7 +8,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "0.4.3"
-        url: https://gh-proxy.org/https://github.com/bazelbuild/buildtools/releases/download/{{.Version}}/{{.Asset}}
         asset: buildozer.{{.OS}}
         format: raw
         replacements:
@@ -17,7 +16,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "0.25.0"
-        url: https://gh-proxy.org/https://github.com/bazelbuild/buildtools/releases/download/{{.Version}}/{{.Asset}}
         asset: buildozer.{{.OS}}
         format: raw
         replacements:
@@ -25,7 +23,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: Version == "4.0.0"
-        url: https://gh-proxy.org/https://github.com/bazelbuild/buildtools/releases/download/{{.Version}}/{{.Asset}}
         asset: buildozer-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -35,13 +32,11 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "4.0.1"
-        url: https://gh-proxy.org/https://github.com/bazelbuild/buildtools/releases/download/{{.Version}}/{{.Asset}}
         asset: buildozer-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.22.0")
-        url: https://gh-proxy.org/https://github.com/bazelbuild/buildtools/releases/download/{{.Version}}/{{.Asset}}
         asset: buildozer.{{.OS}}
         format: raw
         replacements:
@@ -49,7 +44,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("<= 3.5.0")
-        url: https://gh-proxy.org/https://github.com/bazelbuild/buildtools/releases/download/{{.Version}}/{{.Asset}}
         asset: buildozer.{{.OS}}
         format: raw
         replacements:
@@ -61,7 +55,6 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/bazelbuild/buildtools/releases/download/{{.Version}}/{{.Asset}}
         asset: buildozer-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

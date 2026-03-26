@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.10"
-        url: https://gh-proxy.org/https://github.com/houseabsolute/ubi/releases/download/{{.Version}}/{{.Asset}}
         asset: ubi-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -21,7 +20,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.0.7")
-        url: https://gh-proxy.org/https://github.com/houseabsolute/ubi/releases/download/{{.Version}}/{{.Asset}}
         asset: ubi-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -39,7 +37,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.0.9")
-        url: https://gh-proxy.org/https://github.com/houseabsolute/ubi/releases/download/{{.Version}}/{{.Asset}}
         asset: ubi-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -59,7 +56,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.0.19")
-        url: https://gh-proxy.org/https://github.com/houseabsolute/ubi/releases/download/{{.Version}}/{{.Asset}}
         asset: ubi-{{.OS}}-{{.Arch}}-musl.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -76,7 +72,6 @@ packages:
             format: zip
             asset: ubi-{{.OS}}-{{.Arch}}.{{.Format}}
       - version_constraint: semver("<= 0.1.1")
-        url: https://gh-proxy.org/https://github.com/houseabsolute/ubi/releases/download/{{.Version}}/{{.Asset}}
         asset: ubi-{{.OS}}-{{.Arch}}-musl.{{.Format}}
         format: tar.gz
         replacements:
@@ -92,7 +87,6 @@ packages:
             format: zip
             asset: ubi-{{.OS}}-{{.Arch}}.{{.Format}}
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/houseabsolute/ubi/releases/download/{{.Version}}/{{.Asset}}
         asset: ubi-{{.OS}}-musl-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

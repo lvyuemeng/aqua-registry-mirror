@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.11"
         no_asset: true
       - version_constraint: Version == "v0.12"
-        url: https://gh-proxy.org/https://github.com/jesseduffield/lazydocker/releases/download/{{.Version}}/{{.Asset}}
         asset: lazydocker_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -27,7 +26,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.7.4")
-        url: https://gh-proxy.org/https://github.com/jesseduffield/lazydocker/releases/download/{{.Version}}/{{.Asset}}
         asset: lazydocker_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -43,7 +41,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.10.0")
-        url: https://gh-proxy.org/https://github.com/jesseduffield/lazydocker/releases/download/{{.Version}}/{{.Asset}}
         asset: lazydocker_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -61,7 +58,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/jesseduffield/lazydocker/releases/download/{{.Version}}/{{.Asset}}
         asset: lazydocker_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

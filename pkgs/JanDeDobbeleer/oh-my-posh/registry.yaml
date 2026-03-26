@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v5.6.5"
-        url: https://gh-proxy.org/https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/{{.Version}}/{{.Asset}}
         asset: posh-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -21,7 +20,6 @@ packages:
             checksum:
               enabled: false
       - version_constraint: Version == "v6.41.1"
-        url: https://gh-proxy.org/https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/{{.Version}}/{{.Asset}}
         asset: posh-{{.OS}}-{{.Arch}}
         format: raw
         checksum:
@@ -32,7 +30,6 @@ packages:
           - windows
           - linux
       - version_constraint: semver("<= 7.52.1")
-        url: https://gh-proxy.org/https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/{{.Version}}/{{.Asset}}
         asset: posh-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -41,7 +38,6 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: semver("<= 24.10.1")
-        url: https://gh-proxy.org/https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/{{.Version}}/{{.Asset}}
         asset: posh-{{.OS}}-{{.Arch}}
         format: raw
         checksum:
@@ -49,7 +45,6 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/{{.Version}}/{{.Asset}}
         asset: posh-{{.OS}}-{{.Arch}}
         format: raw
         checksum:

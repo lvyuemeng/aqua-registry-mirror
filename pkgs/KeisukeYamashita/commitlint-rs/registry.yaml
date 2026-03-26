@@ -11,7 +11,6 @@ packages:
       - version_constraint: semver("<= 0.1.8")
         no_asset: true
       - version_constraint: semver("<= 0.1.12")
-        url: https://gh-proxy.org/https://github.com/KeisukeYamashita/commitlint-rs/releases/download/{{.Version}}/{{.Asset}}
         asset: commitlint-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -27,7 +26,6 @@ packages:
       - version_constraint: semver("<= 0.2.1")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/KeisukeYamashita/commitlint-rs/releases/download/{{.Version}}/{{.Asset}}
         asset: commitlint-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

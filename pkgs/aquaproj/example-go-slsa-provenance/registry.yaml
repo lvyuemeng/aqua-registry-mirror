@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.2")
-        url: https://gh-proxy.org/https://github.com/aquaproj/example-go-slsa-provenance/releases/download/{{.Version}}/{{.Asset}}
         asset: example-go-slsa-provenance_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -18,7 +17,6 @@ packages:
           type: github_release
           asset: multiple.intoto.jsonl
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/aquaproj/example-go-slsa-provenance/releases/download/{{.Version}}/{{.Asset}}
         asset: example-go-slsa-provenance_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

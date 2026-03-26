@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.1.1"
-        url: https://gh-proxy.org/https://github.com/so-dang-cool/findup/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Arch}}-{{.OS}}.{{.Format}}"
         format: tgz
         files:
@@ -22,7 +21,6 @@ packages:
       - version_constraint: semver("<= 1.1.0")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/so-dang-cool/findup/releases/download/{{.Version}}/{{.Asset}}
         asset: findup-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tgz
         replacements:

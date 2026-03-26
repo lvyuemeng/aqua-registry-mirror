@@ -8,6 +8,5 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kubernetes-sigs/kwok/releases/download/{{.Version}}/{{.Asset}}
         asset: kwok-{{.OS}}-{{.Arch}}
         format: raw

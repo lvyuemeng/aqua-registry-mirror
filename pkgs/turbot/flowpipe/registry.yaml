@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/turbot/flowpipe/releases/download/{{.Version}}/{{.Asset}}
         asset: flowpipe.{{.OS}}.{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:

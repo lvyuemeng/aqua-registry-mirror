@@ -17,7 +17,6 @@ packages:
     version_constraint: semver(">= 1.5")
     version_overrides:
       - version_constraint: semver("< 1.5")
-        url: https://gh-proxy.org/https://github.com/Mikescher/better-docker-ps/releases/download/{{.Version}}/{{.Asset}}
         asset: dops
         supported_envs:
           - linux/amd64

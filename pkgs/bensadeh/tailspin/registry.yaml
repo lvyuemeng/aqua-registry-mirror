@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.1")
-        url: https://gh-proxy.org/https://github.com/bensadeh/tailspin/releases/download/{{.Version}}/{{.Asset}}
         asset: tailspin_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -31,7 +30,6 @@ packages:
         files:
           - name: tspin
       - version_constraint: Version == "2.2.0"
-        url: https://gh-proxy.org/https://github.com/bensadeh/tailspin/releases/download/{{.Version}}/{{.Asset}}
         asset: tspin-{{.Arch}}-{{.OS}}.{{.Format}}
         windows_arm_emulation: true
         files:
@@ -51,7 +49,6 @@ packages:
           - linux
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/bensadeh/tailspin/releases/download/{{.Version}}/{{.Asset}}
         asset: tailspin-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

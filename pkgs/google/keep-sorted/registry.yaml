@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.6.0")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/google/keep-sorted/releases/download/{{.Version}}/{{.Asset}}
         asset: keep-sorted_{{.OS}}
         format: raw
         supported_envs:

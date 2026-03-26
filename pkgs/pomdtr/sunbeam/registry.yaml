@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.0-rc.47")
-        url: https://gh-proxy.org/https://github.com/pomdtr/sunbeam/releases/download/{{.Version}}/{{.Asset}}
         asset: sunbeam_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -18,7 +17,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.0.0-rc.49")
-        url: https://gh-proxy.org/https://github.com/pomdtr/sunbeam/releases/download/{{.Version}}/{{.Asset}}
         asset: sunbeam-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -29,7 +27,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.0.0-rc.56")
-        url: https://gh-proxy.org/https://github.com/pomdtr/sunbeam/releases/download/{{.Version}}/{{.Asset}}
         asset: sunbeam-{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -40,7 +37,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.0.0-rc.73")
-        url: https://gh-proxy.org/https://github.com/pomdtr/sunbeam/releases/download/{{.Version}}/{{.Asset}}
         asset: sunbeam-{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -51,7 +47,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/pomdtr/sunbeam/releases/download/{{.Version}}/{{.Asset}}
         asset: sunbeam-{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

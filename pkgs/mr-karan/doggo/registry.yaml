@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.3")
-        url: https://gh-proxy.org/https://github.com/mr-karan/doggo/releases/download/{{.Version}}/{{.Asset}}
         asset: doggo_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
           asset: doggo_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.4.1")
-        url: https://gh-proxy.org/https://github.com/mr-karan/doggo/releases/download/{{.Version}}/{{.Asset}}
         asset: doggo_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -26,7 +24,6 @@ packages:
           asset: doggo_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.5.7")
-        url: https://gh-proxy.org/https://github.com/mr-karan/doggo/releases/download/{{.Version}}/{{.Asset}}
         asset: doggo_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -34,7 +31,6 @@ packages:
           asset: doggo_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mr-karan/doggo/releases/download/{{.Version}}/{{.Asset}}
         asset: doggo_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

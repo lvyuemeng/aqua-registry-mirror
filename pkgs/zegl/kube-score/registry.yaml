@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.7.1"
-        url: https://gh-proxy.org/https://github.com/zegl/kube-score/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-score_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -19,7 +18,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v1.11.0"
-        url: https://gh-proxy.org/https://github.com/zegl/kube-score/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-score_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -28,7 +26,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v1.12.0"
-        url: https://gh-proxy.org/https://github.com/zegl/kube-score/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-score_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -38,7 +35,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/zegl/kube-score/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-score_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -54,7 +50,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.6.0")
-        url: https://gh-proxy.org/https://github.com/zegl/kube-score/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-score_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -73,7 +68,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.7.3")
-        url: https://gh-proxy.org/https://github.com/zegl/kube-score/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-score_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -87,7 +81,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.10.1")
-        url: https://gh-proxy.org/https://github.com/zegl/kube-score/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-score_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -97,7 +90,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/zegl/kube-score/releases/download/{{.Version}}/{{.Asset}}
         asset: kube-score_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

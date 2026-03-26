@@ -11,7 +11,6 @@ packages:
       - version_constraint: SemVer in ["0.9.85-rc.1", "0.9.41-a.5", "0.9.49-rc.1", "0.9.65", "0.9.69", "0.9.71"] or semver("> 0.9.59, <= 0.9.61-rc.1") or semver("> 0.9.61, <= 0.9.62-a.1") or semver("> 0.9.40, <= 0.9.41-a.3")
         no_asset: true
       - version_constraint: Version in ["cargo-nextest-0.9.30-rc.1", "cargo-nextest-0.9.41", "cargo-nextest-0.9.41-a.4"]
-        url: https://gh-proxy.org/https://github.com/nextest-rs/nextest/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Version}}-universal-{{.OS}}.{{.Format}}"
         format: tar.gz
         replacements:
@@ -19,7 +18,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: Version == "cargo-nextest-0.9.30-rc.2"
-        url: https://gh-proxy.org/https://github.com/nextest-rs/nextest/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}"
         format: tar.gz
         replacements:
@@ -35,7 +33,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "cargo-nextest-0.9.46"
-        url: https://gh-proxy.org/https://github.com/nextest-rs/nextest/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Version}}-i686-{{.OS}}.{{.Format}}"
         format: tar.gz
         windows_arm_emulation: true
@@ -49,7 +46,6 @@ packages:
           - darwin
           - windows
       - version_constraint: Version == "cargo-nextest-0.9.49-rc.2"
-        url: https://gh-proxy.org/https://github.com/nextest-rs/nextest/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}"
         format: tar.gz
         windows_arm_emulation: true
@@ -70,7 +66,6 @@ packages:
           - linux
           - windows
       - version_constraint: Version == "cargo-nextest-0.9.58-rc.1"
-        url: https://gh-proxy.org/https://github.com/nextest-rs/nextest/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}"
         format: tar.gz
         replacements:
@@ -79,7 +74,6 @@ packages:
         supported_envs:
           - linux/arm64
       - version_constraint: semver("<= 0.9.28")
-        url: https://gh-proxy.org/https://github.com/nextest-rs/nextest/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}"
         format: tar.gz
         windows_arm_emulation: true
@@ -96,7 +90,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.9.84")
-        url: https://gh-proxy.org/https://github.com/nextest-rs/nextest/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}"
         format: tar.gz
         windows_arm_emulation: true
@@ -117,7 +110,6 @@ packages:
           - goos: darwin
             asset: "{{.Version}}-universal-{{.OS}}.{{.Format}}"
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/nextest-rs/nextest/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}"
         format: tar.gz
         windows_arm_emulation: true

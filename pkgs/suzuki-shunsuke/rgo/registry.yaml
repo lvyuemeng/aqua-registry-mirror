@@ -13,7 +13,6 @@ packages:
           - darwin
           - linux
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/rgo/releases/download/{{.Version}}/{{.Asset}}
         asset: rgo_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

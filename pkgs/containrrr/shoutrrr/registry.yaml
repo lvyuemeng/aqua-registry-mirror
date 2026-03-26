@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.6.1")
-        url: https://gh-proxy.org/https://github.com/containrrr/shoutrrr/releases/download/{{.Version}}/{{.Asset}}
         asset: shoutrrr_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -25,7 +24,6 @@ packages:
           - linux
           - windows/amd64
       - version_constraint: semver("<= 0.7.1")
-        url: https://gh-proxy.org/https://github.com/containrrr/shoutrrr/releases/download/{{.Version}}/{{.Asset}}
         asset: shoutrrr_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -41,7 +39,6 @@ packages:
           - linux
           - windows
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/containrrr/shoutrrr/releases/download/{{.Version}}/{{.Asset}}
         asset: shoutrrr_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:

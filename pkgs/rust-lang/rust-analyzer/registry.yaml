@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "2024-09-23"
         no_asset: true
       - version_constraint: semver("<= 2020-02-17")
-        url: https://gh-proxy.org/https://github.com/rust-lang/rust-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: ra_lsp_server-{{.OS}}
         format: raw
         replacements:
@@ -19,7 +18,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2020-07-06")
-        url: https://gh-proxy.org/https://github.com/rust-lang/rust-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: rust-analyzer-{{.OS}}
         format: raw
         replacements:
@@ -29,7 +27,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2020-12-21")
-        url: https://gh-proxy.org/https://github.com/rust-lang/rust-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: rust-analyzer-{{.OS}}.{{.Format}}
         format: gz
         files:
@@ -42,7 +39,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2021-01-04")
-        url: https://gh-proxy.org/https://github.com/rust-lang/rust-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: rust-analyzer-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         windows_arm_emulation: true
@@ -63,7 +59,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "2021-01-11"
-        url: https://gh-proxy.org/https://github.com/rust-lang/rust-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: rust-analyzer-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         files:
@@ -80,7 +75,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 2021-02-08")
-        url: https://gh-proxy.org/https://github.com/rust-lang/rust-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: rust-analyzer-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         files:
@@ -93,7 +87,6 @@ packages:
           linux: unknown-linux-gnu
           windows: pc-windows-msvc
       - version_constraint: semver("<= 2024-09-16")
-        url: https://gh-proxy.org/https://github.com/rust-lang/rust-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: rust-analyzer-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         files:
@@ -114,7 +107,6 @@ packages:
             replacements:
               linux: unknown-linux-gnu
       - version_constraint: semver("<= 2024-10-28")
-        url: https://gh-proxy.org/https://github.com/rust-lang/rust-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: rust-analyzer-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         files:
@@ -135,7 +127,6 @@ packages:
             replacements:
               linux: unknown-linux-gnu
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/rust-lang/rust-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: rust-analyzer-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         files:

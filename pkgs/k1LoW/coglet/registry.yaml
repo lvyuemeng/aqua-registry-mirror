@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.0.1"
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/k1LoW/coglet/releases/download/{{.Version}}/{{.Asset}}
         asset: coglet_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

@@ -7,13 +7,11 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "1.0"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: Version in ["1.1", "1.2"]
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -31,7 +29,6 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: Version == "2.0"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -53,7 +50,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.1.5"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -63,7 +59,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v3.0"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -79,7 +74,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v3.1"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -103,7 +97,6 @@ packages:
           amd64: x64
           darwin: macos
       - version_constraint: Version == "v4.0"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -122,7 +115,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v4.1"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -147,7 +139,6 @@ packages:
           amd64: x64
           darwin: macos
       - version_constraint: Version == "v5.0"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -167,7 +158,6 @@ packages:
           amd64: x64
           darwin: macos
       - version_constraint: Version == "v5.1"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel-{{.OS}}-{{.Arch}}
         format: raw
         replacements:
@@ -175,7 +165,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v6.0"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -187,7 +176,6 @@ packages:
           arm64: aarch64
           darwin: macos
       - version_constraint: Version == "v7.0-rc1"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -202,7 +190,6 @@ packages:
           linux: unknown-linux-musl
           windows: pc-windows-msvc
       - version_constraint: Version == "v7.0.0-rc2"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -218,7 +205,6 @@ packages:
           - linux
           - windows/amd64
       - version_constraint: semver("<= 7.1.0")
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -233,7 +219,6 @@ packages:
           linux: unknown-linux-musl
           windows: pc-windows-msvc
       - version_constraint: semver("<= 8.4.2")
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -243,7 +228,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/erebe/wstunnel/releases/download/{{.Version}}/{{.Asset}}
         asset: wstunnel_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

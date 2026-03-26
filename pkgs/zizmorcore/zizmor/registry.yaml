@@ -10,7 +10,6 @@ packages:
         type: cargo
         crate: zizmor
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/zizmorcore/zizmor/releases/download/{{.Version}}/{{.Asset}}
         asset: zizmor-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

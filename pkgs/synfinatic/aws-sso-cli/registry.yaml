@@ -9,18 +9,15 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.9.5"
-        url: https://gh-proxy.org/https://github.com/synfinatic/aws-sso-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: aws-sso-1.9.4-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: semver("<= 1.0.0") or Version == "v1.9.3"
-        url: https://gh-proxy.org/https://github.com/synfinatic/aws-sso-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: aws-sso-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/synfinatic/aws-sso-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: aws-sso-{{trimV .Version}}-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

@@ -7,13 +7,11 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/Lifailon/lazyjournal/releases/download/{{.Version}}/{{.Asset}}
         asset: lazyjournal-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Lifailon/lazyjournal/releases/download/{{.Version}}/{{.Asset}}
         asset: lazyjournal-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:

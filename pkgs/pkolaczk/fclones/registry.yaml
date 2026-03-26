@@ -10,7 +10,6 @@ packages:
       - version_constraint: Version in ["v0.12.3", "v0.18.1", "v0.29.2", "v0.31.1"]
         no_asset: true
       - version_constraint: Version == "0.2.0"
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{.Version}}.{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -28,7 +27,6 @@ packages:
           - linux/arm64
           - windows/amd64
       - version_constraint: Version in ["v0.19.0", "v0.23.0"]
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{trimV .Version}}-{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -38,7 +36,6 @@ packages:
         supported_envs:
           - windows/amd64
       - version_constraint: Version == "v0.20.0"
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{trimV .Version}}.{{.Format}}
         format: tgz
         windows_arm_emulation: true
@@ -52,7 +49,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v0.20.1"
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{trimV .Version}}-{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -73,7 +69,6 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: Version == "v0.21.0"
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -96,7 +91,6 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: Version == "v0.22.0"
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{trimV .Version}}-{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -119,7 +113,6 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: Version in ["v0.24.0", "v0.26.0"]
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{trimV .Version}}-{{.OS}}.{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -134,7 +127,6 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: Version == "v0.25.0"
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{trimV .Version}}-{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -150,7 +142,6 @@ packages:
       - version_constraint: semver("<= 0.1.2")
         no_asset: true
       - version_constraint: semver("<= 0.6.0")
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{.Version}}-{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -167,7 +158,6 @@ packages:
           - linux/arm64
           - windows/amd64
       - version_constraint: semver("<= 0.9.1")
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{.Version}}-{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -177,7 +167,6 @@ packages:
         supported_envs:
           - windows/amd64
       - version_constraint: semver("<= 0.10.2")
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{trimV .Version}}-{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -189,7 +178,6 @@ packages:
       - version_constraint: semver("<= 0.12.0")
         no_asset: true
       - version_constraint: semver("<= 0.28.0")
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{trimV .Version}}-{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -207,7 +195,6 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/pkolaczk/fclones/releases/download/{{.Version}}/{{.Asset}}
         asset: fclones-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

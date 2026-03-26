@@ -10,7 +10,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Shopify/toxiproxy/releases/download/{{.Version}}/{{.Asset}}
         asset: toxiproxy_{{trimV .Version}}_{{.OS}}_{{.Arch}}.tar.gz
         checksum:
           type: github_release

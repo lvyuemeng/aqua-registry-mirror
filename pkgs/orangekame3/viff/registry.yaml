@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.0.8"
         no_asset: true
       - version_constraint: semver("<= 0.0.7")
-        url: https://gh-proxy.org/https://github.com/orangekame3/viff/releases/download/{{.Version}}/{{.Asset}}
         asset: viff_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -17,7 +16,6 @@ packages:
           asset: viff_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/orangekame3/viff/releases/download/{{.Version}}/{{.Asset}}
         asset: viff_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

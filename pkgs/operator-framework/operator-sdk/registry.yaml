@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.0.6") or Version == "v1.34.0"
         no_asset: true
       - version_constraint: semver("<= 0.16.0")
-        url: https://gh-proxy.org/https://github.com/operator-framework/operator-sdk/releases/download/{{.Version}}/{{.Asset}}
         asset: operator-sdk-{{.Version}}-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -21,7 +20,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.2.0")
-        url: https://gh-proxy.org/https://github.com/operator-framework/operator-sdk/releases/download/{{.Version}}/{{.Asset}}
         asset: operator-sdk-{{.Version}}-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -37,7 +35,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.18.1")
-        url: https://gh-proxy.org/https://github.com/operator-framework/operator-sdk/releases/download/{{.Version}}/{{.Asset}}
         asset: operator-sdk_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -49,7 +46,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/operator-framework/operator-sdk/releases/download/{{.Version}}/{{.Asset}}
         asset: operator-sdk_{{.OS}}_{{.Arch}}
         format: raw
         checksum:

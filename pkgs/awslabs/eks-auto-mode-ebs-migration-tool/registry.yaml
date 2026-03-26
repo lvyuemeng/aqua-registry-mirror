@@ -6,7 +6,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/awslabs/eks-auto-mode-ebs-migration-tool/releases/download/{{.Version}}/{{.Asset}}
         asset: eks-auto-mode-ebs-migration-tool_{{.OS}}_{{.Arch}}
         format: raw
         replacements:

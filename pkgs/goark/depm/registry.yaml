@@ -3,11 +3,10 @@ packages:
   - type: github_release
     repo_owner: goark
     repo_name: depm
-    description: Visualize depndency packages and modules
+    description: Visualize dependency packages and modules
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.1")
-        url: https://gh-proxy.org/https://github.com/goark/depm/releases/download/{{.Version}}/{{.Asset}}
         asset: depm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -28,7 +27,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.4.4")
-        url: https://gh-proxy.org/https://github.com/goark/depm/releases/download/{{.Version}}/{{.Asset}}
         asset: depm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -46,7 +44,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.6.5")
-        url: https://gh-proxy.org/https://github.com/goark/depm/releases/download/{{.Version}}/{{.Asset}}
         asset: depm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -63,7 +60,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/goark/depm/releases/download/{{.Version}}/{{.Asset}}
         asset: depm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

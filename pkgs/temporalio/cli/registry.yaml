@@ -11,7 +11,6 @@ packages:
       - version_constraint: Version == "v0.13.0-rc.1"
         no_asset: true
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/temporalio/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: temporal-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -22,7 +21,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.2.0"
-        url: https://gh-proxy.org/https://github.com/temporalio/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -33,7 +31,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "0.5.0"
-        url: https://gh-proxy.org/https://github.com/temporalio/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: temporal_cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -44,7 +41,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/temporalio/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: temporal_cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -55,7 +51,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/temporalio/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: temporal_cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

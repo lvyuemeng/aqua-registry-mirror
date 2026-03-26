@@ -10,7 +10,6 @@ packages:
         src: rv-{{.Arch}}-{{.OS}}/rv
     version_overrides:
       - version_constraint: semver("<= 0.1.1")
-        url: https://gh-proxy.org/https://github.com/spinel-coop/rv/releases/download/{{.Version}}/{{.Asset}}
         asset: rv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         replacements:
@@ -29,7 +28,6 @@ packages:
           - linux
           - darwin/arm64
       - version_constraint: semver("<= 0.5.2")
-        url: https://gh-proxy.org/https://github.com/spinel-coop/rv/releases/download/{{.Version}}/{{.Asset}}
         asset: rv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         replacements:
@@ -45,7 +43,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/spinel-coop/rv/releases/download/{{.Version}}/{{.Asset}}
         asset: rv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         replacements:

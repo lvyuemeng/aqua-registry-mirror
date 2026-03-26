@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.6.1"
-        url: https://gh-proxy.org/https://github.com/cilium/hubble/releases/download/{{.Version}}/{{.Asset}}
         asset: hubble-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -23,7 +22,6 @@ packages:
       - version_constraint: semver("<= 0.6.0")
         no_asset: true
       - version_constraint: semver("<= 0.7.1")
-        url: https://gh-proxy.org/https://github.com/cilium/hubble/releases/download/{{.Version}}/{{.Asset}}
         asset: hubble-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -35,7 +33,6 @@ packages:
           asset: hubble-{{.OS}}-{{.Arch}}.tar.gz.sha256sum
           algorithm: sha256
       - version_constraint: semver("<= 0.8.2")
-        url: https://gh-proxy.org/https://github.com/cilium/hubble/releases/download/{{.Version}}/{{.Asset}}
         asset: hubble-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -44,7 +41,6 @@ packages:
           asset: hubble-{{.OS}}-{{.Arch}}.tar.gz.sha256sum
           algorithm: sha256
       - version_constraint: semver("<= 1.16.2")
-        url: https://gh-proxy.org/https://github.com/cilium/hubble/releases/download/{{.Version}}/{{.Asset}}
         asset: hubble-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -52,7 +48,6 @@ packages:
           asset: hubble-{{.OS}}-{{.Arch}}.tar.gz.sha256sum
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/cilium/hubble/releases/download/{{.Version}}/{{.Asset}}
         asset: hubble-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

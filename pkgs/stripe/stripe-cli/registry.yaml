@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.5.10"
-        url: https://gh-proxy.org/https://github.com/stripe/stripe-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: stripe_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -34,7 +33,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v1.7.2"
-        url: https://gh-proxy.org/https://github.com/stripe/stripe-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: stripe_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -56,7 +54,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v1.7.5"
-        url: https://gh-proxy.org/https://github.com/stripe/stripe-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: stripe_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -73,7 +70,6 @@ packages:
           - linux/amd64
           - windows
       - version_constraint: Version == "v1.7.6"
-        url: https://gh-proxy.org/https://github.com/stripe/stripe-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: stripe_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -94,7 +90,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v1.7.7"
-        url: https://gh-proxy.org/https://github.com/stripe/stripe-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: stripe_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -111,7 +106,6 @@ packages:
           - linux/amd64
           - windows
       - version_constraint: Version == "v1.13.2"
-        url: https://gh-proxy.org/https://github.com/stripe/stripe-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: stripe_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -130,7 +124,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 0.8.2")
-        url: https://gh-proxy.org/https://github.com/stripe/stripe-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: stripe_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -147,7 +140,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.5.9")
-        url: https://gh-proxy.org/https://github.com/stripe/stripe-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: stripe_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -167,7 +159,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.12.3")
-        url: https://gh-proxy.org/https://github.com/stripe/stripe-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: stripe_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -188,7 +179,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/stripe/stripe-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: stripe_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

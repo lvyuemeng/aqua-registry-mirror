@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.18.0")
-        url: https://gh-proxy.org/https://github.com/gruntwork-io/terragrunt/releases/download/{{.Version}}/{{.Asset}}
         asset: terragrunt_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.28.11")
-        url: https://gh-proxy.org/https://github.com/gruntwork-io/terragrunt/releases/download/{{.Version}}/{{.Asset}}
         asset: terragrunt_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -31,7 +29,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.93.5")
-        url: https://gh-proxy.org/https://github.com/gruntwork-io/terragrunt/releases/download/{{.Version}}/{{.Asset}}
         asset: terragrunt_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -40,7 +37,6 @@ packages:
           asset: SHA256SUMS
           algorithm: sha256
       - version_constraint: semver("<= 0.97.2")
-        url: https://gh-proxy.org/https://github.com/gruntwork-io/terragrunt/releases/download/{{.Version}}/{{.Asset}}
         asset: terragrunt_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -55,7 +51,6 @@ packages:
           - goos: windows
             asset: terragrunt_{{.OS}}_{{.Arch}}.exe.{{.Format}}
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/gruntwork-io/terragrunt/releases/download/{{.Version}}/{{.Asset}}
         asset: terragrunt_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

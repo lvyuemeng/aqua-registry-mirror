@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.0.2")
         no_asset: true
       - version_constraint: semver("<= 0.2.2")
-        url: https://gh-proxy.org/https://github.com/hougesen/mdsf/releases/download/{{.Version}}/{{.Asset}}
         asset: mdsf-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -27,7 +26,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.2.3"
-        url: https://gh-proxy.org/https://github.com/hougesen/mdsf/releases/download/{{.Version}}/{{.Asset}}
         asset: mdsf-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -52,7 +50,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/hougesen/mdsf/releases/download/{{.Version}}/{{.Asset}}
         asset: mdsf-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

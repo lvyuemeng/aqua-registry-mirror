@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.1"
-        url: https://gh-proxy.org/https://github.com/ianlewis/todos/releases/download/{{.Version}}/{{.Asset}}
         asset: todos-{{.OS}}-{{.Arch}}
         format: raw
         complete_windows_ext: false
@@ -15,7 +14,6 @@ packages:
           type: github_release
           asset: todos-{{.OS}}-{{.Arch}}.intoto.jsonl
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ianlewis/todos/releases/download/{{.Version}}/{{.Asset}}
         asset: todos-{{.OS}}-{{.Arch}}
         format: raw
         slsa_provenance:

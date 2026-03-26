@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/rogerwelin/cassowary/releases/download/{{.Version}}/{{.Asset}}
         asset: cassowary_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -23,7 +22,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.12.0")
-        url: https://gh-proxy.org/https://github.com/rogerwelin/cassowary/releases/download/{{.Version}}/{{.Asset}}
         asset: cassowary_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -42,7 +40,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.13.0")
-        url: https://gh-proxy.org/https://github.com/rogerwelin/cassowary/releases/download/{{.Version}}/{{.Asset}}
         asset: cassowary_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -61,7 +58,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.16.0")
-        url: https://gh-proxy.org/https://github.com/rogerwelin/cassowary/releases/download/{{.Version}}/{{.Asset}}
         asset: cassowary_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -76,7 +72,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/rogerwelin/cassowary/releases/download/{{.Version}}/{{.Asset}}
         asset: cassowary_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

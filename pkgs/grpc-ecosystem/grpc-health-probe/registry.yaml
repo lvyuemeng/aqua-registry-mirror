@@ -9,19 +9,16 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.0")
-        url: https://gh-proxy.org/https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/{{.Version}}/{{.Asset}}
         asset: grpc_health_probe-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.3.4")
-        url: https://gh-proxy.org/https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/{{.Version}}/{{.Asset}}
         asset: grpc_health_probe-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux
       - version_constraint: semver("<= 0.3.6")
-        url: https://gh-proxy.org/https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/{{.Version}}/{{.Asset}}
         asset: grpc_health_probe-{{.OS}}-{{.Arch}}
         format: raw
         checksum:
@@ -31,7 +28,6 @@ packages:
         supported_envs:
           - linux
       - version_constraint: semver("<= 0.4.2")
-        url: https://gh-proxy.org/https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/{{.Version}}/{{.Asset}}
         asset: grpc_health_probe-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -43,7 +39,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.4.13")
-        url: https://gh-proxy.org/https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/{{.Version}}/{{.Asset}}
         asset: grpc_health_probe-{{.OS}}-{{.Arch}}
         format: raw
         checksum:
@@ -54,7 +49,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/{{.Version}}/{{.Asset}}
         asset: grpc_health_probe-{{.OS}}-{{.Arch}}
         format: raw
         checksum:

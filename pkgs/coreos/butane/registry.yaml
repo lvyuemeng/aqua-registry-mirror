@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.3.0"
         no_asset: true
       - version_constraint: semver("<= 0.10.0")
-        url: https://gh-proxy.org/https://github.com/coreos/butane/releases/download/{{.Version}}/{{.Asset}}
         asset: fcct-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -26,7 +25,6 @@ packages:
             replacements:
               arm64: aarch64
       - version_constraint: semver("<= 0.15.0")
-        url: https://gh-proxy.org/https://github.com/coreos/butane/releases/download/{{.Version}}/{{.Asset}}
         asset: butane-{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true
@@ -41,7 +39,6 @@ packages:
             replacements:
               arm64: aarch64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/coreos/butane/releases/download/{{.Version}}/{{.Asset}}
         asset: butane-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true

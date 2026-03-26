@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version in ["v0.11.0", "v0.14.0"]
-        url: https://gh-proxy.org/https://github.com/oxipng/oxipng/releases/download/{{.Version}}/{{.Asset}}
         asset: oxipng-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -21,7 +20,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.14.3"
-        url: https://gh-proxy.org/https://github.com/oxipng/oxipng/releases/download/{{.Version}}/{{.Asset}}
         asset: oxipng-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -32,7 +30,6 @@ packages:
       - version_constraint: semver("<= 0.10.0") || Version in ["v0.17.0", "v2.2.1"]
         no_asset: true
       - version_constraint: semver("<= 0.15.1")
-        url: https://gh-proxy.org/https://github.com/oxipng/oxipng/releases/download/{{.Version}}/{{.Asset}}
         asset: oxipng-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -50,7 +47,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.0.0")
-        url: https://gh-proxy.org/https://github.com/oxipng/oxipng/releases/download/{{.Version}}/{{.Asset}}
         asset: oxipng-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -60,7 +56,6 @@ packages:
         supported_envs:
           - windows/amd64
       - version_constraint: Version == "v3.0.1"
-        url: https://gh-proxy.org/https://github.com/oxipng/oxipng/releases/download/{{.Version}}/{{.Asset}}
         asset: oxipng-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -83,7 +78,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 8.0.0")
-        url: https://gh-proxy.org/https://github.com/oxipng/oxipng/releases/download/{{.Version}}/{{.Asset}}
         asset: oxipng-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -106,7 +100,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/oxipng/oxipng/releases/download/{{.Version}}/{{.Asset}}
         asset: oxipng-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

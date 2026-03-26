@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.3")
-        url: https://gh-proxy.org/https://github.com/jmespath/jp/releases/download/{{.Version}}/{{.Asset}}
         asset: jp-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -18,14 +17,12 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.2.0"
-        url: https://gh-proxy.org/https://github.com/jmespath/jp/releases/download/{{.Version}}/{{.Asset}}
         asset: jp-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
         complete_windows_ext: false
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/jmespath/jp/releases/download/{{.Version}}/{{.Asset}}
         asset: jp-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

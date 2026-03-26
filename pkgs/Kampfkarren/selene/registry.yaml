@@ -14,7 +14,6 @@ packages:
     asset: selene-{{.Version}}-{{.OS}}.zip
     version_overrides:
       - version_constraint: semver(">= 0.4.3")
-        url: https://gh-proxy.org/https://github.com/Kampfkarren/selene/releases/download/{{.Version}}/{{.Asset}}
         asset: selene-{{.OS}}
         replacements:
           darwin: osx
@@ -22,7 +21,6 @@ packages:
           - goos: windows
             asset: selene.exe
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Kampfkarren/selene/releases/download/{{.Version}}/{{.Asset}}
         asset: selene
         supported_envs:
           - linux/amd64

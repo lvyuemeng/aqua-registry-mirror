@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 7.1.0")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/libbpf/bpftool/releases/download/{{.Version}}/{{.Asset}}
         asset: bpftool-{{ .Version}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

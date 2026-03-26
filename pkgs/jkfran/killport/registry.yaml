@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/jkfran/killport/releases/download/{{.Version}}/{{.Asset}}
         asset: killport-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -17,7 +16,6 @@ packages:
         supported_envs:
           - linux
       - version_constraint: Version == "v0.5.0"
-        url: https://gh-proxy.org/https://github.com/jkfran/killport/releases/download/{{.Version}}/{{.Asset}}
         asset: killport-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -29,7 +27,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.8.0") || Version == "v1.0.0"
-        url: https://gh-proxy.org/https://github.com/jkfran/killport/releases/download/{{.Version}}/{{.Asset}}
         asset: killport-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -41,7 +38,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("< 2.0.0")
-        url: https://gh-proxy.org/https://github.com/jkfran/killport/releases/download/{{.Version}}/{{.Asset}}
         asset: killport-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -52,7 +48,6 @@ packages:
           windows: pc-windows-gnu
           linux: linux-gnu
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/jkfran/killport/releases/download/{{.Version}}/{{.Asset}}
         asset: killport-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:

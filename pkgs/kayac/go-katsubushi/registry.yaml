@@ -15,7 +15,6 @@ packages:
     version_overrides:
       # checksum file not provided & tag style was changed
       - version_constraint: semver(">= 1.6.1")
-        url: https://gh-proxy.org/https://github.com/kayac/go-katsubushi/releases/download/{{.Version}}/{{.Asset}}
         asset: go-katsubushi_v{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         overrides:
@@ -32,7 +31,6 @@ packages:
           enabled: false
       # asset name was changed
       - version_constraint: semver(">= 0.1.0")
-        url: https://gh-proxy.org/https://github.com/kayac/go-katsubushi/releases/download/{{.Version}}/{{.Asset}}
         asset: katsubushi-{{.Version}}-{{.OS}}-{{.Arch}}.zip
         rosetta2: true
         supported_envs:
@@ -42,7 +40,6 @@ packages:
           enabled: false
       # linux only support
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kayac/go-katsubushi/releases/download/{{.Version}}/{{.Asset}}
         asset: katsubushi-{{.Version}}-{{.OS}}-{{.Arch}}.zip
         files:
           - name: katsubushi

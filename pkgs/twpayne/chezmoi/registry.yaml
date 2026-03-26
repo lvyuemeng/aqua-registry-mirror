@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.5")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -20,7 +19,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.5.10")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -32,7 +30,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.7.5")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -42,7 +39,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 1.7.10")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -55,7 +51,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.8.11")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -68,7 +63,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.0.3")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -80,7 +74,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.0.6")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -95,7 +88,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.1.5")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -110,7 +102,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.13.1")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -124,7 +115,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.21.1")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -138,7 +128,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.27.1")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -152,7 +141,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.29.4")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}-glibc_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -173,7 +161,6 @@ packages:
             format: zip
             asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
       - version_constraint: semver("<= 2.66.1")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}-glibc_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -200,7 +187,6 @@ packages:
             format: zip
             asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
       - version_constraint: semver("<= 2.67.1")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}-glibc_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -228,7 +214,6 @@ packages:
             asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         github_immutable_release: true
       - version_constraint: semver("<= 2.68.1")
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}-glibc_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -257,7 +242,6 @@ packages:
             asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         github_immutable_release: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

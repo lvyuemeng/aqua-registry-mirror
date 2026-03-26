@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "0.0.4"
         no_asset: true
       - version_constraint: Version == "edge"
-        url: https://gh-proxy.org/https://github.com/mvisonneau/tfcw/releases/download/{{.Version}}/{{.Asset}}
         asset: tfcw_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -20,7 +19,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.0.10"
-        url: https://gh-proxy.org/https://github.com/mvisonneau/tfcw/releases/download/{{.Version}}/{{.Asset}}
         asset: tfcw_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -33,7 +31,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.0.11"
-        url: https://gh-proxy.org/https://github.com/mvisonneau/tfcw/releases/download/{{.Version}}/{{.Asset}}
         asset: tfcw_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -46,7 +43,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.0.9")
-        url: https://gh-proxy.org/https://github.com/mvisonneau/tfcw/releases/download/{{.Version}}/{{.Asset}}
         asset: tfcw_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -59,7 +55,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mvisonneau/tfcw/releases/download/{{.Version}}/{{.Asset}}
         asset: tfcw_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

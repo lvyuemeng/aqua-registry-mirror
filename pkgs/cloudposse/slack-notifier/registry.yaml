@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/cloudposse/slack-notifier/releases/download/{{.Version}}/{{.Asset}}
         asset: slack-notifier_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.5.0"
-        url: https://gh-proxy.org/https://github.com/cloudposse/slack-notifier/releases/download/{{.Version}}/{{.Asset}}
         asset: slack-notifier_{{.OS}}_{{.Arch}}
         format: raw
         checksum:
@@ -25,7 +23,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "0.5.1"
-        url: https://gh-proxy.org/https://github.com/cloudposse/slack-notifier/releases/download/{{.Version}}/{{.Asset}}
         asset: slack-notifier_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         checksum:
@@ -35,7 +32,6 @@ packages:
       - version_constraint: semver("<= 0.7.0")
         no_asset: true
       - version_constraint: Version == "0.8.0"
-        url: https://gh-proxy.org/https://github.com/cloudposse/slack-notifier/releases/download/{{.Version}}/{{.Asset}}
         asset: slack-notifier_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         checksum:
@@ -43,7 +39,6 @@ packages:
           asset: slack-notifier_{{.Version}}_SHA256SUMS
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/cloudposse/slack-notifier/releases/download/{{.Version}}/{{.Asset}}
         asset: slack-notifier_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         files:

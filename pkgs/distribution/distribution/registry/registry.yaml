@@ -12,7 +12,6 @@ packages:
       - version_constraint: semver("<= 2.7.1")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/distribution/distribution/releases/download/{{.Version}}/{{.Asset}}
         asset: registry_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

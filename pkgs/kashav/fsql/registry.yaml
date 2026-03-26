@@ -23,7 +23,6 @@ packages:
         files:
           - name: fsql
       - version_constraint: semver("= 0.4.0")
-        url: https://gh-proxy.org/https://github.com/kashav/fsql/releases/download/{{.Version}}/{{.Asset}}
         asset: fsql-{{trimV .Version}}-{{.OS}}-{{.Arch}}.tar.gz
         # arm64 wasn't supported
         rosetta2: true
@@ -42,7 +41,6 @@ packages:
           - name: fsql
             src: "{{.OS}}-{{.Arch}}/fsql"
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kashav/fsql/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}_{{.Arch}}.tar.gz"
         rosetta2: true
         overrides:

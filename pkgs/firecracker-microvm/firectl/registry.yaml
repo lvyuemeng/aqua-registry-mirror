@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/firecracker-microvm/firectl/releases/download/{{.Version}}/{{.Asset}}
         asset: firectl-{{ .Version }}
         format: raw
         supported_envs:

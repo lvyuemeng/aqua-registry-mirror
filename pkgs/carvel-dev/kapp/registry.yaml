@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.34.0")
-        url: https://gh-proxy.org/https://github.com/carvel-dev/kapp/releases/download/{{.Version}}/{{.Asset}}
         asset: kapp-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -19,18 +18,15 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.38.0")
-        url: https://gh-proxy.org/https://github.com/carvel-dev/kapp/releases/download/{{.Version}}/{{.Asset}}
         asset: kapp-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.45.0")
-        url: https://gh-proxy.org/https://github.com/carvel-dev/kapp/releases/download/{{.Version}}/{{.Asset}}
         asset: kapp-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: semver("< 0.60.0")
-        url: https://gh-proxy.org/https://github.com/carvel-dev/kapp/releases/download/{{.Version}}/{{.Asset}}
         asset: kapp-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -39,7 +35,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/carvel-dev/kapp/releases/download/{{.Version}}/{{.Asset}}
         asset: kapp-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

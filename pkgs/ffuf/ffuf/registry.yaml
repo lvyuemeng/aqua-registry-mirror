@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.0")
-        url: https://gh-proxy.org/https://github.com/ffuf/ffuf/releases/download/{{.Version}}/{{.Asset}}
         asset: ffuf_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -17,7 +16,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.5.0")
-        url: https://gh-proxy.org/https://github.com/ffuf/ffuf/releases/download/{{.Version}}/{{.Asset}}
         asset: ffuf_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -32,7 +30,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ffuf/ffuf/releases/download/{{.Version}}/{{.Asset}}
         asset: ffuf_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

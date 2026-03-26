@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.19.2"
         no_asset: true
       - version_constraint: semver("<= 0.20.0")
-        url: https://gh-proxy.org/https://github.com/koki-develop/gat/releases/download/{{.Version}}/{{.Asset}}
         asset: gat_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -27,7 +26,6 @@ packages:
       - version_constraint: semver("<= 0.20.3")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/koki-develop/gat/releases/download/{{.Version}}/{{.Asset}}
         asset: gat_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

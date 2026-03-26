@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/hherman1/gq/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}-{{.Arch}}.{{.Format}}"
         format: zip
         windows_arm_emulation: true

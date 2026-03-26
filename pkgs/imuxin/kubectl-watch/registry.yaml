@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "0.1.5"
-        url: https://gh-proxy.org/https://github.com/imuxin/kubectl-watch/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-watch_{{.Version}}_{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -28,7 +27,6 @@ packages:
       - version_constraint: semver("<= 0.1.4")
         no_asset: true
       - version_constraint: semver("<= 0.2.3")
-        url: https://gh-proxy.org/https://github.com/imuxin/kubectl-watch/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-watch-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -40,7 +38,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/imuxin/kubectl-watch/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-watch-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

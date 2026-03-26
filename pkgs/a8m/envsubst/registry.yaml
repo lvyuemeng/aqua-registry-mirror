@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.0.0"
-        url: https://gh-proxy.org/https://github.com/a8m/envsubst/releases/download/{{.Version}}/{{.Asset}}
         asset: envsubst-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -19,7 +18,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v1.1.0"
-        url: https://gh-proxy.org/https://github.com/a8m/envsubst/releases/download/{{.Version}}/{{.Asset}}
         asset: envsubst-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -36,7 +34,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v1.2.0"
-        url: https://gh-proxy.org/https://github.com/a8m/envsubst/releases/download/{{.Version}}/{{.Asset}}
         asset: envsubst-{{.OS}}-{{.Arch}}
         format: raw
         replacements:
@@ -47,7 +44,6 @@ packages:
           - goos: windows
             asset: envsubst
       - version_constraint: Version == "v1.4.1"
-        url: https://gh-proxy.org/https://github.com/a8m/envsubst/releases/download/{{.Version}}/{{.Asset}}
         asset: envsubst-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -58,7 +54,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/a8m/envsubst/releases/download/{{.Version}}/{{.Asset}}
         asset: envsubst-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

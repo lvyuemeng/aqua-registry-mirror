@@ -11,14 +11,12 @@ packages:
       - version_constraint: Version == "v0.7.2"
         no_asset: true
       - version_constraint: Version == "v0.12.1"
-        url: https://gh-proxy.org/https://github.com/kubie-org/kubie/releases/download/{{.Version}}/{{.Asset}}
         asset: kubie-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.13.0"
-        url: https://gh-proxy.org/https://github.com/kubie-org/kubie/releases/download/{{.Version}}/{{.Asset}}
         asset: kubie-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -26,13 +24,11 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.20.0"
-        url: https://gh-proxy.org/https://github.com/kubie-org/kubie/releases/download/{{.Version}}/{{.Asset}}
         asset: kubie-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux
       - version_constraint: semver("<= 0.12.0")
-        url: https://gh-proxy.org/https://github.com/kubie-org/kubie/releases/download/{{.Version}}/{{.Asset}}
         asset: kubie-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -40,14 +36,12 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.14.1")
-        url: https://gh-proxy.org/https://github.com/kubie-org/kubie/releases/download/{{.Version}}/{{.Asset}}
         asset: kubie-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kubie-org/kubie/releases/download/{{.Version}}/{{.Asset}}
         asset: kubie-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:

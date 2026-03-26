@@ -14,7 +14,6 @@ packages:
       - version_constraint: Version == "0.35.3"
         no_asset: true
       - version_constraint: Version == "0.16.5"
-        url: https://gh-proxy.org/https://github.com/sagiegurari/cargo-make/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-make-v{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -31,7 +30,6 @@ packages:
             files:
               - name: cargo-make
       - version_constraint: Version == "0.19.0"
-        url: https://gh-proxy.org/https://github.com/sagiegurari/cargo-make/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-make-v0.18.0-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -53,7 +51,6 @@ packages:
             files:
               - name: cargo-make
       - version_constraint: Version == "0.30.2"
-        url: https://gh-proxy.org/https://github.com/sagiegurari/cargo-make/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-make-v{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -73,7 +70,6 @@ packages:
             files:
               - name: cargo-make
       - version_constraint: Version == "0.35.14"
-        url: https://gh-proxy.org/https://github.com/sagiegurari/cargo-make/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-make-v{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -92,7 +88,6 @@ packages:
       - version_constraint: semver("<= 0.15.0")
         no_asset: true
       - version_constraint: semver("<= 0.36.6")
-        url: https://gh-proxy.org/https://github.com/sagiegurari/cargo-make/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-make-v{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -112,7 +107,6 @@ packages:
               - name: cargo-make
               - name: makers
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/sagiegurari/cargo-make/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-make-v{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

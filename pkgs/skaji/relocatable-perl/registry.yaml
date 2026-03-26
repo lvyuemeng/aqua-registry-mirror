@@ -16,7 +16,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 5.34.1.0")
-        url: https://gh-proxy.org/https://github.com/skaji/relocatable-perl/releases/download/{{.Version}}/{{.Asset}}
         asset: perl-{{.OS}}-2level.{{.Format}}
         format: tar.gz
         replacements:
@@ -28,7 +27,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 5.36.0.0")
-        url: https://gh-proxy.org/https://github.com/skaji/relocatable-perl/releases/download/{{.Version}}/{{.Asset}}
         asset: perl-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -42,7 +40,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/skaji/relocatable-perl/releases/download/{{.Version}}/{{.Asset}}
         asset: perl-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:

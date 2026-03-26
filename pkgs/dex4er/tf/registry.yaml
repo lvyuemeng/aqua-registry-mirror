@@ -14,7 +14,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/dex4er/tf/releases/download/{{.Version}}/{{.Asset}}
         asset: tf-{{.OS}}-{{.Arch}}
         format: raw
         checksum:

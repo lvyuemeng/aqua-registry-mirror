@@ -25,7 +25,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver(">= 0.0.2")
-        url: https://gh-proxy.org/https://github.com/dineshba/tf-summarize/releases/download/{{.Version}}/{{.Asset}}
         asset: terraform-plan-summary_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         overrides: []
@@ -39,7 +38,6 @@ packages:
           asset: terraform-plan-summary_SHA256SUMS
           algorithm: sha256
       - version_constraint: Version == "v0.0.1"
-        url: https://gh-proxy.org/https://github.com/dineshba/tf-summarize/releases/download/{{.Version}}/{{.Asset}}
         asset: terraform-plan-summary_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         overrides: []

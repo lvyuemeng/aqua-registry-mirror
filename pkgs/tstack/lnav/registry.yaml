@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.8.1")
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         files:
@@ -18,7 +17,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v0.8.2-alpha"
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         files:
@@ -29,7 +27,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v0.8.2"
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         files:
@@ -40,7 +37,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.8.3b")
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         replacements:
@@ -48,7 +44,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.8.5")
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         files:
@@ -59,7 +54,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v0.9.0"
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         files:
@@ -70,7 +64,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.11.0")
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-musl-64bit.{{.Format}}
         format: zip
         rosetta2: true
@@ -84,7 +77,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.11.1-test1")
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-0.11.1-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -101,7 +93,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.11.2")
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-{{.Arch}}-{{.OS}}-musl.{{.Format}}
         format: zip
         rosetta2: true
@@ -118,7 +109,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.12.0")
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-{{.OS}}-musl-{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -138,7 +128,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.12.3")
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-{{.OS}}-musl-{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -155,7 +144,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.12.4"
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-{{.OS}}-musl-{{.Arch}}.{{.Format}}
         format: zip
         files:
@@ -173,7 +161,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/tstack/lnav/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-{{.OS}}-musl-{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true

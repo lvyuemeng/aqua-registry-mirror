@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mitsuhiko/insta/releases/download/{{.Version}}/{{.Asset}}
         asset: cargo-insta-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3")
-        url: https://gh-proxy.org/https://github.com/jedisct1/piknik/releases/download/{{.Version}}/{{.Asset}}
         asset: piknik-{{.OS}}-{{.Version}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -31,7 +30,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/jedisct1/piknik/releases/download/{{.Version}}/{{.Asset}}
         asset: piknik-{{.OS}}_{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         replacements:

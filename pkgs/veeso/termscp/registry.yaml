@@ -22,7 +22,6 @@ packages:
       - version_constraint: semver(">= 0.6.1")
         rosetta2: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/veeso/termscp/releases/download/{{.Version}}/{{.Asset}}
         asset: termscp-{{.OS}}.{{.Format}}
         rosetta2: true
         replacements:

@@ -26,7 +26,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("< 0.1.0")
-        url: https://gh-proxy.org/https://github.com/theurichde/go-aws-sso/releases/download/{{.Version}}/{{.Asset}}
         asset: go-aws-sso-util_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         supported_envs:
           - linux

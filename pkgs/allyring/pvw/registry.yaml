@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.3.1")
-        url: https://gh-proxy.org/https://github.com/allyring/pvw/releases/download/{{.Version}}/{{.Asset}}
         asset: pvw_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -18,7 +17,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.4.1")
-        url: https://gh-proxy.org/https://github.com/allyring/pvw/releases/download/{{.Version}}/{{.Asset}}
         asset: pvw_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -26,7 +24,6 @@ packages:
           asset: pvw_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/allyring/pvw/releases/download/{{.Version}}/{{.Asset}}
         asset: pvw_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

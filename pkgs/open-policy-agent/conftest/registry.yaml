@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.44.0"
         no_asset: true
       - version_constraint: Version == "0.9.1"
-        url: https://gh-proxy.org/https://github.com/open-policy-agent/conftest/releases/download/{{.Version}}/{{.Asset}}
         asset: conftest_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -31,7 +30,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.20.0")
-        url: https://gh-proxy.org/https://github.com/open-policy-agent/conftest/releases/download/{{.Version}}/{{.Asset}}
         asset: conftest_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -53,7 +51,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.27.0")
-        url: https://gh-proxy.org/https://github.com/open-policy-agent/conftest/releases/download/{{.Version}}/{{.Asset}}
         asset: conftest_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -71,7 +68,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/open-policy-agent/conftest/releases/download/{{.Version}}/{{.Asset}}
         asset: conftest_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

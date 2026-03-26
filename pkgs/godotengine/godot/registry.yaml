@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "1.0-stable"
         no_asset: true
       - version_constraint: semver("<= 2.0.2-stable")
-        url: https://gh-proxy.org/https://github.com/godotengine/godot/releases/download/{{.Version}}/{{.Asset}}
         asset: Godot_v{{replace "-" "_" .Version}}_{{.OS}}.exe.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -21,7 +20,6 @@ packages:
         supported_envs:
           - windows
       - version_constraint: Version == "2.0.3-stable"
-        url: https://gh-proxy.org/https://github.com/godotengine/godot/releases/download/{{.Version}}/{{.Asset}}
         asset: Godot_v{{replace "-" "_" .Version}}_{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -44,7 +42,6 @@ packages:
           - darwin
           - windows
       - version_constraint: Version == "2.0.4.1-stable"
-        url: https://gh-proxy.org/https://github.com/godotengine/godot/releases/download/{{.Version}}/{{.Asset}}
         asset: Godot_v{{replace "-" "_" .Version}}_{{.OS}}.fat.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -65,7 +62,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 3.0.6-stable")
-        url: https://gh-proxy.org/https://github.com/godotengine/godot/releases/download/{{.Version}}/{{.Asset}}
         asset: Godot_v{{.Version}}_{{.OS}}.fat.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -86,7 +82,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 3.2.3-stable")
-        url: https://gh-proxy.org/https://github.com/godotengine/godot/releases/download/{{.Version}}/{{.Asset}}
         asset: Godot_v{{.Version}}_{{.OS}}.64.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -111,7 +106,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 3.5.3-stable")
-        url: https://gh-proxy.org/https://github.com/godotengine/godot/releases/download/{{.Version}}/{{.Asset}}
         asset: Godot_v{{.Version}}_{{.OS}}.universal.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -136,7 +130,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 3.6.1-stable")
-        url: https://gh-proxy.org/https://github.com/godotengine/godot/releases/download/{{.Version}}/{{.Asset}}
         asset: Godot_v{{.Version}}_{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -163,7 +156,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 4.1.4-stable")
-        url: https://gh-proxy.org/https://github.com/godotengine/godot/releases/download/{{.Version}}/{{.Asset}}
         asset: Godot_v{{.Version}}_{{.OS}}.exe.{{.Format}}
         format: zip
         files:
@@ -191,7 +183,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 4.2.2-stable")
-        url: https://gh-proxy.org/https://github.com/godotengine/godot/releases/download/{{.Version}}/{{.Asset}}
         asset: Godot_v{{.Version}}_{{.OS}}.{{.Arch}}.{{.Format}}
         windows_arm_emulation: true
         format: zip
@@ -217,7 +208,6 @@ packages:
           - goos: windows
             asset: Godot_v{{.Version}}_{{.OS}}.exe.{{.Format}}
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/godotengine/godot/releases/download/{{.Version}}/{{.Asset}}
         asset: Godot_v{{.Version}}_{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         files:

@@ -20,7 +20,6 @@ packages:
           asset: sha512sum.txt
           algorithm: sha512
       - version_constraint: semver("<= 0.2.0")
-        url: https://gh-proxy.org/https://github.com/siderolabs/talos/releases/download/{{.Version}}/{{.Asset}}
         asset: osctl-{{.OS}}-{{.Arch}}
         files:
           - name: osctl
@@ -33,7 +32,6 @@ packages:
           - linux/amd64
           - darwin/amd64
       - version_constraint: semver("<= 0.3.3")
-        url: https://gh-proxy.org/https://github.com/siderolabs/talos/releases/download/{{.Version}}/{{.Asset}}
         asset: osctl-{{.OS}}-{{.Arch}}
         files:
           - name: osctl

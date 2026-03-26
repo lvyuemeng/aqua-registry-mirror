@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.17-4"
-        url: https://gh-proxy.org/https://github.com/sudorandom/fauxrpc/releases/download/{{.Version}}/{{.Asset}}
         asset: fauxrpc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -15,7 +14,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v0.0.17"
-        url: https://gh-proxy.org/https://github.com/sudorandom/fauxrpc/releases/download/{{.Version}}/{{.Asset}}
         asset: fauxrpc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -23,7 +21,6 @@ packages:
           asset: fauxrpc_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.0.16")
-        url: https://gh-proxy.org/https://github.com/sudorandom/fauxrpc/releases/download/{{.Version}}/{{.Asset}}
         asset: fauxrpc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -31,7 +28,6 @@ packages:
           asset: fauxrpc_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.16.1")
-        url: https://gh-proxy.org/https://github.com/sudorandom/fauxrpc/releases/download/{{.Version}}/{{.Asset}}
         asset: fauxrpc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -39,7 +35,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.19.4")
-        url: https://gh-proxy.org/https://github.com/sudorandom/fauxrpc/releases/download/{{.Version}}/{{.Asset}}
         asset: fauxrpc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -49,7 +44,6 @@ packages:
         supported_envs:
           - linux
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/sudorandom/fauxrpc/releases/download/{{.Version}}/{{.Asset}}
         asset: fauxrpc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

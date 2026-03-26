@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.8")
-        url: https://gh-proxy.org/https://github.com/Qovery/Replibyte/releases/download/{{.Version}}/{{.Asset}}
         asset: replibyte_{{.Version}}_{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -33,7 +32,6 @@ packages:
       - version_constraint: Version == "v0.2.0"
         no_asset: true
       - version_constraint: semver("<= 0.4.1")
-        url: https://gh-proxy.org/https://github.com/Qovery/Replibyte/releases/download/{{.Version}}/{{.Asset}}
         asset: replibyte_{{.Version}}_{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -54,7 +52,6 @@ packages:
           asset: replibyte_{{.Version}}_{{.Arch}}-{{.OS}}.{{.Format}}.sha256sum
           algorithm: sha256
       - version_constraint: Version == "v0.4.2"
-        url: https://gh-proxy.org/https://github.com/Qovery/Replibyte/releases/download/{{.Version}}/{{.Asset}}
         asset: replibyte_{{.Version}}_{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -85,7 +82,6 @@ packages:
           asset: replibyte_{{.Version}}_{{.Arch}}-{{.OS}}.sha256sum
           algorithm: sha256
       - version_constraint: Version == "v0.4.3"
-        url: https://gh-proxy.org/https://github.com/Qovery/Replibyte/releases/download/{{.Version}}/{{.Asset}}
         asset: replibyte_{{.Version}}_{{.Arch}}-{{.OS}}.exe.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -102,7 +98,6 @@ packages:
           asset: replibyte_{{.Version}}_{{.Arch}}-{{.OS}}.exe.{{.Format}}.sha256sum
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Qovery/Replibyte/releases/download/{{.Version}}/{{.Asset}}
         asset: replibyte_{{.Version}}_{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true

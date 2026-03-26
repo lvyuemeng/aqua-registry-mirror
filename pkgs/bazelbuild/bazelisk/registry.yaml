@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.5")
-        url: https://gh-proxy.org/https://github.com/bazelbuild/bazelisk/releases/download/{{.Version}}/{{.Asset}}
         asset: bazelisk-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
@@ -17,7 +16,6 @@ packages:
       - version_constraint: Version == "v0.0.6"
         no_asset: true
       - version_constraint: semver("<= 1.5.0")
-        url: https://gh-proxy.org/https://github.com/bazelbuild/bazelisk/releases/download/{{.Version}}/{{.Asset}}
         asset: bazelisk-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
@@ -25,7 +23,6 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver("<= 1.6.1")
-        url: https://gh-proxy.org/https://github.com/bazelbuild/bazelisk/releases/download/{{.Version}}/{{.Asset}}
         asset: bazelisk-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
@@ -36,7 +33,6 @@ packages:
       - version_constraint: Version == "v1.7.0"
         no_asset: true
       - version_constraint: semver("<= 1.8.1")
-        url: https://gh-proxy.org/https://github.com/bazelbuild/bazelisk/releases/download/{{.Version}}/{{.Asset}}
         asset: bazelisk-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
@@ -45,7 +41,6 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/bazelbuild/bazelisk/releases/download/{{.Version}}/{{.Asset}}
         asset: bazelisk-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:

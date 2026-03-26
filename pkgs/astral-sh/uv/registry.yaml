@@ -10,7 +10,6 @@ packages:
       - name: uvx
     version_overrides:
       - version_constraint: semver("<= 0.2.19")
-        url: https://gh-proxy.org/https://github.com/astral-sh/uv/releases/download/{{.Version}}/{{.Asset}}
         asset: uv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -33,7 +32,6 @@ packages:
             files:
               - name: uv
       - version_constraint: Version == "0.2.20"
-        url: https://gh-proxy.org/https://github.com/astral-sh/uv/releases/download/{{.Version}}/{{.Asset}}
         asset: uv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -58,7 +56,6 @@ packages:
             files:
               - name: uv
       - version_constraint: semver("<= 0.9.7") || Version == "0.9.11"
-        url: https://gh-proxy.org/https://github.com/astral-sh/uv/releases/download/{{.Version}}/{{.Asset}}
         asset: uv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -84,7 +81,6 @@ packages:
               - name: uv
               - name: uvx
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/astral-sh/uv/releases/download/{{.Version}}/{{.Asset}}
         asset: uv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

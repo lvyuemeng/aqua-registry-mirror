@@ -12,7 +12,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.2")
-        url: https://gh-proxy.org/https://github.com/xo/dbtpl/releases/download/{{.Version}}/{{.Asset}}
         asset: xo-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         windows_arm_emulation: true
@@ -22,7 +21,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/xo/dbtpl/releases/download/{{.Version}}/{{.Asset}}
         asset: xo-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.bz2
         windows_arm_emulation: true

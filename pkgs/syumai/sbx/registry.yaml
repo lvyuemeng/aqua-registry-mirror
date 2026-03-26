@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.0.1"
         no_asset: true
       - version_constraint: Version == "v0.0.2"
-        url: https://gh-proxy.org/https://github.com/syumai/sbx/releases/download/{{.Version}}/{{.Asset}}
         asset: sbx_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -25,7 +24,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.0.4")
-        url: https://gh-proxy.org/https://github.com/syumai/sbx/releases/download/{{.Version}}/{{.Asset}}
         asset: sbx-{{.Arch}}-{{.OS}}
         format: raw
         checksum:
@@ -33,7 +31,6 @@ packages:
           asset: sbx_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/syumai/sbx/releases/download/{{.Version}}/{{.Asset}}
         asset: sbx-{{.Arch}}-{{.OS}}
         format: raw
         checksum:

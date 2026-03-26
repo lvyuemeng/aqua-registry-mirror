@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.40.0")
-        url: https://gh-proxy.org/https://github.com/realm/SwiftLint/releases/download/{{.Version}}/{{.Asset}}
         asset: portable_swiftlint.{{.Format}}
         format: zip
         files:
@@ -17,7 +16,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("<= 0.59.1")
-        url: https://gh-proxy.org/https://github.com/realm/SwiftLint/releases/download/{{.Version}}/{{.Asset}}
         asset: swiftlint_linux.{{.Format}}
         format: zip
         files:
@@ -29,7 +27,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/realm/SwiftLint/releases/download/{{.Version}}/{{.Asset}}
         asset: swiftlint_linux_{{.Arch}}.{{.Format}}
         format: zip
         files:

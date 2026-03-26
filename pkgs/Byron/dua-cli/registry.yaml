@@ -11,7 +11,6 @@ packages:
       - version_constraint: Version in ["v2.12.0", "v2.14.9", "v2.18.1", "v2.29.3"]
         no_asset: true
       - version_constraint: Version == "v2.10.3"
-        url: https://gh-proxy.org/https://github.com/Byron/dua-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: dua-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -29,7 +28,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v2.20.0"
-        url: https://gh-proxy.org/https://github.com/Byron/dua-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: dua-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -48,7 +46,6 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: Version == "v2.21.0"
-        url: https://gh-proxy.org/https://github.com/Byron/dua-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: dua-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -66,7 +63,6 @@ packages:
           - linux/amd64
           - windows/amd64
       - version_constraint: Version == "v2.28.0"
-        url: https://gh-proxy.org/https://github.com/Byron/dua-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: dua-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -89,7 +85,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.5.0")
-        url: https://gh-proxy.org/https://github.com/Byron/dua-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: dua-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -104,7 +99,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.27.2")
-        url: https://gh-proxy.org/https://github.com/Byron/dua-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: dua-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -125,7 +119,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v2.31.0"
-        url: https://gh-proxy.org/https://github.com/Byron/dua-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: dua-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -145,7 +138,6 @@ packages:
           - darwin
           - linux
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Byron/dua-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: dua-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

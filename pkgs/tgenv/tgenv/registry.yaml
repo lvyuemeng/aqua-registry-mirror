@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/tgenv/tgenv/archive/refs/tags/{{.Version}}.tar.gz
         files:
           - name: tgenv
             src: tgenv-{{trimV .Version}}/bin/tgenv

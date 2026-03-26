@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/babarot/changed-objects/releases/download/{{.Version}}/{{.Asset}}
         asset: get-changed-objects_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -25,7 +24,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.1.1"
-        url: https://gh-proxy.org/https://github.com/babarot/changed-objects/releases/download/{{.Version}}/{{.Asset}}
         asset: get-changed-objects-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -41,7 +39,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.1.2"
-        url: https://gh-proxy.org/https://github.com/babarot/changed-objects/releases/download/{{.Version}}/{{.Asset}}
         asset: get-changed-objects-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -55,7 +52,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.1.11"
-        url: https://gh-proxy.org/https://github.com/babarot/changed-objects/releases/download/{{.Version}}/{{.Asset}}
         asset: changed-objects-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -67,7 +63,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.1.7")
-        url: https://gh-proxy.org/https://github.com/babarot/changed-objects/releases/download/{{.Version}}/{{.Asset}}
         asset: changed-objects-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -79,7 +74,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.1.16")
-        url: https://gh-proxy.org/https://github.com/babarot/changed-objects/releases/download/{{.Version}}/{{.Asset}}
         asset: changed-objects-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -92,7 +86,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.3.7")
-        url: https://gh-proxy.org/https://github.com/babarot/changed-objects/releases/download/{{.Version}}/{{.Asset}}
         asset: changed-objects-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -105,7 +98,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/babarot/changed-objects/releases/download/{{.Version}}/{{.Asset}}
         asset: changed-objects_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

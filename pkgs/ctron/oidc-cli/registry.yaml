@@ -11,7 +11,6 @@ packages:
       - version_constraint: Version == "v0.1.2"
         no_asset: true
       - version_constraint: semver("<= 0.5.1")
-        url: https://gh-proxy.org/https://github.com/ctron/oidc-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: oidc-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true
@@ -22,7 +21,6 @@ packages:
           linux: unknown-linux-musl
           windows: pc-windows-msvc
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ctron/oidc-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: oidc-{{.Arch}}-{{.OS}}
         format: raw
         windows_arm_emulation: true

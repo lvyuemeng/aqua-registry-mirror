@@ -8,13 +8,11 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 154.0.0")
-        url: https://gh-proxy.org/https://github.com/subtrace/subtrace/releases/download/{{.Version}}/{{.Asset}}
         asset: subtrace-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/subtrace/subtrace/releases/download/{{.Version}}/{{.Asset}}
         asset: subtrace-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/ynqa/jnv/releases/download/{{.Version}}/{{.Asset}}
         asset: jnv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         rosetta2: true
@@ -24,7 +23,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: Version == "v0.3.0"
-        url: https://gh-proxy.org/https://github.com/ynqa/jnv/releases/download/{{.Version}}/{{.Asset}}
         asset: jnv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -53,7 +51,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.2.3")
-        url: https://gh-proxy.org/https://github.com/ynqa/jnv/releases/download/{{.Version}}/{{.Asset}}
         asset: jnv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         rosetta2: true
@@ -72,7 +69,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.5.0")
-        url: https://gh-proxy.org/https://github.com/ynqa/jnv/releases/download/{{.Version}}/{{.Asset}}
         asset: jnv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -101,7 +97,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ynqa/jnv/releases/download/{{.Version}}/{{.Asset}}
         asset: jnv-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true

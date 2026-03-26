@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 1.3.0")
         no_asset: true
       - version_constraint: semver("<= 1.10.1")
-        url: https://gh-proxy.org/https://github.com/makiuchi-d/arelo/releases/download/{{.Version}}/{{.Asset}}
         asset: arelo_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -28,7 +27,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.12.3")
-        url: https://gh-proxy.org/https://github.com/makiuchi-d/arelo/releases/download/{{.Version}}/{{.Asset}}
         asset: arelo_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -41,7 +39,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/makiuchi-d/arelo/releases/download/{{.Version}}/{{.Asset}}
         asset: arelo_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

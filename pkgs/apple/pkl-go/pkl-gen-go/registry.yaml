@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/apple/pkl-go/releases/download/{{.Version}}/{{.Asset}}
         asset: pkl-gen-go-{{.OS}}-{{.Arch}}.bin
         format: raw
         replacements:

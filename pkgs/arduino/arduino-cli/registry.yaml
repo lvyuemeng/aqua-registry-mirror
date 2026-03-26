@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.2.1-alpha.preview")
         no_asset: true
       - version_constraint: Version == "0.4.0"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -30,7 +29,6 @@ packages:
           asset: "{{.Version}}-20190805-checksums.txt"
           algorithm: sha256
       - version_constraint: Version == "0.5.0"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -51,7 +49,6 @@ packages:
           asset: "{{.Version}}-20190905-checksums.txt"
           algorithm: sha256
       - version_constraint: Version == "0.6.0"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -72,7 +69,6 @@ packages:
           asset: "{{.Version}}-20191024-checksums.txt"
           algorithm: sha256
       - version_constraint: Version == "0.7.0"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -93,7 +89,6 @@ packages:
           asset: "{{.Version}}-20191220-checksums.txt"
           algorithm: sha256
       - version_constraint: semver("<= 0.7.1")
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -114,7 +109,6 @@ packages:
           asset: "{{.Version}}-20191231-checksums.txt"
           algorithm: sha256
       - version_constraint: Version == "0.7.2"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -135,7 +129,6 @@ packages:
           asset: "{{.Version}}-20200109-checksums.txt"
           algorithm: sha256
       - version_constraint: semver("<= 0.8.0")
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -156,7 +149,6 @@ packages:
           asset: "{{.Version}}-20200214-checksums.txt"
           algorithm: sha256
       - version_constraint: Version == "0.9.0"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -177,7 +169,6 @@ packages:
           asset: "{{.Version}}-20200226-checksums.txt"
           algorithm: sha256
       - version_constraint: semver("<= 0.10.0")
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -198,7 +189,6 @@ packages:
           asset: "{{.Version}}-20200416-checksums.txt"
           algorithm: sha256
       - version_constraint: Version == "0.11.0"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -219,7 +209,6 @@ packages:
           asset: "{{.Version}}-20200625-checksums.txt"
           algorithm: sha256
       - version_constraint: Version == "0.12.0"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -240,7 +229,6 @@ packages:
           asset: "{{.Version}}-20200824-checksums.txt"
           algorithm: sha256
       - version_constraint: Version == "0.12.1"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -261,7 +249,6 @@ packages:
           asset: "{{.Version}}-20200826-checksums.txt"
           algorithm: sha256
       - version_constraint: Version == "0.13.0"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -282,7 +269,6 @@ packages:
           asset: "{{.Version}}-20200914-checksums.txt"
           algorithm: sha256
       - version_constraint: Version == "0.14.0"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -303,7 +289,6 @@ packages:
           asset: "{{.Version}}-20201210-checksums.txt"
           algorithm: sha256
       - version_constraint: semver("<= 0.24.0")
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -324,7 +309,6 @@ packages:
           asset: "{{.Version}}-checksums.txt"
           algorithm: sha256
       - version_constraint: semver("<= 0.28.0")
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -342,7 +326,6 @@ packages:
           asset: "{{.Version}}-checksums.txt"
           algorithm: sha256
       - version_constraint: semver("<= 0.31.0")
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -360,7 +343,6 @@ packages:
           asset: "{{.Version}}-checksums.txt"
           algorithm: sha256
       - version_constraint: semver("<= 0.34.2")
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -378,7 +360,6 @@ packages:
           asset: "{{.Version}}-checksums.txt"
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/arduino/arduino-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: arduino-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

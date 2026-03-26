@@ -23,7 +23,6 @@ packages:
             type: go_install
             path: github.com/josephburnett/jd
       - version_constraint: semver(">= 1.2.0")
-        url: https://gh-proxy.org/https://github.com/josephburnett/jd/releases/download/{{.Version}}/{{.Asset}}
         asset: jd
         overrides:
           - goarch: arm64
@@ -38,7 +37,6 @@ packages:
             type: go_install
             path: github.com/josephburnett/jd
       - version_constraint: semver("< 1.2.0")
-        url: https://gh-proxy.org/https://github.com/josephburnett/jd/releases/download/{{.Version}}/{{.Asset}}
         asset: jd
         supported_envs:
           - linux/amd64

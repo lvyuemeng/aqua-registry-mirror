@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.6.1"
-        url: https://gh-proxy.org/https://github.com/tomnomnom/gron/releases/download/{{.Version}}/{{.Asset}}
         asset: gron-{{.OS}}-{{.Arch}}-{{trimV .Version}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -16,13 +15,11 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.1.2")
-        url: https://gh-proxy.org/https://github.com/tomnomnom/gron/releases/download/{{.Version}}/{{.Asset}}
         asset: gron-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 0.2.0")
-        url: https://gh-proxy.org/https://github.com/tomnomnom/gron/releases/download/{{.Version}}/{{.Asset}}
         asset: gron-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -30,7 +27,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.2.2")
-        url: https://gh-proxy.org/https://github.com/tomnomnom/gron/releases/download/{{.Version}}/{{.Asset}}
         asset: gron-{{.OS}}-{{.Arch}}-{{trimV .Version}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -40,7 +36,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.6.0")
-        url: https://gh-proxy.org/https://github.com/tomnomnom/gron/releases/download/{{.Version}}/{{.Asset}}
         asset: gron-{{.OS}}-{{.Arch}}-{{trimV .Version}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -53,7 +48,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/tomnomnom/gron/releases/download/{{.Version}}/{{.Asset}}
         asset: gron-{{.OS}}-{{.Arch}}-{{trimV .Version}}.{{.Format}}
         format: tgz
         overrides:

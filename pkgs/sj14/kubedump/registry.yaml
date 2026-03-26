@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/sj14/kubedump/releases/download/{{.Version}}/{{.Asset}}
         asset: kubedump_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         checksum:

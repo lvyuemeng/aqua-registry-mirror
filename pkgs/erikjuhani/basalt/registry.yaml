@@ -10,7 +10,6 @@ packages:
       - version_constraint: semver("<= 0.3.1")
         no_asset: true
       - version_constraint: Version == "basalt/v0.10.4"
-        url: https://gh-proxy.org/https://github.com/erikjuhani/basalt/releases/download/{{.Version}}/{{.Asset}}
         asset: basalt-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -29,7 +28,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/erikjuhani/basalt/releases/download/{{.Version}}/{{.Asset}}
         asset: basalt-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

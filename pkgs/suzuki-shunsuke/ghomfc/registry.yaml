@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/ghomfc/releases/download/{{.Version}}/{{.Asset}}
         asset: ghomfc_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

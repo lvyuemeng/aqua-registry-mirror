@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2.0.0")
-        url: https://gh-proxy.org/https://github.com/securego/gosec/releases/download/{{.Version}}/{{.Asset}}
         asset: gosec_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -21,7 +20,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.7.0")
-        url: https://gh-proxy.org/https://github.com/securego/gosec/releases/download/{{.Version}}/{{.Asset}}
         asset: gosec_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -35,7 +33,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.8.1")
-        url: https://gh-proxy.org/https://github.com/securego/gosec/releases/download/{{.Version}}/{{.Asset}}
         asset: gosec_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -44,7 +41,6 @@ packages:
           asset: gosec_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("< 2.10.0")
-        url: https://gh-proxy.org/https://github.com/securego/gosec/releases/download/{{.Version}}/{{.Asset}}
         asset: gosec_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -52,7 +48,6 @@ packages:
           asset: gosec_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/securego/gosec/releases/download/{{.Version}}/{{.Asset}}
         asset: gosec_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

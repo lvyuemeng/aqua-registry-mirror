@@ -7,14 +7,12 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.2"
-        url: https://gh-proxy.org/https://github.com/goccy/bigquery-emulator/releases/download/{{.Version}}/{{.Asset}}
         asset: bigquery-emulator-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         supported_envs:
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/goccy/bigquery-emulator/releases/download/{{.Version}}/{{.Asset}}
         asset: bigquery-emulator-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true

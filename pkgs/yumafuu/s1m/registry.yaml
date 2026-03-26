@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version in ["v0.2.2", "v0.2.3"]
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/yumafuu/s1m/releases/download/{{.Version}}/{{.Asset}}
         asset: s1m_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

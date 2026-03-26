@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.2.0"
-        url: https://gh-proxy.org/https://github.com/mgdm/htmlq/releases/download/{{.Version}}/{{.Asset}}
         asset: htmlq_{{.Arch}}_{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mgdm/htmlq/releases/download/{{.Version}}/{{.Asset}}
         asset: htmlq-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

@@ -43,7 +43,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mintoolkit/mint/releases/download/{{.Version}}/{{.Asset}}
         asset: dist_{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

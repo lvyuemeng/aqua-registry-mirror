@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "1.0.0"
-        url: https://gh-proxy.org/https://github.com/CQLabs/homebrew-dcm/releases/download/{{.Version}}/{{.Asset}}
         asset: dcm-{{.OS}}-{{.Arch}}-release.{{.Format}}
         format: zip
         files:
@@ -28,7 +27,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/CQLabs/homebrew-dcm/releases/download/{{.Version}}/{{.Asset}}
         asset: dcm-{{.OS}}-{{.Arch}}-release.{{.Format}}
         format: zip
         files:

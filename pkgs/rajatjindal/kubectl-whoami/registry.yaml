@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.6")
-        url: https://gh-proxy.org/https://github.com/rajatjindal/kubectl-whoami/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}"
         format: tar.gz
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
       - version_constraint: semver("<= 0.0.16")
         no_asset: true
       - version_constraint: semver("<= 0.0.18")
-        url: https://gh-proxy.org/https://github.com/rajatjindal/kubectl-whoami/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-whoami_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -31,7 +29,6 @@ packages:
       - version_constraint: Version == "v0.0.19"
         no_asset: true
       - version_constraint: semver("<= 0.0.41")
-        url: https://gh-proxy.org/https://github.com/rajatjindal/kubectl-whoami/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-whoami_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -43,7 +40,6 @@ packages:
           asset: kubectl-whoami_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v0.0.42"
-        url: https://gh-proxy.org/https://github.com/rajatjindal/kubectl-whoami/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-whoami_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -55,7 +51,6 @@ packages:
           asset: kubectl-whoami_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.0.45")
-        url: https://gh-proxy.org/https://github.com/rajatjindal/kubectl-whoami/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-whoami_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:
@@ -66,7 +61,6 @@ packages:
           asset: kubectl-whoami_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/rajatjindal/kubectl-whoami/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-whoami_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

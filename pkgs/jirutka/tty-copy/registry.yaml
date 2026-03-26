@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.0")
-        url: https://gh-proxy.org/https://github.com/jirutka/tty-copy/releases/download/{{.Version}}/{{.Asset}}
         asset: tty-copy.{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -20,7 +19,6 @@ packages:
         supported_envs:
           - linux
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/jirutka/tty-copy/releases/download/{{.Version}}/{{.Asset}}
         asset: tty-copy.{{.Arch}}-{{.OS}}
         format: raw
         rosetta2: true

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.17.1")
-        url: https://gh-proxy.org/https://github.com/mpostument/awstaghelper/releases/download/{{.Version}}/{{.Asset}}
         asset: awstaghelper_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -26,7 +25,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.19.0")
-        url: https://gh-proxy.org/https://github.com/mpostument/awstaghelper/releases/download/{{.Version}}/{{.Asset}}
         asset: awstaghelper_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -39,7 +37,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mpostument/awstaghelper/releases/download/{{.Version}}/{{.Asset}}
         asset: awstaghelper_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

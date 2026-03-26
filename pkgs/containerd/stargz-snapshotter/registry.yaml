@@ -20,7 +20,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.0")
-        url: https://gh-proxy.org/https://github.com/containerd/stargz-snapshotter/releases/download/{{.Version}}/{{.Asset}}
         asset: stargz-snapshotter-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -33,7 +32,6 @@ packages:
           - name: containerd-stargz-grpc
           - name: ctr-remote
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/containerd/stargz-snapshotter/releases/download/{{.Version}}/{{.Asset}}
         asset: stargz-snapshotter-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

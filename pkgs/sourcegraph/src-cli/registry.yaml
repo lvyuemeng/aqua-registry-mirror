@@ -25,7 +25,6 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver("< 3.10.9")
-        url: https://gh-proxy.org/https://github.com/sourcegraph/src-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: src_{{.OS}}_{{.Arch}}
         format: raw
         supported_envs:

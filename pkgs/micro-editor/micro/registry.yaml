@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v2.0.8"
-        url: https://gh-proxy.org/https://github.com/micro-editor/micro/releases/download/{{.Version}}/{{.Asset}}
         asset: micro-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -28,7 +27,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.0rc1")
-        url: https://gh-proxy.org/https://github.com/micro-editor/micro/releases/download/{{.Version}}/{{.Asset}}
         asset: micro-{{.Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -47,7 +45,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.4.1")
-        url: https://gh-proxy.org/https://github.com/micro-editor/micro/releases/download/{{.Version}}/{{.Asset}}
         asset: micro-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -66,7 +63,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.0.10")
-        url: https://gh-proxy.org/https://github.com/micro-editor/micro/releases/download/{{.Version}}/{{.Asset}}
         asset: micro-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -85,7 +81,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/micro-editor/micro/releases/download/{{.Version}}/{{.Asset}}
         asset: micro-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:

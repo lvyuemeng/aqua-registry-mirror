@@ -11,7 +11,6 @@ packages:
       - version_constraint: Version == "v1.5.0"
         no_asset: true
       - version_constraint: semver("<= 1.1.0")
-        url: https://gh-proxy.org/https://github.com/antonmedv/walk/releases/download/{{.Version}}/{{.Asset}}
         asset: llama_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -23,12 +22,10 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.4.0")
-        url: https://gh-proxy.org/https://github.com/antonmedv/walk/releases/download/{{.Version}}/{{.Asset}}
         asset: llama_{{.OS}}_{{.Arch}}
         format: raw
         files:
           - name: llama
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/antonmedv/walk/releases/download/{{.Version}}/{{.Asset}}
         asset: walk_{{.OS}}_{{.Arch}}
         format: raw

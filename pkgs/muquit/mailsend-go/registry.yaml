@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.3")
-        url: https://gh-proxy.org/https://github.com/muquit/mailsend-go/releases/download/{{.Version}}/{{.Asset}}
         asset: mailsend-go_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -30,7 +29,6 @@ packages:
           - name: mailsend-go
             src: mailsend-go-dir/mailsend-go
       - version_constraint: semver("<= 1.0.10")
-        url: https://gh-proxy.org/https://github.com/muquit/mailsend-go/releases/download/{{.Version}}/{{.Asset}}
         asset: mailsend-go_{{trimV .Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -52,7 +50,6 @@ packages:
           - name: mailsend-go
             src: mailsend-go-dir/mailsend-go
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/muquit/mailsend-go/releases/download/{{.Version}}/{{.Asset}}
         asset: mailsend-go-{{.Version}}-{{.OS}}-{{.Arch}}.d.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

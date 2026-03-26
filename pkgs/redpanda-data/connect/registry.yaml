@@ -17,7 +17,6 @@ packages:
       - version_constraint: semver("<= 0.11.1") or Version == "v1.7.8"
         no_asset: true
       - version_constraint: semver("<= 0.11.1")
-        url: https://gh-proxy.org/https://github.com/redpanda-data/connect/releases/download/{{.Version}}/{{.Asset}}
         asset: benthos_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -29,7 +28,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.7.0")
-        url: https://gh-proxy.org/https://github.com/redpanda-data/connect/releases/download/{{.Version}}/{{.Asset}}
         asset: benthos_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -45,7 +43,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 3.43.0-rc1")
-        url: https://gh-proxy.org/https://github.com/redpanda-data/connect/releases/download/{{.Version}}/{{.Asset}}
         asset: benthos_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -57,7 +54,6 @@ packages:
           asset: benthos_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 3.54.1")
-        url: https://gh-proxy.org/https://github.com/redpanda-data/connect/releases/download/{{.Version}}/{{.Asset}}
         asset: benthos_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -68,7 +64,6 @@ packages:
           asset: benthos_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 4.27.0")
-        url: https://gh-proxy.org/https://github.com/redpanda-data/connect/releases/download/{{.Version}}/{{.Asset}}
         asset: benthos_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -78,7 +73,6 @@ packages:
           asset: benthos_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 4.66.1")
-        url: https://gh-proxy.org/https://github.com/redpanda-data/connect/releases/download/{{.Version}}/{{.Asset}}
         asset: redpanda-connect_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -88,7 +82,6 @@ packages:
           asset: redpanda-connect_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v4.67.5"
-        url: https://gh-proxy.org/https://github.com/redpanda-data/connect/releases/download/{{.Version}}/{{.Asset}}
         asset: redpanda-connect_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -99,7 +92,6 @@ packages:
           asset: redpanda-connect_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v4.68.0"
-        url: https://gh-proxy.org/https://github.com/redpanda-data/connect/releases/download/{{.Version}}/{{.Asset}}
         asset: redpanda-connect_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -109,7 +101,6 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/redpanda-data/connect/releases/download/{{.Version}}/{{.Asset}}
         asset: redpanda-connect_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

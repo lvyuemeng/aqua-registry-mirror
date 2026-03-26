@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.55.0"
-        url: https://gh-proxy.org/https://github.com/F1bonacc1/process-compose/releases/download/{{.Version}}/{{.Asset}}
         asset: process-compose_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -24,13 +23,11 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.5.2")
-        url: https://gh-proxy.org/https://github.com/F1bonacc1/process-compose/releases/download/{{.Version}}/{{.Asset}}
         asset: process-compose-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux
       - version_constraint: semver("<= 0.10.0")
-        url: https://gh-proxy.org/https://github.com/F1bonacc1/process-compose/releases/download/{{.Version}}/{{.Asset}}
         asset: process-compose-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -38,16 +35,13 @@ packages:
           - linux
           - windows/amd64
       - version_constraint: semver("<= 0.20.0")
-        url: https://gh-proxy.org/https://github.com/F1bonacc1/process-compose/releases/download/{{.Version}}/{{.Asset}}
         asset: process-compose-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.29.0")
-        url: https://gh-proxy.org/https://github.com/F1bonacc1/process-compose/releases/download/{{.Version}}/{{.Asset}}
         asset: process-compose-{{.OS}}-{{.Arch}}
         format: raw
       - version_constraint: semver("<= 0.29.4")
-        url: https://gh-proxy.org/https://github.com/F1bonacc1/process-compose/releases/download/{{.Version}}/{{.Asset}}
         asset: process-compose_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -60,7 +54,6 @@ packages:
           asset: process-compose_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.45.0")
-        url: https://gh-proxy.org/https://github.com/F1bonacc1/process-compose/releases/download/{{.Version}}/{{.Asset}}
         asset: process-compose_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -76,7 +69,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.69.0")
-        url: https://gh-proxy.org/https://github.com/F1bonacc1/process-compose/releases/download/{{.Version}}/{{.Asset}}
         asset: process-compose_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -92,7 +84,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/F1bonacc1/process-compose/releases/download/{{.Version}}/{{.Asset}}
         asset: process-compose_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

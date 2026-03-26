@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.1.0"
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/k1LoW/concrun/releases/download/{{.Version}}/{{.Asset}}
         asset: concrun_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/miniscruff/changie/releases/download/{{.Version}}/{{.Asset}}
         asset: changie_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -26,7 +25,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.3.0")
-        url: https://gh-proxy.org/https://github.com/miniscruff/changie/releases/download/{{.Version}}/{{.Asset}}
         asset: changie_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -43,7 +41,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.0.0")
-        url: https://gh-proxy.org/https://github.com/miniscruff/changie/releases/download/{{.Version}}/{{.Asset}}
         asset: changie_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -56,7 +53,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/miniscruff/changie/releases/download/{{.Version}}/{{.Asset}}
         asset: changie_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

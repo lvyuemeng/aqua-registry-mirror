@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/cert-manager/cmctl/releases/download/{{.Version}}/{{.Asset}}
         asset: cmctl_{{.OS}}_{{.Arch}}
         format: raw
         checksum:

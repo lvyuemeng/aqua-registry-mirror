@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version in ["0.11.1", "0.11.3", "0.11.4"]
         no_asset: true
       - version_constraint: Version == "0.6.0"
-        url: https://gh-proxy.org/https://github.com/cloudposse/github-commenter/releases/download/{{.Version}}/{{.Asset}}
         asset: github-commenter_.{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -19,21 +18,18 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.10.0"
-        url: https://gh-proxy.org/https://github.com/cloudposse/github-commenter/releases/download/{{.Version}}/{{.Asset}}
         asset: github-commenter_{{.OS}}_{{.Arch}}-r0
         format: raw
         rosetta2: true
         supported_envs:
           - darwin
       - version_constraint: Version in ["0.11.5"]
-        url: https://gh-proxy.org/https://github.com/cloudposse/github-commenter/releases/download/{{.Version}}/{{.Asset}}
         asset: github-commenter_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
         supported_envs:
           - darwin
       - version_constraint: Version == "0.16.0"
-        url: https://gh-proxy.org/https://github.com/cloudposse/github-commenter/releases/download/{{.Version}}/{{.Asset}}
         asset: github-commenter_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -41,7 +37,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.12.0")
-        url: https://gh-proxy.org/https://github.com/cloudposse/github-commenter/releases/download/{{.Version}}/{{.Asset}}
         asset: github-commenter_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -51,7 +46,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.14.0")
-        url: https://gh-proxy.org/https://github.com/cloudposse/github-commenter/releases/download/{{.Version}}/{{.Asset}}
         asset: github-commenter_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -59,7 +53,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.16.1")
-        url: https://gh-proxy.org/https://github.com/cloudposse/github-commenter/releases/download/{{.Version}}/{{.Asset}}
         asset: github-commenter_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -69,7 +62,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.16.2"
-        url: https://gh-proxy.org/https://github.com/cloudposse/github-commenter/releases/download/{{.Version}}/{{.Asset}}
         asset: github-commenter_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -77,7 +69,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.19.0")
-        url: https://gh-proxy.org/https://github.com/cloudposse/github-commenter/releases/download/{{.Version}}/{{.Asset}}
         asset: github-commenter_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         checksum:
@@ -87,7 +78,6 @@ packages:
       - version_constraint: semver("<= 0.27.0")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/cloudposse/github-commenter/releases/download/{{.Version}}/{{.Asset}}
         asset: github-commenter_{{.Version}}_{{.OS}}_{{.Arch}}
         format: raw
         checksum:

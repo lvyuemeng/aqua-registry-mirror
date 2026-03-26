@@ -11,7 +11,6 @@ packages:
       - version_constraint: Version == "3.1.0"
         no_asset: true
       - version_constraint: semver("<= 2.1.0")
-        url: https://gh-proxy.org/https://github.com/oknozor/toml-bombadil/releases/download/{{.Version}}/{{.Asset}}
         asset: bombadil-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -25,7 +24,6 @@ packages:
       - version_constraint: semver("<= 2.2.1")
         no_asset: true
       - version_constraint: semver("<= 3.0.0")
-        url: https://gh-proxy.org/https://github.com/oknozor/toml-bombadil/releases/download/{{.Version}}/{{.Asset}}
         asset: bombadil-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -37,7 +35,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 4.1.0")
-        url: https://gh-proxy.org/https://github.com/oknozor/toml-bombadil/releases/download/{{.Version}}/{{.Asset}}
         asset: bombadil--{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -49,7 +46,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/oknozor/toml-bombadil/releases/download/{{.Version}}/{{.Asset}}
         asset: bombadil-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:

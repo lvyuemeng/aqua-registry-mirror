@@ -7,14 +7,12 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.7.1")
-        url: https://gh-proxy.org/https://github.com/idursun/jjui/releases/download/{{.Version}}/{{.Asset}}
         asset: jjui-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         files:
           - name: jjui
             src: "release/{{.AssetWithoutExt}}"
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/idursun/jjui/releases/download/{{.Version}}/{{.Asset}}
         asset: jjui-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         files:

@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.0.40"
         no_asset: true
       - version_constraint: Version == "v0.0.63"
-        url: https://gh-proxy.org/https://github.com/mattn/bsky/releases/download/{{.Version}}/{{.Asset}}
         asset: bsky-{{.OS}}-{{trimV .Version}}.{{.Format}}
         format: zip
         overrides:
@@ -20,7 +19,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mattn/bsky/releases/download/{{.Version}}/{{.Asset}}
         asset: bsky-{{.OS}}-{{trimV .Version}}.{{.Format}}
         format: zip
         supported_envs:

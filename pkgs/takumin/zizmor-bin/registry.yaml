@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/takumin/zizmor-bin/releases/download/{{.Version}}/{{.Asset}}
         asset: zizmor-{{.Arch}}-{{.OS}}
         format: raw
         replacements:

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.3.2")
-        url: https://gh-proxy.org/https://github.com/google/gke-policy-automation/releases/download/{{.Version}}/{{.Asset}}
         asset: gke-policy-automation_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         files:
@@ -17,7 +16,6 @@ packages:
           asset: gke-policy-automation_{{trimV .Version}}_SHA256SUMS
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/google/gke-policy-automation/releases/download/{{.Version}}/{{.Asset}}
         asset: gke-policy-automation_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         files:

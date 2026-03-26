@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.26.0"
-        url: https://gh-proxy.org/https://github.com/anchore/syft/releases/download/{{.Version}}/{{.Asset}}
         asset: syft_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -26,7 +25,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.27.0"
-        url: https://gh-proxy.org/https://github.com/anchore/syft/releases/download/{{.Version}}/{{.Asset}}
         asset: syft_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -50,7 +48,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.36.0"
-        url: https://gh-proxy.org/https://github.com/anchore/syft/releases/download/{{.Version}}/{{.Asset}}
         asset: syft_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -71,7 +68,6 @@ packages:
               # checksum isn't included in checksums.txt
               enabled: false
       - version_constraint: semver("<= 0.5.0")
-        url: https://gh-proxy.org/https://github.com/anchore/syft/releases/download/{{.Version}}/{{.Asset}}
         asset: syft_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -88,7 +84,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.24.0")
-        url: https://gh-proxy.org/https://github.com/anchore/syft/releases/download/{{.Version}}/{{.Asset}}
         asset: syft_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -107,7 +102,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.25.0")
-        url: https://gh-proxy.org/https://github.com/anchore/syft/releases/download/{{.Version}}/{{.Asset}}
         asset: syft_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -125,7 +119,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.35.1")
-        url: https://gh-proxy.org/https://github.com/anchore/syft/releases/download/{{.Version}}/{{.Asset}}
         asset: syft_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -145,7 +138,6 @@ packages:
               # checksum isn't included in checksums.txt
               enabled: false
       - version_constraint: semver("< 0.37.10")
-        url: https://gh-proxy.org/https://github.com/anchore/syft/releases/download/{{.Version}}/{{.Asset}}
         asset: syft_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -160,7 +152,6 @@ packages:
               # checksum isn't included in checksums.txt
               enabled: false
       - version_constraint: semver("<= 0.103.1")
-        url: https://gh-proxy.org/https://github.com/anchore/syft/releases/download/{{.Version}}/{{.Asset}}
         asset: syft_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -172,7 +163,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/anchore/syft/releases/download/{{.Version}}/{{.Asset}}
         asset: syft_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

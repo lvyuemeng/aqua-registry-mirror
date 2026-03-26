@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.8.0")
-        url: https://gh-proxy.org/https://github.com/charmbracelet/gum/releases/download/{{.Version}}/{{.Asset}}
         asset: gum_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -23,7 +22,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.13.0")
-        url: https://gh-proxy.org/https://github.com/charmbracelet/gum/releases/download/{{.Version}}/{{.Asset}}
         asset: gum_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -40,7 +38,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/charmbracelet/gum/releases/download/{{.Version}}/{{.Asset}}
         asset: gum_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

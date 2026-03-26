@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "1.0.0-beta.4"
         no_asset: true
       - version_constraint: Version == "1.0.0-beta.2"
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-v{{.Version}}-{{.Arch}}-x86_64-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -22,7 +21,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "1.0.0-beta.3"
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-v{{.Version}}-{{.Arch}}-x86_64-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -35,7 +33,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v2.0.0-beta.5"
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -54,7 +51,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.2.0")
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-{{.Version}}-{{.Arch}}-x86_64-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -67,7 +63,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 1.6.0")
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -83,7 +78,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.13.0")
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -99,7 +93,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.16.0")
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -121,7 +114,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.19.4")
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -141,7 +133,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 2.0.0-beta.4")
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -157,7 +148,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 2.23.0")
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -178,7 +168,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/static-web-server/static-web-server/releases/download/{{.Version}}/{{.Asset}}
         asset: static-web-server-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:

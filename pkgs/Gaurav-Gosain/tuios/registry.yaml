@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.5"
-        url: https://gh-proxy.org/https://github.com/Gaurav-Gosain/tuios/releases/download/{{.Version}}/{{.Asset}}
         asset: tuios_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -15,7 +14,6 @@ packages:
           asset: tuios_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v0.0.6"
-        url: https://gh-proxy.org/https://github.com/Gaurav-Gosain/tuios/releases/download/{{.Version}}/{{.Asset}}
         asset: tuios_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -32,7 +30,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Gaurav-Gosain/tuios/releases/download/{{.Version}}/{{.Asset}}
         asset: tuios_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

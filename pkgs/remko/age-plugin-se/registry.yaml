@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.2.0"
         no_asset: true
       - version_constraint: Version == "v0.0.2"
-        url: https://gh-proxy.org/https://github.com/remko/age-plugin-se/releases/download/{{.Version}}/{{.Asset}}
         asset: age-plugin-se-{{.Version}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -17,7 +16,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: Version == "v0.0.3"
-        url: https://gh-proxy.org/https://github.com/remko/age-plugin-se/releases/download/{{.Version}}/{{.Asset}}
         asset: age-plugin-se-{{.Version}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -33,7 +31,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.0.5")
-        url: https://gh-proxy.org/https://github.com/remko/age-plugin-se/releases/download/{{.Version}}/{{.Asset}}
         asset: age-plugin-se-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -51,7 +48,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/remko/age-plugin-se/releases/download/{{.Version}}/{{.Asset}}
         asset: age-plugin-se-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

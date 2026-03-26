@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/juanfont/headscale/releases/download/{{.Version}}/{{.Asset}}
         asset: headscale_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -21,7 +20,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.3.2")
-        url: https://gh-proxy.org/https://github.com/juanfont/headscale/releases/download/{{.Version}}/{{.Asset}}
         asset: headscale_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -33,7 +31,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.10.2")
-        url: https://gh-proxy.org/https://github.com/juanfont/headscale/releases/download/{{.Version}}/{{.Asset}}
         asset: headscale_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -45,7 +42,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/juanfont/headscale/releases/download/{{.Version}}/{{.Asset}}
         asset: headscale_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true

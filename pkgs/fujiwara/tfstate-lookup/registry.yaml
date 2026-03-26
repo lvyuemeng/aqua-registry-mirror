@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/fujiwara/tfstate-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: tfstate-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -15,7 +14,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.0.3")
-        url: https://gh-proxy.org/https://github.com/fujiwara/tfstate-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: tfstate-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -31,7 +29,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.0.14")
-        url: https://gh-proxy.org/https://github.com/fujiwara/tfstate-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: tfstate-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -43,7 +40,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.3.0")
-        url: https://gh-proxy.org/https://github.com/fujiwara/tfstate-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: tfstate-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -55,7 +51,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/fujiwara/tfstate-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: tfstate-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.7.2"
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -18,7 +17,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.7.3"
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -28,13 +26,11 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.8.2"
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya-{{.OS}}.{{.Format}}
         format: tgz
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "v0.8.3"
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya-{{.OS}}.{{.Format}}
         format: tgz
         replacements:
@@ -43,7 +39,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v1.0.0-beta.4"
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya.{{.Arch}}-{{.OS}}.{{.Format}}
         format: tgz
         rosetta2: true
@@ -56,7 +51,6 @@ packages:
             replacements:
               arm64: aarch64
       - version_constraint: semver("< 0.3.2")
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -70,7 +64,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.5.5")
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -80,7 +73,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.5.9")
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -89,7 +81,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.7.1")
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -99,7 +90,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.9.0")
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya-{{.OS}}.{{.Format}}
         format: tgz
         replacements:
@@ -109,7 +99,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.0.0-beta.3")
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya-{{.OS}}.{{.Format}}
         format: tgz
         replacements:
@@ -122,7 +111,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/pimalaya/himalaya/releases/download/{{.Version}}/{{.Asset}}
         asset: himalaya.{{.Arch}}-{{.OS}}.{{.Format}}
         format: tgz
         windows_arm_emulation: true

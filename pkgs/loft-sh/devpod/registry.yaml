@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.3")
-        url: https://gh-proxy.org/https://github.com/loft-sh/devpod/releases/download/{{.Version}}/{{.Asset}}
         asset: devpod-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -16,7 +15,6 @@ packages:
           - darwin
           - windows
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/loft-sh/devpod/releases/download/{{.Version}}/{{.Asset}}
         asset: devpod-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

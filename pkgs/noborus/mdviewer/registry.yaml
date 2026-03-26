@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.1.0")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/noborus/mdviewer/releases/download/{{.Version}}/{{.Asset}}
         asset: mdviewer_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:

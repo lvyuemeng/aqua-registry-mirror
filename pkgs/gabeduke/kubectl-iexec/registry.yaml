@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.2.0")
-        url: https://gh-proxy.org/https://github.com/gabeduke/kubectl-iexec/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-iexec_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -25,7 +24,6 @@ packages:
       - version_constraint: semver("<= 1.2.2")
         no_asset: true
       - version_constraint: semver("<= 1.4.0")
-        url: https://gh-proxy.org/https://github.com/gabeduke/kubectl-iexec/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-iexec_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -43,7 +41,6 @@ packages:
       - version_constraint: Version == "1.5.0-alpha1"
         no_asset: true
       - version_constraint: Version == "v1.6.1"
-        url: https://gh-proxy.org/https://github.com/gabeduke/kubectl-iexec/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-iexec_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -59,7 +56,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.8.0")
-        url: https://gh-proxy.org/https://github.com/gabeduke/kubectl-iexec/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-iexec_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -75,7 +71,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.18.0")
-        url: https://gh-proxy.org/https://github.com/gabeduke/kubectl-iexec/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-iexec_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -90,7 +85,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.19.11")
-        url: https://gh-proxy.org/https://github.com/gabeduke/kubectl-iexec/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-iexec_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -103,7 +97,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "1.19.12"
-        url: https://gh-proxy.org/https://github.com/gabeduke/kubectl-iexec/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-iexec_.{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -114,7 +107,6 @@ packages:
         checksum:
           enabled: false # Disable as the checksum file is broken
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/gabeduke/kubectl-iexec/releases/download/{{.Version}}/{{.Asset}}
         asset: kubectl-iexec_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

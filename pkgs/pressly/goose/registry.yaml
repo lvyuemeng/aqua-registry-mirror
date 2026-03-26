@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v3.13.0"
         no_asset: true
       - version_constraint: Version == "v1.0"
-        url: https://gh-proxy.org/https://github.com/pressly/goose/releases/download/{{.Version}}/{{.Asset}}
         asset: goose-{{.OS}}64
         format: raw
         supported_envs:
@@ -18,7 +17,6 @@ packages:
       - version_constraint: semver("<= 2.4.5")
         no_asset: true
       - version_constraint: semver("<= 2.7.0-rc5")
-        url: https://gh-proxy.org/https://github.com/pressly/goose/releases/download/{{.Version}}/{{.Asset}}
         asset: goose-{{.OS}}64
         format: raw
         supported_envs:
@@ -28,7 +26,6 @@ packages:
       - version_constraint: semver("<= 3.1.0")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/pressly/goose/releases/download/{{.Version}}/{{.Asset}}
         asset: goose_{{.OS}}_{{.Arch}}
         format: raw
         replacements:

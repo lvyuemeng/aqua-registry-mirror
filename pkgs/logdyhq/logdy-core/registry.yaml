@@ -9,12 +9,10 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.5.0")
-        url: https://gh-proxy.org/https://github.com/logdyhq/logdy-core/releases/download/{{.Version}}/{{.Asset}}
         asset: logdy-core_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/logdyhq/logdy-core/releases/download/{{.Version}}/{{.Asset}}
         asset: logdy_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true

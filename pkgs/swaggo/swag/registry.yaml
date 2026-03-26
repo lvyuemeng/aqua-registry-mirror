@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 1.4.0")
         no_asset: true
       - version_constraint: semver("<= 1.6.9")
-        url: https://gh-proxy.org/https://github.com/swaggo/swag/releases/download/{{.Version}}/{{.Asset}}
         asset: swag_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -25,7 +24,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v1.7.0"
-        url: https://gh-proxy.org/https://github.com/swaggo/swag/releases/download/{{.Version}}/{{.Asset}}
         asset: swag_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -45,7 +43,6 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v1.7.1"
-        url: https://gh-proxy.org/https://github.com/swaggo/swag/releases/download/{{.Version}}/{{.Asset}}
         asset: swag_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -56,7 +53,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.8.1")
-        url: https://gh-proxy.org/https://github.com/swaggo/swag/releases/download/{{.Version}}/{{.Asset}}
         asset: swag_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -76,7 +72,6 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v1.8.2"
-        url: https://gh-proxy.org/https://github.com/swaggo/swag/releases/download/{{.Version}}/{{.Asset}}
         asset: swag_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -87,7 +82,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.8.9")
-        url: https://gh-proxy.org/https://github.com/swaggo/swag/releases/download/{{.Version}}/{{.Asset}}
         asset: swag_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -107,7 +101,6 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v1.8.10"
-        url: https://gh-proxy.org/https://github.com/swaggo/swag/releases/download/{{.Version}}/{{.Asset}}
         asset: swag_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -123,7 +116,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 1.16.2")
-        url: https://gh-proxy.org/https://github.com/swaggo/swag/releases/download/{{.Version}}/{{.Asset}}
         asset: swag_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -138,7 +130,6 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v1.16.3"
-        url: https://gh-proxy.org/https://github.com/swaggo/swag/releases/download/{{.Version}}/{{.Asset}}
         asset: swag_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -156,7 +147,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/swaggo/swag/releases/download/{{.Version}}/{{.Asset}}
         asset: swag_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

@@ -12,7 +12,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.103.0"
-        url: https://gh-proxy.org/https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/{{.Version}}/{{.Asset}}
         asset: vmutils-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -23,7 +22,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/{{.Version}}/{{.Asset}}
         asset: vmutils-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

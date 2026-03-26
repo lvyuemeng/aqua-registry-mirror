@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.4.0")
-        url: https://gh-proxy.org/https://github.com/ankitpokhrel/jira-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: jira_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         files:
           - name: jira
@@ -30,7 +29,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ankitpokhrel/jira-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: jira_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         files:
           - name: jira

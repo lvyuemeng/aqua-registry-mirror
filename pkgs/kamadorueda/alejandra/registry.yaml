@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "0.0.0"
-        url: https://gh-proxy.org/https://github.com/kamadorueda/alejandra/releases/download/{{.Version}}/{{.Asset}}
         asset: alejandra-{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -16,7 +15,6 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kamadorueda/alejandra/releases/download/{{.Version}}/{{.Asset}}
         asset: alejandra-{{.Arch}}-{{.OS}}
         format: raw
         replacements:

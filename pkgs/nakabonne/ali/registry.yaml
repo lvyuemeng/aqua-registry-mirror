@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.7.0"
-        url: https://gh-proxy.org/https://github.com/nakabonne/ali/releases/download/{{.Version}}/{{.Asset}}
         asset: ali_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -18,7 +17,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.6.1")
-        url: https://gh-proxy.org/https://github.com/nakabonne/ali/releases/download/{{.Version}}/{{.Asset}}
         asset: ali_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -28,7 +26,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/nakabonne/ali/releases/download/{{.Version}}/{{.Asset}}
         asset: ali_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

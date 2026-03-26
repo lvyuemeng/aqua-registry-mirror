@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version in ["v0.4.0", "v0.6.0", "v0.8.0", "v0.13.0"]
         no_asset: true
       - version_constraint: Version == "v0.12.0"
-        url: https://gh-proxy.org/https://github.com/rtk-ai/rtk/releases/download/{{.Version}}/{{.Asset}}
         asset: rtk-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -27,7 +26,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.9.4")
-        url: https://gh-proxy.org/https://github.com/rtk-ai/rtk/releases/download/{{.Version}}/{{.Asset}}
         asset: rtk-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -47,7 +45,6 @@ packages:
       - version_constraint: semver("<= 0.11.0")
         no_asset: true
       - version_constraint: semver("<= 0.22.2")
-        url: https://gh-proxy.org/https://github.com/rtk-ai/rtk/releases/download/{{.Version}}/{{.Asset}}
         asset: rtk-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -65,7 +62,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/rtk-ai/rtk/releases/download/{{.Version}}/{{.Asset}}
         asset: rtk-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

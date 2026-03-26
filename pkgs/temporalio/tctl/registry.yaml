@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 1.16.1")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/temporalio/tctl/releases/download/{{.Version}}/{{.Asset}}
         asset: tctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

@@ -11,7 +11,6 @@ packages:
       - version_constraint: semver("<= 0.1.7") or Version == "v0.2.1"
         no_asset: true
       - version_constraint: Version == "v0.2.0"
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -32,7 +31,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 0.3.1")
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -53,7 +51,6 @@ packages:
           - darwin
           - windows
       - version_constraint: Version in ["v0.3.6", "v0.4.0"]
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -73,7 +70,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.4.4")
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -100,7 +96,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 0.6.1")
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -131,7 +126,6 @@ packages:
           - darwin
           - windows
       - version_constraint: Version == "v0.7.0"
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -159,7 +153,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 0.8.3")
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -183,7 +176,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 0.9.5")
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -207,7 +199,6 @@ packages:
           - darwin
           - windows
       - version_constraint: semver("<= 0.10.3")
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -234,7 +225,6 @@ packages:
           - darwin
           - windows
       - version_constraint: Version == "v0.10.4"
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -256,7 +246,6 @@ packages:
             replacements:
               amd64: amd64
       - version_constraint: semver("<= 0.11.2")
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -276,7 +265,6 @@ packages:
             asset: nvim-{{.OS}}.{{.Format}}
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/neovim/neovim/releases/download/{{.Version}}/{{.Asset}}
         asset: nvim-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

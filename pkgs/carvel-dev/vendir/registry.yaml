@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.17.0")
-        url: https://gh-proxy.org/https://github.com/carvel-dev/vendir/releases/download/{{.Version}}/{{.Asset}}
         asset: vendir-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -19,13 +18,11 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.24.0")
-        url: https://gh-proxy.org/https://github.com/carvel-dev/vendir/releases/download/{{.Version}}/{{.Asset}}
         asset: vendir-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.38.0")
-        url: https://gh-proxy.org/https://github.com/carvel-dev/vendir/releases/download/{{.Version}}/{{.Asset}}
         asset: vendir-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -34,7 +31,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/carvel-dev/vendir/releases/download/{{.Version}}/{{.Asset}}
         asset: vendir-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.0.1"
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ryoppippi/zigchat/releases/download/{{.Version}}/{{.Asset}}
         asset: zigchat-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

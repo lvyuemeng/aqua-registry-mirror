@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.4.1")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/shinagawa-web/gomarklint/releases/download/{{.Version}}/{{.Asset}}
         asset: gomarklint_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

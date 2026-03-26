@@ -8,7 +8,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.19.0")
-        url: https://gh-proxy.org/https://github.com/openai/codex/releases/download/{{.Version}}/{{.Asset}}
         asset: codex-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zst
         files:
@@ -23,7 +22,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/openai/codex/releases/download/{{.Version}}/{{.Asset}}
         asset: codex-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zst
         windows_arm_emulation: true

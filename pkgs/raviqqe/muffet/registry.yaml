@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "1.1.0"
-        url: https://gh-proxy.org/https://github.com/raviqqe/muffet/releases/download/{{.Version}}/{{.Asset}}
         asset: muffet_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -23,7 +22,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.5.0")
-        url: https://gh-proxy.org/https://github.com/raviqqe/muffet/releases/download/{{.Version}}/{{.Asset}}
         asset: muffet_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -42,7 +40,6 @@ packages:
             replacements:
               arm64: ARM64
       - version_constraint: semver("<= 2.4.0")
-        url: https://gh-proxy.org/https://github.com/raviqqe/muffet/releases/download/{{.Version}}/{{.Asset}}
         asset: muffet_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -61,7 +58,6 @@ packages:
             replacements:
               arm64: ARM64
       - version_constraint: semver("<= 2.4.2")
-        url: https://gh-proxy.org/https://github.com/raviqqe/muffet/releases/download/{{.Version}}/{{.Asset}}
         asset: muffet_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -76,7 +72,6 @@ packages:
           asset: muffet_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 2.8.1")
-        url: https://gh-proxy.org/https://github.com/raviqqe/muffet/releases/download/{{.Version}}/{{.Asset}}
         asset: muffet_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -90,7 +85,6 @@ packages:
           asset: muffet_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/raviqqe/muffet/releases/download/{{.Version}}/{{.Asset}}
         asset: muffet_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

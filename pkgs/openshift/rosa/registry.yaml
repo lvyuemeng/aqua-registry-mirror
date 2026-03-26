@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v1.2.19"
         no_asset: true
       - version_constraint: semver("<= 0.0.2")
-        url: https://gh-proxy.org/https://github.com/openshift/rosa/releases/download/{{.Version}}/{{.Asset}}
         asset: moactl-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -21,7 +20,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.0.16")
-        url: https://gh-proxy.org/https://github.com/openshift/rosa/releases/download/{{.Version}}/{{.Asset}}
         asset: moactl-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -41,7 +39,6 @@ packages:
               asset: '{{trimSuffix ".exe" .Asset}}.sha256'
               algorithm: sha256
       - version_constraint: semver("<= 1.2.26")
-        url: https://gh-proxy.org/https://github.com/openshift/rosa/releases/download/{{.Version}}/{{.Asset}}
         asset: rosa-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -61,7 +58,6 @@ packages:
               asset: '{{trimSuffix ".exe" .Asset}}.sha256'
               algorithm: sha256
       - version_constraint: semver("<= 1.2.39")
-        url: https://gh-proxy.org/https://github.com/openshift/rosa/releases/download/{{.Version}}/{{.Asset}}
         asset: rosa-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -76,7 +72,6 @@ packages:
               asset: '{{trimSuffix ".exe" .Asset}}.sha256'
               algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/openshift/rosa/releases/download/{{.Version}}/{{.Asset}}
         asset: rosa_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

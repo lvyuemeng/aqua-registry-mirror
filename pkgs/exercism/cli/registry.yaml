@@ -25,7 +25,6 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver(">= 3.0.0")
-        url: https://gh-proxy.org/https://github.com/exercism/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: exercism-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tgz
         replacements:
@@ -38,7 +37,6 @@ packages:
         checksum:
           enabled: false
       - version_constraint: semver(">= 1.7.3")
-        url: https://gh-proxy.org/https://github.com/exercism/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: exercism-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tgz
         replacements:
@@ -51,7 +49,6 @@ packages:
         checksum:
           enabled: false
       - version_constraint: semver(">= 1.7.2")
-        url: https://gh-proxy.org/https://github.com/exercism/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: exercism-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tgz
         overrides: []
@@ -65,7 +62,6 @@ packages:
         checksum:
           enabled: false
       - version_constraint: semver("< 1.7.2")
-        url: https://gh-proxy.org/https://github.com/exercism/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: exercism-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tgz
         overrides: []

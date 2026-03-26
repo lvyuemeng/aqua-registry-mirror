@@ -10,7 +10,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.17.0")
-        url: https://gh-proxy.org/https://github.com/kubeshark/kubeshark/releases/download/{{.Version}}/{{.Asset}}
         asset: mizu_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -24,7 +23,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.23.0")
-        url: https://gh-proxy.org/https://github.com/kubeshark/kubeshark/releases/download/{{.Version}}/{{.Asset}}
         asset: mizu_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -44,7 +42,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 36.0")
-        url: https://gh-proxy.org/https://github.com/kubeshark/kubeshark/releases/download/{{.Version}}/{{.Asset}}
         asset: mizu_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -60,7 +57,6 @@ packages:
             checksum:
               enabled: false
       - version_constraint: semver("<= 37.0")
-        url: https://gh-proxy.org/https://github.com/kubeshark/kubeshark/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeshark_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -74,7 +70,6 @@ packages:
             checksum:
               enabled: false
       - version_constraint: semver("<= 50.4")
-        url: https://gh-proxy.org/https://github.com/kubeshark/kubeshark/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeshark_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -82,7 +77,6 @@ packages:
           asset: kubeshark_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 52.1.50")
-        url: https://gh-proxy.org/https://github.com/kubeshark/kubeshark/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeshark_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -90,7 +84,6 @@ packages:
           asset: kubeshark_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kubeshark/kubeshark/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeshark_{{.OS}}_{{.Arch}}
         format: raw
         windows_arm_emulation: true

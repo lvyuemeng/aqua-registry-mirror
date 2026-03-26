@@ -6,7 +6,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.5.15"
-        url: https://gh-proxy.org/https://github.com/Arriven/db1000n/releases/download/{{.Version}}/{{.Asset}}
         asset: db1000n-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -19,7 +18,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.8.6"
-        url: https://gh-proxy.org/https://github.com/Arriven/db1000n/releases/download/{{.Version}}/{{.Asset}}
         asset: db1000n_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -30,7 +28,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.7.0")
-        url: https://gh-proxy.org/https://github.com/Arriven/db1000n/releases/download/{{.Version}}/{{.Asset}}
         asset: db1000n-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -42,7 +39,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.7.2")
-        url: https://gh-proxy.org/https://github.com/Arriven/db1000n/releases/download/{{.Version}}/{{.Asset}}
         asset: db1000n-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -53,7 +49,6 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.8.3")
-        url: https://gh-proxy.org/https://github.com/Arriven/db1000n/releases/download/{{.Version}}/{{.Asset}}
         asset: db1000n-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -65,7 +60,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.8.5")
-        url: https://gh-proxy.org/https://github.com/Arriven/db1000n/releases/download/{{.Version}}/{{.Asset}}
         asset: db1000n_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -73,7 +67,6 @@ packages:
           asset: db1000n_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.8.12")
-        url: https://gh-proxy.org/https://github.com/Arriven/db1000n/releases/download/{{.Version}}/{{.Asset}}
         asset: db1000n_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -85,7 +78,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.8.19")
-        url: https://gh-proxy.org/https://github.com/Arriven/db1000n/releases/download/{{.Version}}/{{.Asset}}
         asset: db1000n_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -96,7 +88,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.9.23")
-        url: https://gh-proxy.org/https://github.com/Arriven/db1000n/releases/download/{{.Version}}/{{.Asset}}
         asset: db1000n_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -107,7 +98,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Arriven/db1000n/releases/download/{{.Version}}/{{.Asset}}
         asset: db1000n-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.3.5")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Piturnah/gex/releases/download/{{.Version}}/{{.Asset}}
         asset: gex-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

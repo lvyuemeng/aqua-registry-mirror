@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.1"
-        url: https://gh-proxy.org/https://github.com/buildpacks/pack/releases/download/{{.Version}}/{{.Asset}}
         asset: pack-{{.OS}}
         format: raw
         replacements:
@@ -15,7 +14,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: Version == "v0.0.3"
-        url: https://gh-proxy.org/https://github.com/buildpacks/pack/releases/download/{{.Version}}/{{.Asset}}
         asset: pack-{{.OS}}
         format: raw
         replacements:
@@ -24,7 +22,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.0.4"
-        url: https://gh-proxy.org/https://github.com/buildpacks/pack/releases/download/{{.Version}}/{{.Asset}}
         asset: pack-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -33,7 +30,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "v0.0.5"
-        url: https://gh-proxy.org/https://github.com/buildpacks/pack/releases/download/{{.Version}}/{{.Asset}}
         asset: pack-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -42,7 +38,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.0.9")
-        url: https://gh-proxy.org/https://github.com/buildpacks/pack/releases/download/{{.Version}}/{{.Asset}}
         asset: pack-{{trimV .Version}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -55,7 +50,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.13.1")
-        url: https://gh-proxy.org/https://github.com/buildpacks/pack/releases/download/{{.Version}}/{{.Asset}}
         asset: pack-{{.Version}}-{{.OS}}.{{.Format}}
         format: tgz
         replacements:
@@ -68,7 +62,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.16.0")
-        url: https://gh-proxy.org/https://github.com/buildpacks/pack/releases/download/{{.Version}}/{{.Asset}}
         asset: pack-{{.Version}}-{{.OS}}.{{.Format}}
         format: tgz
         replacements:
@@ -85,7 +78,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.24.1")
-        url: https://gh-proxy.org/https://github.com/buildpacks/pack/releases/download/{{.Version}}/{{.Asset}}
         asset: pack-{{.Version}}-{{.OS}}.{{.Format}}
         format: tgz
         replacements:
@@ -105,7 +97,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/buildpacks/pack/releases/download/{{.Version}}/{{.Asset}}
         asset: pack-{{.Version}}-{{.OS}}.{{.Format}}
         format: tgz
         replacements:

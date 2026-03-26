@@ -12,7 +12,6 @@ packages:
       - version_constraint: Version == "v0.3.2"
         no_asset: true
       - version_constraint: Version in ["v0.5.1", "v0.6.0"]
-        url: https://gh-proxy.org/https://github.com/mozilla/sccache/releases/download/{{.Version}}/{{.Asset}}
         asset: sccache-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -34,7 +33,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "v0.13.0"
-        url: https://gh-proxy.org/https://github.com/mozilla/sccache/releases/download/{{.Version}}/{{.Asset}}
         asset: sccache-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -58,7 +56,6 @@ packages:
       - version_constraint: semver("<= 0.2.13")
         error_message: "This version is too old. Please use newer versions"
       - version_constraint: semver("<= 0.3.1")
-        url: https://gh-proxy.org/https://github.com/mozilla/sccache/releases/download/{{.Version}}/{{.Asset}}
         asset: sccache-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -73,7 +70,6 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: semver("<= 0.4.0-pre.1")
-        url: https://gh-proxy.org/https://github.com/mozilla/sccache/releases/download/{{.Version}}/{{.Asset}}
         asset: sccache-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -95,7 +91,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.8.1")
-        url: https://gh-proxy.org/https://github.com/mozilla/sccache/releases/download/{{.Version}}/{{.Asset}}
         asset: sccache-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -110,7 +105,6 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mozilla/sccache/releases/download/{{.Version}}/{{.Asset}}
         asset: sccache-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:

@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.4.0"
-        url: https://gh-proxy.org/https://github.com/jsonnet-bundler/jsonnet-bundler/releases/download/{{.Version}}/{{.Asset}}
         asset: jb-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -17,13 +16,11 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v0.5.1"
-        url: https://gh-proxy.org/https://github.com/jsonnet-bundler/jsonnet-bundler/releases/download/{{.Version}}/{{.Asset}}
         asset: jb-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 0.3.1")
-        url: https://gh-proxy.org/https://github.com/jsonnet-bundler/jsonnet-bundler/releases/download/{{.Version}}/{{.Asset}}
         asset: jb-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -31,7 +28,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/jsonnet-bundler/jsonnet-bundler/releases/download/{{.Version}}/{{.Asset}}
         asset: jb-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

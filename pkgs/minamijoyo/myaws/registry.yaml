@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.1"
-        url: https://gh-proxy.org/https://github.com/minamijoyo/myaws/releases/download/{{.Version}}/{{.Asset}}
         asset: myaws_{{trimV .Version}}_myaws_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -15,7 +14,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.0.3")
-        url: https://gh-proxy.org/https://github.com/minamijoyo/myaws/releases/download/{{.Version}}/{{.Asset}}
         asset: myaws_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -23,7 +21,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.3.4")
-        url: https://gh-proxy.org/https://github.com/minamijoyo/myaws/releases/download/{{.Version}}/{{.Asset}}
         asset: myaws_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -31,7 +28,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.4.1")
-        url: https://gh-proxy.org/https://github.com/minamijoyo/myaws/releases/download/{{.Version}}/{{.Asset}}
         asset: myaws_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -43,7 +39,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/minamijoyo/myaws/releases/download/{{.Version}}/{{.Asset}}
         asset: myaws_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

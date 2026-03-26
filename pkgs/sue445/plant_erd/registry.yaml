@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "v0.4.1.rc1"
         no_asset: true
       - version_constraint: Version in ["v0.0.1", "v0.2.0.rc1", "v0.2.0.rc1", "v0.2.0.rc1", "v0.2.0.rc1", "v0.2.0.rc1", "v0.2.0.rc1", "v0.2.0.rc1", "v0.2.0.rc1", "v0.2.0.rc1"]
-        url: https://gh-proxy.org/https://github.com/sue445/plant_erd/releases/download/{{.Version}}/{{.Asset}}
         asset: plant_erd_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -25,7 +24,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/sue445/plant_erd/releases/download/{{.Version}}/{{.Asset}}
         asset: plant_erd_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

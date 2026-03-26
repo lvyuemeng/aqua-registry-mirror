@@ -11,7 +11,6 @@ packages:
       - version_constraint: semver("<= 0.0.18")
         error_message: The version is too old. Please upgrade to a newer version.
       - version_constraint: semver("<= 1.4.6")
-        url: https://gh-proxy.org/https://github.com/alexhallam/tv/releases/download/{{.Version}}/{{.Asset}}
         asset: tidy-viewer--{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -32,7 +31,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.4.30")
-        url: https://gh-proxy.org/https://github.com/alexhallam/tv/releases/download/{{.Version}}/{{.Asset}}
         asset: tidy-viewer-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -53,7 +51,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.5.2")
-        url: https://gh-proxy.org/https://github.com/alexhallam/tv/releases/download/{{.Version}}/{{.Asset}}
         asset: tidy-viewer-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -81,7 +78,6 @@ packages:
       - version_constraint: semver("<= 1.6.5")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/alexhallam/tv/releases/download/{{.Version}}/{{.Asset}}
         asset: tidy-viewer-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true

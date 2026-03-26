@@ -20,7 +20,6 @@ packages:
       - version_constraint: semver("<= 1.6.38")
         no_asset: true
       - version_constraint: semver("<= 2.0.0")
-        url: https://gh-proxy.org/https://github.com/containerd/containerd/releases/download/{{.Version}}/{{.Asset}}
         asset: containerd-static-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -30,7 +29,6 @@ packages:
         supported_envs:
           - linux
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/containerd/containerd/releases/download/{{.Version}}/{{.Asset}}
         asset: containerd-static-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         github_artifact_attestations:

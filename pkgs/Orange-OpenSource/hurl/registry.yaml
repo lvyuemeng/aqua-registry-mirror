@@ -10,7 +10,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.1.0")
-        url: https://gh-proxy.org/https://github.com/Orange-OpenSource/hurl/releases/download/{{.Version}}/{{.Asset}}
         asset: hurl-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -26,7 +25,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.6.0")
-        url: https://gh-proxy.org/https://github.com/Orange-OpenSource/hurl/releases/download/{{.Version}}/{{.Asset}}
         asset: hurl-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -52,7 +50,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "1.6.1"
-        url: https://gh-proxy.org/https://github.com/Orange-OpenSource/hurl/releases/download/{{.Version}}/{{.Asset}}
         asset: hurl-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -77,7 +74,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 4.0.0")
-        url: https://gh-proxy.org/https://github.com/Orange-OpenSource/hurl/releases/download/{{.Version}}/{{.Asset}}
         asset: hurl-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -102,7 +98,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 4.2.0")
-        url: https://gh-proxy.org/https://github.com/Orange-OpenSource/hurl/releases/download/{{.Version}}/{{.Asset}}
         asset: hurl-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -124,7 +119,6 @@ packages:
               - name: hurl
               - name: hurlfmt
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Orange-OpenSource/hurl/releases/download/{{.Version}}/{{.Asset}}
         asset: hurl-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

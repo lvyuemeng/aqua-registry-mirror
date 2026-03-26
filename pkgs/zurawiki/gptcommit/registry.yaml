@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.7"
-        url: https://gh-proxy.org/https://github.com/zurawiki/gptcommit/releases/download/{{.Version}}/{{.Asset}}
         asset: gptcommit-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -24,7 +23,6 @@ packages:
           - linux/amd64
           - darwin/arm64
       - version_constraint: semver("<= 0.5.3")
-        url: https://gh-proxy.org/https://github.com/zurawiki/gptcommit/releases/download/{{.Version}}/{{.Asset}}
         asset: gptcommit-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -44,7 +42,6 @@ packages:
       - version_constraint: semver("<= 0.5.5")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/zurawiki/gptcommit/releases/download/{{.Version}}/{{.Asset}}
         asset: gptcommit-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

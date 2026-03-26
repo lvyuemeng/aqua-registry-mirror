@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.3.0")
-        url: https://gh-proxy.org/https://github.com/bronze1man/yaml2json/releases/download/{{.Version}}/{{.Asset}}
         asset: yaml2json_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true
@@ -17,6 +16,5 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/bronze1man/yaml2json/releases/download/{{.Version}}/{{.Asset}}
         asset: yaml2json_{{.OS}}_{{.Arch}}
         format: raw

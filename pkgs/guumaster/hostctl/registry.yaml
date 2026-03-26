@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.6")
-        url: https://gh-proxy.org/https://github.com/guumaster/hostctl/releases/download/{{.Version}}/{{.Asset}}
         asset: hostctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -29,7 +28,6 @@ packages:
       - version_constraint: semver("<= 1.0.8")
         no_asset: true
       - version_constraint: semver("<= 1.1.0")
-        url: https://gh-proxy.org/https://github.com/guumaster/hostctl/releases/download/{{.Version}}/{{.Asset}}
         asset: hostctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -49,7 +47,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.1.2")
-        url: https://gh-proxy.org/https://github.com/guumaster/hostctl/releases/download/{{.Version}}/{{.Asset}}
         asset: hostctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -65,7 +62,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/guumaster/hostctl/releases/download/{{.Version}}/{{.Asset}}
         asset: hostctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

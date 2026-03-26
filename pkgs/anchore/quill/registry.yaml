@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/anchore/quill/releases/download/{{.Version}}/{{.Asset}}
         asset: quill_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -22,7 +21,6 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/anchore/quill/releases/download/{{.Version}}/{{.Asset}}
         asset: quill_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

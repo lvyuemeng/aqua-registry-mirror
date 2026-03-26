@@ -10,7 +10,6 @@ packages:
         error_message: |
           Please use a version later than v1.0.
       - version_constraint: semver("<= 1.25.0")
-        url: https://gh-proxy.org/https://github.com/block/goose/releases/download/{{.Version}}/{{.Asset}}
         asset: goose-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.bz2
         replacements:
@@ -22,7 +21,6 @@ packages:
           - linux
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/block/goose/releases/download/{{.Version}}/{{.Asset}}
         asset: goose-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.bz2
         replacements:

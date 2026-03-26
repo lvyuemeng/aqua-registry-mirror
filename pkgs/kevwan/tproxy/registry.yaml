@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.2.1")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kevwan/tproxy/releases/download/{{.Version}}/{{.Asset}}
         asset: tproxy-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

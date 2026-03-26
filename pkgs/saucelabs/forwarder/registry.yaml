@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.0.0-rc0"
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -15,7 +14,6 @@ packages:
           asset: checksums
           algorithm: sha256
       - version_constraint: Version == "v1.0.0-rc2"
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder-{{trimV .Version}}_{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         replacements:
@@ -29,7 +27,6 @@ packages:
           - goos: linux
             format: tar.gz
       - version_constraint: Version == "v1.0.0"
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder-{{trimV .Version}}_{{.OS}}-signed.{{.Arch}}.{{.Format}}
         format: zip
         replacements:
@@ -46,7 +43,6 @@ packages:
           - goos: windows
             asset: forwarder-{{trimV .Version}}_{{.OS}}.{{.Arch}}.{{.Format}}
       - version_constraint: Version == "v1.2.0"
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder-{{trimV .Version}}_{{.OS}}.all.{{.Format}}
         format: zip
         replacements:
@@ -63,7 +59,6 @@ packages:
           - goos: windows
             asset: forwarder-{{trimV .Version}}_{{.OS}}.{{.Arch}}.{{.Format}}
       - version_constraint: semver("<= 0.1.12")
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -73,7 +68,6 @@ packages:
           asset: forwarder_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.1.15")
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -82,7 +76,6 @@ packages:
           asset: forwarder_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.3.4")
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -90,7 +83,6 @@ packages:
           asset: forwarder_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 1.0.2")
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder-{{trimV .Version}}_{{.OS}}-signed.all.{{.Format}}
         format: zip
         replacements:
@@ -107,7 +99,6 @@ packages:
           - goos: windows
             asset: forwarder-{{trimV .Version}}_{{.OS}}.{{.Arch}}.{{.Format}}
       - version_constraint: semver("<= 1.1.0-rc1")
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder-{{trimV .Version}}_{{.OS}}.all.{{.Format}}
         format: zip
         replacements:
@@ -124,7 +115,6 @@ packages:
           - goos: windows
             asset: forwarder-{{trimV .Version}}_{{.OS}}.{{.Arch}}.{{.Format}}
       - version_constraint: semver("<= 1.4.0")
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder-{{trimV .Version}}_{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         replacements:
@@ -140,7 +130,6 @@ packages:
           - goos: darwin
             asset: forwarder-{{trimV .Version}}_{{.OS}}-signed.all.{{.Format}}
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/saucelabs/forwarder/releases/download/{{.Version}}/{{.Asset}}
         asset: forwarder-{{trimV .Version}}_{{.OS}}.{{.Arch}}.{{.Format}}
         format: zip
         replacements:

@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version == "0.6.0"
         no_asset: true
       - version_constraint: semver("<= 0.7.2")
-        url: https://gh-proxy.org/https://github.com/barnybug/cli53/releases/download/{{.Version}}/{{.Asset}}
         asset: cli53-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -21,7 +20,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.8.10")
-        url: https://gh-proxy.org/https://github.com/barnybug/cli53/releases/download/{{.Version}}/{{.Asset}}
         asset: cli53-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -37,7 +35,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.8.19")
-        url: https://gh-proxy.org/https://github.com/barnybug/cli53/releases/download/{{.Version}}/{{.Asset}}
         asset: cli53-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -49,7 +46,6 @@ packages:
           asset: cli53_{{.Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.8.23")
-        url: https://gh-proxy.org/https://github.com/barnybug/cli53/releases/download/{{.Version}}/{{.Asset}}
         asset: cli53-{{.OS}}-{{.Arch}}
         format: raw
         replacements:
@@ -59,7 +55,6 @@ packages:
           asset: cli53_{{.Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/barnybug/cli53/releases/download/{{.Version}}/{{.Asset}}
         asset: cli53-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

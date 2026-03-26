@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/sachaos/go-life/releases/download/{{.Version}}/{{.Asset}}
         asset: go-life_{{.OS}}_{{.Arch}}
         format: raw
         rosetta2: true

@@ -11,7 +11,6 @@ packages:
       - version_constraint: Version == "v0.2.0"
         no_asset: true
       - version_constraint: Version == "v0.1.0"
-        url: https://gh-proxy.org/https://github.com/arcanist-sh/hx/releases/download/{{.Version}}/{{.Asset}}
         asset: hx-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -36,7 +35,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.3.0"
-        url: https://gh-proxy.org/https://github.com/arcanist-sh/hx/releases/download/{{.Version}}/{{.Asset}}
         asset: hx-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         files:
@@ -52,7 +50,6 @@ packages:
         supported_envs:
           - darwin/arm64
       - version_constraint: Version == "v0.3.5"
-        url: https://gh-proxy.org/https://github.com/arcanist-sh/hx/releases/download/{{.Version}}/{{.Asset}}
         asset: hx-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -77,7 +74,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.4.0"
-        url: https://gh-proxy.org/https://github.com/arcanist-sh/hx/releases/download/{{.Version}}/{{.Asset}}
         asset: hx-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -103,7 +99,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/arcanist-sh/hx/releases/download/{{.Version}}/{{.Asset}}
         asset: hx-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

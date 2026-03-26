@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.60")
-        url: https://gh-proxy.org/https://github.com/bytecodealliance/wasm-tools/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}"
         format: tar.gz
         windows_arm_emulation: true
@@ -24,7 +23,6 @@ packages:
             format: zip
             replacements: {}
       - version_constraint: semver("<= 1.202.0")
-        url: https://gh-proxy.org/https://github.com/bytecodealliance/wasm-tools/releases/download/{{.Version}}/{{.Asset}}
         asset: wasm-tools-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -39,7 +37,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.239.0")
-        url: https://gh-proxy.org/https://github.com/bytecodealliance/wasm-tools/releases/download/{{.Version}}/{{.Asset}}
         asset: wasm-tools-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -55,7 +52,6 @@ packages:
             format: zip
             replacements: {}
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/bytecodealliance/wasm-tools/releases/download/{{.Version}}/{{.Asset}}
         asset: wasm-tools-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

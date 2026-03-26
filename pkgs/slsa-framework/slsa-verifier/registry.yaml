@@ -34,7 +34,6 @@ packages:
               type: github_release
               asset: slsa-verifier-{{.OS}}-{{.Arch}}.intoto.jsonl
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/slsa-framework/slsa-verifier/releases/download/{{.Version}}/{{.Asset}}
         asset: slsa-verifier-{{.OS}}-{{.Arch}}
         format: raw
         slsa_provenance:

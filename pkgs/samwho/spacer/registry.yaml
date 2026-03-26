@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.6")
-        url: https://gh-proxy.org/https://github.com/samwho/spacer/releases/download/{{.Version}}/{{.Asset}}
         asset: spacer-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -25,7 +24,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/samwho/spacer/releases/download/{{.Version}}/{{.Asset}}
         asset: spacer-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

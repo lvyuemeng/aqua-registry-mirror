@@ -11,7 +11,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "7.1.1"
-        url: https://gh-proxy.org/https://github.com/Tyrrrz/FFmpegBin/releases/download/{{.Version}}/{{.Asset}}
         asset: ffmpeg-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         replacements:
@@ -29,7 +28,6 @@ packages:
               asset: ffmpeg-{{.OS}}-{{.Arch}}.sha256
               algorithm: sha256
       - version_constraint: semver("<= 7.1.0")
-        url: https://gh-proxy.org/https://github.com/Tyrrrz/FFmpegBin/releases/download/{{.Version}}/{{.Asset}}
         asset: ffmpeg-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         replacements:
@@ -44,7 +42,6 @@ packages:
           - darwin
           - windows
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Tyrrrz/FFmpegBin/releases/download/{{.Version}}/{{.Asset}}
         asset: ffmpeg-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         replacements:

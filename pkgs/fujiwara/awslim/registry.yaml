@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.7")
-        url: https://gh-proxy.org/https://github.com/fujiwara/awslim/releases/download/{{.Version}}/{{.Asset}}
         asset: aws-sdk-client-go_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -21,7 +20,6 @@ packages:
         files:
           - name: aws-sdk-client-go
       - version_constraint: semver("<= 0.0.14")
-        url: https://gh-proxy.org/https://github.com/fujiwara/awslim/releases/download/{{.Version}}/{{.Asset}}
         asset: aws-sdk-client-go_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -34,7 +32,6 @@ packages:
         files:
           - name: aws-sdk-client-go
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/fujiwara/awslim/releases/download/{{.Version}}/{{.Asset}}
         asset: awslim_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

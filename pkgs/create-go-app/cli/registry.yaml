@@ -18,7 +18,6 @@ packages:
     version_constraint: semver(">= 4.0.0")
     version_overrides:
       - version_constraint: semver(">= 1.7.0")
-        url: https://gh-proxy.org/https://github.com/create-go-app/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: cgapp_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -33,7 +32,6 @@ packages:
           - darwin
           - amd64
       - version_constraint: semver(">= 1.6.3")
-        url: https://gh-proxy.org/https://github.com/create-go-app/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: cgapp_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -49,7 +47,6 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver(">= 1.0.0")
-        url: https://gh-proxy.org/https://github.com/create-go-app/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: cgapp_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -65,7 +62,6 @@ packages:
           - amd64
         rosetta2: true
       - version_constraint: semver("< 1.0.0")
-        url: https://gh-proxy.org/https://github.com/create-go-app/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

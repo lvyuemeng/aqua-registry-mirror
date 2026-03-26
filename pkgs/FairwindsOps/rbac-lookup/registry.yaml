@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.2")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/rbac-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -25,7 +24,6 @@ packages:
       - version_constraint: semver("<= 0.4.1")
         no_asset: true
       - version_constraint: semver("<= 0.6.2")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/rbac-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -41,7 +39,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.6.5")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/rbac-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -56,7 +53,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.7.1")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/rbac-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -70,7 +66,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("< 0.8.3")
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/rbac-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -83,7 +78,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/FairwindsOps/rbac-lookup/releases/download/{{.Version}}/{{.Asset}}
         asset: rbac-lookup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

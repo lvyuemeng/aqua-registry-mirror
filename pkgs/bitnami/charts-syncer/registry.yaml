@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.1")
-        url: https://gh-proxy.org/https://github.com/bitnami/charts-syncer/releases/download/{{.Version}}/{{.Asset}}
         asset: c3tsyncer_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -25,7 +24,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.6.2")
-        url: https://gh-proxy.org/https://github.com/bitnami/charts-syncer/releases/download/{{.Version}}/{{.Asset}}
         asset: charts-syncer_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -39,7 +37,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.9.1")
-        url: https://gh-proxy.org/https://github.com/bitnami/charts-syncer/releases/download/{{.Version}}/{{.Asset}}
         asset: charts-syncer_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -53,7 +50,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.19.0")
-        url: https://gh-proxy.org/https://github.com/bitnami/charts-syncer/releases/download/{{.Version}}/{{.Asset}}
         asset: charts-syncer_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -66,7 +62,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.20.1")
-        url: https://gh-proxy.org/https://github.com/bitnami/charts-syncer/releases/download/{{.Version}}/{{.Asset}}
         asset: charts-syncer_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -76,7 +71,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/bitnami/charts-syncer/releases/download/{{.Version}}/{{.Asset}}
         asset: charts-syncer_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:

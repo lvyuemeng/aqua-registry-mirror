@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.12")
-        url: https://gh-proxy.org/https://github.com/go-jira/jira/releases/download/{{.Version}}/{{.Asset}}
         asset: jira-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -15,7 +14,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.1.0")
-        url: https://gh-proxy.org/https://github.com/go-jira/jira/releases/download/{{.Version}}/{{.Asset}}
         asset: jira-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -26,7 +24,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.1.7")
-        url: https://gh-proxy.org/https://github.com/go-jira/jira/releases/download/{{.Version}}/{{.Asset}}
         asset: jira-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -36,7 +33,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.0.20")
-        url: https://gh-proxy.org/https://github.com/go-jira/jira/releases/download/{{.Version}}/{{.Asset}}
         asset: jira-{{.OS}}-10.6-{{.Arch}}
         format: raw
         rosetta2: true
@@ -51,7 +47,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/go-jira/jira/releases/download/{{.Version}}/{{.Asset}}
         asset: jira-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true

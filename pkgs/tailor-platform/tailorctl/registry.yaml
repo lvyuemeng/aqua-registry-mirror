@@ -9,7 +9,6 @@ packages:
       - version_constraint: Version in ["v0.9.4", "v0.12.1", "v1.19.0"]
         no_asset: true
       - version_constraint: semver("<= 0.7.8")
-        url: https://gh-proxy.org/https://github.com/tailor-platform/tailorctl/releases/download/{{.Version}}/{{.Asset}}
         asset: tailorctl_{{.OS}}_{{.Version}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -23,7 +22,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/tailor-platform/tailorctl/releases/download/{{.Version}}/{{.Asset}}
         asset: tailorctl_{{.OS}}_{{.Version}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

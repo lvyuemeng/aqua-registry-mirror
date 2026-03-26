@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3.2")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -24,7 +23,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: Version == "0.3.3"
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -45,7 +43,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.5.1")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -63,7 +60,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.6.4")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -79,7 +75,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.6.6")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -95,7 +90,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.12.0")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -113,7 +107,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.13.8")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -131,7 +124,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.16.0")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -149,7 +141,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.24.2")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -167,7 +158,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.24.9")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -184,7 +174,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.24.10")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -201,7 +190,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.24.15")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -218,7 +206,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.26.7")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -231,7 +218,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.27.3")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -243,7 +229,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.27.4")
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -258,7 +243,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/derailed/k9s/releases/download/{{.Version}}/{{.Asset}}
         asset: k9s_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:

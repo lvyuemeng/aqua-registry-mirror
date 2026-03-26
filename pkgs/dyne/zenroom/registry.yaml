@@ -13,7 +13,6 @@ packages:
         error_message: |
           Please update to 3.10.1 or newer.
       - version_constraint: semver("<= 4.27.1")
-        url: https://gh-proxy.org/https://github.com/dyne/zenroom/releases/download/{{.Version}}/{{.Asset}}
         asset: zenroom
         format: raw
         files:
@@ -26,7 +25,6 @@ packages:
           - goos: darwin
             asset: zenroom.command
       - version_constraint: semver("<= 5.10.4")
-        url: https://gh-proxy.org/https://github.com/dyne/zenroom/releases/download/{{.Version}}/{{.Asset}}
         asset: zenroom
         format: raw
         files:
@@ -39,7 +37,6 @@ packages:
           - goos: darwin
             asset: zenroom.command
       - version_constraint: semver("<= 5.25.0")
-        url: https://gh-proxy.org/https://github.com/dyne/zenroom/releases/download/{{.Version}}/{{.Asset}}
         asset: zenroom-{{.OS}}.{{.Format}}
         format: zip
         files:
@@ -62,7 +59,6 @@ packages:
               - name: zencode-exec
                 src: zenroom-{{.OS}}/zencode-exec.command
       - version_constraint: semver("<= 5.25.3")
-        url: https://gh-proxy.org/https://github.com/dyne/zenroom/releases/download/{{.Version}}/{{.Asset}}
         asset: zenroom-{{.OS}}.{{.Format}}
         format: zip
         files:
@@ -92,7 +88,6 @@ packages:
               - name: zencode-exec
                 src: zenroom-{{.OS}}/zencode-exec.command
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/dyne/zenroom/releases/download/{{.Version}}/{{.Asset}}
         asset: zenroom-{{.OS}}.{{.Format}}
         format: zip
         files:

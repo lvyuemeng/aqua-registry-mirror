@@ -11,14 +11,12 @@ packages:
       - version_constraint: Version == "v0.11.6"
         no_asset: true
       - version_constraint: semver("<= 0.11.28")
-        url: https://gh-proxy.org/https://github.com/typstyle-rs/typstyle/releases/download/{{.Version}}/{{.Asset}}
         asset: typstyle-{{.OS}}-{{.Arch}}
         format: raw
         replacements:
           amd64: x64
           windows: win32
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/typstyle-rs/typstyle/releases/download/{{.Version}}/{{.Asset}}
         asset: typstyle-{{.Arch}}-{{.OS}}
         format: raw
         overrides:

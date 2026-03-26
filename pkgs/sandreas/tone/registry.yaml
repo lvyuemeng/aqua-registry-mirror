@@ -10,7 +10,6 @@ packages:
         src: "{{.AssetWithoutExt}}/tone"
     version_overrides:
       - version_constraint: semver("<= 0.0.4")
-        url: https://gh-proxy.org/https://github.com/sandreas/tone/releases/download/{{.Version}}/{{.Asset}}
         asset: tone-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -24,7 +23,6 @@ packages:
             files:
               - name: tone
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/sandreas/tone/releases/download/{{.Version}}/{{.Asset}}
         asset: tone-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

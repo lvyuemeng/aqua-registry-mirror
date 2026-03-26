@@ -10,19 +10,16 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version in ["0.1.0-alpha-1", "0.1.0-alpha-4"]
-        url: https://gh-proxy.org/https://github.com/ClementTsang/bottom/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}-bottom-{{.Version}}"
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "0.1.0-alpha-3"
-        url: https://gh-proxy.org/https://github.com/ClementTsang/bottom/releases/download/{{.Version}}/{{.Asset}}
         asset: bottom
         format: raw
         supported_envs:
           - linux/amd64
       - version_constraint: Version == "0.2.0"
-        url: https://gh-proxy.org/https://github.com/ClementTsang/bottom/releases/download/{{.Version}}/{{.Asset}}
         asset: bottom_{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -37,7 +34,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "0.5.0"
-        url: https://gh-proxy.org/https://github.com/ClementTsang/bottom/releases/download/{{.Version}}/{{.Asset}}
         asset: bottom_{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -56,7 +52,6 @@ packages:
       - version_constraint: semver("<= 0.1.2")
         no_asset: true
       - version_constraint: semver("<= 0.4.7")
-        url: https://gh-proxy.org/https://github.com/ClementTsang/bottom/releases/download/{{.Version}}/{{.Asset}}
         asset: bottom_{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -74,7 +69,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 0.6.8")
-        url: https://gh-proxy.org/https://github.com/ClementTsang/bottom/releases/download/{{.Version}}/{{.Asset}}
         asset: bottom_{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -96,7 +90,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("< 0.10.0")
-        url: https://gh-proxy.org/https://github.com/ClementTsang/bottom/releases/download/{{.Version}}/{{.Asset}}
         asset: bottom_{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -110,7 +103,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ClementTsang/bottom/releases/download/{{.Version}}/{{.Asset}}
         asset: bottom_{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

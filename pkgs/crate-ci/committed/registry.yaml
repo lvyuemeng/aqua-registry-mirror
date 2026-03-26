@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.1.2") || Version == "v0.1.22"
         no_asset: true
       - version_constraint: Version == "v0.2.8"
-        url: https://gh-proxy.org/https://github.com/crate-ci/committed/releases/download/{{.Version}}/{{.Asset}}
         asset: committed-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -24,7 +23,6 @@ packages:
           - linux/amd64
           - windows
       - version_constraint: semver("<= 0.1.4")
-        url: https://gh-proxy.org/https://github.com/crate-ci/committed/releases/download/{{.Version}}/{{.Asset}}
         asset: committed-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -34,7 +32,6 @@ packages:
         supported_envs:
           - windows
       - version_constraint: semver("<= 0.1.15")
-        url: https://gh-proxy.org/https://github.com/crate-ci/committed/releases/download/{{.Version}}/{{.Asset}}
         asset: committed-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -54,7 +51,6 @@ packages:
       - version_constraint: semver("<= 0.1.20")
         no_asset: true
       - version_constraint: Version == "v0.1.21"
-        url: https://gh-proxy.org/https://github.com/crate-ci/committed/releases/download/{{.Version}}/{{.Asset}}
         asset: committed-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -75,7 +71,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/crate-ci/committed/releases/download/{{.Version}}/{{.Asset}}
         asset: committed-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         rosetta2: true

@@ -9,7 +9,6 @@ packages:
       - version_constraint: semver("<= 0.7.0")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/GoogleCloudPlatform/berglas/releases/download/{{.Version}}/{{.Asset}}
         asset: berglas_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

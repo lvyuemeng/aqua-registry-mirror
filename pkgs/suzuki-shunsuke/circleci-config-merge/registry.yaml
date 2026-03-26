@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.1.1")
-        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/{{.Asset}}
         asset: circleci-config-merge_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         supported_envs:
@@ -19,7 +18,6 @@ packages:
           asset: circleci-config-merge_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 1.1.3")
-        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/{{.Asset}}
         asset: circleci-config-merge_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         slsa_provenance:
@@ -40,7 +38,6 @@ packages:
               - --certificate
               - https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/circleci-config-merge_{{trimV .Version}}_checksums.txt.pem
       - version_constraint: semver("<= 1.1.4-4")
-        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/{{.Asset}}
         asset: circleci-config-merge_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -66,7 +63,6 @@ packages:
               - --certificate
               - https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/circleci-config-merge_{{trimV .Version}}_checksums.txt.pem
       - version_constraint: semver("<= 1.1.4-10")
-        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/{{.Asset}}
         asset: circleci-config-merge_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -87,7 +83,6 @@ packages:
               - --certificate
               - https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/circleci-config-merge_{{trimV .Version}}_checksums.txt.pem
       - version_constraint: semver("<= 1.1.4-12")
-        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/{{.Asset}}
         asset: circleci-config-merge_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -113,7 +108,6 @@ packages:
               - --certificate
               - https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/circleci-config-merge_{{trimV .Version}}_checksums.txt.pem
       - version_constraint: Version == "v1.1.4"
-        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/{{.Asset}}
         asset: circleci-config-merge_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -134,7 +128,6 @@ packages:
               - --certificate
               - https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/circleci-config-merge_{{trimV .Version}}_checksums.txt.pem
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/{{.Version}}/{{.Asset}}
         asset: circleci-config-merge_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:

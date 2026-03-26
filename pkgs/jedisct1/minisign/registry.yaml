@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.3")
-        url: https://gh-proxy.org/https://github.com/jedisct1/minisign/releases/download/{{.Version}}/{{.Asset}}
         asset: minisign-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -18,7 +17,6 @@ packages:
       - version_constraint: Version == "0.4"
         no_asset: true
       - version_constraint: semver("<= 0.8")
-        url: https://gh-proxy.org/https://github.com/jedisct1/minisign/releases/download/{{.Version}}/{{.Asset}}
         asset: minisign-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -27,7 +25,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: Version == "0.9"
-        url: https://gh-proxy.org/https://github.com/jedisct1/minisign/releases/download/{{.Version}}/{{.Asset}}
         asset: minisign-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -40,7 +37,6 @@ packages:
           - darwin
           - windows/amd64
       - version_constraint: Version in ["0.10", "0.11"]
-        url: https://gh-proxy.org/https://github.com/jedisct1/minisign/releases/download/{{.Version}}/{{.Asset}}
         asset: minisign-{{.Version}}-{{.OS}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -65,7 +61,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/jedisct1/minisign/releases/download/{{.Version}}/{{.Asset}}
         asset: minisign-{{.Version}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

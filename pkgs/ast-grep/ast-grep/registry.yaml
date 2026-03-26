@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.6.6")
-        url: https://gh-proxy.org/https://github.com/ast-grep/ast-grep/releases/download/{{.Version}}/{{.Asset}}
         asset: sg-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -27,7 +26,6 @@ packages:
         files:
           - name: sg
       - version_constraint: semver("<= 0.13.2")
-        url: https://gh-proxy.org/https://github.com/ast-grep/ast-grep/releases/download/{{.Version}}/{{.Asset}}
         asset: sg-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -39,7 +37,6 @@ packages:
         files:
           - name: sg
       - version_constraint: Version == "0.14.0"
-        url: https://gh-proxy.org/https://github.com/ast-grep/ast-grep/releases/download/{{.Version}}/{{.Asset}}
         asset: sg-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -51,7 +48,6 @@ packages:
         files:
           - name: sg
       - version_constraint: semver("<= 0.22.0")
-        url: https://gh-proxy.org/https://github.com/ast-grep/ast-grep/releases/download/{{.Version}}/{{.Asset}}
         asset: sg-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:
@@ -63,7 +59,6 @@ packages:
         files:
           - name: sg
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ast-grep/ast-grep/releases/download/{{.Version}}/{{.Asset}}
         asset: app-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         files:

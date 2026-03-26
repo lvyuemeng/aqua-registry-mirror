@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.0.1"
-        url: https://gh-proxy.org/https://github.com/containerd/nerdctl/releases/download/{{.Version}}/{{.Asset}}
         asset: nerdctl-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         checksum:
@@ -17,7 +16,6 @@ packages:
         supported_envs:
           - linux
       - version_constraint: semver("<= 0.8.1")
-        url: https://gh-proxy.org/https://github.com/containerd/nerdctl/releases/download/{{.Version}}/{{.Asset}}
         asset: nerdctl-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -27,7 +25,6 @@ packages:
         supported_envs:
           - linux
       - version_constraint: semver("<= 2.0.4")
-        url: https://gh-proxy.org/https://github.com/containerd/nerdctl/releases/download/{{.Version}}/{{.Asset}}
         asset: nerdctl-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -39,7 +36,6 @@ packages:
           - linux
           - windows/amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/containerd/nerdctl/releases/download/{{.Version}}/{{.Asset}}
         asset: nerdctl-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.2")
-        url: https://gh-proxy.org/https://github.com/tkuchiki/slp/releases/download/{{.Version}}/{{.Asset}}
         asset: slp_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -15,7 +14,6 @@ packages:
           asset: slp_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/tkuchiki/slp/releases/download/{{.Version}}/{{.Asset}}
         asset: slp_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         supported_envs:

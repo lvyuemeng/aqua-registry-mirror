@@ -16,7 +16,6 @@ packages:
     version_constraint: semver(">= 0.0.2")
     version_overrides:
       - version_constraint: semver("< 0.0.2")
-        url: https://gh-proxy.org/https://github.com/NimbleArchitect/kubectl-ice/releases/download/{{.Version}}/{{.Asset}}
         asset: ice_{{.OS}}_{{.Arch}}.{{.Format}}
         files:
           - name: kubectl-ice

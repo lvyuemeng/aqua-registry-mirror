@@ -12,7 +12,6 @@ packages:
       - version_constraint: semver("<= 1.2")
         no_asset: true
       - version_constraint: semver("<= 1.4")
-        url: https://gh-proxy.org/https://github.com/jqlang/jq/releases/download/{{.Version}}/{{.Asset}}
         asset: jq-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -28,7 +27,6 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "jq-1.5rc1"
-        url: https://gh-proxy.org/https://github.com/jqlang/jq/releases/download/{{.Version}}/{{.Asset}}
         asset: jq-{{.OS}}-{{.Arch}}-static
         format: raw
         replacements:
@@ -41,7 +39,6 @@ packages:
           - linux/amd64
           - windows
       - version_constraint: Version == "jq-1.5rc2"
-        url: https://gh-proxy.org/https://github.com/jqlang/jq/releases/download/{{.Version}}/{{.Asset}}
         asset: jq-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -57,7 +54,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.6")
-        url: https://gh-proxy.org/https://github.com/jqlang/jq/releases/download/{{.Version}}/{{.Asset}}
         asset: jq-{{.OS}}
         format: raw
         rosetta2: true
@@ -73,7 +69,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("< 1.8.0")
-        url: https://gh-proxy.org/https://github.com/jqlang/jq/releases/download/{{.Version}}/{{.Asset}}
         asset: jq-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -84,7 +79,6 @@ packages:
           asset: sha256sum.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/jqlang/jq/releases/download/{{.Version}}/{{.Asset}}
         asset: jq-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

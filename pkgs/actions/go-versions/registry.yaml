@@ -12,7 +12,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/actions/go-versions/releases/download/{{.Version}}/{{.Asset}}
         asset: go-{{.Version | regexFind "^[^-]+"}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:

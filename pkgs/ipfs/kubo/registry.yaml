@@ -21,7 +21,6 @@ packages:
         src: kubo/ipfs
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/ipfs/kubo/releases/download/{{.Version}}/{{.Asset}}
         asset: go-ipfs_{{.Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
         files:
           - name: ipfs

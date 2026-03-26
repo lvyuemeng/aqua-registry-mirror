@@ -12,7 +12,6 @@ packages:
       - version_constraint: semver("<= 1.1.5")
         no_asset: true
       - version_constraint: semver("<= 1.5.8")
-        url: https://gh-proxy.org/https://github.com/kyverno/kyverno/releases/download/{{.Version}}/{{.Asset}}
         asset: kyverno-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -31,7 +30,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.10.0")
-        url: https://gh-proxy.org/https://github.com/kyverno/kyverno/releases/download/{{.Version}}/{{.Asset}}
         asset: kyverno-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -44,7 +42,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 1.10.7")
-        url: https://gh-proxy.org/https://github.com/kyverno/kyverno/releases/download/{{.Version}}/{{.Asset}}
         asset: kyverno-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -68,7 +65,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/kyverno/kyverno/releases/download/{{.Version}}/{{.Asset}}
         asset: kyverno-cli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

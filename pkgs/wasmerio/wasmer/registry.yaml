@@ -138,7 +138,6 @@ packages:
           - darwin
         rosetta2: true
       - version_constraint: semver("< 0.3.0")
-        url: https://gh-proxy.org/https://github.com/wasmerio/wasmer/releases/download/{{.Version}}/{{.Asset}}
         asset: wasmer-{{.OS}}-{{.Arch}}
         format: raw
         replacements: {}

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.0")
-        url: https://gh-proxy.org/https://github.com/konradsz/igrep/releases/download/{{.Version}}/{{.Asset}}
         asset: igrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         overrides:
@@ -25,7 +24,6 @@ packages:
           - name: ig
             src: target/{{.Arch}}-{{.OS}}/release/ig
       - version_constraint: Version == "v0.3.0"
-        url: https://gh-proxy.org/https://github.com/konradsz/igrep/releases/download/{{.Version}}/{{.Asset}}
         asset: igrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         overrides:
@@ -42,7 +40,6 @@ packages:
         files:
           - name: ig
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/konradsz/igrep/releases/download/{{.Version}}/{{.Asset}}
         asset: igrep-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

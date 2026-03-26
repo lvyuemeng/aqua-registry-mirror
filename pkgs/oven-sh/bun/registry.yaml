@@ -13,7 +13,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.4")
-        url: https://gh-proxy.org/https://github.com/oven-sh/bun/releases/download/{{.Version}}/{{.Asset}}
         asset: bun-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         replacements:
@@ -29,7 +28,6 @@ packages:
             src: "{{.AssetWithoutExt}}/bun"
             link: bunx
       - version_constraint: semver("<= 1.0.36")
-        url: https://gh-proxy.org/https://github.com/oven-sh/bun/releases/download/{{.Version}}/{{.Asset}}
         asset: bun-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         replacements:
@@ -45,7 +43,6 @@ packages:
             src: "{{.AssetWithoutExt}}/bun"
             link: bunx
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/oven-sh/bun/releases/download/{{.Version}}/{{.Asset}}
         asset: bun-{{.OS}}-{{.Arch}}.{{.Format}}
         format: zip
         windows_arm_emulation: true

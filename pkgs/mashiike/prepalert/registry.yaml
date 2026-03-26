@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.2.0")
-        url: https://gh-proxy.org/https://github.com/mashiike/prepalert/releases/download/{{.Version}}/{{.Asset}}
         asset: prepalert_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -17,7 +16,6 @@ packages:
       - version_constraint: Version == "v0.2.1"
         no_asset: true
       - version_constraint: semver("<= 1.0.1")
-        url: https://gh-proxy.org/https://github.com/mashiike/prepalert/releases/download/{{.Version}}/{{.Asset}}
         asset: prepalert_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -25,7 +23,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/mashiike/prepalert/releases/download/{{.Version}}/{{.Asset}}
         asset: prepalert_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

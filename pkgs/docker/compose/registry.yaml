@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.5.2")
-        url: https://gh-proxy.org/https://github.com/docker/compose/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}"
         format: raw
         rosetta2: true
@@ -17,7 +16,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.0.1")
-        url: https://gh-proxy.org/https://github.com/docker/compose/releases/download/{{.Version}}/{{.Asset}}
         asset: fig-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -29,7 +27,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.4.2")
-        url: https://gh-proxy.org/https://github.com/docker/compose/releases/download/{{.Version}}/{{.Asset}}
         asset: docker-compose-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -41,7 +38,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 1.17.1")
-        url: https://gh-proxy.org/https://github.com/docker/compose/releases/download/{{.Version}}/{{.Asset}}
         asset: docker-compose-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -56,7 +52,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.29.2")
-        url: https://gh-proxy.org/https://github.com/docker/compose/releases/download/{{.Version}}/{{.Asset}}
         asset: docker-compose-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
@@ -75,12 +70,10 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: Version == "v2.0.0-rc.3"
-        url: https://gh-proxy.org/https://github.com/docker/compose/releases/download/{{.Version}}/{{.Asset}}
         asset: docker-compose-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: Version == "v2.0.0"
-        url: https://gh-proxy.org/https://github.com/docker/compose/releases/download/{{.Version}}/{{.Asset}}
         asset: docker-compose-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -89,7 +82,6 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: semver("<= 2.9.0")
-        url: https://gh-proxy.org/https://github.com/docker/compose/releases/download/{{.Version}}/{{.Asset}}
         asset: docker-compose-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -101,7 +93,6 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
       - version_constraint: Version == "v2.10.0"
-        url: https://gh-proxy.org/https://github.com/docker/compose/releases/download/{{.Version}}/{{.Asset}}
         asset: docker-compose-{{.OS}}-{{.Arch}}
         format: raw
         replacements:
@@ -112,7 +103,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/docker/compose/releases/download/{{.Version}}/{{.Asset}}
         asset: docker-compose-{{.OS}}-{{.Arch}}
         format: raw
         replacements:

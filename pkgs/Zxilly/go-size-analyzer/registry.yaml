@@ -11,7 +11,6 @@ packages:
       - version_constraint: semver("<= 0.1.0")
         no_asset: true
       - version_constraint: semver("< 1.2.3")
-        url: https://gh-proxy.org/https://github.com/Zxilly/go-size-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: go-size-analyzer_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -22,7 +21,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("< 1.3.4")
-        url: https://gh-proxy.org/https://github.com/Zxilly/go-size-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: go-size-analyzer_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -35,7 +33,6 @@ packages:
         github_artifact_attestations:
           signer_workflow: Zxilly/go-size-analyzer/.github/workflows/build-gsa.yml
       - version_constraint: semver("<= 1.9.1")
-        url: https://gh-proxy.org/https://github.com/Zxilly/go-size-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: go-size-analyzer_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -50,7 +47,6 @@ packages:
         github_artifact_attestations:
           signer_workflow: Zxilly/go-size-analyzer/.github/workflows/release.yml
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/Zxilly/go-size-analyzer/releases/download/{{.Version}}/{{.Asset}}
         asset: go-size-analyzer_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

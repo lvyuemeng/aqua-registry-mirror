@@ -12,7 +12,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/yujqiao/catproc/releases/download/{{.Version}}/{{.Asset}}
         asset: catp-{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
         replacements:

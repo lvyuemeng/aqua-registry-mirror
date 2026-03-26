@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.9.1")
-        url: https://gh-proxy.org/https://github.com/k1LoW/awsdo/releases/download/{{.Version}}/{{.Asset}}
         asset: awsdo_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true
@@ -22,7 +21,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.10.0")
-        url: https://gh-proxy.org/https://github.com/k1LoW/awsdo/releases/download/{{.Version}}/{{.Asset}}
         asset: awsdo_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         checksum:
@@ -36,7 +34,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/k1LoW/awsdo/releases/download/{{.Version}}/{{.Asset}}
         asset: awsdo_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

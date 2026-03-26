@@ -8,7 +8,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.24.0"
-        url: https://gh-proxy.org/https://github.com/protocolbuffers/protobuf-go/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-go.{{.Version}}-devel.{{.OS}}.{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -18,7 +17,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.26.0")
-        url: https://gh-proxy.org/https://github.com/protocolbuffers/protobuf-go/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-go.{{.Version}}.{{.OS}}.{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -28,7 +26,6 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 1.28.0")
-        url: https://gh-proxy.org/https://github.com/protocolbuffers/protobuf-go/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-go.{{.Version}}.{{.OS}}.{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -41,7 +38,6 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/protocolbuffers/protobuf-go/releases/download/{{.Version}}/{{.Asset}}
         asset: protoc-gen-go.{{.Version}}.{{.OS}}.{{.Arch}}.{{.Format}}
         format: tar.gz
         overrides:

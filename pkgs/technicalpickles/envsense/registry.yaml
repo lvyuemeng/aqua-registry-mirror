@@ -6,7 +6,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v0.2.0"
-        url: https://gh-proxy.org/https://github.com/technicalpickles/envsense/releases/download/{{.Version}}/{{.Asset}}
         asset: envsense-{{.Version}}-{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -25,7 +24,6 @@ packages:
           - linux
           - darwin
       - version_constraint: Version == "v0.2.1"
-        url: https://gh-proxy.org/https://github.com/technicalpickles/envsense/releases/download/{{.Version}}/{{.Asset}}
         asset: envsense-{{.Version}}-{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -43,7 +41,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.2.2")
-        url: https://gh-proxy.org/https://github.com/technicalpickles/envsense/releases/download/{{.Version}}/{{.Asset}}
         asset: envsense-v0.1.0-universal-{{.OS}}
         format: raw
         replacements:
@@ -55,7 +52,6 @@ packages:
         supported_envs:
           - darwin
       - version_constraint: semver("<= 0.3.1")
-        url: https://gh-proxy.org/https://github.com/technicalpickles/envsense/releases/download/{{.Version}}/{{.Asset}}
         asset: envsense-{{.Version}}-{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -73,7 +69,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.3.4")
-        url: https://gh-proxy.org/https://github.com/technicalpickles/envsense/releases/download/{{.Version}}/{{.Asset}}
         asset: envsense-{{.Version}}-{{.Arch}}-{{.OS}}
         format: raw
         replacements:
@@ -100,7 +95,6 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/technicalpickles/envsense/releases/download/{{.Version}}/{{.Asset}}
         asset: envsense-{{.Version}}-{{.Arch}}-{{.OS}}
         format: raw
         replacements:

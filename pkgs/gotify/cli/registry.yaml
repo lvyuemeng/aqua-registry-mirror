@@ -9,7 +9,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 2.1.0")
-        url: https://gh-proxy.org/https://github.com/gotify/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gotify-cli-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
@@ -17,20 +16,17 @@ packages:
           - linux
           - windows/amd64
       - version_constraint: semver("<= 2.2.1")
-        url: https://gh-proxy.org/https://github.com/gotify/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gotify-cli-{{.OS}}-{{.Arch}}
         format: raw
         rosetta2: true
         windows_arm_emulation: true
       - version_constraint: semver("<= 2.2.4")
-        url: https://gh-proxy.org/https://github.com/gotify/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gotify-cli-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
       - version_constraint: semver("<= 2.3.1")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/gotify/cli/releases/download/{{.Version}}/{{.Asset}}
         asset: gotify-cli-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true

@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.8")
-        url: https://gh-proxy.org/https://github.com/bomctl/bomctl/releases/download/{{.Version}}/{{.Asset}}
         asset: bomctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -28,7 +27,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/bomctl/bomctl/releases/download/{{.Version}}/{{.Asset}}
         asset: bomctl_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

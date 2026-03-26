@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.0.3")
-        url: https://gh-proxy.org/https://github.com/equinix-labs/otel-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: otel-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -21,7 +20,6 @@ packages:
           asset: checksums.txt
           algorithm: sha256
       - version_constraint: semver("<= 0.0.19")
-        url: https://gh-proxy.org/https://github.com/equinix-labs/otel-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: otel-cli-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -38,7 +36,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: Version == "v0.0.20"
-        url: https://gh-proxy.org/https://github.com/equinix-labs/otel-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: otel-cli-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:
@@ -54,7 +51,6 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/equinix-labs/otel-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: otel-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:

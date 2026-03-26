@@ -14,7 +14,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 1.0.5")
-        url: https://gh-proxy.org/https://github.com/tofuutils/tenv/releases/download/{{.Version}}/{{.Asset}}
         asset: tenv_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         files:
@@ -26,7 +25,6 @@ packages:
           asset: tenv_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: Version == "v1.0.6"
-        url: https://gh-proxy.org/https://github.com/tofuutils/tenv/releases/download/{{.Version}}/{{.Asset}}
         asset: tenv_.{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -44,7 +42,6 @@ packages:
         checksum:
           enabled: false
       - version_constraint: Version == "v1.0.7"
-        url: https://gh-proxy.org/https://github.com/tofuutils/tenv/releases/download/{{.Version}}/{{.Asset}}
         asset: tenv_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -130,7 +127,6 @@ packages:
           asset: tenv_{{.Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/tofuutils/tenv/releases/download/{{.Version}}/{{.Asset}}
         asset: tenv_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

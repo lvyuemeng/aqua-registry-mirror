@@ -7,7 +7,6 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1"
-        url: https://gh-proxy.org/https://github.com/so-dang-cool/fib/releases/download/{{.Version}}/{{.Asset}}
         asset: fib
         format: raw
         supported_envs:
@@ -15,7 +14,6 @@ packages:
       - version_constraint: semver("<= 1.1.2.3")
         no_asset: true
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/so-dang-cool/fib/releases/download/{{.Version}}/{{.Asset}}
         asset: fib-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tgz
         replacements:

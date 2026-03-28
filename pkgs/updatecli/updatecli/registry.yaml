@@ -94,6 +94,31 @@ packages:
         overrides:
           - goos: windows
             format: zip
+      - version_constraint: semver("<= 0.114.0")
+        url: https://gh-proxy.org/https://github.com/updatecli/updatecli/releases/download/{{.Version}}/{{.Asset}}
+        asset: updatecli_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          darwin: Darwin
+          linux: Linux
+          windows: Windows
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+          cosign:
+            bundle:
+              type: github_release
+              asset: checksums.txt.sig
+            opts:
+              - --certificate-identity
+              - "https://github.com/updatecli/updatecli/.github/workflows/release.yaml@refs/tags/{{.Version}}"
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
+        overrides:
+          - goos: windows
+            format: zip
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/updatecli/updatecli/releases/download/{{.Version}}/{{.Asset}}
         asset: updatecli_{{.OS}}_{{.Arch}}.{{.Format}}
@@ -119,3 +144,5 @@ packages:
         overrides:
           - goos: windows
             format: zip
+        github_artifact_attestations:
+          signer_workflow: updatecli/updatecli/\.github/workflows/release\.yaml

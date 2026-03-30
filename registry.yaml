@@ -32734,7 +32734,7 @@ packages:
           - darwin
           - windows
           - amd64
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.8.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: bkt.v{{.Version}}.{{.Arch}}-{{.OS}}.{{.Format}}
         format: zip
@@ -32753,6 +32753,25 @@ packages:
             goarch: arm64
             replacements:
               arm64: aarch64
+              linux: unknown-linux-gnu
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: bkt.v{{.Version}}.{{.Arch}}-{{.OS}}.{{.Format}}
+        format: zip
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          windows: pc-windows-msvc
+        overrides:
+          - goos: linux
+            goarch: amd64
+            replacements:
+              linux: unknown-linux-musl
+          - goos: linux
+            goarch: arm64
+            replacements:
               linux: unknown-linux-gnu
   - type: github_release
     repo_owner: dimonomid
@@ -35589,6 +35608,37 @@ packages:
           type: github_release
           asset: checksums.txt
           algorithm: sha256
+  - type: github_release
+    repo_owner: emacs-eask
+    repo_name: cli
+    description: CLI for building, running, testing, and managing your Emacs Lisp dependencies
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.6.0")
+        no_asset: true
+      - version_constraint: semver("<= 0.9.3")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: eask_{{.Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
+        format: zip
+        files:
+          - name: eask
+        replacements:
+          amd64: x64
+          darwin: macos
+          windows: win
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: eask_{{.Version}}_{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: eask
+        replacements:
+          amd64: x64
+          darwin: macos
+          windows: win
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: emirozer
     repo_name: kubectl-doctor
@@ -87062,6 +87112,47 @@ packages:
           - goos: windows
             format: zip
   - type: github_release
+    repo_owner: superradcompany
+    repo_name: microsandbox
+    aliases:
+      - name: microsandbox/microsandbox
+      - name: zerocore-ai/microsandbox
+    description: Self-Hosted Platform for Secure Execution of Untrusted User/AI Code
+    files:
+      - name: msb
+    version_prefix: microsandbox-v
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: microsandbox-{{.SemVer}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: msb
+            src: "{{.AssetWithoutExt}}/msb"
+          - name: msbrun
+            src: "{{.AssetWithoutExt}}/msbrun"
+          - name: msbserver
+            src: "{{.AssetWithoutExt}}/msbserver"
+          - name: msi
+            src: "{{.AssetWithoutExt}}/msi"
+          - name: msr
+            src: "{{.AssetWithoutExt}}/msr"
+          - name: msx
+            src: "{{.AssetWithoutExt}}/msx"
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            replacements:
+              amd64: x86_64
+              arm64: aarch64
+        supported_envs:
+          - linux
+          - darwin/arm64
+  - type: github_release
     repo_owner: suzuki-shunsuke
     repo_name: akoi
     description: "Deprecated: Please use aqua"
@@ -99387,46 +99478,6 @@ packages:
       arm64: aarch64
     checksum:
       enabled: false # https://github.com/aquaproj/aqua-registry/issues/6780#issuecomment-1267714776
-  - type: github_release
-    repo_owner: zerocore-ai
-    repo_name: microsandbox
-    aliases:
-      - name: microsandbox/microsandbox
-    description: Self-Hosted Platform for Secure Execution of Untrusted User/AI Code
-    files:
-      - name: msb
-    version_prefix: microsandbox-v
-    version_constraint: "false"
-    version_overrides:
-      - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: microsandbox-{{.SemVer}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        files:
-          - name: msb
-            src: "{{.AssetWithoutExt}}/msb"
-          - name: msbrun
-            src: "{{.AssetWithoutExt}}/msbrun"
-          - name: msbserver
-            src: "{{.AssetWithoutExt}}/msbserver"
-          - name: msi
-            src: "{{.AssetWithoutExt}}/msi"
-          - name: msr
-            src: "{{.AssetWithoutExt}}/msr"
-          - name: msx
-            src: "{{.AssetWithoutExt}}/msx"
-        checksum:
-          type: github_release
-          asset: "{{.Asset}}.sha256"
-          algorithm: sha256
-        overrides:
-          - goos: linux
-            replacements:
-              amd64: x86_64
-              arm64: aarch64
-        supported_envs:
-          - linux
-          - darwin/arm64
   - type: http
     repo_owner: ziglang
     repo_name: zig

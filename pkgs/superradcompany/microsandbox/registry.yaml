@@ -1,10 +1,11 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/registry.json
 packages:
   - type: github_release
-    repo_owner: zerocore-ai
+    repo_owner: superradcompany
     repo_name: microsandbox
     aliases:
       - name: microsandbox/microsandbox
+      - name: zerocore-ai/microsandbox
     description: Self-Hosted Platform for Secure Execution of Untrusted User/AI Code
     files:
       - name: msb
@@ -12,7 +13,7 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/zerocore-ai/microsandbox/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/superradcompany/microsandbox/releases/download/{{.Version}}/{{.Asset}}
         asset: microsandbox-{{.SemVer}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:

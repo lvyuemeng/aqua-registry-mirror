@@ -1,8 +1,10 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/registry.json
 packages:
   - type: github_release
-    repo_owner: steveyegge
+    repo_owner: gastownhall
     repo_name: beads
+    aliases:
+      - name: steveyegge/beads
     description: "Beads - A memory upgrade for your coding agent"
     files:
       - name: bd
@@ -11,7 +13,7 @@ packages:
       - version_constraint: semver("<= 0.9.11")
         no_asset: true
       - version_constraint: semver("<= 0.21.9")
-        url: https://gh-proxy.org/https://github.com/steveyegge/beads/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/gastownhall/beads/releases/download/{{.Version}}/{{.Asset}}
         asset: beads_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
@@ -22,7 +24,7 @@ packages:
           - goos: windows
             format: zip
       - version_constraint: semver("<= 0.24.3")
-        url: https://gh-proxy.org/https://github.com/steveyegge/beads/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/gastownhall/beads/releases/download/{{.Version}}/{{.Asset}}
         asset: beads_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -38,7 +40,7 @@ packages:
           - windows
           - amd64
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/steveyegge/beads/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/gastownhall/beads/releases/download/{{.Version}}/{{.Asset}}
         asset: beads_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

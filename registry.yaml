@@ -13132,6 +13132,8 @@ packages:
     version_source: github_tag
     version_constraint: "false"
     version_overrides:
+      - version_constraint: Version == "v2.1.88"
+        no_asset: true
       - version_constraint: "true"
         format: raw
         url: https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/{{trimV .Version}}/{{.OS}}-{{.Arch}}/claude
@@ -17825,6 +17827,25 @@ packages:
         asset: f2_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+  - type: github_release
+    repo_owner: azu
+    repo_name: dockerfile-pin
+    description: A CLI tool that adds @sha256:<digest> to FROM lines in Dockerfiles and image fields in docker-compose.yml to prevent supply chain attacks
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.0.1"
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dockerfile-pin_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
         checksum:
           type: github_release
           asset: checksums.txt
@@ -30597,130 +30618,103 @@ packages:
   - type: github_release
     repo_owner: dandavison
     repo_name: delta
-    description: A syntax-highlighting pager for git, diff, and grep output
-    asset: delta-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
-    format: tar.gz
+    description: A syntax-highlighting pager for git, diff, grep, and blame output
     files:
       - name: delta
-        src: delta-{{.Version}}-{{.Arch}}-{{.OS}}/delta
+        src: "{{.AssetWithoutExt}}/delta"
     overrides:
-      - goos: linux
-        goarch: amd64
-        replacements:
-          linux: unknown-linux-musl
-      - goos: linux
-        goarch: arm64
-        replacements:
-          linux: unknown-linux-gnu
       - goos: windows
-        format: zip
-        replacements:
-          arm64: arm64
-    replacements:
-      amd64: x86_64
-      arm64: aarch64
-      darwin: apple-darwin
-      windows: pc-windows-msvc
-    supported_envs:
-      - darwin
-      - linux
-      - amd64
-    version_constraint: semver(">= 0.16.5")
+        files:
+          - name: delta
+    version_constraint: "false"
     version_overrides:
-      - version_constraint: semver(">= 0.16.4")
+      - version_constraint: Version == "0.16.4"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: delta-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+          linux: unknown-linux-gnu
+          windows: pc-windows-msvc
         overrides:
           - goos: darwin
             replacements:
               arm64: aarch64
           - goos: windows
             format: zip
-        replacements:
-          amd64: x86_64
-          darwin: apple-darwin
-          linux: unknown-linux-gnu
-          windows: pc-windows-msvc
         supported_envs:
           - darwin
+          - windows
           - amd64
-      - version_constraint: semver(">= 0.15.0")
-      - version_constraint: semver(">= 0.4.1")
-        overrides:
-          - goos: linux
-            goarch: amd64
-            replacements:
-              linux: unknown-linux-musl
-          - goos: linux
-            goarch: arm64
-            replacements:
-              arm64: aarch64
-              linux: unknown-linux-gnu
-          - goos: windows
-            format: zip
-        replacements:
-          amd64: x86_64
-          darwin: apple-darwin
-          windows: pc-windows-msvc
-        rosetta2: true
-      - version_constraint: semver(">= 0.3.0")
-        overrides:
-          - goos: windows
-            format: zip
+      - version_constraint: Version == "0.19.0"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: delta-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
         replacements:
           amd64: x86_64
           darwin: apple-darwin
           linux: unknown-linux-musl
           windows: pc-windows-msvc
-        supported_envs:
-          - darwin
-          - amd64
-        rosetta2: true
-      - version_constraint: semver(">= 0.1.0")
         overrides:
+          - goos: darwin
+            replacements:
+              amd64: amd64
+              arm64: aarch64
           - goos: windows
             format: zip
+        supported_envs:
+          - linux/amd64
+          - darwin/arm64
+          - windows/amd64
+      - version_constraint: semver("<= 0.2.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: delta-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
         replacements:
           amd64: x86_64
           darwin: apple-darwin
           linux: unknown-linux-musl
           windows: pc-windows-gnu
+        overrides:
+          - goos: windows
+            format: zip
         supported_envs:
           - darwin
+          - windows
           - amd64
+      - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: delta-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
         rosetta2: true
-      - version_constraint: semver(">= 0.0.16")
-        overrides: []
-        replacements:
-          amd64: x86_64
-          darwin: apple-darwin
-          linux: unknown-linux-musl
-        supported_envs:
-          - linux/amd64
-          - darwin
-        rosetta2: true
-      - version_constraint: semver(">= 0.0.10")
-        overrides:
-          - goos: windows
-            format: zip
+        windows_arm_emulation: true
         replacements:
           amd64: x86_64
           darwin: apple-darwin
           linux: unknown-linux-musl
           windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
         supported_envs:
           - darwin
+          - windows
           - amd64
+      - version_constraint: semver("<= 0.14.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: delta-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
         rosetta2: true
-      - version_constraint: semver(">= 0.0.8")
-        overrides: []
+        windows_arm_emulation: true
         replacements:
           amd64: x86_64
           darwin: apple-darwin
-          linux: unknown-linux-musl
-        supported_envs:
-          - linux/amd64
-          - darwin
-        rosetta2: true
-      - version_constraint: semver(">= 0.0.7")
+          windows: pc-windows-msvc
         overrides:
           - goos: linux
             goarch: amd64
@@ -30733,12 +30727,16 @@ packages:
               linux: unknown-linux-gnu
           - goos: windows
             format: zip
+      - version_constraint: semver("<= 0.18.2")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: delta-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
         replacements:
           amd64: x86_64
+          arm64: aarch64
           darwin: apple-darwin
           windows: pc-windows-msvc
-        rosetta2: true
-      - version_constraint: semver(">= 0.0.6")
         overrides:
           - goos: linux
             goarch: amd64
@@ -30747,19 +30745,19 @@ packages:
           - goos: linux
             goarch: arm64
             replacements:
-              arm64: aarch64
               linux: unknown-linux-gnu
           - goos: windows
             format: zip
-            asset: bat-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
-            files:
-              - name: delta
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: delta-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
         replacements:
           amd64: x86_64
+          arm64: aarch64
           darwin: apple-darwin
           windows: pc-windows-msvc
-        rosetta2: true
-      - version_constraint: semver(">= 0.0.5")
         overrides:
           - goos: linux
             goarch: amd64
@@ -30768,33 +30766,16 @@ packages:
           - goos: linux
             goarch: arm64
             replacements:
-              arm64: aarch64
               linux: unknown-linux-gnu
+          - goos: darwin
+            replacements:
+              amd64: amd64
           - goos: windows
             format: zip
-        replacements:
-          amd64: x86_64
-          darwin: apple-darwin
-          windows: pc-windows-msvc
-        rosetta2: true
-      - version_constraint: semver("< 0.0.5")
-        overrides:
-          - goos: linux
-            goarch: amd64
-            replacements:
-              linux: unknown-linux-musl
-          - goos: linux
-            goarch: arm64
-            replacements:
-              arm64: aarch64
-              linux: unknown-linux-gnu
-        replacements:
-          amd64: x86_64
-          darwin: apple-darwin
         supported_envs:
           - linux
-          - darwin
-        rosetta2: true
+          - darwin/arm64
+          - windows/amd64
   - type: github_release
     repo_owner: danielfoehrKn
     repo_name: kubeswitch
@@ -44930,6 +44911,23 @@ packages:
               - https://github.com/goreleaser/goreleaser/releases/download/{{.Version}}/checksums.txt.sig
               - --certificate
               - https://github.com/goreleaser/goreleaser/releases/download/{{.Version}}/checksums.txt.pem
+        github_artifact_attestations:
+          signer_workflow: goreleaser/goreleaser/.github/workflows/release.yml
+        overrides:
+          - goos: darwin
+            asset: goreleaser_{{title .OS}}_all.{{.Format}}
+          - goos: windows
+            format: zip
+      - version_constraint: Version in ["v2.15.0", "v2.15.1"]
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: goreleaser_{{title .OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
         github_artifact_attestations:
           signer_workflow: goreleaser/goreleaser/.github/workflows/release.yml
         overrides:

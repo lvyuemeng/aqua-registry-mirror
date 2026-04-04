@@ -11227,6 +11227,28 @@ packages:
           asset: diffsitter-{{.Arch}}-{{.OS}}.sha256
           algorithm: sha256
   - type: github_release
+    repo_owner: ahkohd
+    repo_name: oyo
+    description: A different viewer
+    files:
+      - name: oy
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.1.19")
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: oy-{{.Arch}}-{{.OS}}.{{.Format}}
+        files:
+          - name: oy
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+        supported_envs:
+          - darwin
+  - type: github_release
     repo_owner: ahmetb
     repo_name: kubectl-tree
     description: kubectl plugin to browse Kubernetes object hierarchies as a tree  (star the repo if you are using)
@@ -19062,6 +19084,44 @@ packages:
           type: github_release
           asset: roumon_{{trimV .Version}}_checksums.txt
           algorithm: sha256
+  - type: github_release
+    repo_owner: bellicose100xp
+    repo_name: jiq
+    description: Interactive JSON query tool with real-time output and AI assistance
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v2.0.0"
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: jiq-{{.Arch}}-{{.OS}}.{{.Format}}
+        files:
+          - name: jiq
+            src: "{{.AssetWithoutExt}}/jiq"
+        format: tar.xz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            goarch: amd64
+            replacements:
+              linux: unknown-linux-musl
+          - goos: linux
+            goarch: arm64
+            replacements:
+              linux: unknown-linux-gnu
+          - goos: windows
+            format: zip
+            files:
+              - name: jiq
   - type: github_release
     repo_owner: benbjohnson
     repo_name: litestream
@@ -59791,6 +59851,26 @@ packages:
       - darwin/arm64
       - linux/amd64
   - type: github_release
+    repo_owner: kurama
+    repo_name: dealve-tui
+    description: Delve into game deals from your terminal
+    files:
+      - name: dealve
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dealve-{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: macos
+        overrides:
+          - goos: windows
+            replacements: {}
+  - type: github_release
     repo_owner: kurehajime
     repo_name: dajarep
     description: ダジャレを検索するコマンド
@@ -63538,6 +63618,91 @@ packages:
         supported_envs:
           - linux
           - windows/amd64
+  - type: github_release
+    repo_owner: micahkepe
+    repo_name: jsongrep
+    description: A path query language for JSON, YAML, TOML, and other serialization formats
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.1.1"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: jsongrep-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        files:
+          - name: jg
+            src: "{{.AssetWithoutExt}}/jg"
+        format: tar.gz
+        rosetta2: true
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.6.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: jsongrep-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        files:
+          - name: jg
+            src: "{{.AssetWithoutExt}}/jg"
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+            checksum:
+              type: github_release
+              asset: "{{.Asset}}.sha256"
+              algorithm: sha256
+              file_format: regexp
+              pattern:
+                checksum: (\b[A-Fa-f0-9]{64}\b)
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: jsongrep-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        files:
+          - name: jg
+            src: "{{.AssetWithoutExt}}/jg"
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+            checksum:
+              type: github_release
+              asset: "{{.Asset}}.sha256"
+              algorithm: sha256
+              file_format: regexp
+              pattern:
+                checksum: (\b[A-Fa-f0-9]{64}\b)
   - type: github_release
     repo_owner: michidk
     repo_name: vscli
@@ -82457,7 +82622,7 @@ packages:
           type: github_release
           asset: cosign_checksums.txt
           algorithm: sha256
-      - version_constraint: semver("<= 2.6.1")
+      - version_constraint: semver("<= 2.6.2")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: cosign-{{.OS}}-{{.Arch}}
         format: raw
@@ -91434,6 +91599,23 @@ packages:
           - goos: windows
             format: zip
   - type: github_release
+    repo_owner: textfuel
+    repo_name: lazyjira
+    description: Lazygit but for Jira
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: lazyjira_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: lazyjira_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+  - type: github_release
     repo_owner: tfmigrator
     repo_name: cli
     description: CLI to migrate Terraform Configuration and State
@@ -94560,6 +94742,27 @@ packages:
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: ubi-{{.OS}}-{{.Arch}}-{{.Version}}.{{.Format}}
         format: tar.gz
+        overrides:
+          - goos: windows
+            format: zip
+  - type: github_release
+    repo_owner: ubugeeei
+    repo_name: vize
+    description: Unofficial High-Performance Vue.js Toolchain in Rust
+    search_words:
+      - vue
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: vize-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-gnu
+          windows: pc-windows-msvc
         overrides:
           - goos: windows
             format: zip

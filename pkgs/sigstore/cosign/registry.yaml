@@ -98,7 +98,7 @@ packages:
           type: github_release
           asset: cosign_checksums.txt
           algorithm: sha256
-      - version_constraint: semver("<= 2.6.2")
+      - version_constraint: semver("< 3.0.0")
         url: https://gh-proxy.org/https://github.com/sigstore/cosign/releases/download/{{.Version}}/{{.Asset}}
         asset: cosign-{{.OS}}-{{.Arch}}
         format: raw

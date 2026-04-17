@@ -28810,6 +28810,40 @@ packages:
         supported_envs:
           - darwin/arm64
   - type: github_release
+    repo_owner: controlplaneio-fluxcd
+    repo_name: flux-operator
+    link: https://fluxoperator.dev/docs/guides/cli/
+    description: |
+      Flux Operator CLI allows you to manage the Flux Operator resources in your Kubernetes clusters.
+      It provides a convenient way to interact with the operator and perform various operations.
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.13.0")
+        no_asset: true
+      - version_constraint: semver("<= 0.19.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: flux-operator_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: flux-operator_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: flux-operator_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: flux-operator_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+  - type: github_release
     repo_owner: controlplaneio
     repo_name: kubectl-kubesec
     description: Security risk analysis for Kubernetes resources
@@ -31983,6 +32017,26 @@ packages:
             format: zip
         files:
           - name: dependabot
+  - type: github_release
+    repo_owner: dependency-check
+    repo_name: DependencyCheck
+    description: OWASP dependency-check is a software composition analysis utility that detects publicly disclosed vulnerabilities in application dependencies
+    files:
+      - name: dependency-check
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dependency-check-{{trimV .Version}}-release.zip
+        format: zip
+        files:
+          - name: dependency-check
+            src: dependency-check/bin/dependency-check.sh
+        overrides:
+          - goos: windows
+            files:
+              - name: dependency-check
+                src: dependency-check/bin/dependency-check.bat
   - type: github_release
     repo_owner: derailed
     repo_name: k9s
@@ -53564,26 +53618,107 @@ packages:
     repo_owner: jreleaser
     repo_name: jreleaser
     description: Release projects quickly and easily with JReleaser
-    rosetta2: true
-    replacements:
-      amd64: x86_64
-      darwin: osx
-      linux: linux_musl
-      arm64: aarch64
-    asset: jreleaser-standalone-{{trimV .Version}}-{{.OS}}-{{.Arch}}.zip
     files:
       - name: jreleaser
-        src: jreleaser-standalone-{{trimV .Version}}-{{.OS}}-{{.Arch}}/bin/jreleaser
+        src: "{{.AssetWithoutExt}}/bin/jreleaser"
       - name: java
-        src: jreleaser-standalone-{{trimV .Version}}-{{.OS}}-{{.Arch}}/bin/java
+        src: "{{.AssetWithoutExt}}/bin/java"
       - name: keytool
-        src: jreleaser-standalone-{{trimV .Version}}-{{.OS}}-{{.Arch}}/bin/keytool
+        src: "{{.AssetWithoutExt}}/bin/keytool"
       - name: rmiregistry
-        src: jreleaser-standalone-{{trimV .Version}}-{{.OS}}-{{.Arch}}/bin/rmiregistry
-    checksum:
-      type: github_release
-      asset: checksums_sha256.txt
-      algorithm: sha256
+        src: "{{.AssetWithoutExt}}/bin/rmiregistry"
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.3.0"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: jreleaser-standalone-{{trimV .Version}}-{{.OS}}.{{.Format}}
+        format: zip
+        overrides:
+          - goos: windows
+            files:
+              - name: jreleaser
+                src: "{{.AssetWithoutExt}}/bin/jreleaser.bat"
+              - name: java
+                src: "{{.AssetWithoutExt}}/bin/java"
+              - name: keytool
+                src: "{{.AssetWithoutExt}}/bin/keytool"
+              - name: rmiregistry
+                src: "{{.AssetWithoutExt}}/bin/rmiregistry"
+        replacements:
+          darwin: osx
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: semver("<= 0.5.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: jreleaser-standalone-{{trimV .Version}}-{{.OS}}.{{.Format}}
+        format: zip
+        overrides:
+          - goos: windows
+            files:
+              - name: jreleaser
+                src: "{{.AssetWithoutExt}}/bin/jreleaser.bat"
+              - name: java
+                src: "{{.AssetWithoutExt}}/bin/java"
+              - name: keytool
+                src: "{{.AssetWithoutExt}}/bin/keytool"
+              - name: rmiregistry
+                src: "{{.AssetWithoutExt}}/bin/rmiregistry"
+        replacements:
+          darwin: osx
+        checksum:
+          type: github_release
+          asset: checksums_sha256.txt
+          algorithm: sha256
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: semver("<= 0.8.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: jreleaser-standalone-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: zip
+        rosetta2: true
+        windows_arm_emulation: true
+        overrides:
+          - goos: windows
+            files:
+              - name: jreleaser
+                src: "{{.AssetWithoutExt}}/bin/jreleaser.bat"
+              - name: java
+                src: "{{.AssetWithoutExt}}/bin/java"
+              - name: keytool
+                src: "{{.AssetWithoutExt}}/bin/keytool"
+              - name: rmiregistry
+                src: "{{.AssetWithoutExt}}/bin/rmiregistry"
+        replacements:
+          amd64: x86_64
+          darwin: osx
+        checksum:
+          type: github_release
+          asset: checksums_sha256.txt
+          algorithm: sha256
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: jreleaser-standalone-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: zip
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: osx
+        checksum:
+          type: github_release
+          asset: checksums_sha256.txt
+          algorithm: sha256
   - type: github_release
     repo_owner: jscaltreto
     repo_name: eks-auth
@@ -56012,6 +56147,30 @@ packages:
         format: raw
         supported_envs:
           - linux
+  - type: http
+    name: kiro.dev/kiro-cli
+    description: Kiro CLI is an agentic coding tool that lives in your terminal
+    link: https://kiro.dev/docs/cli/installation/
+    url: https://prod.download.cli.kiro.dev/stable/{{.Version}}/kirocli-{{.Arch}}-linux-musl.zip
+    format: zip
+    files:
+      - name: kiro-cli
+        src: kirocli/bin/kiro-cli
+      - name: kiro-cli-chat
+        src: kirocli/bin/kiro-cli-chat
+    replacements:
+      amd64: x86_64
+      arm64: aarch64
+    overrides:
+      - goos: darwin
+        url: https://prod.download.cli.kiro.dev/stable/{{.Version}}/Kiro%20CLI.dmg
+        format: dmg
+        files:
+          - name: kiro-cli
+            src: Kiro CLI.app/Contents/MacOS/kiro-cli
+    supported_envs:
+      - linux
+      - darwin
   - type: github_content
     repo_owner: kjokjo
     repo_name: ipcalc
@@ -83064,7 +83223,7 @@ packages:
           type: github_release
           asset: cosign_checksums.txt
           algorithm: sha256
-      - version_constraint: semver("<= 2.6.2")
+      - version_constraint: semver("< 3.0.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: cosign-{{.OS}}-{{.Arch}}
         format: raw

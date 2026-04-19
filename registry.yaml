@@ -5055,6 +5055,32 @@ packages:
       - name: gorss
         src: dist/gorss_{{.OS}}
   - type: github_release
+    repo_owner: LargeModGames
+    repo_name: spotatui
+    description: A fully standalone Spotify client for the terminal. Native streaming included, no daemon required
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: spotatui-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: macos
+          arm64: aarch64
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+  - type: github_release
     repo_owner: Lifailon
     repo_name: lazyjournal
     description: TUI for journalctl, file system logs, as well Docker and Podman containers for quick viewing and filtering with fuzzy find, regex support (like fzf and grep) and coloring the output, written in Go with the gocui library
@@ -83923,9 +83949,9 @@ packages:
   - type: github_release
     repo_owner: skim-rs
     repo_name: skim
-    description: Fuzzy Finder in rust
     aliases:
       - name: lotabout/skim
+    description: Fuzzy Finder in rust
     files:
       - name: sk
     version_constraint: "false"
@@ -83965,14 +83991,8 @@ packages:
           amd64: x86_64
           darwin: apple-darwin
           linux: unknown-linux-gnu
-        overrides:
-          - goos: linux
-            goarch: arm64
-            asset: skim-{{.Version}}-{{.Arch}}-{{.OS}}eabi.{{.Format}}
-            replacements:
-              arm64: arm
         supported_envs:
-          - linux
+          - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.9.3")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
@@ -83987,14 +84007,8 @@ packages:
             goarch: amd64
             replacements:
               linux: unknown-linux-musl
-          - goos: linux
-            goarch: arm64
-            asset: skim-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
-            replacements:
-              arm64: arm
-              linux: unknown-linux-gnueabi
         supported_envs:
-          - linux
+          - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.10.4")
         no_asset: true
@@ -84024,7 +84038,7 @@ packages:
         supported_envs:
           - linux
           - darwin
-      - version_constraint: "true"
+      - version_constraint: semver("<= 4.0.1")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: skim-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
@@ -84051,6 +84065,29 @@ packages:
         supported_envs:
           - linux
           - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: skim-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.xz
+        windows_arm_emulation: true
+        files:
+          - name: sk
+            src: "{{.AssetWithoutExt}}/sk"
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: sk
   - type: github_release
     repo_owner: sl1pm4t
     repo_name: k2tf
@@ -96514,6 +96551,97 @@ packages:
           asset: checksum.txt
           algorithm: sha256
   - type: github_release
+    repo_owner: velero-io
+    repo_name: velero
+    aliases:
+      - name: vmware-tanzu/velero
+    description: Backup and migrate Kubernetes applications and their persistent volumes
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.8.0-rc.1"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ark-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        files:
+          - name: ark
+      - version_constraint: Version == "v0.10.0-beta.1"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ark-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        files:
+          - name: ark
+        checksum:
+          type: github_release
+          asset: CHECKSUM
+          algorithm: sha256
+      - version_constraint: Version == "v1.10.0-rc.2"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: velero-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        files:
+          - name: velero
+            src: "{{.AssetWithoutExt}}/velero"
+        checksum:
+          type: github_release
+          asset: CHECKSUM
+          algorithm: sha256
+      - version_constraint: semver("<= 0.4.0")
+        no_asset: true
+      - version_constraint: semver("<= 0.5.1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ark-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        files:
+          - name: ark
+        checksum:
+          type: github_release
+          asset: CHECKSUM
+          algorithm: sha256
+      - version_constraint: semver("<= 0.10.2")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ark-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        files:
+          - name: ark
+        checksum:
+          type: github_release
+          asset: CHECKSUM
+          algorithm: sha256
+      - version_constraint: semver("<= 1.10.3")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: velero-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        files:
+          - name: velero
+            src: "{{.AssetWithoutExt}}/velero"
+        checksum:
+          type: github_release
+          asset: CHECKSUM
+          algorithm: sha256
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: velero-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        files:
+          - name: velero
+            src: "{{.AssetWithoutExt}}/velero"
+        checksum:
+          type: github_release
+          asset: CHECKSUM
+          algorithm: sha256
+  - type: github_release
     repo_owner: vercel-labs
     repo_name: agent-browser
     description: Browser automation CLI for AI agents
@@ -96887,95 +97015,6 @@ packages:
         overrides:
           - goos: windows
             format: zip
-  - type: github_release
-    repo_owner: vmware-tanzu
-    repo_name: velero
-    description: Backup and migrate Kubernetes applications and their persistent volumes
-    version_constraint: "false"
-    version_overrides:
-      - version_constraint: Version == "v0.8.0-rc.1"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: ark-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        windows_arm_emulation: true
-        files:
-          - name: ark
-      - version_constraint: Version == "v0.10.0-beta.1"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: ark-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        windows_arm_emulation: true
-        files:
-          - name: ark
-        checksum:
-          type: github_release
-          asset: CHECKSUM
-          algorithm: sha256
-      - version_constraint: Version == "v1.10.0-rc.2"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: velero-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        windows_arm_emulation: true
-        files:
-          - name: velero
-            src: "{{.AssetWithoutExt}}/velero"
-        checksum:
-          type: github_release
-          asset: CHECKSUM
-          algorithm: sha256
-      - version_constraint: semver("<= 0.4.0")
-        no_asset: true
-      - version_constraint: semver("<= 0.5.1")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: ark-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        windows_arm_emulation: true
-        files:
-          - name: ark
-        checksum:
-          type: github_release
-          asset: CHECKSUM
-          algorithm: sha256
-      - version_constraint: semver("<= 0.10.2")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: ark-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        windows_arm_emulation: true
-        files:
-          - name: ark
-        checksum:
-          type: github_release
-          asset: CHECKSUM
-          algorithm: sha256
-      - version_constraint: semver("<= 1.10.3")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: velero-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        windows_arm_emulation: true
-        files:
-          - name: velero
-            src: "{{.AssetWithoutExt}}/velero"
-        checksum:
-          type: github_release
-          asset: CHECKSUM
-          algorithm: sha256
-      - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: velero-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        windows_arm_emulation: true
-        files:
-          - name: velero
-            src: "{{.AssetWithoutExt}}/velero"
-        checksum:
-          type: github_release
-          asset: CHECKSUM
-          algorithm: sha256
   - name: vmware/govmomi/govc
     type: github_release
     repo_owner: vmware

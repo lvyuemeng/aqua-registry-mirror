@@ -6,6 +6,18 @@ packages:
     description: Power Usage Monitor for Apple Silicon
     version_constraint: "false"
     version_overrides:
+      - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/graelo/pumas/releases/download/{{.Version}}/{{.Asset}}
+        asset: pumas-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: zip
+        files:
+          - name: pumas
+            src: target/release/pumas
+        replacements:
+          arm64: aarch64
+          darwin: apple-darwin
+        supported_envs:
+          - darwin/arm64
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/graelo/pumas/releases/download/{{.Version}}/{{.Asset}}
         asset: pumas-{{.Arch}}-{{.OS}}.{{.Format}}
@@ -18,3 +30,5 @@ packages:
           darwin: apple-darwin
         supported_envs:
           - darwin/arm64
+        github_artifact_attestations:
+          signer_workflow: graelo/pumas/\.github/workflows/release\.yml

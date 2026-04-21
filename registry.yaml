@@ -28938,6 +28938,26 @@ packages:
         overrides:
           - goos: windows
             format: zip
+  - name: controlplaneio-fluxcd/flux-operator/flux-operator-mcp
+    type: github_release
+    repo_owner: controlplaneio-fluxcd
+    repo_name: flux-operator
+    description: GitOps on Autopilot Mode
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.19.0")
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: flux-operator-mcp_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: flux-operator_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: controlplaneio
     repo_name: kubectl-kubesec
@@ -35981,6 +36001,28 @@ packages:
       - darwin
       - linux
       - amd64
+  - type: github_release
+    repo_owner: endevco
+    repo_name: aube
+    description: A fast Node.js package manager
+    asset: aube-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+    format: tar.gz
+    replacements:
+      amd64: x86_64
+      arm64: aarch64
+      darwin: apple-darwin
+      linux: unknown-linux-gnu
+      windows: pc-windows-msvc
+    overrides:
+      - goos: darwin
+        replacements:
+          amd64: amd64
+      - goos: windows
+        format: zip
+    supported_envs:
+      - linux
+      - darwin/arm64
+      - windows
   - type: github_release
     repo_owner: enokawa
     repo_name: taskdiff
@@ -45837,6 +45879,18 @@ packages:
     description: Power Usage Monitor for Apple Silicon
     version_constraint: "false"
     version_overrides:
+      - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: pumas-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: zip
+        files:
+          - name: pumas
+            src: target/release/pumas
+        replacements:
+          arm64: aarch64
+          darwin: apple-darwin
+        supported_envs:
+          - darwin/arm64
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: pumas-{{.Arch}}-{{.OS}}.{{.Format}}
@@ -45849,6 +45903,8 @@ packages:
           darwin: apple-darwin
         supported_envs:
           - darwin/arm64
+        github_artifact_attestations:
+          signer_workflow: graelo/pumas/\.github/workflows/release\.yml
   - type: github_release
     repo_owner: grafana
     repo_name: alloy

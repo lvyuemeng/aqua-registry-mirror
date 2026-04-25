@@ -17518,18 +17518,11 @@ packages:
           type: github_release
           asset: eks-node-viewer_{{trimV .Version}}_sha256_checksums.txt
           algorithm: sha256
-  - type: github_content
-    repo_owner: awslabs
-    repo_name: git-secrets
-    description: Prevents you from committing secrets and credentials into git repositories
-    supported_envs:
-      - darwin
-      - linux
-    version_source: github_tag
-    path: git-secrets
   - type: github_release
     repo_owner: awslabs
-    repo_name: kubernetes-iteration-toolkit
+    repo_name: eks-perf-tests
+    aliases:
+      - name: awslabs/kubernetes-iteration-toolkit
     version_filter: not (Version startsWith "kit-operator-")
     files:
       - name: kitctl
@@ -17542,6 +17535,15 @@ packages:
         rosetta2: true
         supported_envs:
           - darwin
+  - type: github_content
+    repo_owner: awslabs
+    repo_name: git-secrets
+    description: Prevents you from committing secrets and credentials into git repositories
+    supported_envs:
+      - darwin
+      - linux
+    version_source: github_tag
+    path: git-secrets
   - type: http
     repo_owner: awslabs
     repo_name: mountpoint-s3
@@ -61038,6 +61040,51 @@ packages:
           - windows
           - amd64
   - type: github_release
+    repo_owner: lazywalker
+    repo_name: rgrc
+    description: "rgrc - Rusty Generic Colouriser - just like grc but fast"
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.4.2"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: rgrc-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: zip
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+      - version_constraint: semver("<= 0.4.1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: rgrc-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: zip
+        rosetta2: true
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: linux
+            replacements:
+              arm64: aarch64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: rgrc-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
+  - type: github_release
     repo_owner: lc
     repo_name: gau
     description: Fetch known URLs from AlienVault's Open Threat Exchange, the Wayback Machine, and Common Crawl
@@ -84807,6 +84854,89 @@ packages:
             replacements:
               amd64: x64
   - type: github_release
+    repo_owner: smol-machines
+    repo_name: smolvm
+    description: Tool to build & run portable, lightweight, self-contained virtual machines
+    files:
+      - name: smolvm
+        src: "{{.AssetWithoutExt}}/smolvm"
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version in ["v0.1.17", "v0.1.19"]
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: smolvm-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - darwin/arm64
+      - version_constraint: Version == "v0.1.18"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: smolvm-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        supported_envs:
+          - darwin/arm64
+      - version_constraint: semver("<= 0.1.5")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: smolvm-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - darwin/arm64
+      - version_constraint: semver("<= 0.1.8")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: smolvm-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        supported_envs:
+          - darwin/arm64
+      - version_constraint: semver("<= 0.1.11")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: smolvm-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - darwin/arm64
+      - version_constraint: semver("<= 0.1.16")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: smolvm-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        supported_envs:
+          - darwin/arm64
+      - version_constraint: semver("<= 0.5.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: smolvm-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux/amd64
+          - darwin/arm64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: smolvm-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: checksums.sha256
+          algorithm: sha256
+        supported_envs:
+          - linux/amd64
+          - darwin/arm64
+  - type: github_release
     repo_owner: smtg-ai
     repo_name: claude-squad
     description: Manage multiple AI agents like Claude Code, Aider, Codex, and Amp. 10x your productivity
@@ -90714,6 +90844,23 @@ packages:
         overrides:
           - goos: linux
             asset: tailwindcss-{{.OS}}-{{.Arch}}-musl
+  - type: github_release
+    repo_owner: tak848
+    repo_name: ccgate
+    description: LLM-powered PermissionRequest hook for Claude Code
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ccgate-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux
+          - darwin
   - type: github_release
     repo_owner: takaishi
     repo_name: awscost

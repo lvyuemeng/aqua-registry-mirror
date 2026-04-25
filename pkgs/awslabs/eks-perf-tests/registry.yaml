@@ -2,14 +2,16 @@
 packages:
   - type: github_release
     repo_owner: awslabs
-    repo_name: kubernetes-iteration-toolkit
+    repo_name: eks-perf-tests
+    aliases:
+      - name: awslabs/kubernetes-iteration-toolkit
     version_filter: not (Version startsWith "kit-operator-")
     files:
       - name: kitctl
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/awslabs/kubernetes-iteration-toolkit/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/awslabs/eks-perf-tests/releases/download/{{.Version}}/{{.Asset}}
         asset: kitctl_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         rosetta2: true

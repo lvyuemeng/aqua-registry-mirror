@@ -20421,7 +20421,7 @@ packages:
     version_overrides:
       - version_constraint: semver("<= 3.2.1")
         no_asset: true
-      - version_constraint: "true"
+      - version_constraint: semver("< 8.3.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: ggc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -20429,6 +20429,38 @@ packages:
           type: github_release
           asset: ggc_{{trimV .Version}}_checksums.txt
           algorithm: sha256
+      - version_constraint: semver("< 8.4.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ggc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ggc_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+          cosign:
+            opts:
+              - --certificate
+              - https://github.com/bmf-san/ggc/releases/download/{{.Version}}/checksums.txt.pem
+              - --certificate-identity
+              - "https://github.com/bmf-san/ggc/.github/workflows/release.yml@refs/tags/{{.Version}}"
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
+              - --signature
+              - https://github.com/bmf-san/ggc/releases/download/{{.Version}}/checksums.txt.sig
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: bodaay
     repo_name: HuggingFaceModelDownloader
@@ -45076,6 +45108,39 @@ packages:
       - version_constraint: "true"
   - type: github_release
     repo_owner: google
+    repo_name: google-java-format
+    description: Reformats Java source code to comply with Google Java Style
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 1.19.2")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: google-java-format-{{trimV .Version}}-all-deps.jar
+        format: raw
+        complete_windows_ext: false
+      - version_constraint: semver("<= 1.25.2")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: google-java-format_{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86-64
+        supported_envs:
+          - linux/amd64
+          - darwin/arm64
+          - windows
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: google-java-format_{{.OS}}-{{.Arch}}
+        windows_arm_emulation: true
+        format: raw
+        replacements:
+          amd64: x86-64
+        supported_envs:
+          - linux
+          - darwin/arm64
+          - windows
+  - type: github_release
+    repo_owner: google
     repo_name: jsonnet
     asset: jsonnet-bin-{{.Version}}-linux.tar.gz
     supported_envs:
@@ -53463,6 +53528,28 @@ packages:
       type: github_release
       asset: checksums.txt
       algorithm: sha256
+  - type: github_release
+    repo_owner: jonwiggins
+    repo_name: xmloxide
+    description: A pure Rust reimplementation of libxml2
+    files:
+      - name: xmllint
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.4.1")
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: xmllint_{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
+        replacements:
+          arm64: aarch64
+          amd64: x86-64
+        checksum:
+          type: github_release
+          asset: SHA256SUMS
+          algorithm: sha256
   - type: github_release
     repo_owner: jorgelbg
     repo_name: pinentry-touchid
@@ -93935,13 +94022,31 @@ packages:
             format: zip
             files:
               - name: tombi
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.9.22")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: tombi-cli-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: gz
         files:
           - name: tombi
             src: "{{.AssetWithoutExt}}"
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: tombi
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: tombi-cli-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: tombi
+            src: "{{.AssetWithoutExt}}/tombi"
         replacements:
           amd64: x86_64
           arm64: aarch64
@@ -95054,7 +95159,7 @@ packages:
         supported_envs:
           - linux
           - darwin
-      - version_constraint: "true"
+      - version_constraint: semver("< 0.14.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: lnav-{{trimV .Version}}-{{.OS}}-musl-{{.Arch}}.{{.Format}}
         format: zip
@@ -95073,7 +95178,32 @@ packages:
             asset: lnav-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
             files:
               - name: lnav
-                src: lnav-{{trimV .Version}}/bin/lnav.exe
+                src: lnav-{{trimV .Version}}/bin/lnav
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: lnav-{{trimV .Version}}-{{.OS}}-musl-{{.Arch}}.{{.Format}}
+        format: zip
+        windows_arm_emulation: true
+        files:
+          - name: lnav
+            src: lnav-{{trimV .Version}}/lnav
+        replacements:
+          amd64: x86_64
+          darwin: macos
+        overrides:
+          - goos: darwin
+            asset: lnav-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+            replacements:
+              arm64: aarch64
+          - goos: windows
+            asset: lnav-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+            files:
+              - name: lnav
+                src: lnav-{{trimV .Version}}/bin/lnav
+        supported_envs:
+          - linux
+          - darwin/arm64
+          - windows
   - type: github_release
     repo_owner: tuist
     repo_name: tuist

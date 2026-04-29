@@ -76,7 +76,7 @@ packages:
           amd64: x64
           darwin: macos
           windows: win
-      - version_constraint: "true"
+      - version_constraint: semver("<= 10.33.2")
         url: https://gh-proxy.org/https://github.com/pnpm/pnpm/releases/download/{{.Version}}/{{.Asset}}
         asset: pnpm-{{.OS}}-{{.Arch}}
         format: raw
@@ -89,4 +89,17 @@ packages:
           amd64: x64
           darwin: macos
           windows: win
+        github_immutable_release: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/pnpm/pnpm/releases/download/{{.Version}}/{{.Asset}}
+        asset: pnpm-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: pnpm
+        replacements:
+          amd64: x64
+          windows: win32
+        overrides:
+          - goos: windows
+            format: zip
         github_immutable_release: true

@@ -2074,29 +2074,63 @@ packages:
     repo_owner: CircleCI-Public
     repo_name: circleci-cli
     description: Use CircleCI from the command line
-    rosetta2: true
-    asset: circleci-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
-    supported_envs:
-      - darwin
-      - linux
-      - amd64
-    format: tar.gz
-    overrides:
-      - goos: windows
-        format: zip
     files:
       - name: circleci
-        src: circleci-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}/circleci
-    version_constraint: semver(">= 0.1.17554")
+        src: "{{.AssetWithoutExt}}/circleci"
+    version_constraint: "false"
     version_overrides:
-      - version_constraint: "true"
+      - version_constraint: Version == "v0.1.28363"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: circleci-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: circleci-cli_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: semver("<= 0.1.17522")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: circleci-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: circleci-cli_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
         supported_envs:
           - darwin
+          - windows
           - amd64
-    checksum:
-      type: github_release
-      asset: circleci-cli_{{trimV .Version}}_checksums.txt
-      algorithm: sha256
+      - version_constraint: semver("<= 0.1.28434")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: circleci-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: circleci-cli_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: circleci-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: circleci-cli_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: ClementTsang
     repo_name: bottom
@@ -3390,6 +3424,56 @@ packages:
         asset: tentez-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
+  - type: github_release
+    repo_owner: Feel-ix-343
+    repo_name: markdown-oxide
+    description: PKM Markdown Language Server
+    version_constraint: "false"
+    files:
+      - name: markdown-oxide
+        src: "{{.AssetWithoutExt}}/markdown-oxide"
+    version_overrides:
+      - version_constraint: Version == "v0.0.9"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: markdown-oxide-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          linux: unknown-linux-musl
+        supported_envs:
+          - linux/amd64
+      - version_constraint: semver("<= 0.0.11")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: markdown-oxide-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-gnu
+        overrides:
+          - goos: windows
+            format: zip
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: markdown-oxide-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-gnu
+          windows: pc-windows-gnu
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: FiloSottile
     repo_name: age
@@ -5993,6 +6077,19 @@ packages:
           linux: unknown-linux-musl
           windows: pc-windows-msvc
   - type: github_release
+    repo_owner: OpenAPITools
+    repo_name: openapi-generator
+    description: OpenAPI Generator allows generation of API client libraries (SDK generation), server stubs, documentation and configuration automatically given an OpenAPI Spec (v2, v3)
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("< 7.21.0")
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: openapi-generator-cli-{{trimV .Version}}.jar
+        format: raw
+        complete_windows_ext: false
+  - type: github_release
     repo_owner: Orange-OpenSource
     repo_name: hurl
     description: Hurl, run and test HTTP requests with plain text
@@ -8206,6 +8303,20 @@ packages:
           algorithm: sha256
         github_artifact_attestations:
           signer_workflow: UpCloudLtd/upcloud-cli/.github/workflows/publish.yml
+        overrides:
+          - goos: windows
+            format: zip
+        github_immutable_release: true
+      - version_constraint: Version == "v3.32.0"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: upcloud-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
         overrides:
           - goos: windows
             format: zip
@@ -74637,6 +74748,127 @@ packages:
         supported_envs:
           - linux
           - darwin
+  - type: github_release
+    repo_owner: phrase
+    repo_name: phrase-cli
+    description: CLI for the Phrase API
+    files:
+      - name: phrase
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 2.0.14")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: phrase_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        replacements:
+          darwin: macosx
+        files:
+          - name: phrase
+            src: phrase_{{.OS}}_{{.Arch}}
+        overrides:
+          - goos: darwin
+            files:
+              - name: phrase
+          - goos: windows
+            format: zip
+            asset: phrase_{{.OS}}_{{.Arch}}.exe.{{.Format}}
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: Version == "2.0.15-alpine-alpha9"
+        no_asset: true
+      - version_constraint: semver("<= 2.0.28")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: phrase_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        replacements:
+          darwin: macosx
+        files:
+          - name: phrase
+            src: phrase_{{.OS}}_{{.Arch}}
+        overrides:
+          - goos: darwin
+            files:
+              - name: phrase
+          - goos: windows
+            format: zip
+            asset: phrase_{{.OS}}_{{.Arch}}.exe.{{.Format}}
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: Version == "2.1.1"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: phrase_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          darwin: macosx
+        files:
+          - name: phrase
+            src: phrase_{{.OS}}_{{.Arch}}
+        overrides:
+          - goos: darwin
+            goarch: arm64
+            format: raw
+            asset: phrase_{{.OS}}_{{.Arch}}
+          - goos: darwin
+            files:
+              - name: phrase
+          - goos: windows
+            format: zip
+            asset: phrase_{{.OS}}_{{.Arch}}.exe.{{.Format}}
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: semver("<= 2.4.1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: phrase_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          darwin: macosx
+        files:
+          - name: phrase
+            src: phrase_{{.OS}}_{{.Arch}}
+        overrides:
+          - goos: darwin
+            files:
+              - name: phrase
+          - goos: windows
+            format: zip
+            asset: phrase_{{.OS}}_{{.Arch}}.exe.{{.Format}}
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: phrase_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          darwin: macosx
+        files:
+          - name: phrase
+            src: phrase_{{.OS}}_{{.Arch}}
+        overrides:
+          - goos: linux
+            goarch: arm64
+            format: raw
+            asset: phrase_{{.OS}}_{{.Arch}}
+          - goos: darwin
+            files:
+              - name: phrase
+          - goos: windows
+            format: zip
+            asset: phrase_{{.OS}}_{{.Arch}}.exe.{{.Format}}
   - type: github_release
     repo_owner: pimalaya
     repo_name: himalaya

@@ -13485,7 +13485,7 @@ packages:
           - goos: linux
             variants:
               - key: libc
-                value: gnu
+                value: glibc
           - goos: linux
             url: https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/{{trimV .Version}}/{{.OS}}-{{.Arch}}-musl/claude
             variants:
@@ -20758,6 +20758,61 @@ packages:
       type: github_release
       asset: kubectl-fzf_checksums.txt
       algorithm: sha256
+  - type: github_release
+    repo_owner: boostsecurityio
+    repo_name: bagel
+    description: bagel, a CLI that inventories security-relevant metadata on developer workstations
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.1.0"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: bagel_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: Darwin
+          linux: Linux
+          windows: Windows
+        checksum:
+          type: github_release
+          asset: bagel_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+          cosign:
+            opts:
+              - --certificate-identity-regexp
+              - "^https://github\\.com/boostsecurityio/bagel/\\.github/workflows/.+\\.ya?ml@refs/tags/\\Q{{.Version}}\\E$"
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
+            bundle:
+              type: github_release
+              asset: bagel_{{trimV .Version}}_checksums.txt.sigstore.json
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: bagel_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: Darwin
+          linux: Linux
+          windows: Windows
+        checksum:
+          type: github_release
+          asset: bagel_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+          cosign:
+            opts:
+              - --certificate-identity-regexp
+              - "^https://github\\.com/boostsecurityio/bagel/\\.github/workflows/.+\\.ya?ml@refs/tags/\\Q{{.Version}}\\E$"
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
+            bundle:
+              type: github_release
+              asset: bagel_{{trimV .Version}}_checksums.txt.sigstore.json
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: bootandy
     repo_name: dust
@@ -36155,6 +36210,76 @@ packages:
           - goos: windows
             format: zip
   - type: github_release
+    repo_owner: elixir-lsp
+    repo_name: elixir-ls
+    description: A frontend-independent IDE "smartness" server for Elixir. Implements the "Language Server Protocol" standard and provides debugger support via the "Debug Adapter Protocol"
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.14.6")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: elixir-ls.{{.Format}}
+        format: zip
+        files:
+          - name: elixir-ls
+            src: language_server.sh
+          - name: elixir-debug-adapter
+            src: debugger.sh
+        overrides:
+          - goos: windows
+            files:
+              - name: elixir-ls
+                src: language_server.bat
+              - name: elixir-debug-adapter
+                src: debugger.bat
+      - version_constraint: semver("<= 0.17.10")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: elixir-ls-{{.Version}}.{{.Format}}
+        format: zip
+        files:
+          - name: elixir-ls
+            src: language_server.sh
+          - name: elixir-debug-adapter
+            src: debugger.sh
+        overrides:
+          - goos: windows
+            files:
+              - name: elixir-ls
+                src: language_server.bat
+              - name: elixir-debug-adapter
+                src: debugger.bat
+      - version_constraint: Version == "v0.29.0"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: elixir-ls.{{.Format}}
+        format: zip
+        files:
+          - name: elixir-ls
+            src: language_server.sh
+          - name: elixir-debug-adapter
+            src: debug_adapter.sh
+        overrides:
+          - goos: windows
+            files:
+              - name: elixir-ls
+                src: language_server.bat
+              - name: elixir-debug-adapter
+                src: debug_adapter.bat
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: elixir-ls-{{.Version}}.{{.Format}}
+        format: zip
+        files:
+          - name: elixir-ls
+            src: language_server.sh
+          - name: elixir-debug-adapter
+            src: debug_adapter.sh
+        overrides:
+          - goos: windows
+            files:
+              - name: elixir-ls
+                src: language_server.bat
+              - name: elixir-debug-adapter
+                src: debug_adapter.bat
+  - type: github_release
     repo_owner: elkowar
     repo_name: pipr
     description: A tool to interactively write shell pipelines
@@ -38361,6 +38486,23 @@ packages:
       type: github_release
       asset: checksums.txt
       algorithm: sha256
+  - type: github_release
+    repo_owner: fillmore-labs
+    repo_name: scopeguard
+    description: A Go static analyzer that identifies variables with unnecessarily wide scope and suggests moving them to tighter scopes
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: scopeguard_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: fioncat
     repo_name: otree
@@ -61525,6 +61667,26 @@ packages:
               - name: fvm
                 src: fvm/fvm.exe
   - type: github_release
+    repo_owner: levibostian
+    repo_name: decaf
+    description: Calm & reliable automated deployments. No more coffee breaks to deploy your code
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "0.1.0" or semver(">= 1.0.0-alpha.1, <= 1.0.0-alpha.8")
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: bin-{{.Arch}}-{{.OS}}
+        format: raw
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: Darwin
+          linux: Linux
+        supported_envs:
+          - linux
+          - darwin
+  - type: github_release
     repo_owner: lewispeckover
     repo_name: consulator
     description: Import and synchronize your Consul KV data from JSON and YAML
@@ -64925,7 +65087,7 @@ packages:
             format: zip
             files:
               - name: edit
-                src: "{{.AssetWithoutExt}}/edit.exe"
+                src: "{{.AssetWithoutExt}}/edit"
         replacements:
           amd64: x86_64
           arm64: aarch64
@@ -64949,11 +65111,11 @@ packages:
             format: zip
             files:
               - name: edit
-                src: "{{.AssetWithoutExt}}/edit.exe"
+                src: "{{.AssetWithoutExt}}/edit"
         supported_envs:
           - linux
           - windows
-      - version_constraint: "true"
+      - version_constraint: semver("< 2.0.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: edit-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.zst
@@ -64962,12 +65124,31 @@ packages:
             format: zip
             files:
               - name: edit
-                src: "{{.AssetWithoutExt}}/edit.exe"
+                src: "{{.AssetWithoutExt}}/edit"
         replacements:
           amd64: x86_64
           arm64: aarch64
           linux: linux-gnu
         supported_envs:
+          - linux
+          - windows
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: edit-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: edit
+                src: "{{.AssetWithoutExt}}/edit"
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: linux-gnu
+        supported_envs:
+          - darwin/arm64
           - linux
           - windows
   - type: github_release
@@ -71473,6 +71654,38 @@ packages:
           type: github_release
           asset: runc.sha256sum
           algorithm: sha256
+  - type: github_release
+    repo_owner: opencontainers
+    repo_name: umoci
+    description: umoci modifies Open Container images
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.2.1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: umoci.amd64
+        format: raw
+        supported_envs:
+          - linux/amd64
+      - version_constraint: semver("<= 0.4.7")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: umoci.amd64
+        format: raw
+        checksum:
+          type: github_release
+          asset: umoci.sha256sum
+          algorithm: sha256
+        supported_envs:
+          - linux/amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: umoci.{{.OS}}.{{.Arch}}
+        format: raw
+        checksum:
+          type: github_release
+          asset: umoci.sha256sum
+          algorithm: sha256
+        supported_envs:
+          - linux
   - type: github_release
     repo_owner: openfaas
     repo_name: faas-cli

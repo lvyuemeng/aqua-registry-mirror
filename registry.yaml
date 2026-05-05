@@ -15945,10 +15945,23 @@ packages:
           arm64: aarch64
         supported_envs:
           - linux
-      - version_constraint: "true"
+      - version_constraint: Version == "v1.4.6"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: btop-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tbz
+        files:
+          - name: btop
+            src: btop/bin/btop
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          linux: unknown-linux-musl
+        supported_envs:
+          - linux
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: btop-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
         files:
           - name: btop
             src: btop/bin/btop
@@ -75757,7 +75770,7 @@ packages:
           darwin: macos
           windows: win
         github_immutable_release: true
-      - version_constraint: "true"
+      - version_constraint: semver("<= 11.0.4")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: pnpm-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -75770,6 +75783,25 @@ packages:
           - goos: windows
             format: zip
         github_immutable_release: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: pnpm-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: pnpm
+        replacements:
+          amd64: x64
+          windows: win32
+        overrides:
+          - goos: windows
+            format: zip
+        github_artifact_attestations:
+          signer_workflow: pnpm/pnpm/\.github/workflows/release\.yml
+        github_immutable_release: true
+        supported_envs:
+          - linux
+          - windows
+          - darwin/arm64
   - type: github_release
     repo_owner: po3rin
     repo_name: github_link_creator
@@ -86391,6 +86423,73 @@ packages:
           - darwin
         github_artifact_attestations:
           signer_workflow: spinel-coop/rv/.github/workflows/release.yml
+  - type: github_release
+    repo_owner: spinframework
+    repo_name: spin
+    description: Developer tool for building and running serverless WebAssembly applications
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.1.0-rc.1"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: spin-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          arm64: aarch64
+          darwin: macos
+      - version_constraint: Version == "v0.1.0-rc.4"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: spin-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          arm64: aarch64
+          darwin: macos
+        checksum:
+          type: github_release
+          asset: checksums-{{.Version}}.txt
+          algorithm: sha256
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: semver("<= 0.6.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: spin-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          darwin: macos
+        checksum:
+          type: github_release
+          asset: checksums-{{.Version}}.txt
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            replacements:
+              arm64: aarch64
+          - goos: windows
+            format: zip
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: spin-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          arm64: aarch64
+          darwin: macos
+        checksum:
+          type: github_release
+          asset: checksums-{{.Version}}.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+            replacements: {}
   - name: spinnaker/spin
     type: http
     format: raw

@@ -140,6 +140,7 @@ packages:
             files:
               - name: prek
         github_immutable_release: true
+        github_release_attestations: true
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/j178/prek/releases/download/{{.Version}}/{{.Asset}}
         asset: prek-{{.Arch}}-{{.OS}}.{{.Format}}
@@ -165,3 +166,4 @@ packages:
         github_artifact_attestations:
           signer_workflow: j178/prek/.github/workflows/release.yml
         github_immutable_release: true
+        github_release_attestations: true

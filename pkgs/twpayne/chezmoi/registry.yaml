@@ -227,6 +227,7 @@ packages:
             format: zip
             asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         github_immutable_release: true
+        github_release_attestations: true
       - version_constraint: semver("<= 2.68.1")
         url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}-glibc_{{.Arch}}.{{.Format}}
@@ -256,6 +257,7 @@ packages:
             format: zip
             asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         github_immutable_release: true
+        github_release_attestations: true
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/twpayne/chezmoi/releases/download/{{.Version}}/{{.Asset}}
         asset: chezmoi_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
@@ -274,3 +276,4 @@ packages:
           - goos: windows
             format: zip
         github_immutable_release: true
+        github_release_attestations: true

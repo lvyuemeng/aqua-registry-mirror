@@ -118,6 +118,7 @@ packages:
           type: github_release
           asset: multiple.intoto.jsonl
         github_immutable_release: true
+        github_release_attestations: true
         overrides:
           - goos: windows
             format: zip

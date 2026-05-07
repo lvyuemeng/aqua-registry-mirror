@@ -78,6 +78,7 @@ packages:
           - goos: windows
             format: zip
         github_immutable_release: true
+        github_release_attestations: true
       - version_constraint: Version == "v3.32.0"
         url: https://gh-proxy.org/https://github.com/UpCloudLtd/upcloud-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: upcloud-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
@@ -92,6 +93,7 @@ packages:
           - goos: windows
             format: zip
         github_immutable_release: true
+        github_release_attestations: true
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/UpCloudLtd/upcloud-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: upcloud-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
@@ -108,3 +110,4 @@ packages:
           - goos: windows
             format: zip
         github_immutable_release: true
+        github_release_attestations: true

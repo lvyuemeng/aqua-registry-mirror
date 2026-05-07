@@ -64,3 +64,4 @@ packages:
           - darwin/arm64
           - windows
         github_immutable_release: true
+        github_release_attestations: true

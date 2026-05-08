@@ -2470,6 +2470,52 @@ packages:
         supported_envs:
           - linux
           - darwin
+  - type: github_release
+    repo_owner: DataDog
+    repo_name: pup
+    aliases:
+      - name: datadog-labs/pup
+    description: Give your AI agent a Pup — a CLI companion with 200+ commands across 33+ Datadog products
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.21.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: pup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: Darwin
+          linux: Linux
+          windows: Windows
+        checksum:
+          type: github_release
+          asset: pup_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: pup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          darwin: Darwin
+          linux: Linux
+        checksum:
+          type: github_release
+          asset: pup_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+          cosign:
+            opts:
+              - --certificate-identity-regexp
+              - "^https://github\\.com/datadog-labs/pup/\\.github/workflows/.+\\.ya?ml@refs/tags/\\Q{{.Version}}\\E$"
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
+            bundle:
+              type: github_release
+              asset: pup_{{trimV .Version}}_checksums.txt.sigstore.json
+        supported_envs:
+          - linux
+          - darwin
   - name: DeNA/unity-meta-check/gh-action
     type: github_release
     repo_owner: DeNA
@@ -31577,50 +31623,6 @@ packages:
           - darwin
           - amd64
   - type: github_release
-    repo_owner: datadog-labs
-    repo_name: pup
-    description: Give your AI agent a Pup — a CLI companion with 200+ commands across 33+ Datadog products
-    version_constraint: "false"
-    version_overrides:
-      - version_constraint: semver("<= 0.21.0")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: pup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
-        format: tar.gz
-        windows_arm_emulation: true
-        replacements:
-          amd64: x86_64
-          darwin: Darwin
-          linux: Linux
-          windows: Windows
-        checksum:
-          type: github_release
-          asset: pup_{{trimV .Version}}_checksums.txt
-          algorithm: sha256
-      - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: pup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
-        format: tar.gz
-        replacements:
-          amd64: x86_64
-          darwin: Darwin
-          linux: Linux
-        checksum:
-          type: github_release
-          asset: pup_{{trimV .Version}}_checksums.txt
-          algorithm: sha256
-          cosign:
-            opts:
-              - --certificate-identity-regexp
-              - "^https://github\\.com/datadog-labs/pup/\\.github/workflows/.+\\.ya?ml@refs/tags/\\Q{{.Version}}\\E$"
-              - --certificate-oidc-issuer
-              - https://token.actions.githubusercontent.com
-            bundle:
-              type: github_release
-              asset: pup_{{trimV .Version}}_checksums.txt.sigstore.json
-        supported_envs:
-          - linux
-          - darwin
-  - type: github_release
     repo_owner: datadog
     repo_name: managed-kubernetes-auditing-toolkit
     description: All-in-one auditing toolkit for identifying common security issues in managed Kubernetes environments. Currently supports Amazon EKS
@@ -42355,7 +42357,7 @@ packages:
     description: A security layer for Git repositories
     version_constraint: "false"
     version_overrides:
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.12.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: gittuf_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
@@ -42385,6 +42387,25 @@ packages:
             - https://github.com/gittuf/gittuf/releases/download/{{.Version}}/gittuf_{{trimV .Version}}_{{.OS}}_{{.Arch}}.sig
             - --certificate
             - https://github.com/gittuf/gittuf/releases/download/{{.Version}}/gittuf_{{trimV .Version}}_{{.OS}}_{{.Arch}}.pem
+      - version_constraint: Version == "v0.13.0"
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: gittuf_{{trimV .Version}}_{{.OS}}_{{.Arch}}
+        format: raw
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+          cosign:
+            bundle:
+              type: github_release
+              asset: checksums.txt.sigstore.json
+            opts:
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
+              - --certificate-identity
+              - "https://github.com/gittuf/gittuf/.github/workflows/release.yml@refs/tags/{{.Version}}"
   - type: github_release
     repo_owner: gitui-org
     repo_name: gitui

@@ -1,13 +1,15 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/registry.json
 packages:
   - type: github_release
-    repo_owner: datadog-labs
+    repo_owner: DataDog
     repo_name: pup
+    aliases:
+      - name: datadog-labs/pup
     description: Give your AI agent a Pup — a CLI companion with 200+ commands across 33+ Datadog products
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.21.0")
-        url: https://gh-proxy.org/https://github.com/datadog-labs/pup/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/DataDog/pup/releases/download/{{.Version}}/{{.Asset}}
         asset: pup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -21,7 +23,7 @@ packages:
           asset: pup_{{trimV .Version}}_checksums.txt
           algorithm: sha256
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/datadog-labs/pup/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/DataDog/pup/releases/download/{{.Version}}/{{.Asset}}
         asset: pup_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         replacements:

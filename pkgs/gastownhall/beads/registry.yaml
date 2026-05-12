@@ -39,6 +39,18 @@ packages:
           - darwin
           - windows
           - amd64
+      - version_constraint: semver("<= 1.0.3")
+        url: https://gh-proxy.org/https://github.com/gastownhall/beads/releases/download/{{.Version}}/{{.Asset}}
+        asset: beads_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/gastownhall/beads/releases/download/{{.Version}}/{{.Asset}}
         asset: beads_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
@@ -51,3 +63,5 @@ packages:
         overrides:
           - goos: windows
             format: zip
+        github_artifact_attestations:
+          signer_workflow: gastownhall/beads/\.github/workflows/release\.yml

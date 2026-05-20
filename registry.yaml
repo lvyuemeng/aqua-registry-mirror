@@ -3506,7 +3506,7 @@ packages:
               - https://artifacts.fairwinds.com/cosign.pub
               - --signature
               - https://github.com/FairwindsOps/pluto/releases/download/{{.Version}}/checksums.txt.sig
-      - version_constraint: "true"
+      - version_constraint: semver("<=5.23.5")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: pluto_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -3520,6 +3520,21 @@ packages:
               - https://artifacts.fairwinds.com/cosign-p256.pub
               - --signature
               - https://github.com/FairwindsOps/pluto/releases/download/{{.Version}}/checksums.txt.sig
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: pluto_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+          cosign:
+            bundle:
+              type: github_release
+              asset: checksums.txt.sigstore.json
+            opts:
+              - --key
+              - https://artifacts.fairwinds.com/cosign-p256.pub
   - type: github_release
     repo_owner: FairwindsOps
     repo_name: polaris
@@ -44201,7 +44216,7 @@ packages:
         rosetta2: true
         supported_envs:
           - darwin
-      - version_constraint: "true"
+      - version_constraint: semver("< 0.7.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: bigquery-emulator-{{.OS}}-{{.Arch}}
         format: raw
@@ -44209,6 +44224,16 @@ packages:
         supported_envs:
           - linux/amd64
           - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: bigquery-emulator_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        overrides:
+          - goos: windows
+            format: zip
+        github_artifact_attestations:
+          signer_workflow: goccy/bigquery-emulator/\.github/workflows/release\.yml
   - name: goccy/go-yaml/ycat
     type: go_build
     repo_owner: goccy
@@ -87427,6 +87452,16 @@ packages:
           - goos: linux
             replacements:
               arm64: aarch64
+      - version_constraint: semver("<= 15.6.2")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: jsonschema-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: zip
+        windows_arm_emulation: true
+        files:
+          - name: jsonschema
+            src: "{{.AssetWithoutExt}}/bin/jsonschema"
+        replacements:
+          amd64: x86_64
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: jsonschema-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
@@ -87437,6 +87472,16 @@ packages:
             src: "{{.AssetWithoutExt}}/bin/jsonschema"
         replacements:
           amd64: x86_64
+        overrides:
+          - goos: linux
+            variants:
+              - key: libc
+                value: glibc
+          - goos: linux
+            asset: jsonschema-{{trimV .Version}}-{{.OS}}-{{.Arch}}-musl.{{.Format}}
+            variants:
+              - key: libc
+                value: musl
   - type: github_release
     repo_owner: spacelift-io
     repo_name: spacectl
@@ -100659,6 +100704,25 @@ packages:
           darwin: apple-darwin
           linux: unknown-linux-musl
           windows: pc-windows-msvc
+        github_artifact_attestations:
+          signer_workflow: wasmCloud/wasmCloud/\.github/workflows/wash\.yml
+      - version_constraint: semver("<= 2.0.5")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: wash-{{.Arch}}-{{.OS}}
+        format: raw
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
+            asset: wash-{{.Arch}}-{{.OS}}.{{.Format}}
+        github_artifact_attestations:
+          signer_workflow: wasmCloud/wasmCloud/\.github/workflows/wash\.yml
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: wash-{{.Arch}}-{{.OS}}
@@ -100674,6 +100738,8 @@ packages:
           - goos: windows
             format: zip
             asset: wash-{{.Arch}}-{{.OS}}.{{.Format}}
+        github_artifact_attestations:
+          signer_workflow: wasmCloud/wasmCloud/\.github/workflows/release-tag\.yml
   - type: github_release
     repo_owner: wasmerio
     repo_name: wapm-cli

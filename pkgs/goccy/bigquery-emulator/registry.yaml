@@ -13,7 +13,7 @@ packages:
         rosetta2: true
         supported_envs:
           - darwin
-      - version_constraint: "true"
+      - version_constraint: semver("< 0.7.0")
         url: https://gh-proxy.org/https://github.com/goccy/bigquery-emulator/releases/download/{{.Version}}/{{.Asset}}
         asset: bigquery-emulator-{{.OS}}-{{.Arch}}
         format: raw
@@ -21,3 +21,13 @@ packages:
         supported_envs:
           - linux/amd64
           - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/goccy/bigquery-emulator/releases/download/{{.Version}}/{{.Asset}}
+        asset: bigquery-emulator_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        overrides:
+          - goos: windows
+            format: zip
+        github_artifact_attestations:
+          signer_workflow: goccy/bigquery-emulator/\.github/workflows/release\.yml

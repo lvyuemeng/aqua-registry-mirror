@@ -45611,6 +45611,46 @@ packages:
         supported_envs:
           - linux
           - darwin
+  - type: http
+    name: google.com/antigravity-cli
+    description: Google's agentic development platform CLI companion
+    link: https://antigravity.google/download
+    format: tar.gz
+    files:
+      - name: agy
+        src: antigravity
+    checksum:
+      type: http
+      url: https://antigravity-cli-auto-updater-974169037036.us-central1.run.app/manifests/{{.OS}}_{{.Arch}}.json
+      file_format: regexp
+      algorithm: sha512
+      pattern:
+        checksum: '"sha512": "([0-9a-f]{128})"'
+    overrides:
+      - goos: linux
+        goarch: amd64
+        url: https://storage.googleapis.com/antigravity-public/antigravity-cli/{{.Version}}/linux-x64/cli_linux_x64.tar.gz
+      - goos: linux
+        goarch: arm64
+        url: https://storage.googleapis.com/antigravity-public/antigravity-cli/{{.Version}}/linux-arm/cli_linux_arm64.tar.gz
+      - goos: darwin
+        goarch: amd64
+        url: https://storage.googleapis.com/antigravity-public/antigravity-cli/{{.Version}}/darwin-x64/cli_mac_x64.tar.gz
+      - goos: darwin
+        goarch: arm64
+        url: https://storage.googleapis.com/antigravity-public/antigravity-cli/{{.Version}}/darwin-arm/cli_mac_arm64.tar.gz
+      - goos: windows
+        goarch: amd64
+        url: https://storage.googleapis.com/antigravity-public/antigravity-cli/{{.Version}}/windows-x64/cli_windows_x64.exe
+        format: raw
+        files:
+          - name: agy
+      - goos: windows
+        goarch: arm64
+        url: https://storage.googleapis.com/antigravity-public/antigravity-cli/{{.Version}}/windows-arm/cli_windows_arm64.exe
+        format: raw
+        files:
+          - name: agy
   - type: github_release
     repo_owner: google
     repo_name: addlicense
@@ -84912,6 +84952,36 @@ packages:
           asset: tparagen_{{trimV .Version}}_checksums.txt
           algorithm: sha256
   - type: github_release
+    repo_owner: sholdee
+    repo_name: crd-schema-publisher
+    description: Browsable CRD docs and IDE validation schemas, straight from your Kubernetes cluster
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 2026.424.75813")
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: crd-schema-publisher-{{.OS}}-{{.Arch}}
+        format: raw
+        github_artifact_attestations:
+          signer_workflow: sholdee/crd-schema-publisher/.github/workflows/release.yaml
+        checksum:
+          type: github_release
+          asset: checksums-sha256.txt
+          algorithm: sha256
+          cosign:
+            opts:
+              - --certificate-identity
+              - https://github.com/sholdee/crd-schema-publisher/.github/workflows/release.yaml@refs/heads/main
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
+            bundle:
+              type: github_release
+              asset: checksums-sha256.txt.sigstore.json
+        supported_envs:
+          - linux
+          - darwin
+  - type: github_release
     repo_owner: showwin
     repo_name: speedtest-go
     asset: speedtest-go_{{trimV .Version}}_{{.OS}}_{{.Arch}}.tar.gz
@@ -100723,6 +100793,23 @@ packages:
             asset: wash-{{.Arch}}-{{.OS}}.{{.Format}}
         github_artifact_attestations:
           signer_workflow: wasmCloud/wasmCloud/\.github/workflows/wash\.yml
+      - version_constraint: semver("< 2.1.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: wash-{{.Arch}}-{{.OS}}
+        format: raw
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
+            asset: wash-{{.Arch}}-{{.OS}}.{{.Format}}
+        github_artifact_attestations:
+          signer_workflow: wasmCloud/wasmCloud/\.github/workflows/release-tag\.yml
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: wash-{{.Arch}}-{{.OS}}
@@ -100738,6 +100825,15 @@ packages:
           - goos: windows
             format: zip
             asset: wash-{{.Arch}}-{{.OS}}.{{.Format}}
+        cosign:
+          bundle:
+            type: github_release
+            asset: wash.sigstore.json
+          opts:
+            - --certificate-oidc-issuer
+            - https://token.actions.githubusercontent.com
+            - --certificate-identity
+            - https://github.com/wasmCloud/wasmCloud/.github/workflows/release-tag.yml@refs/heads/main
         github_artifact_attestations:
           signer_workflow: wasmCloud/wasmCloud/\.github/workflows/release-tag\.yml
   - type: github_release

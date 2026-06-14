@@ -38686,6 +38686,41 @@ packages:
     format: raw
     complete_windows_ext: false
   - type: github_release
+    repo_owner: fallow-rs
+    repo_name: fallow
+    description: "Codebase intelligence for TypeScript and JavaScript. Free static layer: unused code, duplication, circular deps, complexity hotspots, architecture boundaries. Optional paid runtime layer: hot-path review and cold-path deletion evidence from real production traffic. Rust-native, sub-second, zero-config framework support"
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version in ["v1.0.0", "v2.22.2"]
+        no_asset: true
+      - version_constraint: semver("<= 2.47.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fallow-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fallow-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
+  - type: github_release
     repo_owner: fastfetch-cli
     repo_name: fastfetch
     description: An actively maintained, feature-rich and performance oriented, neofetch like system information tool
@@ -75494,16 +75529,16 @@ packages:
     repo_owner: oxc-project
     repo_name: oxc
     description: The linter for oxc
+    version_filter: 'Version matches "^apps_v" || Version matches "^oxlint_v"'
+    files:
+      - name: oxlint
+        src: "{{.AssetWithoutExt}}"
     version_constraint: "false"
-    version_prefix: oxlint_v
     version_overrides:
-      - version_constraint: semver(">= 1.17.0")
-        error_message: |
-          aqua can't support oxlint 1.17.0 or later. 
-          > Newer versions of Oxlint require node.js. There isn’t a native executable alternative anymore.
-          https://github.com/oxc-project/oxc/discussions/14452#discussioncomment-14631344
+      - version_constraint: Version in ["apps_v1.47.0", "oxlint_v0.0.9", "oxlint_v0.1.1"]
+        no_asset: true
       - version_constraint: semver("<= 0.0.8")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        version_prefix: oxlint_v
         asset: oxlint-{{.OS}}-{{.Arch}}
         files:
           - name: oxlint
@@ -75511,10 +75546,8 @@ packages:
         replacements:
           amd64: x64
           windows: win32
-      - version_constraint: Version == "oxlint_v0.0.9"
-        no_asset: true
       - version_constraint: semver("<= 0.0.19")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        version_prefix: oxlint_v
         asset: oxlint-{{.OS}}-{{.Arch}}
         files:
           - name: oxlint
@@ -75522,10 +75555,8 @@ packages:
         replacements:
           amd64: x64
           windows: win32
-      - version_constraint: Version == "oxlint_v0.1.1"
-        no_asset: true
       - version_constraint: semver("<= 0.2.2")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        version_prefix: oxlint_v
         asset: oxlint-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -75537,8 +75568,8 @@ packages:
         replacements:
           amd64: x64
           windows: win32
-      - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+      - version_constraint: semver("< 1.17.0")
+        version_prefix: oxlint_v
         asset: oxlint-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         files:
@@ -75555,6 +75586,62 @@ packages:
         replacements:
           amd64: x64
           windows: win32
+      - version_constraint: semver(">= 1.17.0")
+        version_prefix: oxlint_v
+        error_message: |
+          This version is unavailable.
+          < 1.17.0: The version prefix is oxlint_v e.g. oxlint_v1.16.0
+          >= 1.17.0, < 1.28.0: These versions are unavailable
+          >= 1.28.0: The version prefix is apps_v e.g. apps_v1.28.0
+      - version_constraint: semver("< 1.28.0")
+        version_prefix: apps_v
+        error_message: |
+          The version was too old. Please ugrade to 1.28.0 or later.
+          < 1.17.0: The version prefix is oxlint_v
+          >= 1.17.0, < 1.28.0: These versions are unavailable
+          >= 1.28.0: The version prefix is apps_v
+      - version_constraint: semver("<= 1.43.0")
+        version_prefix: apps_v
+        asset: oxlint-{{.OS}}-{{.Arch}}-gnu.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x64
+          windows: win32
+        overrides:
+          - goos: darwin
+            asset: oxlint-{{.OS}}-{{.Arch}}.{{.Format}}
+          - goos: windows
+            format: zip
+            asset: oxlint-{{.OS}}-{{.Arch}}.{{.Format}}
+      - version_constraint: semver("<= 1.51.0")
+        version_prefix: apps_v
+        asset: oxlint-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: semver("<= 1.53.0")
+        version_prefix: apps_v
+        no_asset: true
+      - version_constraint: "true"
+        version_prefix: apps_v
+        asset: oxlint-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: oxipng
     repo_name: oxipng
@@ -91881,7 +91968,7 @@ packages:
     description: Make document maintainable, reusable, and testable
     version_constraint: "false"
     version_overrides:
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.2.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: docfresh_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -91893,6 +91980,31 @@ packages:
             bundle:
               type: github_release
               asset: docfresh_checksums.txt.bundle
+            opts:
+              - --certificate-identity-regexp
+              - "https://github\\.com/suzuki-shunsuke/go-release-workflow/\\.github/workflows/release\\.yaml@.*"
+              - --certificate-oidc-issuer
+              - "https://token.actions.githubusercontent.com"
+        github_artifact_attestations:
+          signer_workflow: suzuki-shunsuke/go-release-workflow/.github/workflows/release.yaml
+        slsa_provenance:
+          type: github_release
+          asset: multiple.intoto.jsonl
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: docfresh_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: docfresh_checksums.txt
+          algorithm: sha256
+          cosign:
+            bundle:
+              type: github_release
+              asset: docfresh_checksums.txt.sigstore.json
             opts:
               - --certificate-identity-regexp
               - "https://github\\.com/suzuki-shunsuke/go-release-workflow/\\.github/workflows/release\\.yaml@.*"
@@ -92004,7 +92116,7 @@ packages:
     description: ghaperf is a CLI to analyze the performance of GitHub Actions using GitHub API and raw job logs
     version_constraint: "false"
     version_overrides:
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.1.1")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: ghaperf_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -92021,6 +92133,29 @@ packages:
             bundle:
               type: github_release
               asset: ghaperf_checksums.txt.bundle
+        slsa_provenance:
+          type: github_release
+          asset: multiple.intoto.jsonl
+        supported_envs:
+          - linux
+          - darwin/arm64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ghaperf_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: ghaperf_checksums.txt
+          algorithm: sha256
+          cosign:
+            opts:
+              - --certificate-identity-regexp
+              - "https://github\\.com/suzuki-shunsuke/go-release-workflow/\\.github/workflows/release\\.yaml@.*"
+              - --certificate-oidc-issuer
+              - "https://token.actions.githubusercontent.com"
+            bundle:
+              type: github_release
+              asset: ghaperf_checksums.txt.sigstore.json
         slsa_provenance:
           type: github_release
           asset: multiple.intoto.jsonl

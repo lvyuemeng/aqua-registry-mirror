@@ -8,6 +8,30 @@ packages:
     description: Simple and flexible tool for managing secrets
     version_constraint: "false"
     version_overrides:
+      - version_constraint: Version == "v3.8.0-rc.1"
+        url: https://gh-proxy.org/https://github.com/getsops/sops/releases/download/{{.Version}}/{{.Asset}}
+        asset: sops-{{.Version}}.{{.OS}}.{{.Arch}}
+        format: raw
+        checksum:
+          type: github_release
+          asset: sops-{{.Version}}.checksums.txt
+          algorithm: sha256
+          cosign:
+            opts:
+              - --certificate
+              - https://github.com/getsops/sops/releases/download/{{.Version}}/sops-{{.Version}}.checksums.pem
+              - --signature
+              - https://github.com/getsops/sops/releases/download/{{.Version}}/sops-{{.Version}}.checksums.sig
+              - --certificate-identity-regexp
+              - https://github.com/getsops
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
+        slsa_provenance:
+          type: github_release
+          asset: provenance.intoto.jsonl
+        overrides:
+          - goos: windows
+            asset: sops-{{.Version}}
       - version_constraint: semver("<= 3.7.1")
         url: https://gh-proxy.org/https://github.com/getsops/sops/releases/download/{{.Version}}/{{.Asset}}
         asset: sops-{{.Version}}.{{.OS}}
@@ -50,7 +74,7 @@ packages:
         overrides:
           - goos: windows
             asset: sops-{{.Version}}
-      - version_constraint: "true"
+      - version_constraint: semver("<= 3.12.2")
         url: https://gh-proxy.org/https://github.com/getsops/sops/releases/download/{{.Version}}/{{.Asset}}
         asset: sops-{{.Version}}.{{.OS}}.{{.Arch}}
         format: raw
@@ -64,6 +88,29 @@ packages:
               - https://github.com/getsops/sops/releases/download/{{.Version}}/sops-{{.Version}}.checksums.pem
               - --signature
               - https://github.com/getsops/sops/releases/download/{{.Version}}/sops-{{.Version}}.checksums.sig
+              - --certificate-identity-regexp
+              - https://github.com/getsops
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
+        slsa_provenance:
+          type: github_release
+          asset: sops-{{.Version}}.intoto.jsonl
+        overrides:
+          - goos: windows
+            asset: sops-{{.Version}}.{{.Arch}}
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/getsops/sops/releases/download/{{.Version}}/{{.Asset}}
+        asset: sops-{{.Version}}.{{.OS}}.{{.Arch}}
+        format: raw
+        checksum:
+          type: github_release
+          asset: sops-{{.Version}}.checksums.txt
+          algorithm: sha256
+          cosign:
+            bundle:
+              type: github_release
+              asset: sops-{{.Version}}.checksums.sigstore.json
+            opts:
               - --certificate-identity-regexp
               - https://github.com/getsops
               - --certificate-oidc-issuer

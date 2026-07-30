@@ -5448,6 +5448,16 @@ packages:
               - name: ki
                 src: ki/bin/ki.bat
   - type: github_release
+    repo_owner: Kotlin
+    repo_name: ktfmt
+    aliases:
+      - name: facebook/ktfmt
+      - name: fbtransfer/ktfmt
+    description: A program that reformats Kotlin source code to comply with the common community standard for Kotlin code conventions
+    asset: ktfmt-{{trimV .Version}}-with-dependencies.jar
+    format: raw
+    complete_windows_ext: false
+  - type: github_release
     repo_owner: KusionStack
     repo_name: kusion
     description: Deliver intentions to Kubernetes and Clouds
@@ -38641,7 +38651,7 @@ packages:
   - type: github_release
     repo_owner: entireio
     repo_name: cli
-    description: Entire is a new developer platform that hooks into your git workflow to capture AI agent sessions on every push, unifying your code with its context and reasoning
+    description: Entire CLI hooks into your Git workflow to capture AI agent sessions as you work. Sessions are indexed alongside commits, creating a searchable record of how code was written in your repo
     files:
       - name: entire
     version_constraint: "false"
@@ -38649,6 +38659,17 @@ packages:
       - version_constraint: semver("<= 0.3.9")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: cli_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: semver("<= 0.5.1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: entire_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
           type: github_release
@@ -38665,9 +38686,9 @@ packages:
           type: github_release
           asset: checksums.txt
           algorithm: sha256
-        supported_envs:
-          - linux
-          - darwin
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: entireio
     repo_name: git-sync
@@ -40527,15 +40548,6 @@ packages:
       type: github_release
       asset: frp_sha256_checksums.txt
       algorithm: sha256
-  - type: github_release
-    repo_owner: fbtransfer
-    repo_name: ktfmt
-    aliases:
-      - name: facebook/ktfmt
-    description: A program that reformats Kotlin source code to comply with the common community standard for Kotlin code conventions
-    asset: ktfmt-{{trimV .Version}}-with-dependencies.jar
-    format: raw
-    complete_windows_ext: false
   - type: github_release
     repo_owner: fe3dback
     repo_name: go-arch-lint
@@ -48369,22 +48381,102 @@ packages:
     aliases:
       - name: aelsabbahy/goss
     description: Quick and Easy server testing/validation
-    rosetta2: true
-    supported_envs:
-      - darwin
-      - linux
-      - amd64
-    asset: goss-{{.OS}}-{{.Arch}}
-    checksum:
-      type: github_release
-      asset: "{{.Asset}}.sha256"
-      algorithm: sha256
-    version_constraint: semver(">= 0.4.0")
+    version_constraint: "false"
     version_overrides:
-      - version_constraint: semver("< 0.4.0")
+      - version_constraint: Version == "v0.3.11"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: goss-{{.OS}}-{{.Arch}}
+        format: raw
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        supported_envs:
+          - linux/amd64
+      - version_constraint: semver("<= 0.3.10")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: goss-{{.OS}}-{{.Arch}}
+        format: raw
+        supported_envs:
+          - linux/amd64
+      - version_constraint: semver("<= 0.3.16")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: goss-alpha-{{.OS}}-{{.Arch}}
+        format: raw
+        rosetta2: true
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            asset: goss-{{.OS}}-{{.Arch}}
+        supported_envs:
+          - linux/amd64
+          - darwin
+          - windows
+      - version_constraint: semver("<= 0.3.23")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: goss-alpha-{{.OS}}-{{.Arch}}
+        format: raw
+        rosetta2: true
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            asset: goss-{{.OS}}-{{.Arch}}
+      - version_constraint: semver("<= 0.4.0-rc.2")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: goss-alpha-{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            asset: goss-{{.OS}}-{{.Arch}}
+        supported_envs:
+          - linux
+          - windows/amd64
+      - version_constraint: semver("<= 0.4.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: goss-{{.OS}}-{{.Arch}}
+        format: raw
+        rosetta2: true
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+      - version_constraint: semver("<= 0.4.9")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: goss-{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: goss_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
         replacements:
-          windows: alpha-windows
-          darwin: alpha-darwin
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
   - name: goss-org/goss/dcgoss
     type: github_content
     repo_owner: goss-org
@@ -48905,6 +48997,27 @@ packages:
         format: tar.gz
         github_artifact_attestations:
           signer_workflow: grafana/oats/.github/workflows/release.yml
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+  - type: github_release
+    repo_owner: grafana
+    repo_name: otel-checker
+    description: Otel Me If It's Right project
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.3.1")
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: otel-checker_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        github_artifact_attestations:
+          signer_workflow: grafana/otel-checker/.github/workflows/release.yml
         checksum:
           type: github_release
           asset: checksums.txt
@@ -51118,6 +51231,35 @@ packages:
           type: github_release
           asset: checksums.txt
           algorithm: sha256
+        supported_envs:
+          - linux
+          - darwin
+  - type: github_release
+    repo_owner: herdrdev
+    repo_name: herdr
+    aliases:
+      - name: ogulcancelik/herdr
+    description: agent multiplexer that lives in your terminal
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.4.0"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: herdr-{{.OS}}-{{.Arch}}
+        format: raw
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: macos
+        supported_envs:
+          - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: herdr-{{.OS}}-{{.Arch}}
+        format: raw
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: macos
         supported_envs:
           - linux
           - darwin
@@ -61520,20 +61662,38 @@ packages:
     repo_name: kubeone
     asset: kubeone_{{trimV .Version}}_{{.OS}}_{{.Arch}}.zip
     description: Kubermatic KubeOne automate cluster operations on all your cloud, on-prem, edge, and IoT environments
-    supported_envs:
-      - linux
-      - darwin
-    checksum:
-      type: github_release
-      asset: kubeone_{{trimV .Version}}_checksums.txt
-      algorithm: sha256
-    version_constraint: semver(">= 1.4.2")
+    version_constraint: "false"
     version_overrides:
-      - version_constraint: "true"
+      - version_constraint: semver("< 1.4.2")
         rosetta2: true
         supported_envs:
           - linux/amd64
           - darwin
+      - version_constraint: semver("<= 1.13.5")
+        supported_envs:
+          - linux
+          - darwin
+        checksum:
+          type: github_release
+          asset: kubeone_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+      - version_constraint: "true"
+        supported_envs:
+          - linux
+          - darwin
+        checksum:
+          type: github_release
+          asset: kubeone_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+          cosign:
+            bundle:
+              type: github_release
+              asset: kubeone_{{trimV .Version}}_checksums.txt.sigstore.json
+            opts:
+              - --certificate-identity
+              - https://github.com/kubermatic/kubeone/.github/workflows/release.yml@refs/tags/{{.Version}}
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
   - type: github_release
     repo_owner: kubernetes-retired
     repo_name: kubefed
@@ -74095,33 +74255,6 @@ packages:
     files:
       - name: exa
         src: bin/exa
-  - type: github_release
-    repo_owner: ogulcancelik
-    repo_name: herdr
-    description: agent multiplexer that lives in your terminal
-    version_constraint: "false"
-    version_overrides:
-      - version_constraint: Version == "v0.4.0"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: herdr-{{.OS}}-{{.Arch}}
-        format: raw
-        replacements:
-          amd64: x86_64
-          arm64: aarch64
-          darwin: macos
-        supported_envs:
-          - darwin
-      - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: herdr-{{.OS}}-{{.Arch}}
-        format: raw
-        replacements:
-          amd64: x86_64
-          arm64: aarch64
-          darwin: macos
-        supported_envs:
-          - linux
-          - darwin
   - type: github_release
     repo_owner: ohkrab
     repo_name: krab
@@ -93484,6 +93617,22 @@ packages:
         supported_envs:
           - linux
           - darwin
+      - version_constraint: semver("<= 0.105.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: nika-{{.OS}}-{{.Arch}}-{{trimV .Version}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x64
+          darwin: macos
+        checksum:
+          type: github_release
+          asset: SHA256SUMS
+          algorithm: sha256
+        github_artifact_attestations:
+          signer_workflow: supernovae-st/nika/\.github/workflows/release\.yml
+        supported_envs:
+          - linux
+          - darwin
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: nika-{{.OS}}-{{.Arch}}-{{trimV .Version}}.{{.Format}}
@@ -93497,6 +93646,10 @@ packages:
           algorithm: sha256
         github_artifact_attestations:
           signer_workflow: supernovae-st/nika/\.github/workflows/release\.yml
+        slsa_provenance:
+          type: github_release
+          asset: multiple.intoto.jsonl
+          source_tag: "-"
         supported_envs:
           - linux
           - darwin

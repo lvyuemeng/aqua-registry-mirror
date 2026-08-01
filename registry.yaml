@@ -1853,6 +1853,26 @@ packages:
         supported_envs:
           - darwin
           - linux
+      - version_constraint: semver("<= 2.39.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dua-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        files:
+          - name: dua
+            src: "{{.AssetWithoutExt}}/dua"
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: linux
+            replacements:
+              arm64: aarch64
+          - goos: windows
+            format: zip
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: dua-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
@@ -1873,6 +1893,8 @@ packages:
               arm64: aarch64
           - goos: windows
             format: zip
+        github_artifact_attestations:
+          signer_workflow: Byron/dua-cli/\.github/workflows/release\.yml
   - type: github_release
     repo_owner: ByteNess
     repo_name: aws-vault
@@ -50011,6 +50033,18 @@ packages:
           type: github_release
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
+      - version_constraint: semver("<= 2.14.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: hadolint-{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: macos
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: hadolint-{{.OS}}-{{.Arch}}
@@ -50023,6 +50057,8 @@ packages:
           type: github_release
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
+        github_artifact_attestations:
+          signer_workflow: hadolint/hadolint/\.github/workflows/release\.yml
   - type: github_release
     repo_owner: hairyhenderson
     repo_name: gomplate
@@ -50637,7 +50673,7 @@ packages:
             format: zip
             url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
             replacements: {}
-      - version_constraint: "true"
+      - version_constraint: semver("<= 3.16.1.0")
         url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}-alpine3_12.{{.Format}}
         format: tar.xz
         windows_arm_emulation: true
@@ -50658,6 +50694,23 @@ packages:
             format: zip
             url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
             replacements: {}
+      - version_constraint: "true"
+        url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/cabal-install-{{.SemVer}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.xz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: linux-unknown
+          windows: mingw64
+        checksum:
+          type: http
+          url: https://mirrors.ustc.edu.cn/hackage/~cabal/cabal-install-{{.SemVer}}/SHA256SUMS
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
   - type: http
     repo_owner: haskell
     repo_name: ghcup-hs
@@ -54032,10 +54085,22 @@ packages:
         supported_envs:
           - linux
           - darwin
-      - version_constraint: "true"
+      - version_constraint: semver("<= 1.14.4")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: mitamae-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+        github_artifact_attestations:
+          signer_workflow: itamae-kitchen/mitamae/.github/workflows/build.yml
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: mitamae-{{.Arch}}-{{.OS}}
+        format: raw
         replacements:
           amd64: x86_64
           arm64: aarch64
@@ -65434,6 +65499,30 @@ packages:
     description: General Linter powered by Jsonnet
     version_constraint: "false"
     version_overrides:
+      - version_constraint: semver("<= 0.4.8-1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: lintnet_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        overrides:
+          - goos: windows
+            format: zip
+        slsa_provenance:
+          type: github_release
+          asset: multiple.intoto.jsonl
+        checksum:
+          type: github_release
+          asset: lintnet_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+          cosign:
+            opts:
+              - --signature
+              - https://github.com/lintnet/lintnet/releases/download/{{.Version}}/lintnet_{{trimV .Version}}_checksums.txt.sig
+              - --certificate
+              - https://github.com/lintnet/lintnet/releases/download/{{.Version}}/lintnet_{{trimV .Version}}_checksums.txt.pem
+              - --certificate-identity-regexp
+              - "https://github\\.com/suzuki-shunsuke/go-release-workflow/\\.github/workflows/release\\.yaml@.*"
+              - --certificate-oidc-issuer
+              - "https://token.actions.githubusercontent.com"
       - version_constraint: semver("<= 0.4.11")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: lintnet_{{.OS}}_{{.Arch}}.{{.Format}}
@@ -65458,6 +65547,8 @@ packages:
               - "https://github\\.com/suzuki-shunsuke/go-release-workflow/\\.github/workflows/release\\.yaml@.*"
               - --certificate-oidc-issuer
               - "https://token.actions.githubusercontent.com"
+        github_artifact_attestations:
+          signer_workflow: suzuki-shunsuke/go-release-workflow/\.github/workflows/release\.yaml
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: lintnet_{{.OS}}_{{.Arch}}.{{.Format}}
@@ -65481,6 +65572,8 @@ packages:
               - "https://github\\.com/suzuki-shunsuke/go-release-workflow/\\.github/workflows/release\\.yaml@.*"
               - --certificate-oidc-issuer
               - "https://token.actions.githubusercontent.com"
+        github_artifact_attestations:
+          signer_workflow: suzuki-shunsuke/go-release-workflow/\.github/workflows/release\.yaml
   - type: github_release
     repo_owner: linuxkit
     repo_name: linuxkit

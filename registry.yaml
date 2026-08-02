@@ -7151,6 +7151,23 @@ packages:
           - goos: windows
             format: zip
             asset: PowerShell-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+  - type: http
+    name: ProtonDriveApps/sdk/cli
+    repo_owner: ProtonDriveApps
+    repo_name: sdk
+    description: Manage your Proton Drive files from the CLI
+    link: https://proton.me/support/drive-cli
+    version_source: github_tag
+    version_prefix: cli/
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://proton.me/download/drive/cli/{{trimV .SemVer}}/{{.OS}}-{{.Arch}}/proton-drive
+        format: raw
+        files:
+          - name: proton-drive
+        replacements:
+          amd64: x64
   - type: github_release
     repo_owner: Qovery
     repo_name: Replibyte
@@ -17373,6 +17390,31 @@ packages:
         supported_envs:
           - linux
           - darwin
+  - type: github_release
+    repo_owner: asmz
+    repo_name: agedir
+    description: A CLI tool to bulk-encrypt, decrypt, and place multiple secret files across a project using age encryption and a simple YAML mapping config
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 1.0.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: agedir-{{.OS}}-{{.Arch}}
+        format: raw
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: agedir_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: assetnote
     repo_name: surf
@@ -32640,6 +32682,18 @@ packages:
         overrides:
           - goos: windows
             format: zip
+  - type: github_release
+    repo_owner: d2lang
+    repo_name: d2
+    aliases:
+      - name: terrastruct/d2
+    asset: d2-{{.Version}}-{{.OS}}-{{.Arch}}.tar.gz
+    description: D2 is a modern diagram scripting language that turns text to diagrams
+    replacements:
+      darwin: macos
+    files:
+      - name: d2
+        src: d2-{{.Version}}/bin/d2
   - type: github_release
     repo_owner: dadav
     repo_name: helm-schema
@@ -48798,6 +48852,16 @@ packages:
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
         overrides:
+          - goos: linux
+            variants:
+              - key: libc
+                value: glibc
+          - goos: linux
+            replacements:
+              linux: unknown-linux-musl
+            variants:
+              - key: libc
+                value: musl
           - goos: windows
             format: zip
         github_artifact_attestations:
@@ -65492,6 +65556,23 @@ packages:
           - goos: windows
             asset: linkerd2-cli-{{.Version}}-{{.OS}}
   - type: github_release
+    repo_owner: linnea-bakshi
+    repo_name: gha-doctor
+    description: "Diagnose GitHub Actions: flaky jobs, wasted minutes, slow steps, and anti-patterns"
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: gha-doctor_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+  - type: github_release
     repo_owner: lintnet
     repo_name: lintnet
     aliases:
@@ -79791,6 +79872,15 @@ packages:
           amd64: x64
           windows: win32
         overrides:
+          - goos: linux
+            variants:
+              - key: libc
+                value: glibc
+          - goos: linux
+            asset: pnpm-{{.OS}}-{{.Arch}}-musl.{{.Format}}
+            variants:
+              - key: libc
+                value: musl
           - goos: windows
             format: zip
       - version_constraint: semver("<= 11.0.6")
@@ -79806,6 +79896,15 @@ packages:
           amd64: x64
           windows: win32
         overrides:
+          - goos: linux
+            variants:
+              - key: libc
+                value: glibc
+          - goos: linux
+            asset: pnpm-{{.OS}}-{{.Arch}}-musl.{{.Format}}
+            variants:
+              - key: libc
+                value: musl
           - goos: windows
             format: zip
         github_artifact_attestations:
@@ -79835,6 +79934,15 @@ packages:
           amd64: x64
           windows: win32
         overrides:
+          - goos: linux
+            variants:
+              - key: libc
+                value: glibc
+          - goos: linux
+            asset: pnpm-{{.OS}}-{{.Arch}}-musl.{{.Format}}
+            variants:
+              - key: libc
+                value: musl
           - goos: windows
             format: zip
         github_artifact_attestations:
@@ -80752,6 +80860,29 @@ packages:
     overrides:
       - goos: windows
         asset: protoc-{{trimV .Version}}-{{.OS}}.{{.Format}}
+  - type: github_release
+    repo_owner: protonpass
+    repo_name: pass-cli
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: pass-cli-{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: macos
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+            asset: pass-cli-{{.OS}}-{{.Arch}}.{{.Format}}
+            replacements: {}
   - name: psastras/sarif-rs/clang-tidy-sarif
     type: github_release
     repo_owner: psastras
@@ -90133,6 +90264,25 @@ packages:
           - goos: linux
             goarch: arm64
             asset: snyk-{{.OS}}-{{.Arch}}
+            variants:
+              - key: libc
+                value: glibc
+          - goos: linux
+            goarch: arm64
+            asset: snyk-alpine-{{.Arch}}
+            variants:
+              - key: libc
+                value: musl
+          - goos: linux
+            variants:
+              - key: libc
+                value: glibc
+          - goos: linux
+            variants:
+              - key: libc
+                value: musl
+            replacements:
+              linux: alpine
           - goos: darwin
             goarch: arm64
             asset: snyk-{{.OS}}-{{.Arch}}
@@ -93456,13 +93606,21 @@ packages:
           type: github_release
           asset: supabase_{{trimV .Version}}_checksums.txt
           algorithm: sha256
-      - version_constraint: "true"
+      - version_constraint: semver("<= 2.98.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: supabase_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         checksum:
           type: github_release
           asset: supabase_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: supabase_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
           algorithm: sha256
   - type: github_release
     repo_owner: superbrothers
@@ -98365,16 +98523,6 @@ packages:
         overrides:
           - goos: windows
             format: zip
-  - type: github_release
-    repo_owner: terrastruct
-    repo_name: d2
-    asset: d2-{{.Version}}-{{.OS}}-{{.Arch}}.tar.gz
-    description: D2 is a modern diagram scripting language that turns text to diagrams
-    replacements:
-      darwin: macos
-    files:
-      - name: d2
-        src: d2-{{.Version}}/bin/d2
   - type: github_release
     repo_owner: terrastruct
     repo_name: tala

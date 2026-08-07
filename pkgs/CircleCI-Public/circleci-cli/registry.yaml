@@ -50,10 +50,23 @@ packages:
         overrides:
           - goos: windows
             format: zip
+      - version_constraint: semver("< 1.0.39747-pre")
+        url: https://gh-proxy.org/https://github.com/CircleCI-Public/circleci-cli/releases/download/{{.Version}}/{{.Asset}}
+        asset: circleci-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: circleci-cli_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/CircleCI-Public/circleci-cli/releases/download/{{.Version}}/{{.Asset}}
         asset: circleci-cli_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
+        files:
+          - name: circleci
         checksum:
           type: github_release
           asset: circleci-cli_{{trimV .Version}}_checksums.txt

@@ -67644,6 +67644,15 @@ packages:
           - darwin
           - windows
           - amd64
+      - version_constraint: Version == "v4.3.0"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: github-nippou_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: github-nippou_{{.Version}}_checksums.txt
+          algorithm: sha256
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: github-nippou_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
@@ -67653,6 +67662,8 @@ packages:
           type: github_release
           asset: github-nippou_{{.Version}}_checksums.txt
           algorithm: sha256
+        github_artifact_attestations:
+          signer_workflow: masutaka/github-nippou/\.github/workflows/release\.yml
   - type: github_release
     repo_owner: mathew-fleisch
     repo_name: bashbot

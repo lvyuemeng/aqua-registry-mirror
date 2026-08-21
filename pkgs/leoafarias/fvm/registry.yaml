@@ -1,15 +1,16 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/registry.json
 packages:
   - type: github_release
-    repo_owner: conceptadev
+    repo_owner: leoafarias
     repo_name: fvm
     aliases:
       - name: leoafarias/fvm
+      - name: conceptadev/fvm
     description: "Flutter Version Management: A simple CLI to manage Flutter SDK versions"
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.1.13")
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -25,7 +26,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: semver("<= 0.2.8")
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -41,7 +42,7 @@ packages:
           - linux
           - darwin
       - version_constraint: semver("<= 0.3.0")
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -55,14 +56,14 @@ packages:
       - version_constraint: semver("<= 0.8.3")
         no_asset: true
       - version_constraint: Version == "App-1.0.0-alpha"
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm-app-{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
         supported_envs:
           - windows/amd64
       - version_constraint: Version == "App-1.0.0-alpha.1"
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm_{{.OS}}.{{.Format}}
         format: zip
         windows_arm_emulation: true
@@ -71,7 +72,7 @@ packages:
       - version_constraint: semver("<= 1.2.3")
         no_asset: true
       - version_constraint: semver("<= 1.3.4")
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -95,7 +96,7 @@ packages:
       - version_constraint: semver("<= 1.3.8")
         no_asset: true
       - version_constraint: semver("<= 2.2.4")
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -117,7 +118,7 @@ packages:
           - windows
           - amd64
       - version_constraint: Version == "2.2.5-dev"
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -131,7 +132,7 @@ packages:
           - linux/amd64
           - darwin
       - version_constraint: Version == "2.2.5-dev.1"
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -143,7 +144,7 @@ packages:
         supported_envs:
           - linux/amd64
       - version_constraint: semver("<= 2.3.1")
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         rosetta2: true
@@ -165,7 +166,7 @@ packages:
           - windows
           - amd64
       - version_constraint: semver("<= 2.4.1")
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -184,7 +185,7 @@ packages:
       - version_constraint: semver("<= 3.0.0-alpha.2")
         no_asset: true
       - version_constraint: semver("<= 4.0.0")
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
@@ -201,7 +202,7 @@ packages:
               - name: fvm
                 src: fvm/fvm.bat
       - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/conceptadev/fvm/releases/download/{{.Version}}/{{.Asset}}
+        url: https://gh-proxy.org/https://github.com/leoafarias/fvm/releases/download/{{.Version}}/{{.Asset}}
         asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true

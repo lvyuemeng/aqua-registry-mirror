@@ -456,7 +456,7 @@ packages:
   - type: github_release
     repo_owner: Arata1202
     repo_name: ascdir
-    description: Manage App Store Connect text metadata as local files
+    description: Manage App Store Connect metadata, TestFlight distribution, and releases with safe CLI workflows
     version_constraint: "false"
     version_overrides:
       - version_constraint: "true"
@@ -30129,223 +30129,6 @@ packages:
         supported_envs:
           - linux/amd64
           - windows/amd64
-  - type: github_release
-    repo_owner: conceptadev
-    repo_name: fvm
-    aliases:
-      - name: leoafarias/fvm
-    description: "Flutter Version Management: A simple CLI to manage Flutter SDK versions"
-    version_constraint: "false"
-    version_overrides:
-      - version_constraint: semver("<= 0.1.13")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        replacements:
-          amd64: x86_64
-          darwin: Darwin
-          linux: Linux
-        checksum:
-          type: github_release
-          asset: checksums.txt
-          algorithm: sha256
-        supported_envs:
-          - linux/amd64
-          - darwin
-      - version_constraint: semver("<= 0.2.8")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        replacements:
-          amd64: x86_64
-          darwin: Darwin
-          linux: Linux
-        checksum:
-          type: github_release
-          asset: checksums.txt
-          algorithm: sha256
-        supported_envs:
-          - linux
-          - darwin
-      - version_constraint: semver("<= 0.3.0")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        checksum:
-          type: github_release
-          asset: checksums.txt
-          algorithm: sha256
-        supported_envs:
-          - linux
-          - darwin
-      - version_constraint: semver("<= 0.8.3")
-        no_asset: true
-      - version_constraint: Version == "App-1.0.0-alpha"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm-app-{{.OS}}.{{.Format}}
-        format: zip
-        windows_arm_emulation: true
-        supported_envs:
-          - windows/amd64
-      - version_constraint: Version == "App-1.0.0-alpha.1"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm_{{.OS}}.{{.Format}}
-        format: zip
-        windows_arm_emulation: true
-        supported_envs:
-          - windows/amd64
-      - version_constraint: semver("<= 1.2.3")
-        no_asset: true
-      - version_constraint: semver("<= 1.3.4")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        windows_arm_emulation: true
-        files:
-          - name: fvm
-            src: fvm/fvm
-        replacements:
-          amd64: x64
-          darwin: macos
-        overrides:
-          - goos: windows
-            format: zip
-            files:
-              - name: fvm
-                src: fvm/fvm.bat
-        supported_envs:
-          - darwin
-          - windows
-          - amd64
-      - version_constraint: semver("<= 1.3.8")
-        no_asset: true
-      - version_constraint: semver("<= 2.2.4")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        windows_arm_emulation: true
-        files:
-          - name: fvm
-            src: fvm/fvm
-        replacements:
-          amd64: x64
-          darwin: macos
-        overrides:
-          - goos: windows
-            format: zip
-            files:
-              - name: fvm
-                src: fvm/fvm.bat
-        supported_envs:
-          - darwin
-          - windows
-          - amd64
-      - version_constraint: Version == "2.2.5-dev"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        files:
-          - name: fvm
-            src: fvm/fvm
-        replacements:
-          amd64: x64
-          darwin: macos
-        supported_envs:
-          - linux/amd64
-          - darwin
-      - version_constraint: Version == "2.2.5-dev.1"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        files:
-          - name: fvm
-            src: fvm/fvm
-        replacements:
-          amd64: x64
-        supported_envs:
-          - linux/amd64
-      - version_constraint: semver("<= 2.3.1")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        rosetta2: true
-        windows_arm_emulation: true
-        files:
-          - name: fvm
-            src: fvm/fvm
-        replacements:
-          amd64: x64
-          darwin: macos
-        overrides:
-          - goos: windows
-            format: zip
-            files:
-              - name: fvm
-                src: fvm/fvm.bat
-        supported_envs:
-          - darwin
-          - windows
-          - amd64
-      - version_constraint: semver("<= 2.4.1")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        windows_arm_emulation: true
-        files:
-          - name: fvm
-            src: fvm/fvm
-        replacements:
-          amd64: x64
-          darwin: macos
-        overrides:
-          - goos: windows
-            format: zip
-            files:
-              - name: fvm
-                src: fvm/fvm.bat
-      - version_constraint: semver("<= 3.0.0-alpha.2")
-        no_asset: true
-      - version_constraint: semver("<= 4.0.0")
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        windows_arm_emulation: true
-        files:
-          - name: fvm
-            src: fvm/fvm
-        replacements:
-          amd64: x64
-          darwin: macos
-        overrides:
-          - goos: windows
-            format: zip
-            files:
-              - name: fvm
-                src: fvm/fvm.bat
-      - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
-        format: tar.gz
-        windows_arm_emulation: true
-        files:
-          - name: fvm
-            src: fvm/fvm
-        replacements:
-          amd64: x64
-          darwin: macos
-        overrides:
-          - goos: windows
-            format: zip
-            files:
-              - name: fvm
-                src: fvm/fvm
   - name: concourse/concourse/concourse
     type: github_release
     repo_owner: concourse
@@ -65571,6 +65354,224 @@ packages:
           type: github_release
           asset: checksums.txt
           algorithm: sha256
+  - type: github_release
+    repo_owner: leoafarias
+    repo_name: fvm
+    aliases:
+      - name: leoafarias/fvm
+      - name: conceptadev/fvm
+    description: "Flutter Version Management: A simple CLI to manage Flutter SDK versions"
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.1.13")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        replacements:
+          amd64: x86_64
+          darwin: Darwin
+          linux: Linux
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.2.8")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        replacements:
+          amd64: x86_64
+          darwin: Darwin
+          linux: Linux
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: semver("<= 0.3.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: semver("<= 0.8.3")
+        no_asset: true
+      - version_constraint: Version == "App-1.0.0-alpha"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm-app-{{.OS}}.{{.Format}}
+        format: zip
+        windows_arm_emulation: true
+        supported_envs:
+          - windows/amd64
+      - version_constraint: Version == "App-1.0.0-alpha.1"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm_{{.OS}}.{{.Format}}
+        format: zip
+        windows_arm_emulation: true
+        supported_envs:
+          - windows/amd64
+      - version_constraint: semver("<= 1.2.3")
+        no_asset: true
+      - version_constraint: semver("<= 1.3.4")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        files:
+          - name: fvm
+            src: fvm/fvm
+        replacements:
+          amd64: x64
+          darwin: macos
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: fvm
+                src: fvm/fvm.bat
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: semver("<= 1.3.8")
+        no_asset: true
+      - version_constraint: semver("<= 2.2.4")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        files:
+          - name: fvm
+            src: fvm/fvm
+        replacements:
+          amd64: x64
+          darwin: macos
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: fvm
+                src: fvm/fvm.bat
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: Version == "2.2.5-dev"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        files:
+          - name: fvm
+            src: fvm/fvm
+        replacements:
+          amd64: x64
+          darwin: macos
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: Version == "2.2.5-dev.1"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        files:
+          - name: fvm
+            src: fvm/fvm
+        replacements:
+          amd64: x64
+        supported_envs:
+          - linux/amd64
+      - version_constraint: semver("<= 2.3.1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        files:
+          - name: fvm
+            src: fvm/fvm
+        replacements:
+          amd64: x64
+          darwin: macos
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: fvm
+                src: fvm/fvm.bat
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: semver("<= 2.4.1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        files:
+          - name: fvm
+            src: fvm/fvm
+        replacements:
+          amd64: x64
+          darwin: macos
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: fvm
+                src: fvm/fvm.bat
+      - version_constraint: semver("<= 3.0.0-alpha.2")
+        no_asset: true
+      - version_constraint: semver("<= 4.0.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        files:
+          - name: fvm
+            src: fvm/fvm
+        replacements:
+          amd64: x64
+          darwin: macos
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: fvm
+                src: fvm/fvm.bat
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: fvm-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        files:
+          - name: fvm
+            src: fvm/fvm
+        replacements:
+          amd64: x64
+          darwin: macos
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: fvm
+                src: fvm/fvm
   - type: github_release
     repo_owner: levibostian
     repo_name: decaf

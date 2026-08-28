@@ -4675,6 +4675,16 @@ packages:
     repo_name: skaffold
     description: Easy and Repeatable Kubernetes Development
     url: https://storage.googleapis.com/skaffold/releases/{{.Version}}/skaffold-{{.OS}}-{{.Arch}}
+    checksum:
+      type: http
+      url: "https://storage.googleapis.com/skaffold/releases/{{.Version}}/skaffold-{{.OS}}-{{.Arch}}.sha256"
+      algorithm: sha256
+    overrides:
+      - goos: windows
+        checksum:
+          type: http
+          url: "https://storage.googleapis.com/skaffold/releases/{{.Version}}/skaffold-{{.OS}}-{{.Arch}}.exe.sha256"
+          algorithm: sha256
     files:
       - name: skaffold
         src: skaffold-{{.OS}}-{{.Arch}}
@@ -5948,7 +5958,7 @@ packages:
   - type: github_release
     repo_owner: Lifailon
     repo_name: lazyjournal
-    description: TUI for journalctl, file system logs, as well Docker and Podman containers for quick viewing and filtering with fuzzy find, regex support (like fzf and grep) and coloring the output, written in Go with the gocui library
+    description: TUI for viewing logs from journald, auditd, file system, Docker and Podman containers, Compose stacks and Kubernetes pods with support for log highlighting and several filtering modes
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver("<= 0.4.0")
@@ -5957,13 +5967,17 @@ packages:
         format: raw
         supported_envs:
           - linux
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.6.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: lazyjournal-{{.Version}}-{{.OS}}-{{.Arch}}
         format: raw
         supported_envs:
           - linux
           - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: lazyjournal-{{.Version}}-{{.OS}}-{{.Arch}}
+        format: raw
   - type: github_release
     repo_owner: LuaLS
     repo_name: lua-language-server
@@ -17074,27 +17088,33 @@ packages:
     type: http
     repo_owner: ariga
     repo_name: atlas
-    url: https://release.ariga.io/atlas/atlas-community-{{.OS}}-{{.Arch}}-{{.Version}}
     description: A modern tool for managing database schemas (Community Edition)
     link: https://atlasgo.io/community-edition
-    format: raw
-    supported_envs:
-      - darwin
-      - linux
-    files:
-      - name: atlas
-    checksum:
-      type: http
-      url: https://release.ariga.io/atlas/atlas-community-{{.OS}}-{{.Arch}}-{{.Version}}.sha256
-      file_format: raw
-      algorithm: sha256
-    version_constraint: semver(">= 0.22.0")
-    # https://github.com/ariga/atlas/issues/3296#issuecomment-2574924728
-    # > Old Versions of Atlas
-    # > As part of our Supported Version Policy mentioned above, binaries for versions that were published more than 6 months ago will be removed from the CDN and Docker Hub.
+    version_constraint: "false"
     version_overrides:
+      # https://github.com/ariga/atlas/issues/3296#issuecomment-2574924728
+      # > Old Versions of Atlas
+      # > As part of our Supported Version Policy mentioned above, binaries for versions that were published more than 6 months ago will be removed from the CDN and Docker Hub.
       - version_constraint: semver("< 0.21.0")
         no_asset: true
+      - version_constraint: "true"
+        url: https://release.ariga.io/atlas/atlas-community-{{.OS}}-{{.Arch}}-{{.Version}}
+        format: raw
+        windows_arm_emulation: true
+        files:
+          - name: atlas
+        checksum:
+          type: http
+          url: https://release.ariga.io/atlas/atlas-community-{{.OS}}-{{.Arch}}-{{.Version}}.sha256
+          file_format: raw
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            checksum:
+              type: http
+              url: https://release.ariga.io/atlas/atlas-community-{{.OS}}-{{.Arch}}-{{.Version}}.exe.sha256
+              file_format: raw
+              algorithm: sha256
   - type: github_release
     repo_owner: aristocratos
     repo_name: btop
@@ -18198,16 +18218,14 @@ packages:
     description: Software to interact with Atlassian Cloud from the terminal
     link: https://developer.atlassian.com/cloud/acli/
     version_source: github_tag
-    url: https://acli.atlassian.com/{{.OS}}/{{.Version}}/acli_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+    url: https://acli.atlassian.com/{{.OS}}/{{.Version}}/acli_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
     format: tar.gz
     files:
       - name: acli
         src: acli_{{.Version}}_{{.OS}}_{{.Arch}}/acli
-    supported_envs:
-      - linux/amd64
-      - linux/arm64
-      - darwin/amd64
-      - darwin/arm64
+    overrides:
+      - goos: windows
+        format: zip
   - type: github_release
     repo_owner: atuinsh
     repo_name: atuin
@@ -18763,28 +18781,45 @@ packages:
     repo_owner: aws
     repo_name: amazon-ecs-cli
     description: The Amazon ECS CLI enables users to run their applications on ECS/Fargate using the Docker Compose file format, quickly provision resources, push/pull images in ECR, and monitor running applications on ECS/Fargate
-    format: raw
-    url: https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-{{.OS}}-{{.Arch}}-{{.Version}}
-    supported_envs:
-      - darwin
-      - linux
-    rosetta2: true
-    files:
-      - name: ecs-cli
-    checksum:
-      type: http
-      algorithm: md5
-      url: https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-{{.OS}}-{{.Arch}}-{{.Version}}.md5
-    version_constraint: semver(">= 1.20.0")
+    version_constraint: "false"
     version_overrides:
-      - version_constraint: semver(">= 1.0.0")
+      - version_constraint: semver("<= 0.6.6")
+        url: https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-{{.OS}}-{{.Arch}}-{{.Version}}
+        format: raw
+        rosetta2: true
+        files:
+          - name: ecs-cli
+        checksum:
+          type: http
+          algorithm: md5
+          url: https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-{{.OS}}-{{.Arch}}-{{.Version}}.md5
+        supported_envs:
+          - darwin
+          - linux/amd64
+      - version_constraint: semver("<= 1.19.1")
+        url: https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-{{.OS}}-{{.Arch}}-{{.Version}}
+        format: raw
+        rosetta2: true
+        files:
+          - name: ecs-cli
+        checksum:
+          type: http
+          algorithm: md5
+          url: https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-{{.OS}}-{{.Arch}}-{{.Version}}.md5
         supported_envs:
           - darwin
           - amd64
       - version_constraint: "true"
-        supported_envs:
-          - darwin
-          - linux/amd64
+        url: https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-{{.OS}}-{{.Arch}}-{{.Version}}
+        format: raw
+        rosetta2: true
+        windows_arm_emulation: true
+        files:
+          - name: ecs-cli
+        checksum:
+          type: http
+          algorithm: md5
+          url: https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-{{.OS}}-{{.Arch}}-{{.Version}}.md5
   - type: http
     repo_owner: aws
     repo_name: aws-cli
@@ -43518,20 +43553,20 @@ packages:
     description: The next-generation engine for dbt
     link: https://docs.getdbt.com/docs/local/install-dbt
     version_source: github_tag
-    url: https://public.cdn.getdbt.com/fs/cli/fs-{{.Version}}-{{.Arch}}-{{.OS}}.tar.gz
+    url: https://public.cdn.getdbt.com/fs/cli/fs-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
     format: tar.gz
+    windows_arm_emulation: true
     replacements:
       linux: unknown-linux-gnu
       darwin: apple-darwin
+      windows: pc-windows-msvc
       amd64: x86_64
       arm64: aarch64
-    supported_envs:
-      - linux/amd64
-      - linux/arm64
-      - darwin/amd64
-      - darwin/arm64
     files:
       - name: dbt
+    overrides:
+      - goos: windows
+        format: zip
   - type: github_release
     repo_owner: getgauge
     repo_name: gauge
@@ -49292,12 +49327,33 @@ packages:
     repo_owner: grafana
     repo_name: mimir
     description: Grafana Mimir provides horizontally scalable, highly available, multi-tenant, long-term storage for Prometheus
-    asset: mimirtool-{{.OS}}-{{.Arch}}
-    format: raw
     version_prefix: mimir-
-    supported_envs:
-      - linux
-      - darwin
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "mimir-3.2.0-rc.0"
+        no_asset: true
+      - version_constraint: Version in ["mimir-2.2.0-rc.0", "mimir-3.1.0-rc.0"]
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: mimirtool-{{.OS}}-{{.Arch}}
+        format: raw
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: semver("<= 3.0.9") or Version == "mimir-3.1.0-rc.1"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: mimirtool-{{.OS}}-{{.Arch}}
+        format: raw
+      - version_constraint: semver("<= 3.1.2")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: mimirtool-{{.OS}}-{{.Arch}}
+        format: raw
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: mimirtool-{{.OS}}-{{.Arch}}
+        format: raw
   - name: grafana/mimir/query-tee
     type: github_release
     repo_owner: grafana
@@ -49476,13 +49532,17 @@ packages:
           - name: tsh
             src: teleport/tsh
       - goos: darwin
-        url: https://cdn.teleport.dev/teleport-tools-{{trimV .Version}}.{{.Format}}
-        format: pkg
+        url: https://cdn.teleport.dev/teleport-{{.Version}}-darwin-{{.Arch}}-bin.{{.Format}}
+        format: tar.gz
         files:
+          - name: tbot
+            src: teleport/tbot
           - name: tctl
-            src: tctl-{{trimV .Version}}.pkg/Payload/tctl.app/Contents/MacOS/tctl
+            src: teleport/tctl.app/Contents/MacOS/tctl
+          - name: teleport
+            src: teleport/teleport
           - name: tsh
-            src: tsh-{{trimV .Version}}.pkg/Payload/tsh.app/Contents/MacOS/tsh
+            src: teleport/tsh.app/Contents/MacOS/tsh
       - goos: windows
         url: https://cdn.teleport.dev/teleport-{{.Version}}-windows-amd64-bin.{{.Format}}
         format: zip
@@ -52163,15 +52223,88 @@ packages:
   - type: github_release
     repo_owner: homeport
     repo_name: dyff
-    description: A diff tool for YAML files, and sometimes JSON
-    supported_envs:
-      - darwin
-      - linux
-    asset: dyff_{{trimV .Version}}_{{.OS}}_{{.Arch}}.tar.gz
-    checksum:
-      type: github_release
-      asset: checksums.txt
-      algorithm: sha256
+    description: "/ˈdʏf/ - diff tool for YAML files, and sometimes JSON"
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.5-beta.20"
+        no_asset: true
+      - version_constraint: Version in ["v1.2.1", "v1.4.1"]
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dyff_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: semver("<= 0.4.0-alpha")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dyff-{{.OS}}-{{.Arch}}
+        format: raw
+        rosetta2: true
+        windows_arm_emulation: true
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: semver("<= 0.5.0-beta.2")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dyff-{{.OS}}-{{.Arch}}
+        format: raw
+        rosetta2: true
+        windows_arm_emulation: true
+      - version_constraint: semver("<= 0.9.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dyff-{{.OS}}-{{.Arch}}
+        format: raw
+        rosetta2: true
+        windows_arm_emulation: true
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: semver("<= 1.2.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dyff-{{.OS}}-{{.Arch}}
+        format: raw
+        rosetta2: true
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 1.4.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dyff_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 1.5.6")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dyff_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: dyff_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
   - type: github_release
     repo_owner: homeport
     repo_name: havener
@@ -68714,15 +68847,80 @@ packages:
     repo_owner: mercari
     repo_name: tfnotify
     description: A CLI command to parse Terraform execution result and notify it to GitHub
-    rosetta2: true
-    supported_envs:
-      - darwin
-      - linux/amd64
-    asset: tfnotify_{{.OS}}_{{.Arch}}.tar.gz
-    checksum:
-      type: github_release
-      asset: tfnotify_{{trimV .Version}}_checksums.txt
-      algorithm: sha256
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.8.0"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: tfnotify_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: tfnotify_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: semver("<= 0.3.1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: tfnotify_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        rosetta2: true
+        files:
+          - name: tfnotify
+            src: tfnotify_{{.Version}}_{{.OS}}_{{.Arch}}/tfnotify
+        overrides:
+          - goos: linux
+            format: tar.gz
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.5.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: tfnotify_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        checksum:
+          type: github_release
+          asset: tfnotify_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.7.0")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: tfnotify_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        checksum:
+          type: github_release
+          asset: tfnotify_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.7.5")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: tfnotify_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        checksum:
+          type: github_release
+          asset: tfnotify_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: tfnotify_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: tfnotify_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: mergestat
     repo_name: mergestat-lite
@@ -92035,12 +92233,12 @@ packages:
   - type: github_release
     repo_owner: specstoryai
     repo_name: getspecstory
-    description: Install our extensions for GH Copilot, Cursor and Claude Code. Try BearClaude. File issues and requests
+    description: Install our local first extensions for your favorite AI IDE or Terminal Agent. Process your histories into reusable skills with Lore. Sync your conversations to the cloud. File issues and requests
     files:
       - name: specstory
     version_constraint: "false"
     version_overrides:
-      - version_constraint: "true"
+      - version_constraint: semver("<= 2.8.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: SpecStoryCLI_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -92055,6 +92253,22 @@ packages:
         supported_envs:
           - linux
           - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: SpecStoryCLI_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          darwin: Darwin
+          linux: Linux
+          windows: Windows
+        checksum:
+          type: github_release
+          asset: SpecStoryCLI_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
   - type: go_install
     repo_owner: spf13
     repo_name: cobra-cli

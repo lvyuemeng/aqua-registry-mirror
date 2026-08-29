@@ -57,7 +57,7 @@ packages:
               - --certificate-oidc-issuer
               - "https://token.actions.githubusercontent.com"
         github_artifact_attestations:
-          signer_workflow: suzuki-shunsuke/go-release-workflow/\.github/workflows/release\.yaml
+          signer_workflow: suzuki-shunsuke/go-release-workflow/.github/workflows/release.yaml
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/lintnet/lintnet/releases/download/{{.Version}}/{{.Asset}}
         asset: lintnet_{{.OS}}_{{.Arch}}.{{.Format}}
@@ -82,4 +82,4 @@ packages:
               - --certificate-oidc-issuer
               - "https://token.actions.githubusercontent.com"
         github_artifact_attestations:
-          signer_workflow: suzuki-shunsuke/go-release-workflow/\.github/workflows/release\.yaml
+          signer_workflow: suzuki-shunsuke/go-release-workflow/.github/workflows/release.yaml

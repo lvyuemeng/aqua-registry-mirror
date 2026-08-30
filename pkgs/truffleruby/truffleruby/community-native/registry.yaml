@@ -63,7 +63,7 @@ packages:
     version_overrides:
       - version_constraint: semver("<= 23.0.1")
         no_asset: true
-      - version_constraint: "true"
+      - version_constraint: semver("< 34.0.0")
         url: https://gh-proxy.org/https://github.com/truffleruby/truffleruby/releases/download/{{.Version}}/{{.Asset}}
         asset: truffleruby-community-{{.SemVer}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -77,3 +77,17 @@ packages:
         supported_envs:
           - linux
           - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/truffleruby/truffleruby/releases/download/{{.Version}}/{{.Asset}}
+        asset: truffleruby-community-{{.SemVer}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          arm64: aarch64
+          darwin: macos
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        supported_envs:
+          - linux
+          - darwin/arm64

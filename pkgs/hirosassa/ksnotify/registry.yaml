@@ -33,7 +33,7 @@ packages:
           - darwin
           - windows
           - amd64
-      - version_constraint: "true"
+      - version_constraint: semver("< 3.2.0")
         url: https://gh-proxy.org/https://github.com/hirosassa/ksnotify/releases/download/{{.Version}}/{{.Asset}}
         asset: ksnotify-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
@@ -48,3 +48,15 @@ packages:
           - darwin
           - windows
           - amd64
+      - version_constraint: Version == "v3.2.0"
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/hirosassa/ksnotify/releases/download/{{.Version}}/{{.Asset}}
+        asset: ksnotify-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        rosetta2: true
+        replacements:
+          amd64: x86_64
+        supported_envs:
+          - darwin
+          - linux/amd64

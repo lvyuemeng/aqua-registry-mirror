@@ -10,7 +10,7 @@ packages:
         no_asset: true
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/amalshaji/portr/releases/download/{{.Version}}/{{.Asset}}
-        asset: portr_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        asset: portr_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
         replacements:
           amd64: x86_64

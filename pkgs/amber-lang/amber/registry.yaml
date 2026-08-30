@@ -19,7 +19,7 @@ packages:
         supported_envs:
           - linux
           - darwin
-      - version_constraint: "true"
+      - version_constraint: semver("< 0.5.0-alpha")
         url: https://gh-proxy.org/https://github.com/amber-lang/amber/releases/download/{{.Version}}/{{.Asset}}
         asset: amber-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.xz
@@ -45,3 +45,20 @@ packages:
               - name: amber
             checksum:
               enabled: false
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/amber-lang/amber/releases/download/{{.Version}}/{{.Asset}}
+        asset: amber-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.xz
+        files:
+          - name: amber
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: macos
+        overrides:
+          - goos: linux
+            replacements:
+              linux: linux-musl
+        supported_envs:
+          - linux
+          - darwin

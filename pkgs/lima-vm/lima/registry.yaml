@@ -4,25 +4,19 @@ packages:
     repo_owner: lima-vm
     repo_name: lima
     description: Linux virtual machines, with a focus on running containers
-    files:
-      - name: lima
-        src: bin/lima
-      - name: limactl
-        src: bin/limactl
     version_constraint: "false"
     version_overrides:
-      - version_constraint: Version == "v1.1.1"
-        error_message: |
-          aqua doesn't support this version.
-          Please update this package.
-          https://github.com/aquaproj/aqua-registry/issues/36874
-          https://github.com/lima-vm/lima/pull/3621
       - version_constraint: Version == "v0.7.0"
         no_asset: true
       - version_constraint: Version == "v0.1.0"
         url: https://gh-proxy.org/https://github.com/lima-vm/lima/releases/download/{{.Version}}/{{.Asset}}
         asset: lima-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
+        files:
+          - name: lima
+            src: bin/lima
+          - name: limactl
+            src: bin/limactl
         replacements:
           amd64: x86_64
           darwin: Darwin
@@ -32,10 +26,15 @@ packages:
           algorithm: sha256
         supported_envs:
           - darwin
-      - version_constraint: semver("< 0.23.0")
+      - version_constraint: semver("<= 2.1.0")
         url: https://gh-proxy.org/https://github.com/lima-vm/lima/releases/download/{{.Version}}/{{.Asset}}
         asset: lima-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
+        files:
+          - name: lima
+            src: bin/lima
+          - name: limactl
+            src: bin/limactl
         replacements:
           amd64: x86_64
           darwin: Darwin
@@ -55,10 +54,16 @@ packages:
         url: https://gh-proxy.org/https://github.com/lima-vm/lima/releases/download/{{.Version}}/{{.Asset}}
         asset: lima-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
+        files:
+          - name: lima
+            src: bin/lima
+          - name: limactl
+            src: bin/limactl
         replacements:
           amd64: x86_64
           darwin: Darwin
           linux: Linux
+          windows: Windows
         checksum:
           type: github_release
           asset: SHA256SUMS
@@ -69,6 +74,11 @@ packages:
           - goos: linux
             replacements:
               arm64: aarch64
-        supported_envs:
-          - linux
-          - darwin
+          - goos: windows
+            format: zip
+            files:
+              - name: limactl
+                src: bin/limactl
+            replacements:
+              amd64: AMD64
+              arm64: ARM64

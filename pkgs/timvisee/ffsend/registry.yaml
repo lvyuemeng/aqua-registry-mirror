@@ -155,7 +155,7 @@ packages:
         supported_envs:
           - linux/amd64
           - darwin
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.2.76")
         url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
         format: raw
@@ -170,3 +170,11 @@ packages:
           - darwin
           - windows
           - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/timvisee/ffsend/releases/download/{{.Version}}/{{.Asset}}
+        asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
+        format: raw
+        replacements:
+          amd64: x64
+        supported_envs:
+          - linux/amd64

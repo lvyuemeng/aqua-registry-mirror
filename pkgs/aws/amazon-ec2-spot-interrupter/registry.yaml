@@ -22,7 +22,7 @@ packages:
         supported_envs:
           - linux/amd64
           - darwin
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.0.10")
         url: https://gh-proxy.org/https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/{{.Version}}/{{.Asset}}
         asset: ec2-spot-interrupter_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -36,3 +36,16 @@ packages:
         supported_envs:
           - linux/amd64
           - darwin
+      - version_constraint: Version == "v0.0.11"
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/{{.Version}}/{{.Asset}}
+        asset: ec2-spot-interrupter_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: ec2-spot-interrupter_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - darwin
+          - linux

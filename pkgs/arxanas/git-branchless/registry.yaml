@@ -23,7 +23,7 @@ packages:
         supported_envs:
           - linux/amd64
           - windows
-      - version_constraint: "true"
+      - version_constraint: semver("< 0.11.0")
         url: https://gh-proxy.org/https://github.com/arxanas/git-branchless/releases/download/{{.Version}}/{{.Asset}}
         asset: git-branchless-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
@@ -41,3 +41,21 @@ packages:
           - darwin
           - windows
           - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/arxanas/git-branchless/releases/download/{{.Version}}/{{.Asset}}
+        asset: git-branchless-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
+        supported_envs:
+          - darwin/arm64
+          - linux
+          - windows

@@ -3498,9 +3498,10 @@ packages:
           cosign:
             opts:
               - --key
-              - https://artifacts.fairwinds.com/cosign.pub
-              - --signature
-              - https://github.com/FairwindsOps/gonogo/releases/download/{{.Version}}/checksums.txt.sig
+              - https://artifacts.fairwinds.com/cosign-p256.pub
+            bundle:
+              type: github_release
+              asset: checksums.txt.sigstore.json
   - type: github_release
     repo_owner: FairwindsOps
     repo_name: nova
@@ -4291,8 +4292,21 @@ packages:
           type: github_release
           asset: scan4all-mac-checksums.txt
           algorithm: sha256
-    version_constraint: semver(">= 2.8.7")
+    version_constraint: "false"
     version_overrides:
+      - version_constraint: semver(">= 2.9.0")
+        rosetta2: true
+        supported_envs:
+          - darwin
+          - amd64
+      - version_constraint: semver(">= 2.8.8")
+        supported_envs:
+          - linux/amd64
+          - windows/amd64
+      - version_constraint: semver(">= 2.8.7")
+        supported_envs:
+          - darwin
+          - amd64
       - version_constraint: semver(">= 2.8.6")
         supported_envs:
           - linux/amd64
@@ -6935,7 +6949,20 @@ packages:
     version_overrides:
       - version_constraint: Version in ["cli-0.0.0-02e9757", "cli-0.0.0-1b829d5", "cli-0.0.0-1c71b5b", "cli-0.0.0-1f610f5", "cli-0.0.0-2f0a249", "cli-0.0.0-34641b1", "cli-0.0.0-3d9c01d", "cli-0.0.0-47f0103", "cli-0.0.0-50b0d25", "cli-0.0.0-5302a93", "cli-0.0.0-592965f", "cli-0.0.0-944fc7a", "cli-0.0.0-9645986", "cli-0.0.0-b5fd984", "cli-0.0.0-b98cd74", "cli-0.0.0-cebea8b", "cli-0.0.0-d68ced1", "cli-0.0.0-d9bbd76", "cli-0.0.0-e701796", "cli-0.0.0-faa36d3"]
         no_asset: true
-      - version_constraint: "true"
+      # ori-windows-x64.exe exists in this release but not in cli-0.11.0-fe98906,
+      # which sorts after it, so it can't be expressed as a range.
+      - version_constraint: Version == "cli-0.11.0-alpha-c8f51ad"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ori-{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
+        replacements:
+          amd64: x64
+        checksum:
+          type: github_release
+          asset: SHA256SUMS
+          algorithm: sha256
+      - version_constraint: semver("<= 0.11.0-fe98906")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: ori-{{.OS}}-{{.Arch}}
         format: raw
@@ -6948,6 +6975,17 @@ packages:
         supported_envs:
           - linux
           - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ori-{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
+        replacements:
+          amd64: x64
+        checksum:
+          type: github_release
+          asset: SHA256SUMS
+          algorithm: sha256
   - type: github_release
     repo_owner: Orange-OpenSource
     repo_name: hurl
@@ -15128,6 +15166,11 @@ packages:
     version_filter: 'Version startsWith "v"'
     version_constraint: "false"
     version_overrides:
+      - version_constraint: semver(">= 0.13.0")
+        error_message: |
+          Releases since v0.13.0 don't include pkl-gen-go binaries.
+
+          https://github.com/apple/pkl-go/releases
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: pkl-gen-go-{{.OS}}-{{.Arch}}.bin
@@ -17217,7 +17260,7 @@ packages:
         supported_envs:
           - linux/amd64
           - windows
-      - version_constraint: "true"
+      - version_constraint: semver("< 0.11.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: git-branchless-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
@@ -17235,6 +17278,24 @@ packages:
           - darwin
           - windows
           - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: git-branchless-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
+        supported_envs:
+          - darwin/arm64
+          - linux
+          - windows
   - type: github_release
     repo_owner: asciidoctor
     repo_name: asciidoctor-reveal.js
@@ -18389,7 +18450,7 @@ packages:
         supported_envs:
           - linux/amd64
           - darwin
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.0.10")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: ec2-spot-interrupter_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -18403,6 +18464,19 @@ packages:
         supported_envs:
           - linux/amd64
           - darwin
+      - version_constraint: Version == "v0.0.11"
+        no_asset: true
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ec2-spot-interrupter_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: ec2-spot-interrupter_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - darwin
+          - linux
   - type: http
     repo_owner: aws
     repo_name: amazon-ecs-cli
@@ -19708,7 +19782,7 @@ packages:
     description: Validate and execute GitHub Actions workflows locally
     version_constraint: "false"
     version_overrides:
-      - version_constraint: "true"
+      - version_constraint: semver("< 0.8.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: wrkflw-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -19718,6 +19792,20 @@ packages:
         supported_envs:
           - linux/amd64
           - darwin
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: wrkflw-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-gnu
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: banzaicloud
     repo_name: banzai-cli
@@ -20646,7 +20734,7 @@ packages:
     version_overrides:
       - version_constraint: Version == "v0.3"
         no_asset: true
-      - version_constraint: "true"
+      - version_constraint: semver("< 1.1.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: "{{.OS}}_{{.Arch}}.{{.Format}}"
         format: tar.gz
@@ -20659,6 +20747,16 @@ packages:
           - darwin
           - windows
           - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: pewpew_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: pewpew
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
   - type: github_release
     repo_owner: bensadeh
     repo_name: tailspin
@@ -21516,69 +21614,135 @@ packages:
   - type: github_release
     repo_owner: blacknon
     repo_name: hwatch
-    description: A modern alternative to the watch command, records the differences in execution results and can check this differences at after
-    supported_envs:
-      - darwin
-      - linux/amd64
-    replacements:
-      amd64: x86_64
-      arm64: aarch64
-      darwin: apple-darwin
-      linux: unknown-linux-musl
-    version_constraint: semver(">= 0.3.1")
-    asset: hwatch-{{.Version}}.{{.Arch}}-{{.OS}}.tar.gz
-    files:
-      - name: hwatch
-        src: bin/hwatch
+    description: "hwatch: alternative watch command with history, diff view, JSONL logging, and change hooks. since 2018"
+    version_constraint: "false"
     version_overrides:
-      - version_constraint: semver("= 0.3.0")
+      - version_constraint: Version in ["0.1.6", "0.2.1"]
+        no_asset: true
+      - version_constraint: Version in ["0.2.0", "0.3.0"]
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+        asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
         rosetta2: true
-        supported_envs:
-          - darwin
-        replacements:
-          amd64: amd64
-          darwin: darwin
-          linux: linux
         files:
           - name: hwatch
             src: hwatch/hwatch
-      - version_constraint: semver("= 0.2.1") || semver("= 0.1.6")
-        supported_envs: []
+        supported_envs:
+          - darwin
       - version_constraint: semver("= 0.1.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+        asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
         rosetta2: true
-        replacements:
-          amd64: amd64
-          darwin: darwin
-          linux: linux
         files:
           - name: hwatch
             src: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}/hwatch
+        supported_envs:
+          - linux/amd64
+          - darwin
       - version_constraint: semver("<= 0.1.2")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+        asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
         rosetta2: true
-        replacements:
-          amd64: amd64
-          darwin: darwin
-          linux: linux
-        files:
-          - name: hwatch
-            src: hwatch
-      - version_constraint: semver("< 0.3.1")
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.1.4")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+        asset: hwatch_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
         rosetta2: true
-        replacements:
-          amd64: amd64
-          darwin: darwin
-          linux: linux
         files:
           - name: hwatch
             src: hwatch/hwatch
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.3.13")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: hwatch-{{.Version}}.{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: hwatch
+            src: bin/hwatch
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+        overrides:
+          - goos: darwin
+            replacements:
+              arm64: aarch64
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.3.18")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: hwatch-{{.Version}}.{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        files:
+          - name: hwatch
+            src: bin/hwatch
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-gnu
+        overrides:
+          - goos: darwin
+            replacements:
+              arm64: aarch64
+          - goos: windows
+            format: zip
+            files:
+              - name: hwatch
+                src: target/{{.Arch}}-{{.OS}}/release/hwatch
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: semver("<= 0.4.1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: hwatch-{{.Version}}.{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        files:
+          - name: hwatch
+            src: bin/hwatch
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-gnu
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: hwatch
+                src: target/{{.Arch}}-{{.OS}}/release/hwatch
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: hwatch-{{.Version}}.{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        files:
+          - name: hwatch
+            src: bin/hwatch
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        overrides:
+          - goos: windows
+            format: zip
+            files:
+              - name: hwatch
+                src: target/{{.Arch}}-{{.OS}}/release/hwatch
   - type: http
     repo_owner: blender
     repo_name: blender
@@ -32474,7 +32638,7 @@ packages:
           - darwin
           - windows
           - amd64
-      - version_constraint: "true"
+      - version_constraint: Version == "v1.12"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: kubeletctl_{{.OS}}_{{.Arch}}
         format: raw
@@ -32483,6 +32647,11 @@ packages:
           - goos: windows
             replacements:
               amd64: x64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: kubeletctl_{{.OS}}_{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
   - type: github_release
     repo_owner: cybozu
     repo_name: assam
@@ -39962,6 +40131,8 @@ packages:
               - windows/arm64
             type: cargo
             crate: eza
+            cargo:
+              locked: true
           - goos: linux
             goarch: amd64
             replacements:
@@ -44696,7 +44867,7 @@ packages:
     version_overrides:
       - version_constraint: Version == "v0.1.0-alpha.1"
         no_asset: true
-      - version_constraint: "true"
+      - version_constraint: semver("< 2.0.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: git-flow-next-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -44704,6 +44875,20 @@ packages:
         files:
           - name: git-flow
             src: git-flow-{{.Version}}-{{.OS}}-{{.Arch}}
+        checksum:
+          type: github_release
+          asset: git-flow-next-{{.Version}}-checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: git-flow-next-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        files:
+          - name: git-flow
         checksum:
           type: github_release
           asset: git-flow-next-{{.Version}}-checksums.txt
@@ -45616,7 +45801,7 @@ packages:
     description: Ensure consistent code style when using log/slog
     version_constraint: "false"
     version_overrides:
-      - version_constraint: "true"
+      - version_constraint: semver("< 0.12.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: sloglint_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -45632,6 +45817,19 @@ packages:
           - darwin
           - windows
           - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: sloglint_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: sloglint_{{trimV .Version}}_checksums.txt
+          algorithm: sha256
+        supported_envs:
+          - darwin
+          - linux
+          - windows
   - type: github_release
     repo_owner: go-swagger
     repo_name: go-swagger
@@ -50634,6 +50832,11 @@ packages:
       - name: vagrant
     version_constraint: "false"
     version_overrides:
+      - version_constraint: semver(">= 2.4.4")
+        error_message: |
+          The Go implementation of Vagrant was removed from the main branch and isn't released since v2.4.4.
+
+          https://github.com/hashicorp/vagrant/issues/12819#issuecomment-2738619021
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: vagrant-go_{{.OS}}_{{.Arch}}
@@ -62029,7 +62232,7 @@ packages:
     supported_envs:
       - darwin
       - linux
-    asset: m1-terraform-provider-helper_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz
+    asset: m1-terraform-provider-helper_{{trimV .Version}}_{{.OS}}_{{.Arch}}.tar.gz
     replacements:
       darwin: Darwin
     checksum:
@@ -66039,25 +66242,19 @@ packages:
     repo_owner: lima-vm
     repo_name: lima
     description: Linux virtual machines, with a focus on running containers
-    files:
-      - name: lima
-        src: bin/lima
-      - name: limactl
-        src: bin/limactl
     version_constraint: "false"
     version_overrides:
-      - version_constraint: Version == "v1.1.1"
-        error_message: |
-          aqua doesn't support this version.
-          Please update this package.
-          https://github.com/aquaproj/aqua-registry/issues/36874
-          https://github.com/lima-vm/lima/pull/3621
       - version_constraint: Version == "v0.7.0"
         no_asset: true
       - version_constraint: Version == "v0.1.0"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: lima-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
+        files:
+          - name: lima
+            src: bin/lima
+          - name: limactl
+            src: bin/limactl
         replacements:
           amd64: x86_64
           darwin: Darwin
@@ -66067,10 +66264,15 @@ packages:
           algorithm: sha256
         supported_envs:
           - darwin
-      - version_constraint: semver("< 0.23.0")
+      - version_constraint: semver("<= 2.1.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: lima-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
+        files:
+          - name: lima
+            src: bin/lima
+          - name: limactl
+            src: bin/limactl
         replacements:
           amd64: x86_64
           darwin: Darwin
@@ -66090,10 +66292,16 @@ packages:
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: lima-{{trimV .Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
+        files:
+          - name: lima
+            src: bin/lima
+          - name: limactl
+            src: bin/limactl
         replacements:
           amd64: x86_64
           darwin: Darwin
           linux: Linux
+          windows: Windows
         checksum:
           type: github_release
           asset: SHA256SUMS
@@ -66104,9 +66312,14 @@ packages:
           - goos: linux
             replacements:
               arm64: aarch64
-        supported_envs:
-          - linux
-          - darwin
+          - goos: windows
+            format: zip
+            files:
+              - name: limactl
+                src: bin/limactl
+            replacements:
+              amd64: AMD64
+              arm64: ARM64
   - type: github_release
     repo_owner: lima-vm
     repo_name: sshocker
@@ -72618,7 +72831,7 @@ packages:
         files:
           - name: mailsend-go
             src: mailsend-go-dir/mailsend-go
-      - version_constraint: "true"
+      - version_constraint: semver("<= 1.0.11")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: mailsend-go-{{.Version}}-{{.OS}}-{{.Arch}}.d.{{.Format}}
         format: tar.gz
@@ -72633,6 +72846,21 @@ packages:
         files:
           - name: mailsend-go
             src: "{{.AssetWithoutExt}}/mailsend-go-{{.Version}}-{{.OS}}-{{.Arch}}"
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: mailsend-go-{{.Version}}-{{.OS}}-{{.Arch}}.d.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: mailsend-go-{{.Version}}-checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+        files:
+          - name: mailsend-go
+            src: mailsend-go-{{.Version}}-{{.OS}}-{{.Arch}}
   - type: github_release
     repo_owner: mutagen-io
     repo_name: mutagen
@@ -77349,7 +77577,7 @@ packages:
             - https://github.com/openvex/vexctl/releases/download/{{.Version}}/{{.Asset}}.sig
             - --certificate
             - https://github.com/openvex/vexctl/releases/download/{{.Version}}/{{.Asset}}.pem
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.4.1")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: vexctl-{{.OS}}-{{.Arch}}
         format: raw
@@ -77378,6 +77606,33 @@ packages:
             - https://github.com/openvex/vexctl/releases/download/{{.Version}}/{{.Asset}}.sig
             - --certificate
             - https://github.com/openvex/vexctl/releases/download/{{.Version}}/{{.Asset}}.pem
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: vexctl-{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: vexctl_checksums.txt
+          algorithm: sha256
+          cosign:
+            opts:
+              - --certificate-identity-regexp
+              - "https://github\\.com/openvex/vexctl/\\.github/workflows/release\\.yaml@.*"
+              - --certificate-oidc-issuer
+              - "https://token.actions.githubusercontent.com"
+            bundle:
+              type: github_release
+              asset: vexctl_checksums.txt.sigstore.json
+        cosign:
+          opts:
+            - --certificate-identity-regexp
+            - "https://github\\.com/openvex/vexctl/\\.github/workflows/release\\.yaml@.*"
+            - --certificate-oidc-issuer
+            - "https://token.actions.githubusercontent.com"
+          bundle:
+            type: github_release
+            asset: "{{.Asset}}.sigstore.json"
   - type: github_release
     repo_owner: openziti
     repo_name: zrok
@@ -85675,20 +85930,20 @@ packages:
   - type: github_release
     repo_owner: rui314
     repo_name: mold
-    description: "Mold: A Modern Linker"
+    description: "mold: A Modern Linker"
     version_constraint: "false"
     version_overrides:
-      - version_constraint: semver("<= 1.0.3") || Version == "v1.6.0-pre.1"
+      - version_constraint: Version == "v1.6.0-pre.1"
         no_asset: true
-      - version_constraint: semver("<= 1.5.1")
+      - version_constraint: semver("<= 1.0.3")
+        no_asset: true
+      - version_constraint: semver("<= 2.40.2")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: mold-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         replacements:
           amd64: x86_64
           arm64: aarch64
-        supported_envs:
-          - linux
         files:
           - name: mold
             src: mold-{{trimV .Version}}-{{.Arch}}-{{.OS}}/bin/mold
@@ -85696,20 +85951,37 @@ packages:
             src: mold-{{trimV .Version}}-{{.Arch}}-{{.OS}}/bin/mold
           - name: ld64.mold
             src: mold-{{trimV .Version}}-{{.Arch}}-{{.OS}}/bin/mold
+        supported_envs:
+          - linux
       - version_constraint: "true"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: mold-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
-        format: tar.gz
+        format: zip
+        windows_arm_emulation: true
         replacements:
           amd64: x86_64
-          arm64: aarch64
-        supported_envs:
-          - linux
         files:
           - name: mold
-            src: mold-{{trimV .Version}}-{{.Arch}}-{{.OS}}/bin/mold
+            src: bin/mold
           - name: ld.mold
-            src: mold-{{trimV .Version}}-{{.Arch}}-{{.OS}}/bin/mold
+            src: bin/mold
+          - name: ld64.mold
+            src: bin/mold
+        overrides:
+          - goos: linux
+            format: tar.gz
+            replacements:
+              arm64: aarch64
+            files:
+              - name: mold
+                src: mold-{{trimV .Version}}-{{.Arch}}-{{.OS}}/bin/mold
+              - name: ld.mold
+                src: mold-{{trimV .Version}}-{{.Arch}}-{{.OS}}/bin/mold
+              - name: ld64.mold
+                src: mold-{{trimV .Version}}-{{.Arch}}-{{.OS}}/bin/mold
+        supported_envs:
+          - linux
+          - windows/amd64
   - type: github_release
     repo_owner: runatlantis
     repo_name: atlantis
@@ -86328,28 +86600,12 @@ packages:
   - type: github_release
     repo_owner: rustic-rs
     repo_name: rustic
-    description: rustic - fast, encrypted, and deduplicated backups powered by Rust
+    description: "rustic - fast, encrypted, and deduplicated backups powered by Rust"
     version_constraint: "false"
     version_overrides:
-      - version_constraint: Version == "v0.10.2"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: rustic-{{.Version}}-1-g189b17c-{{.Arch}}-{{.OS}}.{{.Format}}
-        format: tar.gz
-        windows_arm_emulation: true
-        overrides:
-          - goos: linux
-            goarch: arm64
-            asset: rustic-{{.Version}}-1-{{.Arch}}-{{.OS}}.{{.Format}}
-          - goos: darwin
-            goarch: arm64
-            asset: rustic-{{.Version}}-1-{{.Arch}}-{{.OS}}.{{.Format}}
-        replacements:
-          amd64: x86_64
-          arm64: aarch64
-          darwin: apple-darwin
-          linux: unknown-linux-musl
-          windows: pc-windows-msvc
-      - version_constraint: semver("<= 0.2.0-rc1")
+      - version_constraint: Version == "v0.6.0"
+        no_asset: true
+      - version_constraint: Version == "v0.2.0-rc1"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: rustic_{{trimV .Version}}_{{.Arch}}_64-{{.OS}}.{{.Format}}
         format: bz2
@@ -86361,6 +86617,48 @@ packages:
           linux: unknown-linux-musl
         supported_envs:
           - linux/amd64
+      - version_constraint: Version == "v0.6.1"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: rustic-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+        overrides:
+          - goos: linux
+            goarch: amd64
+            replacements:
+              linux: unknown-linux-musl
+          - goos: linux
+            goarch: arm64
+            replacements:
+              linux: unknown-linux-gnu
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: Version == "v0.10.2"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: rustic-{{.Version}}-1-g189b17c-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            goarch: arm64
+            asset: rustic-{{.Version}}-1-{{.Arch}}-{{.OS}}.{{.Format}}
+          - goos: darwin
+            goarch: arm64
+            asset: rustic-{{.Version}}-1-{{.Arch}}-{{.OS}}.{{.Format}}
       - version_constraint: semver("<= 0.2.2")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: rustic-rs-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
@@ -86369,6 +86667,13 @@ packages:
         files:
           - name: rustic
             src: rustic-rs
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+        checksum:
+          type: github_release
+          asset: rustic-rs-{{.Version}}-{{.Arch}}-{{.OS}}.sha256
+          algorithm: sha256
         overrides:
           - goos: linux
             goarch: amd64
@@ -86379,16 +86684,9 @@ packages:
             replacements:
               arm64: aarch64
               linux: unknown-linux-gnu
-        replacements:
-          amd64: x86_64
-          darwin: apple-darwin
         supported_envs:
           - linux
           - darwin
-        checksum:
-          type: github_release
-          asset: rustic-rs-{{.Version}}-{{.Arch}}-{{.OS}}.sha256
-          algorithm: sha256
       - version_constraint: semver("<= 0.3.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: rustic-rs-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
@@ -86397,6 +86695,9 @@ packages:
         files:
           - name: rustic
             src: rustic-rs
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
         overrides:
           - goos: linux
             goarch: amd64
@@ -86407,9 +86708,6 @@ packages:
             replacements:
               arm64: aarch64
               linux: unknown-linux-gnu
-        replacements:
-          amd64: x86_64
-          darwin: apple-darwin
         supported_envs:
           - linux
           - darwin
@@ -86417,6 +86715,10 @@ packages:
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: rustic-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
         overrides:
           - goos: linux
             goarch: amd64
@@ -86426,10 +86728,6 @@ packages:
             goarch: arm64
             replacements:
               linux: unknown-linux-gnu
-        replacements:
-          amd64: x86_64
-          arm64: aarch64
-          darwin: apple-darwin
         supported_envs:
           - linux
           - darwin
@@ -86438,26 +86736,11 @@ packages:
         asset: rustic-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
         windows_arm_emulation: true
-        overrides:
-          - goos: linux
-            goarch: amd64
-            replacements:
-              linux: unknown-linux-musl
-          - goos: linux
-            goarch: arm64
-            replacements:
-              linux: unknown-linux-gnu
         replacements:
           amd64: x86_64
           arm64: aarch64
           darwin: apple-darwin
           windows: pc-windows-msvc
-      - version_constraint: Version == "v0.6.0"
-        no_asset: true
-      - version_constraint: "true"
-        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
-        asset: rustic-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
-        format: tar.gz
         overrides:
           - goos: linux
             goarch: amd64
@@ -86467,13 +86750,44 @@ packages:
             goarch: arm64
             replacements:
               linux: unknown-linux-gnu
+      - version_constraint: semver("<= 0.9.4")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: rustic-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
         replacements:
           amd64: x86_64
           arm64: aarch64
           darwin: apple-darwin
-        supported_envs:
-          - linux
-          - darwin
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            goarch: amd64
+            replacements:
+              linux: unknown-linux-musl
+          - goos: linux
+            goarch: arm64
+            replacements:
+              linux: unknown-linux-gnu
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: rustic-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
   - name: rustsec/rustsec/cargo-audit
     type: github_release
     repo_owner: rustsec
@@ -86640,7 +86954,7 @@ packages:
           - darwin
           - windows
           - amd64
-      - version_constraint: "true"
+      - version_constraint: semver("< 1.0.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: kfilt_{{trimV .Version}}_{{.OS}}_{{.Arch}}
         format: raw
@@ -86651,6 +86965,17 @@ packages:
         overrides:
           - goos: darwin
             asset: kfilt_{{trimV .Version}}_{{.OS}}_all
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: kfilt_{{.OS}}_{{.Arch}}
+        format: raw
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            asset: kfilt_{{.OS}}_all
   - type: github_release
     repo_owner: ryodocx
     repo_name: kube-credential-cache
@@ -93093,12 +93418,17 @@ packages:
         rosetta2: true
         windows_arm_emulation: true
         complete_windows_ext: false
-      - version_constraint: "true"
+      - version_constraint: semver("< 0.7.0")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: kgctl-{{.OS}}-{{.Arch}}
         format: raw
         windows_arm_emulation: true
         complete_windows_ext: false
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: kgctl-{{.OS}}-{{.Arch}}
+        format: raw
+        windows_arm_emulation: true
   - name: sr.ht/~charles/rq
     type: http
     description: |
@@ -100754,7 +101084,7 @@ packages:
         supported_envs:
           - linux/amd64
           - darwin
-      - version_constraint: "true"
+      - version_constraint: semver("<= 0.2.76")
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
         format: raw
@@ -100769,6 +101099,14 @@ packages:
           - darwin
           - windows
           - amd64
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: ffsend-{{.Version}}-{{.OS}}-{{.Arch}}-static
+        format: raw
+        replacements:
+          amd64: x64
+        supported_envs:
+          - linux/amd64
   - type: github_release
     repo_owner: tinygo-org
     repo_name: tinygo
@@ -107609,13 +107947,22 @@ packages:
         src: csview-{{.Version}}-{{.Arch}}-{{.OS}}/csview
     replacements:
       amd64: x86_64
+      arm64: aarch64
       darwin: apple-darwin
       windows: pc-windows-msvc
-    supported_envs:
-      - darwin
-      - linux
-      - amd64
-    rosetta2: true
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver(">= 1.3.4")
+        supported_envs:
+          - darwin/arm64
+          - linux
+          - windows/amd64
+      - version_constraint: "true"
+        supported_envs:
+          - darwin
+          - linux
+          - amd64
+        rosetta2: true
   - type: github_release
     repo_owner: whalebrew
     repo_name: whalebrew
@@ -109385,17 +109732,18 @@ packages:
     aliases:
       - name: MHNightCat/superfile
     description: Pretty fancy and modern terminal file manager
-    files:
-      - name: spf
     version_constraint: "false"
     version_overrides:
       - version_constraint: Version == "v1.0.0"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: spf
         format: raw
+        files:
+          - name: spf
         supported_envs:
           - linux/amd64
-      - version_constraint: "true"
+      # Windows assets are missing only in this release. v1.1.7.1 has them.
+      - version_constraint: Version == "v1.1.7"
         url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
         asset: superfile-{{.OS}}-{{.Version}}-{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -109405,6 +109753,40 @@ packages:
         supported_envs:
           - linux
           - darwin
+      - version_constraint: semver("<= 1.1.1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: superfile-{{.OS}}-{{.Version}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: spf
+            src: dist/{{.AssetWithoutExt}}/spf
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: semver("<= 1.6.0-rc1")
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: superfile-{{.OS}}-{{.Version}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: spf
+            src: dist/{{.AssetWithoutExt}}/spf
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: "true"
+        url: https://gh-proxy.org/https://github.com/01mf02/jaq/releases/download/{{.Version}}/{{.Asset}}
+        asset: superfile-{{.OS}}-{{.Version}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: spf
+            src: dist/{{.AssetWithoutExt}}/spf
+        checksum:
+          type: github_release
+          asset: superfile-{{.Version}}-checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
   - type: github_release
     repo_owner: ysugimoto
     repo_name: falco
